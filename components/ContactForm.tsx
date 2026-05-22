@@ -209,7 +209,7 @@ export default function ContactForm() {
         <p className="text-sm text-brand-muted mb-4">Or connect with us directly</p>
         <div className="flex items-center justify-center">
           <a
-            href="mailto:contact@makerai.com"
+            href="mailto:info@maker-ai.tech"
             className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 border border-[#1f293d] hover:border-brand/50 hover:bg-brand/5 rounded-lg text-sm text-white hover:text-brand hover:shadow-[0_0_15px_rgba(14,179,186,0.15)] transition-all duration-300 font-semibold"
           >
             <svg
@@ -225,7 +225,7 @@ export default function ContactForm() {
                 d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
               />
             </svg>
-            contact@makerai.com
+            info@maker-ai.tech
           </a>
         </div>
       </div>
