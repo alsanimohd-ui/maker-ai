@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+:root {
+  --background: #05070a;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: #0eb3ba;
+  --color-brand-hover: #14d2db;
+  --color-brand-card: #0d0f17;
+  --color-brand-border: #1a1f2e;
+  --color-brand-muted: #94a3b8;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Subtle tech grid background with radial fade */
+.bg-grid-masked {
+  position: absolute;
+  inset: 0;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at 50% 25%, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 25%, black 40%, transparent 85%);
+}
+
+/* Custom scrollbar to match dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2433;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0eb3ba;
+}
+
+/* Animation Keyframes */
+@keyframes orb-float-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10vw, 8vh) scale(1.15);
+  }
+  66% {
+    transform: translate(-8vw, 15vh) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes orb-float-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-12vw, -10vh) scale(1.2);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes orb-float-3 {
+  0% {
+    transform: translate(0, 0) scale(0.95);
+  }
+  33% {
+    transform: translate(-6vw, 12vh) scale(1.1);
+  }
+  66% {
+    transform: translate(10vw, -8vh) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(0.95);
+  }
+}
+@keyframes float-glow {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-50%, -50%) translate(8%, -6%) scale(1.15);
+  }
+  66% {
+    transform: translate(-50%, -50%) translate(-6%, 8%) scale(0.9);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(14, 179, 186, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(14, 179, 186, 0.55), 0 0 8px rgba(14, 179, 186, 0.2);
+  }
+}
+
+/* Premium Entrance & Scroll Reveal System */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.animate-on-load.visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.reveal-element {
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-element.visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.animate-float-glow {
+  animation: float-glow 35s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+.animate-orb-float-1 {
+  animation: orb-float-1 22s ease-in-out infinite;
+}
+
+.animate-orb-float-2 {
+  animation: orb-float-2 18s ease-in-out infinite;
+}
+
+.animate-orb-float-3 {
+  animation: orb-float-3 25s ease-in-out infinite;
+}
+
+
+/* Staggered Delays (Supports both transitions and animations) */
+.delay-100 {
+  transition-delay: 100ms !important;
+  animation-delay: 100ms !important;
+}
+.delay-150 {
+  transition-delay: 150ms !important;
+  animation-delay: 150ms !important;
+}
+.delay-200 {
+  transition-delay: 200ms !important;
+  animation-delay: 200ms !important;
+}
+.delay-300 {
+  transition-delay: 300ms !important;
+  animation-delay: 300ms !important;
+}
+.delay-400 {
+  transition-delay: 400ms !important;
+  animation-delay: 400ms !important;
+}
+.delay-450 {
+  transition-delay: 450ms !important;
+  animation-delay: 450ms !important;
+}
+.delay-600 {
+  transition-delay: 600ms !important;
+  animation-delay: 600ms !important;
+}
+
+/* Ensure animations and transitions run even if prefers-reduced-motion is active */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-element,
+  .animate-on-load {
+    transition-duration: 1s !important;
+    transition-delay: inherit !important;
+  }
+  .animate-float-glow {
+    animation-duration: 35s !important;
+  }
+  .animate-pulse-glow {
+    animation-duration: 2.5s !important;
+  }
+  .animate-orb-float-1 {
+    animation-duration: 45s !important;
+  }
+  .animate-orb-float-2 {
+    animation-duration: 40s !important;
+  }
+  .animate-orb-float-3 {
+    animation-duration: 50s !important;
+  }
+}
+
+
+
