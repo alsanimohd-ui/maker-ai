@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   description: "We build tailored AI automation systems, chatbots, smart analytics software, and robust cloud architectures to streamline your operations, reduce costs, and scale your business.",
   keywords: ["AI automation", "AI chatbots", "business automation", "Cloud DevOps", "smart systems", "artificial intelligence services"],
   icons: {
-    icon: "/assets/logo/icon-color.svg",
-    shortcut: "/assets/logo/icon-color.svg",
-    apple: "/assets/logo/icon-color.svg",
+    icon: "/assets/logo/icon-dark.svg",
+    shortcut: "/assets/logo/icon-dark.svg",
+    apple: "/assets/logo/icon-dark.svg",
   },
   openGraph: {
     title: "Maker AI | Custom AI Systems & Business Automation",
