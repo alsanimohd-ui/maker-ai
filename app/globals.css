@@ -1,8 +1,57 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
+  /* Default Theme = DARK Mode Variables */
+  --background: #05070a;
+  --foreground: #f8fafc;
+  --card-bg: rgba(13, 18, 30, 0.45);
+  --card-border-default: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(14, 179, 186, 0.55);
+  --grid-line-color: rgba(255, 255, 255, 0.035);
+  --text-muted: #94a3b8;
+  --navbar-bg: rgba(5, 7, 10, 0.7);
+  --navbar-shadow: rgba(0, 0, 0, 0.2);
+  --form-input-bg: rgba(13, 18, 30, 0.6);
+  --form-input-border: rgba(255, 255, 255, 0.1);
+  --chat-msg-bot-bg: rgba(15, 23, 42, 0.6);
+  --chat-msg-bot-border: rgba(255, 255, 255, 0.08);
+  --chat-msg-bot-text: #e2e8f0;
+  --blob-opacity: 0.28;
+  --scrollbar-thumb: #334155;
+  --scrollbar-thumb-hover: #0eb3ba;
+  
+  /* Dynamic Background Gradients */
+  --bg-gradient-from: #05070a;
+  --bg-gradient-via: #0a0e17;
+  --bg-gradient-to: #05070a;
+}
+
+html.light {
+  /* Alternative Theme = LIGHT Mode Variables */
   --background: #f8fafc;
   --foreground: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border-default: rgba(15, 23, 42, 0.07);
+  --card-border-hover: rgba(14, 179, 186, 0.55);
+  --grid-line-color: rgba(15, 23, 42, 0.035);
+  --text-muted: #475569;
+  --navbar-bg: rgba(255, 255, 255, 0.7);
+  --navbar-shadow: rgba(15, 23, 42, 0.03);
+  --form-input-bg: #ffffff;
+  --form-input-border: rgba(15, 23, 42, 0.12);
+  --chat-msg-bot-bg: #f1f5f9;
+  --chat-msg-bot-border: rgba(15, 23, 42, 0.06);
+  --chat-msg-bot-text: #1e293b;
+  --blob-opacity: 0.08;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #0eb3ba;
+
+  /* Dynamic Background Gradients */
+  --bg-gradient-from: #f8fafc;
+  --bg-gradient-via: rgba(224, 242, 254, 0.2);
+  --bg-gradient-to: #f8fafc;
 }
 
 @theme inline {
@@ -10,9 +59,9 @@
   --color-foreground: var(--foreground);
   --color-brand: #0eb3ba;
   --color-brand-hover: #14d2db;
-  --color-brand-card: rgba(255, 255, 255, 0.7);
-  --color-brand-border: rgba(226, 232, 240, 0.8);
-  --color-brand-muted: #475569;
+  --color-brand-card: var(--card-bg);
+  --color-brand-border: var(--card-border-default);
+  --color-brand-muted: var(--text-muted);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
@@ -30,25 +79,25 @@ body {
   inset: 0;
   background-size: 50px 50px;
   background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
   mask-image: radial-gradient(ellipse at 50% 25%, black 45%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 25%, black 45%, transparent 85%);
 }
 
-/* Custom scrollbar to match light theme */
+/* Custom scrollbar to match current theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0eb3ba;
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Premium Aurora Mesh & Flow Keyframes */
@@ -183,7 +232,9 @@ body {
 /* Premium Glassmorphic Masked Neon Borders & Glow Utilities */
 .card-neon-border {
   position: relative;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 100%);
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, box-shadow;

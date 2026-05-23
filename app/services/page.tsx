@@ -141,10 +141,10 @@ export default function ServicesPage() {
       {/* Header section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center mb-16 sm:mb-24">
         <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
-          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-900 to-slate-850 sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-900 to-slate-850 dark:from-slate-100 dark:via-slate-50 dark:to-slate-200 sm:text-5xl md:text-6xl">
             {lang === "ar" ? "أتمتة الأعمال المخصصة" : "Bespoke Business Automation"}
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             {lang === "ar" 
               ? "أنظمة برمجية مخصصة وموجهة لخدمة الأعمال لمساعدتك في تحسين كفاءة العمليات وتقليل التكاليف وتوفير الوقت."
               : "Tailored, business-focused systems built to optimize operations, cut costs, and save your team hours of manual work."}
@@ -173,15 +173,15 @@ export default function ServicesPage() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 shadow-[0_0_15px_rgba(14,179,186,0.15)] group-hover:shadow-[0_0_25px_rgba(14,179,186,0.35)] transition-all duration-300">
                     {service.icon}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h2>
                   <p className="text-brand font-semibold text-sm mb-4">{service.subtitle}</p>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                     {service.impact}
                   </p>
 
-                  <div className="mt-4 border-t border-slate-200/80 pt-4 text-xs space-y-3">
-                    <p className="text-slate-500 font-medium">{service.problem}</p>
-                    <p className="text-slate-500 font-medium">{service.stopsDoing}</p>
+                  <div className="mt-4 border-t border-slate-200/80 dark:border-slate-800/80 pt-4 text-xs space-y-3">
+                    <p className="text-slate-500 dark:text-slate-400 font-medium">{service.problem}</p>
+                    <p className="text-slate-500 dark:text-slate-400 font-medium">{service.stopsDoing}</p>
                   </div>
                 </Reveal>
               </div>
@@ -191,17 +191,17 @@ export default function ServicesPage() {
                 <Reveal delay={255} className="flex flex-col space-y-6">
                   {/* Before / After visual block */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-4">
-                    <div className="flex flex-col bg-red-50/50 border border-red-100/80 rounded-xl p-4.5">
-                      <span className="text-red-600 font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "قبل الأتمتة" : "Before Automation"}</span>
-                      <p className="text-slate-500 leading-relaxed">{service.before}</p>
+                    <div className="flex flex-col bg-red-50/50 dark:bg-red-950/20 border border-red-100/80 dark:border-red-900/40 rounded-xl p-4.5">
+                      <span className="text-red-600 dark:text-red-400 font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "قبل الأتمتة" : "Before Automation"}</span>
+                      <p className="text-slate-500 dark:text-slate-400 leading-relaxed">{service.before}</p>
                     </div>
-                    <div className="flex flex-col bg-teal-50/50 border border-brand/20 rounded-xl p-4.5">
+                    <div className="flex flex-col bg-teal-50/50 dark:bg-teal-950/20 border border-brand/20 dark:border-brand/40 rounded-xl p-4.5">
                       <span className="text-brand font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "بعد الأتمتة" : "After Automation"}</span>
-                      <p className="text-slate-600 leading-relaxed">{service.after}</p>
+                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.after}</p>
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white uppercase tracking-wide">
                     {lang === "ar" ? "تطبيقات وحالات استخدام شائعة" : "Common Applications & Use Cases"}
                   </h3>
                   <ul className="space-y-4">
@@ -212,7 +212,7 @@ export default function ServicesPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                        <span className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                           {useCase}
                         </span>
                       </li>

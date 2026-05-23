@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,7 +52,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground relative overflow-x-hidden">
         {/* Dynamic Background System */}
-        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none bg-gradient-to-tr from-slate-50 via-sky-50/20 to-slate-50 animate-bg-slow">
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none bg-gradient-to-tr from-[var(--bg-gradient-from)] via-[var(--bg-gradient-via)] to-[var(--bg-gradient-to)] transition-colors duration-500 animate-bg-slow">
           {/* Ambient Grid Overlay */}
           <div className="absolute inset-0 bg-grid-masked" />
 
@@ -68,7 +69,7 @@ export default function RootLayout({
           </svg>
           
           {/* Distorted Liquid Aurora Blob Container */}
-          <div className="absolute inset-0 opacity-90" style={{ filter: 'url(#liquid-smoke)' }}>
+          <div className="absolute inset-0" style={{ filter: 'url(#liquid-smoke)', opacity: 'var(--blob-opacity)', transition: 'opacity 0.5s ease' }}>
             {/* Orb 1: Vibrant Teal (Top Left) */}
             <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] min-w-[380px] min-h-[380px] rounded-full bg-gradient-to-br from-brand/20 via-cyan-400/8 to-transparent blur-[90px] animate-aurora-1" />
             
@@ -83,12 +84,14 @@ export default function RootLayout({
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[45vh] min-w-[650px] rounded-full bg-brand/[0.06] blur-[120px] animate-spotlight" />
         </div>
 
-        <LanguageProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <ChatBot />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <ChatBot />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

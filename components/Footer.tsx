@@ -3,40 +3,42 @@
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/lib/translations";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { lang } = useLanguage();
+  const { theme } = useTheme();
   const t = translations[lang];
 
   return (
-    <footer className="mt-auto border-t border-slate-900 bg-slate-950 py-12 md:py-16 text-slate-400">
+    <footer className="mt-auto border-t border-slate-200 dark:border-slate-900 bg-slate-50 dark:bg-slate-950 py-12 md:py-16 text-slate-500 dark:text-slate-400 transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Logo & Description */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="inline-block">
               <img
-                src="/assets/logo/logo-white.svg"
+                src={theme === "dark" ? "/assets/logo/logo-white.svg" : "/assets/logo/logo-dark.svg"}
                 alt="Maker AI Logo"
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
+            <p className="text-sm text-slate-550 dark:text-slate-400 max-w-xs leading-relaxed">
               {t.footer_desc}
             </p>
           </div>
 
           {/* Quick Navigation Links */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
               {t.footer_nav_title}
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-sm text-slate-400 hover:text-brand transition-colors duration-200"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-brand transition-colors duration-200"
                 >
                   {t.nav_home}
                 </Link>
@@ -44,7 +46,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-sm text-slate-400 hover:text-brand transition-colors duration-200"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-brand transition-colors duration-200"
                 >
                   {t.nav_services}
                 </Link>
@@ -52,7 +54,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-sm text-slate-400 hover:text-brand transition-colors duration-200"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-brand transition-colors duration-200"
                 >
                   {t.nav_contact}
                 </Link>
@@ -62,13 +64,13 @@ export default function Footer() {
 
           {/* Contact Details & Direct Connect */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
               {t.footer_contact_title}
             </h3>
             <div className="flex flex-col space-y-3">
               <a
                 href="mailto:info@maker-ai.tech"
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 font-semibold"
+                className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 font-semibold"
               >
                 <svg
                   className="h-5 w-5 text-brand"
@@ -89,7 +91,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-900 pt-8 flex flex-col md:flex-row items-center justify-between">
+        <div className="mt-12 border-t border-slate-200 dark:border-slate-900 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-xs text-slate-500">
             &copy; {currentYear} Maker AI. {t.footer_rights}
           </p>
