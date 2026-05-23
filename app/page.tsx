@@ -74,9 +74,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
           {/* Logo and Premium badge above headline */}
           <div className={`animate-on-load ${heroVisible ? "visible" : ""} flex flex-col items-center mb-8 relative`}>
-            {/* Double pulsing logo lighting glow - expanded and strengthened */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-72 h-72 rounded-full bg-gradient-to-r from-brand/35 via-cyan-400/20 to-transparent blur-[80px] animate-glow-pulse" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-48 h-48 rounded-full bg-indigo-500/25 blur-[60px] animate-pulse" />
+            {/* Double pulsing logo lighting glow - high impact radial light bloom */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-80 h-80 rounded-full bg-gradient-to-r from-brand/40 via-cyan-400/25 to-transparent blur-[70px] animate-glow-pulse" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-56 h-56 rounded-full bg-indigo-500/30 blur-[50px] animate-pulse" />
             <img
               src="/assets/logo/icon-color.svg"
               alt="Maker AI Icon"

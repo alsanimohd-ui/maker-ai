@@ -51,7 +51,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground relative overflow-x-hidden">
         {/* Dynamic Background System */}
-        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none bg-gradient-to-b from-slate-50 via-sky-50/15 to-slate-50">
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none bg-gradient-to-tr from-slate-50 via-sky-50/20 to-slate-50 animate-bg-slow">
           {/* Ambient Grid Overlay */}
           <div className="absolute inset-0 bg-grid-masked" />
 

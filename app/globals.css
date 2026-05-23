@@ -94,6 +94,15 @@ body {
   }
 }
 
+@keyframes bg-gradient-slow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @keyframes spotlight-pulse {
   0%, 100% {
     opacity: 0.35;
@@ -164,6 +173,11 @@ body {
 
 .animate-glow-pulse {
   animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.animate-bg-slow {
+  background-size: 200% 200%;
+  animation: bg-gradient-slow 22s ease-in-out infinite;
 }
 
 /* Premium Tilt, Glow, Hover & Flow Animations */
