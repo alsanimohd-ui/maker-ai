@@ -20,40 +20,56 @@ export default function ServicesPage() {
 
   const serviceDetails = [
     {
-      title: lang === "ar" ? "أتمتة الذكاء الاصطناعي" : "AI Automation",
-      subtitle: lang === "ar" ? "تخلص من المهام اليدوية وسرّع سير العمل اليومي." : "Eliminate manual tasks and speed up daily workflows.",
+      title: lang === "ar" ? "أتمتة البيانات والعمليات" : "Data & Process Automation",
+      subtitle: lang === "ar" ? "تخلص من إدخال البيانات اليدوي بالكامل وسرّع سير العمل." : "Eliminate manual data entry entirely and speed up daily workflows.",
       impact: lang === "ar"
-        ? "يوفر ما يصل إلى 20-30 ساعة أسبوعياً لكل موظف من خلال أتمتة إدخال البيانات وإنشاء التقارير ومعالجة المستندات."
-        : "Saves up to 20-30 hours per week per employee by automating data entry, report generation, and document processing.",
+        ? "نوفر ما يصل إلى 20-30 ساعة أسبوعياً لكل موظف عن طريق جعل الأنظمة تقرأ المستندات، وتنقل البيانات، وتحدث السجلات بشكل تلقائي."
+        : "We save up to 20-30 hours per week per employee by getting systems to read documents, transfer data, and update records automatically.",
+      problem: lang === "ar" 
+        ? "المشكلة: الموظفون يضيعون ساعات في نسخ الفواتير، ونقل البيانات بين الأنظمة، وتحديث جداول البيانات يدوياً."
+        : "Problem: Employees waste hours copy-pasting invoice details, transferring files between tools, and updating spreadsheets manually.",
+      stopsDoing: lang === "ar"
+        ? "ما يتوقف المستخدم عن فعله يدوياً: تنزيل الفواتير، إعادة كتابة الأسماء والأرقام، وتنسيق الملفات يدوياً."
+        : "What you stop doing manually: Downloading PDFs, retyping vendor names and totals, and formatting reports by hand.",
+      before: lang === "ar" ? "إدخال يدوي للبيانات وتكرار العمل مع احتمالية كبيرة للخطأ البشري." : "Repetitive manual data entry and formatting with a high risk of human error.",
+      after: lang === "ar" ? "تتدفق البيانات تلقائيًا بين الأنظمة مع انعدام إدخال البيانات اليدوي." : "Data flows automatically between tools in seconds with zero manual input required.",
       useCases: lang === "ar" ? [
-        "أتمتة إدخال البيانات بين برمجيات الأعمال المختلفة",
-        "تصنيف ومعالجة المستندات الفورية (مثل الفواتير ورسائل البريد الإلكتروني)",
-        "تجميع التقارير اليومية وإشعارات البريد الإلكتروني المؤتمتة",
+        "معالجة فواتير PDF تلقائياً وإرسالها مباشرة إلى نظام المحاسبة",
+        "تحديث قواعد بيانات العملاء لحظياً فور حدوث عمليات الشراء",
+        "استخراج البيانات من رسائل البريد الإلكتروني وتحديث أنظمة إدارة علاقات العملاء CRM",
       ] : [
-        "Automated data entry between different business software",
-        "Instant document classification and processing (e.g., invoices, emails)",
-        "Daily report compilation and automated email notifications",
+        "Processing PDF invoices and uploading them directly to your accounting system",
+        "Updating client database records instantly when a new purchase occurs",
+        "Extracting customer data from incoming emails to update CRM pipelines",
       ],
       icon: (
         <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
         </svg>
       ),
     },
     {
-      title: lang === "ar" ? "روبوتات الدردشة الذكية" : "AI Chatbots",
-      subtitle: lang === "ar" ? "دعم ذكي وتأهيل تلقائي للمبيعات على مدار الساعة." : "Intelligent support and automated sales qualification around the clock.",
+      title: lang === "ar" ? "روبوتات الدردشة والدعم الذكي" : "AI Chatbots & Support",
+      subtitle: lang === "ar" ? "دعم وتأهيل للمبيعات على مدار الساعة دون طوابير انتظار يدوية." : "Support and sales qualification around the clock without manual support queues.",
       impact: lang === "ar"
-        ? "يستجيب على الفور لـ 80% من أسئلة العملاء الروتينية، مما يقلل تكاليف الدعم مع جذب عملاء محتملين مؤهلين 24/7."
-        : "Responds instantly to 80% of routine client questions, decreasing support costs while generating qualified sales leads 24/7.",
+        ? "يستجيب على الفور لـ 80% من أسئلة العملاء الروتينية، مما يقلل تكاليف الدعم مع تصفية وتأهيل العملاء المحتملين تلقائياً."
+        : "Responds instantly to 80% of routine client questions, reducing support costs while filtering and qualifying incoming leads automatically.",
+      problem: lang === "ar"
+        ? "المشكلة: بطء وقت الاستجابة للعملاء خارج ساعات العمل مما يؤدي لخسارة عملاء محتملين."
+        : "Problem: Slow response times to customer inquiries outside business hours leads to missed pipeline opportunities.",
+      stopsDoing: lang === "ar"
+        ? "ما يتوقف المستخدم عن فعله يدوياً: الرد على نفس الأسئلة الشائعة وتأهيل العملاء المحتملين البسيط يدوياً."
+        : "What you stop doing manually: Answering the exact same support questions repeatedly and profiling basic leads yourself.",
+      before: lang === "ar" ? "تراكم تذاكر الدعم وخسارة العملاء المحتملين لعدم الرد خارج ساعات العمل." : "Lead drop-offs and support ticket backlogs because of delayed off-hours responses.",
+      after: lang === "ar" ? "ردود فورية على الأسئلة الشائعة وتصفية وتأهيل فوري للعملاء على مدار الساعة." : "Instant support answers and automated lead profiling active 24 hours a day.",
       useCases: lang === "ar" ? [
-        "أتمتة دعم العملاء لاستفسارات الموقع الإلكتروني الشائعة",
-        "تأهيل مسبق للعملاء المحتملين قبل وصولهم إلى فريق المبيعات",
-        "حجز وجدولة الاستشارات تلقائياً مع العملاء",
+        "روبوتات دردشة ذكية تجيب على الأسئلة الشائعة للعملاء بدقة",
+        "تأهيل مسبق للعملاء المحتملين وحجز المواعيد على التقويم تلقائياً",
+        "توجيه القضايا المعقدة تلقائياً إلى موظف الدعم البشري المناسب",
       ] : [
-        "Automated customer support for common website inquiries",
-        "Pre-qualifying incoming business leads before they reach your sales team",
-        "Booking and scheduling consultations automatically with clients",
+        "Intelligent chatbots that resolve website visitor questions accurately",
+        "Pre-qualifying leads and booking consultation calls on calendars automatically",
+        "Routing complex support issues to the correct human support member instantly",
       ],
       icon: (
         <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -62,40 +78,54 @@ export default function ServicesPage() {
       ),
     },
     {
-      title: lang === "ar" ? "السحابة والعمليات" : "Cloud & DevOps",
-      subtitle: lang === "ar" ? "بنية تحتية آمنة وسريعة وقابلة للتوسع مصممة للأنظمة الحديثة." : "Secure, fast, and scalable infrastructure designed for modern systems.",
+      title: lang === "ar" ? "تكامل الأنظمة والسحابة" : "System Integration & Cloud",
+      subtitle: lang === "ar" ? "بنية تحتية سحابية آمنة وسريعة تربط جميع برمجياتك معاً." : "Secure, fast cloud setup that connects all your software tools together.",
       impact: lang === "ar"
-        ? "يضمن وقت تشغيل للنظام بنسبة 99.9%، وسرعات تحميل عالية، وحماية قوية لبيانات شركتك وعملائك."
-        : "Ensures 99.9% system uptime, fast load speeds, and robust protection for your company and client data.",
+        ? "نضمن بقاء أنظمتك متصلة بالإنترنت دائماً بنسبة تشغيل 99.9%، ونربط الأدوات ببعضها لتجنب الجزر المنعزلة للبيانات."
+        : "We guarantee your systems stay online with 99.9% uptime, connecting tools directly so your business data isn't siloed.",
+      problem: lang === "ar"
+        ? "المشكلة: الأدوات لا تتحدث مع بعضها، مما يتطلب تنزيل البيانات يدوياً ورفعها لتحديث قواعد البيانات."
+        : "Problem: Operations software tools don't communicate, forcing manual updates and siloed records.",
+      stopsDoing: lang === "ar"
+        ? "ما يتوقف المستخدم عن فعله يدوياً: تصدير ورفع ملفات CSV يدوياً وتتبع تحديثات البيانات بين الأنظمة المختلفة."
+        : "What you stop doing manually: Exporting CSVs, uploading user credentials, and tracking data syncs across tools.",
+      before: lang === "ar" ? "تحديث يدوي للملفات وتشتت البيانات بين أدوات متعددة غير مترابطة." : "Manual data syncing and siloed records across multiple disconnected platforms.",
       useCases: lang === "ar" ? [
-        "إعداد بيئات استضافة سحابية سريعة وآمنة وحديثة",
-        "إجراءات النسخ الاحتياطي التلقائي والتخطيط للتعافي من الكوارث",
-        "تحديثات برمجية سلسة دون توقف الخدمة عن المستخدمين",
+        "ربط المتاجر الإلكترونية بموردي المخزون تلقائياً عبر واجهات البرمجة APIs",
+        "تأمين وتشفير استضافات قواعد بيانات العملاء على سحابة AWS أو Google Cloud",
+        "إجراء نسخ احتياطي مؤتمت وخطة تعافي تشغيلية كاملة لحماية البيانات",
       ] : [
-        "Setting up fast, secure, and modern cloud hosting environments",
-        "Automated backup procedures and disaster recovery planning",
-        "Smooth software updates with zero downtime for your users",
+        "Connecting storefronts with supply chains and suppliers via custom APIs",
+        "Securing and hosting customer database environments on AWS or Google Cloud",
+        "Automated backup pipelines and database disaster recovery plans",
       ],
       icon: (
         <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
         </svg>
       ),
     },
     {
-      title: lang === "ar" ? "الأنظمة الذكية" : "Smart Systems",
-      subtitle: lang === "ar" ? "لوحات معلومات وبرمجيات مدفوعة بالبيانات لتوجيه قراراتك." : "Data-driven dashboards and software to guide your decisions.",
+      title: lang === "ar" ? "التقارير ولوحات البيانات" : "Reporting & Dashboards",
+      subtitle: lang === "ar" ? "لوحات معلومات تفاعلية تجمع بياناتك لحظياً في مكان واحد." : "Data dashboards that collect and display your metrics in one place.",
       impact: lang === "ar"
-        ? "يجمع سجلات الأعمال المعقدة في ملخصات مرئية نظيفة، مما يساعد القيادة على اتخاذ قرارات استراتيجية مدروسة للغاية."
-        : "Aggregates complex business records into clean visual summaries, helping leadership make highly informed, strategic choices.",
+        ? "نحول السجلات المعقدة والبيانات المشتتة إلى لوحات معلومات نظيفة ومحدثة باستمرار لمساعدتك في اتخاذ قرارات دقيقة."
+        : "We compile complex business records and spreadsheet files into clean visual summaries to help management make accurate decisions.",
+      problem: lang === "ar"
+        ? "المشكلة: قضاء الساعات في نهاية كل أسبوع لتجميع التقارير وحساب العائد على الاستثمار يدوياً."
+        : "Problem: Spending hours at the end of the week gathering reports and typing calculations manually.",
+      stopsDoing: lang === "ar"
+        ? "ما يتوقف المستخدم عن فعله يدوياً: سحب البيانات من منصات الإعلانات، المبيعات، والتحليلات وحساب الأرقام يدوياً."
+        : "What you stop doing manually: Pulling records from ad networks, sales CRM, and Web analytics to build weekly tables.",
+      before: lang === "ar" ? "سجلات مشتتة وتقارير متأخرة أو غير دقيقة تُبنى يدوياً." : "Siloed sheets and delayed weekly reports that require manual mathematical entries.",
       useCases: lang === "ar" ? [
-        "لوحات تحليلات تفاعلية تمثل أداء الشركة",
-        "تنبيهات تلقائية لتتبع الحالات الشاذة في بياناتك التشغيلية",
-        "توقعات واضحة لسلاسل الإمداد والمخزون أو اتجاهات المبيعات",
+        "لوحات تحليلات تفاعلية تجمع المبيعات والمصروفات والتكاليف لحظياً",
+        "نظام إرسال تقرير الأداء التشغيلي تلقائياً صباح كل جمعة إلى بريد الإدارة",
+        "تنبيهات فورية للمشكلات والأعطال في العمليات التشغيلية",
       ] : [
-        "Interactive analytics dashboards representing company performance",
-        "Automated alerts tracking anomalies in your operational data",
-        "Clear forecasts for supply chains, inventory, or sales trends",
+        "Interactive analytics dashboards compiling sales and advertising spend in real-time",
+        "Automated report deliveries sent to management email addresses every week",
+        "Anomaly detection alerts notifying operations teams of processing drops instantly",
       ],
       icon: (
         <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -112,32 +142,32 @@ export default function ServicesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center mb-16 sm:mb-24">
         <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
           <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-slate-400 sm:text-5xl md:text-6xl">
-            {lang === "ar" ? "خدماتنا المخصصة" : "Our Services"}
+            {lang === "ar" ? "أتمتة الأعمال المخصصة" : "Bespoke Business Automation"}
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
             {lang === "ar" 
-              ? "أنظمة برمجية مخصصة وموجهة لخدمة الأعمال لمساعدتك في تحسين كفاءة العمليات وتقليل التكاليف وجذب العملاء."
-              : "Tailored, business-focused systems built to optimize operations, cut costs, and generate leads."}
+              ? "أنظمة برمجية مخصصة وموجهة لخدمة الأعمال لمساعدتك في تحسين كفاءة العمليات وتقليل التكاليف وتوفير الوقت."
+              : "Tailored, business-focused systems built to optimize operations, cut costs, and save your team hours of manual work."}
           </p>
         </div>
       </section>
 
       {/* Services detailed listing */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-20 sm:space-y-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-24 sm:space-y-36">
         {serviceDetails.map((service, index) => {
           const isEven = index % 2 === 0;
           return (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-start lg:items-center ${
+              className={`flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-stretch ${
                 isEven ? "" : "lg:flex-row-reverse"
               }`}
             >
-              {/* Service Icon and Title block */}
-              <div className="w-full lg:w-1/2">
+              {/* Service Details Card */}
+              <div className="w-full lg:w-1/2 flex">
                 <Reveal
                   delay={100}
-                  className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-2xl p-8 sm:p-10 relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300"
+                  className="group flex flex-col w-full bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-2xl p-8 sm:p-10 relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300"
                 >
                   <div className={`absolute top-0 ${lang === "ar" ? "left-0 rounded-br-full" : "right-0 rounded-bl-full"} w-24 h-24 bg-brand/2`} />
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 transition-all duration-300">
@@ -145,17 +175,34 @@ export default function ServicesPage() {
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h2>
                   <p className="text-brand font-semibold text-sm mb-4">{service.subtitle}</p>
-                  <p className="text-sm text-slate-300 leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
+                  <p className="text-sm text-slate-300 leading-relaxed mb-6">
                     {service.impact}
                   </p>
+
+                  <div className="mt-4 border-t border-[#1f293d] pt-4 text-xs space-y-3">
+                    <p className="text-slate-400 font-medium">{service.problem}</p>
+                    <p className="text-slate-400 font-medium">{service.stopsDoing}</p>
+                  </div>
                 </Reveal>
               </div>
 
-              {/* Service Features & Typical Use Cases */}
-              <div className="w-full lg:w-1/2">
+              {/* Before/After and Common Use Cases */}
+              <div className="w-full lg:w-1/2 flex flex-col justify-between py-2">
                 <Reveal delay={255} className="flex flex-col space-y-6">
+                  {/* Before / After visual block */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-4">
+                    <div className="flex flex-col bg-[#0c0f17] border border-red-500/10 rounded-xl p-4.5">
+                      <span className="text-red-400 font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "قبل الأتمتة" : "Before Automation"}</span>
+                      <p className="text-slate-400 leading-relaxed">{service.before}</p>
+                    </div>
+                    <div className="flex flex-col bg-[#0c0f17] border border-brand/10 rounded-xl p-4.5">
+                      <span className="text-brand font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "بعد الأتمتة" : "After Automation"}</span>
+                      <p className="text-slate-300 leading-relaxed">{service.after}</p>
+                    </div>
+                  </div>
+
                   <h3 className="text-lg font-bold text-white uppercase tracking-wide">
-                    {lang === "ar" ? "تطبيقات الأعمال الشائعة" : "Common Business Applications"}
+                    {lang === "ar" ? "تطبيقات وحالات استخدام شائعة" : "Common Applications & Use Cases"}
                   </h3>
                   <ul className="space-y-4">
                     {service.useCases.map((useCase, idx) => (
@@ -186,23 +233,23 @@ export default function ServicesPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-30 -z-20" />
           
           <div className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-xs font-semibold text-brand mb-6 backdrop-blur-md relative z-10">
-            {lang === "ar" ? "مكالمة استشارية" : "Consultation Call"}
+            {lang === "ar" ? "التدقيق التشغيلي" : "Operational Audit"}
           </div>
 
           <h2 className="text-3xl font-extrabold text-white mb-4 relative z-10">
-            {lang === "ar" ? "هل تحتاج إلى دمج نظام ذكاء اصطناعي مخصص؟" : "Need a Custom AI Integration?"}
+            {lang === "ar" ? "هل تبحث عن إزالة الاختناقات التشغيلية؟" : "Looking to remove operational bottlenecks?"}
           </h2>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-10 leading-relaxed relative z-10">
             {lang === "ar" 
-              ? "يمكن لمهندسينا مساعدتك في تقييم عملياتك الحالية وتحديد أسهل العمليات التي يمكن أتمتتها أولاً."
-              : "Our engineers can help you assess your current operations and identify the easiest processes to automate first."}
+              ? "احجز جلسة تدقيق مجانية مدتها 30 دقيقة لنحدد فيها معاً أين يفقد عملك الوقت والأموال وكيفية أتمتة الأنظمة."
+              : "Book a free 30-minute operational audit. We will map out exactly where you are losing time and how to automate it."}
           </p>
           <div className="relative z-10">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300"
             >
-              {lang === "ar" ? "احصل على اقتباس مجاني" : "Get a Free Quote"}
+              {t.services_page_why_btn}
             </Link>
           </div>
         </Reveal>

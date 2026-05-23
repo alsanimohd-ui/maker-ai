@@ -23,15 +23,19 @@ export default function Home() {
     {
       title: t.service_1_title,
       description: t.service_1_desc,
+      before: lang === "ar" ? "إدخال يدوي للبيانات في جداول متعددة وتكرار العمل بين الأدوات." : "Manually entering data into spreadsheets and copy-pasting between tools.",
+      after: lang === "ar" ? "تتدفق البيانات تلقائيًا بين الأنظمة مع انعدام إدخال البيانات اليدوي." : "Data flows automatically between systems with zero manual entry required.",
       icon: (
         <svg className="h-8 w-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
         </svg>
       ),
     },
     {
       title: t.service_2_title,
       description: t.service_2_desc,
+      before: lang === "ar" ? "تراكم تذاكر الدعم وخسارة العملاء المحتملين لعدم الرد السريع خارج ساعات العمل." : "Support tickets pile up and leads are lost because of slow off-hours response times.",
+      after: lang === "ar" ? "ردود فورية على الأسئلة الشائعة وتصنيف فوري للعملاء على مدار الساعة." : "Instant answers to common questions and immediate lead profiling 24 hours a day.",
       icon: (
         <svg className="h-8 w-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
@@ -41,15 +45,19 @@ export default function Home() {
     {
       title: t.service_3_title,
       description: t.service_3_desc,
+      before: lang === "ar" ? "تصدير ملفات CSV يدوياً ورفعها لتحديث بيانات العملاء والمنتجات." : "Manually exporting CSVs and uploading them to update client and product files.",
+      after: lang === "ar" ? "ربط الأنظمة عبر واجهات API ومزامنة البيانات التشغيلية لحظياً." : "Systems connected via APIs syncing operational database records in real-time.",
       icon: (
         <svg className="h-8 w-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
         </svg>
       ),
     },
     {
       title: t.service_4_title,
       description: t.service_4_desc,
+      before: lang === "ar" ? "قضاء ساعات في نهاية كل أسبوع لتجميع التقارير وحساب الأرقام يدوياً." : "Spending hours at the end of the week gathering reports and typing calculations manually.",
+      after: lang === "ar" ? "تقارير مؤتمتة تجمع أرقامك في لوحة قيادة واحدة نظيفة ومحدثة باستمرار." : "Automated workflows compile metrics into one clean dashboard updated constantly.",
       icon: (
         <svg className="h-8 w-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
@@ -108,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 sm:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section id="services" className="py-24 sm:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-b border-[#1a1f2e]">
         <Reveal className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t.services_title}
@@ -118,27 +126,39 @@ export default function Home() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <Reveal
               key={index}
               delay={index * 120}
-              className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-xl p-7 hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300 h-full cursor-default"
+              className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300 h-full cursor-default"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 transition-all duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-bold text-white mb-2.5 group-hover:text-brand transition-colors duration-300">{service.title}</h3>
-              <p className="text-sm text-slate-300 leading-relaxed flex-grow group-hover:text-slate-100 transition-colors duration-300">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h3>
+              <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 {service.description}
               </p>
+              
+              {/* Before/After Blocks */}
+              <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#1f293d]/50 pt-5 text-xs">
+                <div className="flex flex-col bg-[#05070a] border border-red-500/10 rounded-lg p-3.5">
+                  <span className="text-red-400 font-bold uppercase tracking-wider mb-1.5">{lang === "ar" ? "قبل" : "Before"}</span>
+                  <p className="text-slate-400 leading-relaxed">{service.before}</p>
+                </div>
+                <div className="flex flex-col bg-[#05070a] border border-brand/10 rounded-lg p-3.5">
+                  <span className="text-brand font-bold uppercase tracking-wider mb-1.5">{lang === "ar" ? "بعد" : "After"}</span>
+                  <p className="text-slate-300 leading-relaxed">{service.after}</p>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 sm:py-28 bg-[#0a0d16]/60 border-y border-[#1a1f2e] w-full">
+      <section className="py-24 sm:py-28 bg-[#0a0d16]/60 border-b border-[#1a1f2e] w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -183,8 +203,78 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Who This Is For Section */}
+      <section className="py-24 sm:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-b border-[#1a1f2e]">
+        <Reveal className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            {t.who_title}
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-brand-muted">
+            {t.who_sub}
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Agencies */}
+          <Reveal delay={100} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-brand" />
+              {t.who_agencies_title}
+            </h3>
+            <p className="text-sm text-red-400 bg-red-500/5 border border-red-500/10 rounded-lg p-3 mb-4 leading-relaxed font-medium">
+              {t.who_agencies_pain}
+            </p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {t.who_agencies_solve}
+            </p>
+          </Reveal>
+
+          {/* E-Commerce */}
+          <Reveal delay={200} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-brand" />
+              {t.who_ecommerce_title}
+            </h3>
+            <p className="text-sm text-red-400 bg-red-500/5 border border-red-500/10 rounded-lg p-3 mb-4 leading-relaxed font-medium">
+              {t.who_ecommerce_pain}
+            </p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {t.who_ecommerce_solve}
+            </p>
+          </Reveal>
+
+          {/* Service Companies */}
+          <Reveal delay={300} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-brand" />
+              {t.who_services_title}
+            </h3>
+            <p className="text-sm text-red-400 bg-red-500/5 border border-red-500/10 rounded-lg p-3 mb-4 leading-relaxed font-medium">
+              {t.who_services_pain}
+            </p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {t.who_services_solve}
+            </p>
+          </Reveal>
+
+          {/* Operations Teams */}
+          <Reveal delay={400} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-brand" />
+              {t.who_ops_title}
+            </h3>
+            <p className="text-sm text-red-400 bg-red-500/5 border border-red-500/10 rounded-lg p-3 mb-4 leading-relaxed font-medium">
+              {t.who_ops_pain}
+            </p>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {t.who_ops_solve}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section className="py-24 sm:py-32 bg-transparent border-t border-[#1a1f2e] w-full">
+      <section id="how-it-works" className="py-24 sm:py-32 bg-transparent w-full border-b border-[#1a1f2e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -254,8 +344,106 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Real Use Cases Section */}
+      <section id="use-cases" className="py-24 sm:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-b border-[#1a1f2e]">
+        <Reveal className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            {t.cases_title}
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-brand-muted">
+            {t.cases_sub}
+          </p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Case 1 */}
+          <Reveal delay={100} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+            <h3 className="text-lg font-bold text-white mb-5 group-hover:text-brand transition-colors duration-300">
+              {t.cases_1_title}
+            </h3>
+            <div className="flex flex-col space-y-3.5 text-sm">
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">IN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_1_input}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">RUN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_1_process}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand mt-0.5">OUT</span>
+                <p className="text-slate-200 leading-relaxed font-medium">{t.cases_1_output}</p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Case 2 */}
+          <Reveal delay={200} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+            <h3 className="text-lg font-bold text-white mb-5 group-hover:text-brand transition-colors duration-300">
+              {t.cases_2_title}
+            </h3>
+            <div className="flex flex-col space-y-3.5 text-sm">
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">IN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_2_input}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">RUN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_2_process}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand mt-0.5">OUT</span>
+                <p className="text-slate-200 leading-relaxed font-medium">{t.cases_2_output}</p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Case 3 */}
+          <Reveal delay={300} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+            <h3 className="text-lg font-bold text-white mb-5 group-hover:text-brand transition-colors duration-300">
+              {t.cases_3_title}
+            </h3>
+            <div className="flex flex-col space-y-3.5 text-sm">
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">IN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_3_input}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">RUN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_3_process}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand mt-0.5">OUT</span>
+                <p className="text-slate-200 leading-relaxed font-medium">{t.cases_3_output}</p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Case 4 */}
+          <Reveal delay={400} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-xl p-8 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+            <h3 className="text-lg font-bold text-white mb-5 group-hover:text-brand transition-colors duration-300">
+              {t.cases_4_title}
+            </h3>
+            <div className="flex flex-col space-y-3.5 text-sm">
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">IN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_4_input}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-400 mt-0.5">RUN</span>
+                <p className="text-slate-300 leading-relaxed">{t.cases_4_process}</p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand mt-0.5">OUT</span>
+                <p className="text-slate-200 leading-relaxed font-medium">{t.cases_4_output}</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Proof Section */}
-      <section className="py-20 sm:py-28 bg-[#0a0d16]/30 border-t border-[#1a1f2e] w-full">
+      <section className="py-20 sm:py-28 bg-[#0a0d16]/30 w-full border-b border-[#1a1f2e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
