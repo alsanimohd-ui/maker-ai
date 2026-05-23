@@ -217,7 +217,7 @@ export default function Home() {
             <Reveal
               key={index}
               delay={index * 120}
-              className="group flex flex-col bg-gradient-to-br from-white via-slate-50/90 to-indigo-50/20 backdrop-blur-md border border-slate-200/60 rounded-2xl p-8 card-hover-premium shadow-[0_8px_30px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_45px_-12px_rgba(14,179,186,0.18)] hover:border-brand/45 transition-all duration-500 h-full cursor-default"
+              className="group flex flex-col rounded-3xl p-8 card-neon-border h-full cursor-default"
             >
               <div className="relative mb-6 inline-block">
                 <div className="absolute inset-0 rounded-xl bg-brand/15 blur-md opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500 -z-10" />

@@ -167,7 +167,7 @@ export default function ServicesPage() {
               <div className="w-full lg:w-1/2 flex">
                 <Reveal
                   delay={100}
-                  className="group flex flex-col w-full bg-gradient-to-br from-white via-slate-50/90 to-indigo-50/20 backdrop-blur-md border border-slate-200/60 rounded-3xl p-8 sm:p-10 relative overflow-hidden card-hover-premium shadow-[0_8px_30px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_45px_-12px_rgba(14,179,186,0.18)] hover:border-brand/45 transition-all duration-500"
+                  className="group flex flex-col w-full rounded-3xl p-8 sm:p-10 relative overflow-hidden card-neon-border"
                 >
                   <div className={`absolute top-0 ${lang === "ar" ? "left-0 rounded-br-full" : "right-0 rounded-bl-full"} w-24 h-24 bg-brand/2`} />
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 shadow-[0_0_15px_rgba(14,179,186,0.15)] group-hover:shadow-[0_0_25px_rgba(14,179,186,0.35)] transition-all duration-300">

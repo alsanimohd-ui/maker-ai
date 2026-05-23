@@ -21,7 +21,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/40 bg-white/70 backdrop-blur-xl shadow-[0_2px_20px_rgba(15,23,42,0.02)] transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-xl shadow-[0_4px_30px_rgba(15,23,42,0.03)] transition-all duration-300 navbar-neon-glow">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo inside small premium light glass pill */}

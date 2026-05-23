@@ -38,7 +38,7 @@ export default function ContactPage() {
           {/* Side Info Panel */}
           <Reveal
             delay={100}
-            className="flex flex-col space-y-8 bg-gradient-to-br from-white via-slate-50/90 to-indigo-50/20 backdrop-blur-md border border-slate-200/60 rounded-3xl p-6 sm:p-8 shadow-[0_8px_30px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_45px_-12px_rgba(14,179,186,0.18)] hover:border-brand/45 transition-all duration-500 card-hover-premium"
+            className="flex flex-col space-y-8 p-6 sm:p-8 card-neon-border"
           >
             <div>
               <h2 className="text-xl font-bold text-slate-900 mb-2">{t.contact_side_title}</h2>
