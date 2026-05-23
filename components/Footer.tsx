@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { lang } = useLanguage();
+  const t = translations[lang];
 
   return (
     <footer className="mt-auto border-t border-brand-border bg-transparent py-12 md:py-16">
@@ -17,14 +23,14 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-brand-muted max-w-xs leading-relaxed">
-              We design and implement custom artificial intelligence solutions to automate operations, optimize workflows, and drive business growth.
+              {t.footer_desc}
             </p>
           </div>
 
           {/* Quick Navigation Links */}
           <div className="flex flex-col space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Navigation
+              {t.footer_nav_title}
             </h3>
             <ul className="space-y-2">
               <li>
@@ -32,7 +38,7 @@ export default function Footer() {
                   href="/"
                   className="text-sm text-brand-muted hover:text-brand transition-colors duration-200"
                 >
-                  Home
+                  {t.nav_home}
                 </Link>
               </li>
               <li>
@@ -40,7 +46,7 @@ export default function Footer() {
                   href="/services"
                   className="text-sm text-brand-muted hover:text-brand transition-colors duration-200"
                 >
-                  Services
+                  {t.nav_services}
                 </Link>
               </li>
               <li>
@@ -48,7 +54,7 @@ export default function Footer() {
                   href="/contact"
                   className="text-sm text-brand-muted hover:text-brand transition-colors duration-200"
                 >
-                  Contact
+                  {t.nav_contact}
                 </Link>
               </li>
             </ul>
@@ -57,7 +63,7 @@ export default function Footer() {
           {/* Contact Details & Direct Connect */}
           <div className="flex flex-col space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Get In Touch
+              {t.footer_contact_title}
             </h3>
             <div className="flex flex-col space-y-3">
               <a
@@ -85,10 +91,10 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-brand-border pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-xs text-brand-muted">
-            &copy; {currentYear} Maker AI. All rights reserved.
+            &copy; {currentYear} Maker AI. {t.footer_rights}
           </p>
           <p className="mt-4 md:mt-0 text-xs text-brand-muted">
-            Building intelligent business solutions.
+            {t.footer_tagline}
           </p>
         </div>
       </div>

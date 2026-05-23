@@ -3,15 +3,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const { lang, setLang } = useLanguage();
+  const t = translations[lang];
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: t.nav_home, href: "/" },
+    { name: t.nav_services, href: "/services" },
+    { name: t.nav_contact, href: "/contact" },
   ];
 
   return (
@@ -49,18 +53,32 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop CTA Button */}
-          <div className="hidden md:flex">
+          {/* Desktop CTA & Language Toggle */}
+          <div className="hidden md:flex items-center gap-4">
+            {/* Language Toggle Button */}
+            <button
+              onClick={() => setLang(lang === "en" ? "ar" : "en")}
+              className="px-3 py-1.5 rounded-lg border border-[#2d3748] hover:border-brand/40 text-xs font-semibold text-white bg-transparent transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+            >
+              {lang === "en" ? "العربية" : "English"}
+            </button>
+            
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(14,179,186,0.35)] transition-all duration-300"
             >
-              Book Consultation
+              {t.nav_book}
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex md:hidden">
+          {/* Mobile menu button & Language Toggle */}
+          <div className="flex md:hidden items-center gap-3">
+            <button
+              onClick={() => setLang(lang === "en" ? "ar" : "en")}
+              className="px-2.5 py-1 rounded-md border border-[#2d3748] text-xs font-semibold text-white transition-all duration-200"
+            >
+              {lang === "en" ? "AR" : "EN"}
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
@@ -126,13 +144,22 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <div className="mt-4 px-3">
+            <div className="mt-4 px-3 flex flex-col gap-3">
+              <button
+                onClick={() => {
+                  setLang(lang === "en" ? "ar" : "en");
+                  setIsOpen(false);
+                }}
+                className="flex w-full items-center justify-center rounded-xl border border-[#2d3748] py-3 text-base font-semibold text-white hover:border-brand/40 transition-all duration-300"
+              >
+                {lang === "en" ? "العربية" : "English"}
+              </button>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="flex w-full items-center justify-center rounded-xl bg-brand py-3 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(14,179,186,0.35)] transition-all duration-300"
               >
-                Book Consultation
+                {t.nav_book}
               </Link>
             </div>
           </div>

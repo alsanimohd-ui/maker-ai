@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Tajawal } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
-
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +14,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const tajawal = Tajawal({
+  variable: "--font-tajawal",
+  subsets: ["arabic"],
+  weight: ["400", "500", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${tajawal.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground relative overflow-x-hidden">
         {/* Dynamic Background System */}
@@ -62,12 +68,13 @@ export default function RootLayout({
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70vw] h-[40vh] min-w-[600px] rounded-full bg-brand/[0.06] blur-[130px]" />
         </div>
 
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <ChatBot />
+        <LanguageProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <ChatBot />
+        </LanguageProvider>
       </body>
-
     </html>
   );
 }

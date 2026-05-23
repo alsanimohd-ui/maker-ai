@@ -1,8 +1,13 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export default function ContactForm() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,15 +59,17 @@ export default function ContactForm() {
         });
       } else {
         setStatus("error");
-        setErrorMessage("Submission failed. Please check your inputs and try again.");
+        setErrorMessage(t.form_success_desc); // Fallback to a failure message translated dynamically
       }
     } catch (error) {
       console.error(error);
       setStatus("error");
-      setErrorMessage("An error occurred while submitting the form. Please try again later.");
+      setErrorMessage(lang === "en" 
+        ? "An error occurred while submitting the form. Please try again later."
+        : "حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى لاحقًا."
+      );
     }
   };
-
 
   return (
     <div className="w-full max-w-2xl mx-auto bg-[#0c0f17] border border-[#1f293d] rounded-2xl p-6 sm:p-8 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] hover:border-brand/35 transition-all duration-300">
@@ -83,15 +90,15 @@ export default function ContactForm() {
               />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+          <h3 className="text-2xl font-bold text-white mb-2">{t.form_success_title}</h3>
           <p className="text-slate-300 mb-6 font-medium">
-            Thank you for reaching out. We will review your project details and get back to you within 24 hours.
+            {t.form_success_desc}
           </p>
           <button
             onClick={() => setStatus("idle")}
-            className="text-sm font-semibold text-brand hover:text-brand-hover transition-colors duration-200"
+            className="text-sm font-semibold text-brand hover:text-brand-hover transition-colors duration-200 cursor-pointer"
           >
-            Send another message
+            {t.form_success_btn}
           </button>
         </div>
       ) : (
@@ -99,7 +106,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                Your Name
+                {t.form_name_label}
               </label>
               <input
                 type="text"
@@ -109,12 +116,12 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
-                placeholder="John Doe"
+                placeholder={t.form_name_placeholder}
               />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                Business Email
+                {t.form_email_label}
               </label>
               <input
                 type="email"
@@ -124,7 +131,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
-                placeholder="john@company.com"
+                placeholder={t.form_email_placeholder}
               />
             </div>
           </div>
@@ -132,7 +139,7 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
-                Company Name (Optional)
+                {t.form_company_label}
               </label>
               <input
                 type="text"
@@ -141,12 +148,12 @@ export default function ContactForm() {
                 value={formData.company}
                 onChange={handleChange}
                 className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
-                placeholder="Company Inc."
+                placeholder={t.form_company_placeholder}
               />
             </div>
             <div>
               <label htmlFor="service" className="block text-sm font-medium text-white mb-2">
-                Service Interested In
+                {t.form_service_label}
               </label>
               <select
                 id="service"
@@ -155,18 +162,18 @@ export default function ContactForm() {
                 onChange={handleChange}
                 className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
               >
-                <option value="AI Automation" className="bg-[#0c0f17]">AI Automation</option>
-                <option value="AI Chatbots" className="bg-[#0c0f17]">AI Chatbots</option>
-                <option value="Cloud & DevOps" className="bg-[#0c0f17]">Cloud & DevOps</option>
-                <option value="Smart Systems" className="bg-[#0c0f17]">Smart Systems</option>
-                <option value="Other" className="bg-[#0c0f17]">Other Consultation</option>
+                <option value="AI Automation" className="bg-[#0c0f17]">{t.form_service_opt1}</option>
+                <option value="AI Chatbots" className="bg-[#0c0f17]">{t.form_service_opt2}</option>
+                <option value="Cloud & DevOps" className="bg-[#0c0f17]">{t.form_service_opt3}</option>
+                <option value="Smart Systems" className="bg-[#0c0f17]">{t.form_service_opt4}</option>
+                <option value="Other" className="bg-[#0c0f17]">{t.form_service_opt5}</option>
               </select>
             </div>
           </div>
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-              Project Brief & Requirements
+              {t.form_msg_label}
             </label>
             <textarea
               id="message"
@@ -176,7 +183,7 @@ export default function ContactForm() {
               required
               rows={4}
               className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200 resize-none"
-              placeholder="Tell us about the processes you want to automate or systems you need built..."
+              placeholder={t.form_msg_placeholder}
             />
           </div>
 
@@ -195,10 +202,10 @@ export default function ContactForm() {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
-                Processing Request...
+                {t.form_btn_submitting}
               </span>
             ) : (
-              "Submit Inquiry"
+              t.form_btn_submit
             )}
           </button>
         </form>
@@ -206,7 +213,7 @@ export default function ContactForm() {
 
       {/* Quick Contacts Footer in the Form */}
       <div className="mt-8 pt-6 border-t border-[#1f293d] text-center">
-        <p className="text-sm text-brand-muted mb-4">Or connect with us directly</p>
+        <p className="text-sm text-brand-muted mb-4">{t.contact_direct_title}</p>
         <div className="flex items-center justify-center">
           <a
             href="mailto:info@maker-ai.tech"

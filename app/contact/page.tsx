@@ -3,29 +3,31 @@
 import { useEffect, useState } from "react";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export default function ContactPage() {
   const [mounted, setMounted] = useState(false);
+  const { lang } = useLanguage();
+  const t = translations[lang];
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      mounted ? null : setMounted(true);
+      setMounted(true);
     }, 100);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="relative flex flex-col w-full py-16 sm:py-24 overflow-hidden">
-
-
       {/* Header section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center mb-16">
         <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
           <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-slate-400 sm:text-5xl md:text-6xl">
-            Start Your AI Journey
+            {t.contact_page_title}
           </h1>
           <p className="mt-4 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Reach out to schedule a free 30-minute operational audit call. We will help map out your automation goals.
+            {t.contact_page_sub}
           </p>
         </div>
       </section>
@@ -39,23 +41,23 @@ export default function ContactPage() {
             className="flex flex-col space-y-8 bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-2xl p-6 sm:p-8 hover:shadow-[0_12px_24px_rgba(0,0,0,0.3)] transition-all duration-300"
           >
             <div>
-              <h2 className="text-xl font-bold text-white mb-2">Why Consult Us?</h2>
+              <h2 className="text-xl font-bold text-white mb-2">{t.contact_side_title}</h2>
               <p className="text-sm text-slate-300 leading-relaxed">
-                During our discovery call, we will analyze your core workflows, identify automation blockers, and estimate your potential cost savings.
+                {t.contact_side_desc}
               </p>
             </div>
 
             <div className="border-t border-[#1f293d] pt-6">
               <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-                Operational Hours
+                {t.contact_side_hours_title}
               </h3>
-              <p className="text-sm text-slate-400">Monday – Friday</p>
-              <p className="text-sm text-white font-medium">9:00 AM – 6:00 PM EST</p>
+              <p className="text-sm text-slate-400">{t.contact_side_hours_days}</p>
+              <p className="text-sm text-white font-medium">{t.contact_side_hours_time}</p>
             </div>
 
             <div className="border-t border-[#1f293d] pt-6 flex flex-col space-y-4">
               <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
-                Direct Channels
+                {t.contact_side_channels}
               </h3>
               <a
                 href="mailto:info@maker-ai.tech"
@@ -77,7 +79,6 @@ export default function ContactPage() {
                 info@maker-ai.tech
               </a>
             </div>
-
           </Reveal>
 
           {/* Form area */}

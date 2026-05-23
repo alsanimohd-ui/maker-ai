@@ -213,9 +213,11 @@ body {
     animation-duration: 40s !important;
   }
   .animate-orb-float-3 {
-    animation-duration: 50s !important;
+    animation: orb-float-3 50s !important;
   }
 }
 
-
-
+.font-arabic,
+.font-arabic * {
+  font-family: var(--font-tajawal), system-ui, sans-serif !important;
+}
