@@ -56,16 +56,16 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-grid-masked" />
           
           {/* Orb 1: Teal/Cyan (Top Left) */}
-          <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] min-w-[350px] min-h-[350px] rounded-full bg-gradient-to-br from-brand/12 via-cyan-400/5 to-transparent blur-[120px] animate-orb-float-1" />
+          <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] min-w-[380px] min-h-[380px] rounded-full bg-gradient-to-br from-brand/15 via-cyan-400/6 to-transparent blur-[130px] animate-aurora-1" />
           
           {/* Orb 2: Royal Violet/Indigo (Bottom Right) */}
-          <div className="absolute bottom-[-10%] right-[-10%] w-[55vw] h-[55vw] min-w-[400px] min-h-[400px] rounded-full bg-gradient-to-tr from-indigo-400/10 via-purple-400/4 to-transparent blur-[130px] animate-orb-float-2" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] min-w-[420px] min-h-[420px] rounded-full bg-gradient-to-tr from-indigo-400/12 via-purple-400/5 to-transparent blur-[140px] animate-aurora-2" />
           
           {/* Orb 3: Deep Blue (Center Left) */}
-          <div className="absolute top-[35%] left-[5%] w-[40vw] h-[40vw] min-w-[280px] min-h-[280px] rounded-full bg-gradient-to-r from-blue-400/8 via-brand/4 to-transparent blur-[100px] animate-orb-float-3" />
+          <div className="absolute top-[35%] left-[5%] w-[45vw] h-[45vw] min-w-[300px] min-h-[300px] rounded-full bg-gradient-to-r from-blue-400/10 via-brand/5 to-transparent blur-[110px] animate-aurora-3" />
           
           {/* Hero Premium Accent Spotlight (Center Top) */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70vw] h-[40vh] min-w-[600px] rounded-full bg-brand/[0.04] blur-[130px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[45vh] min-w-[650px] rounded-full bg-brand/[0.05] blur-[120px] animate-spotlight" />
         </div>
 
         <LanguageProvider>

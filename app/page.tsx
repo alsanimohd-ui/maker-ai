@@ -74,13 +74,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
           {/* Logo and Premium badge above headline */}
           <div className={`animate-on-load ${heroVisible ? "visible" : ""} flex flex-col items-center mb-8 relative`}>
-            {/* Pulsing logo lighting glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-48 h-48 rounded-full bg-gradient-to-r from-brand/20 via-cyan-500/10 to-transparent blur-2xl animate-pulse" />
+            {/* Double pulsing logo lighting glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-52 h-52 rounded-full bg-gradient-to-r from-brand/25 via-cyan-400/15 to-transparent blur-3xl animate-glow-pulse" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-36 h-36 rounded-full bg-indigo-500/15 blur-2xl animate-pulse" />
             <img
               src="/assets/logo/icon-color.svg"
               alt="Maker AI Icon"
-              className="h-20 w-auto mb-6 drop-shadow-[0_4px_12px_rgba(14,179,186,0.15)] animate-orb-float-1"
-              style={{ animationDuration: "12s" }}
+              className="h-20 w-auto mb-6 drop-shadow-[0_8px_20px_rgba(14,179,186,0.22)] animate-float-gentle"
+              style={{ animationDuration: "8s" }}
             />
             <div className="inline-flex items-center gap-2.5 rounded-full border border-brand/35 bg-brand/10 px-4 py-1.5 text-xs font-semibold text-brand backdrop-blur-md select-none shadow-[0_0_15px_rgba(14,179,186,0.15)]">
               <span className="flex h-2.5 w-2.5 rounded-full bg-brand animate-pulse" />
@@ -88,8 +89,8 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className={`animate-on-load ${heroVisible ? "visible" : ""} delay-200 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl max-w-5xl leading-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-900 to-slate-850`}>
-            {t.hero_title_1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-cyan-500 to-blue-600 drop-shadow-[0_2px_10px_rgba(14,179,186,0.2)] font-extrabold">{t.hero_title_2}</span> <br className="hidden sm:inline" />
+          <h1 className={`animate-on-load ${heroVisible ? "visible" : ""} delay-200 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl max-w-5xl leading-tight text-slate-900`}>
+            {t.hero_title_1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-cyan-500 to-indigo-600 drop-shadow-[0_2px_15px_rgba(14,179,186,0.25)] font-black animate-text-gradient-flow">{t.hero_title_2}</span> <br className="hidden sm:inline" />
             {t.hero_title_3}
           </h1>
 
@@ -104,20 +105,18 @@ export default function Home() {
           <div className={`animate-on-load ${heroVisible ? "visible" : ""} delay-600 mt-12 flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto`}>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-indigo-600 px-8 py-4 text-base font-bold text-white hover:from-brand-hover hover:to-indigo-500 hover:scale-[1.03] shadow-md shadow-brand/10 hover:shadow-lg hover:shadow-brand/25 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-indigo-600 px-8 py-4 text-base font-bold text-white hover:from-brand-hover hover:to-indigo-500 hover:scale-[1.04] shadow-md shadow-brand/10 hover:shadow-[0_0_30px_rgba(14,179,186,0.45)] active:scale-95 transition-all duration-300 cursor-pointer"
             >
               {t.hero_btn_book}
             </Link>
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border border-slate-200 hover:border-brand/40 px-8 py-4 text-base font-bold text-slate-800 bg-white/70 backdrop-blur-sm hover:scale-[1.03] hover:shadow-[0_4px_20px_rgba(14,179,186,0.08)] transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl border border-slate-200 hover:border-brand/40 px-8 py-4 text-base font-bold text-slate-800 bg-white/70 backdrop-blur-sm hover:scale-[1.04] hover:shadow-[0_6px_25px_rgba(14,179,186,0.12)] active:scale-95 transition-all duration-300"
             >
               {t.hero_btn_explore}
             </Link>
           </div>
-
-          {/* Visual Anchor: SVG System Flow Diagram */}
-          <div className={`animate-on-load ${heroVisible ? "visible" : ""} delay-700 mt-20 w-full max-w-4xl mx-auto hidden sm:block relative p-6 bg-white/40 backdrop-blur-sm border border-slate-200/50 rounded-2xl shadow-sm`}>
+          <div className={`animate-on-load ${heroVisible ? "visible" : ""} delay-700 mt-20 w-full max-w-4xl mx-auto hidden sm:block relative p-6 bg-white/40 backdrop-blur-sm border border-slate-200/50 rounded-2xl shadow-sm animate-float-gentle`}>
             {/* Background grid or glow inside container */}
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/20 via-teal-50/20 to-indigo-50/20 rounded-2xl pointer-events-none -z-10" />
             
@@ -218,10 +217,13 @@ export default function Home() {
             <Reveal
               key={index}
               delay={index * 120}
-              className="group flex flex-col bg-white/70 backdrop-blur-md border border-slate-200/60 rounded-2xl p-8 card-hover-premium shadow-md shadow-slate-100/50 h-full cursor-default"
+              className="group flex flex-col bg-gradient-to-br from-white/95 via-white/85 to-slate-50/50 backdrop-blur-md border border-slate-200/60 rounded-2xl p-8 card-hover-premium shadow-md shadow-slate-100/50 h-full cursor-default"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 shadow-[0_0_15px_rgba(14,179,186,0.15)] group-hover:shadow-[0_0_25px_rgba(14,179,186,0.35)] transition-all duration-300">
-                {service.icon}
+              <div className="relative mb-6 inline-block">
+                <div className="absolute inset-0 rounded-xl bg-brand/15 blur-md opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500 -z-10" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 group-hover:border-brand/45 group-hover:bg-brand/20 shadow-[0_0_15px_rgba(14,179,186,0.12)] group-hover:shadow-[0_0_25px_rgba(14,179,186,0.35)] transition-all duration-300">
+                  {service.icon}
+                </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
@@ -230,11 +232,11 @@ export default function Home() {
               
               {/* Before/After Blocks */}
               <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-100 pt-5 text-xs">
-                <div className="flex flex-col bg-red-50/50 border border-red-100/80 rounded-lg p-3.5">
+                <div className="flex flex-col bg-red-50/50 border border-red-100/80 rounded-lg p-3.5 shadow-sm shadow-red-50/20">
                   <span className="text-red-600 font-bold uppercase tracking-wider mb-1.5">{lang === "ar" ? "قبل" : "Before"}</span>
                   <p className="text-slate-500 leading-relaxed">{service.before}</p>
                 </div>
-                <div className="flex flex-col bg-teal-50/50 border border-brand/20 rounded-lg p-3.5">
+                <div className="flex flex-col bg-teal-50/50 border border-brand/20 rounded-lg p-3.5 shadow-sm shadow-teal-50/20">
                   <span className="text-brand font-bold uppercase tracking-wider mb-1.5">{lang === "ar" ? "بعد" : "After"}</span>
                   <p className="text-slate-600 leading-relaxed">{service.after}</p>
                 </div>
@@ -593,8 +595,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 sm:py-36 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         <Reveal className="bg-gradient-to-br from-indigo-950 via-slate-950 to-black border border-slate-900 rounded-3xl p-8 sm:p-16 relative overflow-hidden shadow-2xl shadow-indigo-950/20">
-          {/* Background floating glow for CTA */}
-          <div className="absolute -top-10 -right-10 -z-10 h-72 w-72 rounded-full bg-gradient-to-br from-brand/25 via-indigo-500/20 to-transparent blur-3xl" />
+          {/* Background moving fluid gradients for CTA */}
+          <div className="absolute top-[-25%] left-[-25%] -z-10 h-[350px] w-[350px] rounded-full bg-gradient-to-br from-brand/20 via-cyan-500/10 to-transparent blur-3xl animate-aurora-1" style={{ animationDuration: '18s' }} />
+          <div className="absolute bottom-[-25%] right-[-25%] -z-10 h-[350px] w-[350px] rounded-full bg-gradient-to-tr from-indigo-500/20 via-purple-600/10 to-transparent blur-3xl animate-aurora-2" style={{ animationDuration: '15s' }} />
           <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-30 -z-20" />
           
           <div className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-xs font-semibold text-brand mb-6 backdrop-blur-md relative z-10">

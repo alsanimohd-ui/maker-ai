@@ -51,18 +51,134 @@ body {
   background: #0eb3ba;
 }
 
+/* Premium Aurora Mesh & Flow Keyframes */
+@keyframes aurora-flow-1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(6vw, 4vh) scale(1.12) rotate(120deg);
+  }
+  66% {
+    transform: translate(-4vw, 8vh) scale(0.92) rotate(240deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg);
+  }
+}
+
+@keyframes aurora-flow-2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-8vw, -5vh) scale(1.15) rotate(-180deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(-360deg);
+  }
+}
+
+@keyframes aurora-flow-3 {
+  0% {
+    transform: translate(0, 0) scale(0.95) rotate(0deg);
+  }
+  33% {
+    transform: translate(-3vw, 6vh) scale(1.08) rotate(90deg);
+  }
+  66% {
+    transform: translate(5vw, -4vh) scale(1.03) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(0.95) rotate(360deg);
+  }
+}
+
+@keyframes spotlight-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.01);
+  }
+}
+
+@keyframes text-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+.animate-aurora-1 {
+  animation: aurora-flow-1 25s ease-in-out infinite;
+}
+
+.animate-aurora-2 {
+  animation: aurora-flow-2 20s ease-in-out infinite;
+}
+
+.animate-aurora-3 {
+  animation: aurora-flow-3 28s ease-in-out infinite;
+}
+
+.animate-spotlight {
+  animation: spotlight-pulse 12s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-text-gradient-flow {
+  background-size: 200% auto;
+  animation: text-gradient-flow 5s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
 /* Premium Tilt, Glow, Hover & Flow Animations */
 .card-hover-premium {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, box-shadow;
 }
 .card-hover-premium:hover {
-  transform: translateY(-6px) scale(1.01) rotate(0.3deg);
-  box-shadow: 0 20px 40px -15px rgba(14, 179, 186, 0.12), 
-              0 0 20px 1px rgba(14, 179, 186, 0.03);
-  border-color: rgba(14, 179, 186, 0.3) !important;
+  transform: translateY(-8px) scale(1.015) rotate(0.4deg);
+  box-shadow: 0 25px 50px -12px rgba(14, 179, 186, 0.15), 
+              0 0 25px 2px rgba(14, 179, 186, 0.04),
+              inset 0 0 12px rgba(14, 179, 186, 0.02);
+  border-color: rgba(14, 179, 186, 0.35) !important;
 }
 
 @keyframes dash {
@@ -145,7 +261,7 @@ body {
 .animate-on-load {
   opacity: 0;
   transform: translateY(60px) scale(0.98);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
@@ -157,7 +273,7 @@ body {
 .reveal-element {
   opacity: 0;
   transform: translateY(60px) scale(0.98);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
