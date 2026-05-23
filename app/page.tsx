@@ -82,6 +82,10 @@ export default function Home() {
             We design and implement custom artificial intelligence solutions to streamline operations, cut costs, and accelerate your business growth.
           </p>
 
+          <p className={`animate-on-load ${heroVisible ? "visible" : ""} delay-500 mt-5 text-base sm:text-lg text-slate-400 font-medium italic`}>
+            Stop wasting hours on manual work. Let your business run itself.
+          </p>
+
           <div className={`animate-on-load ${heroVisible ? "visible" : ""} delay-600 mt-12 flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto`}>
             <Link
               href="/contact"
@@ -169,6 +173,138 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-24 sm:py-32 bg-transparent border-t border-[#1a1f2e] w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              How It Works
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-brand-muted">
+              A simple process to turn your business into an automated system
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            {/* Step 1 */}
+            <Reveal delay={100} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300 h-full cursor-default relative">
+              <div className="absolute top-6 right-8 text-4xl font-extrabold text-slate-800/50 group-hover:text-brand/20 transition-colors duration-300 select-none">
+                01
+              </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 transition-all duration-300">
+                <svg className="h-6 w-6 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-brand transition-colors duration-300">
+                We Analyze Your Business
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed group-hover:text-slate-100 transition-colors duration-300">
+                We identify inefficiencies, repetitive tasks, and areas where automation can deliver the biggest impact.
+              </p>
+            </Reveal>
+
+            {/* Step 2 */}
+            <Reveal delay={220} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300 h-full cursor-default relative">
+              <div className="absolute top-6 right-8 text-4xl font-extrabold text-slate-800/50 group-hover:text-brand/20 transition-colors duration-300 select-none">
+                02
+              </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 transition-all duration-300">
+                <svg className="h-6 w-6 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-brand transition-colors duration-300">
+                We Build Your System
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed group-hover:text-slate-100 transition-colors duration-300">
+                We design and implement a custom AI-powered system tailored to your workflows — not generic tools.
+              </p>
+            </Reveal>
+
+            {/* Step 3 */}
+            <Reveal delay={340} className="group flex flex-col bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-xl p-8 hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300 h-full cursor-default relative">
+              <div className="absolute top-6 right-8 text-4xl font-extrabold text-slate-800/50 group-hover:text-brand/20 transition-colors duration-300 select-none">
+                03
+              </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 transition-all duration-300">
+                <svg className="h-6 w-6 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-brand transition-colors duration-300">
+                You Save Time & Scale
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed group-hover:text-slate-100 transition-colors duration-300">
+                Your operations run faster, with less manual work and lower costs — freeing your team to focus on growth.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Proof Section */}
+      <section className="py-20 sm:py-28 bg-[#0a0d16]/30 border-t border-[#1a1f2e] w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Real Impact
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-brand-muted">
+              Tangible results delivered through custom automated systems
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Impact 1 */}
+            <Reveal delay={100} className="flex items-start gap-4 bg-[#0c0f17] border border-[#1f293d] rounded-2xl p-6 hover:border-brand/40 hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] transition-all duration-300 group">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand group-hover:bg-brand/20 transition-colors duration-300 flex-shrink-0">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-brand transition-colors duration-300">Data Efficiency</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Reduced manual data entry time by up to 80%
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Impact 2 */}
+            <Reveal delay={200} className="flex items-start gap-4 bg-[#0c0f17] border border-[#1f293d] rounded-2xl p-6 hover:border-brand/40 hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] transition-all duration-300 group">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand group-hover:bg-brand/20 transition-colors duration-300 flex-shrink-0">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-brand transition-colors duration-300">24/7 Availability</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Automated customer inquiries with 24/7 AI responses
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Impact 3 */}
+            <Reveal delay={300} className="flex items-start gap-4 bg-[#0c0f17] border border-[#1f293d] rounded-2xl p-6 hover:border-brand/40 hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)] transition-all duration-300 group">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand group-hover:bg-brand/20 transition-colors duration-300 flex-shrink-0">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-brand transition-colors duration-300">Seamless Scaling</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Replaced repetitive workflows with fully automated systems
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 sm:py-32 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         <Reveal className="bg-gradient-to-br from-[#0c101c] to-[#05060b] border border-[#1f293d] rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
@@ -181,10 +317,10 @@ export default function Home() {
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl mb-4 relative z-10">
-            Ready to Transform Your Business?
+            Let’s Find Where You’re Losing Time
           </h2>
           <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto mb-10 relative z-10 leading-relaxed">
-            Schedule a consultation call with our team to map out your custom automation plan and get a tailormade quote.
+            We’ll identify automation opportunities and show you exactly how to improve your operations.
           </p>
           <div className="relative z-10">
             <Link
