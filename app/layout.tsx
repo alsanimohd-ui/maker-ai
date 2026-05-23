@@ -51,21 +51,36 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground relative overflow-x-hidden">
         {/* Dynamic Background System */}
-        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none bg-gradient-to-b from-slate-50 via-sky-50/20 to-slate-50">
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none bg-gradient-to-b from-slate-50 via-sky-50/15 to-slate-50">
           {/* Ambient Grid Overlay */}
           <div className="absolute inset-0 bg-grid-masked" />
+
+          {/* SVG filter definition for liquid smoke distortion */}
+          <svg className="hidden" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="liquid-smoke">
+                <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" result="noise">
+                  <animate attributeName="baseFrequency" values="0.006 0.009; 0.010 0.014; 0.006 0.009" dur="45s" repeatCount="indefinite" />
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="35" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </defs>
+          </svg>
           
-          {/* Orb 1: Teal/Cyan (Top Left) */}
-          <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] min-w-[380px] min-h-[380px] rounded-full bg-gradient-to-br from-brand/15 via-cyan-400/6 to-transparent blur-[130px] animate-aurora-1" />
-          
-          {/* Orb 2: Royal Violet/Indigo (Bottom Right) */}
-          <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] min-w-[420px] min-h-[420px] rounded-full bg-gradient-to-tr from-indigo-400/12 via-purple-400/5 to-transparent blur-[140px] animate-aurora-2" />
-          
-          {/* Orb 3: Deep Blue (Center Left) */}
-          <div className="absolute top-[35%] left-[5%] w-[45vw] h-[45vw] min-w-[300px] min-h-[300px] rounded-full bg-gradient-to-r from-blue-400/10 via-brand/5 to-transparent blur-[110px] animate-aurora-3" />
+          {/* Distorted Liquid Aurora Blob Container */}
+          <div className="absolute inset-0 opacity-90" style={{ filter: 'url(#liquid-smoke)' }}>
+            {/* Orb 1: Vibrant Teal (Top Left) */}
+            <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] min-w-[380px] min-h-[380px] rounded-full bg-gradient-to-br from-brand/20 via-cyan-400/8 to-transparent blur-[90px] animate-aurora-1" />
+            
+            {/* Orb 2: Royal Purple/Indigo (Bottom Right) */}
+            <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] min-w-[420px] min-h-[420px] rounded-full bg-gradient-to-tr from-indigo-500/18 via-purple-500/8 to-transparent blur-[100px] animate-aurora-2" />
+            
+            {/* Orb 3: Sky Blue (Center Left) */}
+            <div className="absolute top-[35%] left-[5%] w-[45vw] h-[45vw] min-w-[300px] min-h-[300px] rounded-full bg-gradient-to-r from-blue-400/15 via-brand/8 to-transparent blur-[85px] animate-aurora-3" />
+          </div>
           
           {/* Hero Premium Accent Spotlight (Center Top) */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[45vh] min-w-[650px] rounded-full bg-brand/[0.05] blur-[120px] animate-spotlight" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[45vh] min-w-[650px] rounded-full bg-brand/[0.06] blur-[120px] animate-spotlight" />
         </div>
 
         <LanguageProvider>

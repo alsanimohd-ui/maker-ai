@@ -167,7 +167,7 @@ export default function ServicesPage() {
               <div className="w-full lg:w-1/2 flex">
                 <Reveal
                   delay={100}
-                  className="group flex flex-col w-full bg-white/70 backdrop-blur-md border border-slate-200/60 rounded-2xl p-8 sm:p-10 relative overflow-hidden card-hover-premium shadow-md shadow-slate-100/50 transition-all duration-300"
+                  className="group flex flex-col w-full bg-gradient-to-br from-white via-slate-50/90 to-indigo-50/20 backdrop-blur-md border border-slate-200/60 rounded-3xl p-8 sm:p-10 relative overflow-hidden card-hover-premium shadow-[0_8px_30px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_45px_-12px_rgba(14,179,186,0.18)] hover:border-brand/45 transition-all duration-500"
                 >
                   <div className={`absolute top-0 ${lang === "ar" ? "left-0 rounded-br-full" : "right-0 rounded-bl-full"} w-24 h-24 bg-brand/2`} />
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 shadow-[0_0_15px_rgba(14,179,186,0.15)] group-hover:shadow-[0_0_25px_rgba(14,179,186,0.35)] transition-all duration-300">
@@ -226,30 +226,31 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="mt-24 sm:mt-32 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-        <Reveal className="bg-gradient-to-br from-indigo-950 via-slate-950 to-black border border-slate-900 rounded-3xl p-8 sm:p-16 relative overflow-hidden shadow-2xl shadow-indigo-950/20">
+      <section className="mt-24 sm:mt-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+        <Reveal className="bg-gradient-to-br from-indigo-950 via-slate-950 to-black border border-slate-900 rounded-3xl p-10 sm:p-20 relative overflow-hidden shadow-2xl shadow-indigo-950/40">
           {/* Background floating glow for CTA */}
-          <div className="absolute -top-10 -right-10 -z-10 h-72 w-72 rounded-full bg-gradient-to-br from-brand/25 via-indigo-500/20 to-transparent blur-3xl" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-30 -z-20" />
+          <div className="absolute top-[-35%] left-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-brand/30 via-cyan-500/15 to-transparent blur-[100px]" />
+          <div className="absolute bottom-[-35%] right-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/30 via-purple-600/15 to-transparent blur-[100px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-40 -z-20" />
           
           <div className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-xs font-semibold text-brand mb-6 backdrop-blur-md relative z-10">
             {lang === "ar" ? "التدقيق التشغيلي" : "Operational Audit"}
           </div>
 
-          <h2 className="text-3xl font-extrabold text-white mb-4 relative z-10">
+          <h2 className="text-3xl font-extrabold text-white mb-6 relative z-10 leading-tight">
             {lang === "ar" ? "هل تبحث عن إزالة الاختناقات التشغيلية؟" : "Looking to remove operational bottlenecks?"}
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-10 leading-relaxed relative z-10">
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed relative z-10">
             {lang === "ar" 
               ? "احجز جلسة تدقيق مجانية مدتها 30 دقيقة لنحدد فيها معاً أين يفقد عملك الوقت والأموال وكيفية أتمتة الأنظمة."
               : "Book a free 30-minute operational audit. We will map out exactly where you are losing time and how to automate it."}
           </p>
           <div className="relative z-10 inline-block group">
             {/* Button Glow Halo */}
-            <div className="absolute inset-0 bg-brand/35 blur-xl rounded-xl opacity-70 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-brand to-indigo-500 blur-xl rounded-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
             <Link
               href="/contact"
-              className="relative inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300"
+              className="relative inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.03] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300 cursor-pointer"
             >
               {t.services_page_why_btn}
             </Link>

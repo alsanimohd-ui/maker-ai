@@ -21,16 +21,19 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#0eb3ba]/10 bg-white/35 backdrop-blur-xl shadow-[0_1px_15px_rgba(14,179,186,0.02)] transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/50 bg-white/70 backdrop-blur-md shadow-[0_2px_20px_rgba(15,23,42,0.03)] transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
+          {/* Logo inside small premium dark glass pill */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center gap-2">
+            <Link 
+              href="/" 
+              className="flex items-center gap-2 px-3.5 py-2.5 bg-slate-950/90 hover:bg-black border border-slate-900 rounded-full shadow-[0_4px_15px_rgba(15,23,42,0.18)] hover:scale-[1.02] transition-all duration-300"
+            >
               <img
-                src="/assets/logo/logo-dark.svg"
+                src="/assets/logo/logo-white.svg"
                 alt="Maker AI Logo"
-                className="h-10 w-auto"
+                className="h-7 w-auto"
               />
             </Link>
           </div>

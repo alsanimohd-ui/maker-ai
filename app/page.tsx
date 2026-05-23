@@ -70,17 +70,17 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-24 sm:py-36 bg-transparent border-b border-slate-200/50">
+      <section className="relative overflow-hidden py-24 sm:py-36 bg-gradient-to-b from-indigo-950/[0.03] via-sky-500/[0.01] to-transparent border-b border-slate-200/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
           {/* Logo and Premium badge above headline */}
           <div className={`animate-on-load ${heroVisible ? "visible" : ""} flex flex-col items-center mb-8 relative`}>
-            {/* Double pulsing logo lighting glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-52 h-52 rounded-full bg-gradient-to-r from-brand/25 via-cyan-400/15 to-transparent blur-3xl animate-glow-pulse" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-36 h-36 rounded-full bg-indigo-500/15 blur-2xl animate-pulse" />
+            {/* Double pulsing logo lighting glow - expanded and strengthened */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-72 h-72 rounded-full bg-gradient-to-r from-brand/35 via-cyan-400/20 to-transparent blur-[80px] animate-glow-pulse" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-48 h-48 rounded-full bg-indigo-500/25 blur-[60px] animate-pulse" />
             <img
               src="/assets/logo/icon-color.svg"
               alt="Maker AI Icon"
-              className="h-20 w-auto mb-6 drop-shadow-[0_8px_20px_rgba(14,179,186,0.22)] animate-float-gentle"
+              className="h-20 w-auto mb-6 drop-shadow-[0_8px_25px_rgba(14,179,186,0.3)] animate-float-gentle"
               style={{ animationDuration: "8s" }}
             />
             <div className="inline-flex items-center gap-2.5 rounded-full border border-brand/35 bg-brand/10 px-4 py-1.5 text-xs font-semibold text-brand backdrop-blur-md select-none shadow-[0_0_15px_rgba(14,179,186,0.15)]">
@@ -89,7 +89,7 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className={`animate-on-load ${heroVisible ? "visible" : ""} delay-200 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl max-w-5xl leading-tight text-slate-900`}>
+          <h1 className={`animate-on-load ${heroVisible ? "visible" : ""} delay-200 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl max-w-5xl leading-tight text-slate-950`}>
             {t.hero_title_1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-cyan-500 to-indigo-600 drop-shadow-[0_2px_15px_rgba(14,179,186,0.25)] font-black animate-text-gradient-flow">{t.hero_title_2}</span> <br className="hidden sm:inline" />
             {t.hero_title_3}
           </h1>
@@ -217,7 +217,7 @@ export default function Home() {
             <Reveal
               key={index}
               delay={index * 120}
-              className="group flex flex-col bg-gradient-to-br from-white/95 via-white/85 to-slate-50/50 backdrop-blur-md border border-slate-200/60 rounded-2xl p-8 card-hover-premium shadow-md shadow-slate-100/50 h-full cursor-default"
+              className="group flex flex-col bg-gradient-to-br from-white via-slate-50/90 to-indigo-50/20 backdrop-blur-md border border-slate-200/60 rounded-2xl p-8 card-hover-premium shadow-[0_8px_30px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_45px_-12px_rgba(14,179,186,0.18)] hover:border-brand/45 transition-all duration-500 h-full cursor-default"
             >
               <div className="relative mb-6 inline-block">
                 <div className="absolute inset-0 rounded-xl bg-brand/15 blur-md opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500 -z-10" />
@@ -593,29 +593,29 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 sm:py-36 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-        <Reveal className="bg-gradient-to-br from-indigo-950 via-slate-950 to-black border border-slate-900 rounded-3xl p-8 sm:p-16 relative overflow-hidden shadow-2xl shadow-indigo-950/20">
-          {/* Background moving fluid gradients for CTA */}
-          <div className="absolute top-[-25%] left-[-25%] -z-10 h-[350px] w-[350px] rounded-full bg-gradient-to-br from-brand/20 via-cyan-500/10 to-transparent blur-3xl animate-aurora-1" style={{ animationDuration: '18s' }} />
-          <div className="absolute bottom-[-25%] right-[-25%] -z-10 h-[350px] w-[350px] rounded-full bg-gradient-to-tr from-indigo-500/20 via-purple-600/10 to-transparent blur-3xl animate-aurora-2" style={{ animationDuration: '15s' }} />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-30 -z-20" />
+      <section className="py-24 sm:py-36 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+        <Reveal className="bg-gradient-to-br from-indigo-950 via-slate-950 to-black border border-slate-900 rounded-3xl p-10 sm:p-20 relative overflow-hidden shadow-2xl shadow-indigo-950/40">
+          {/* Background moving fluid gradients for CTA - expanded and strengthened */}
+          <div className="absolute top-[-35%] left-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-brand/30 via-cyan-500/15 to-transparent blur-[100px] animate-aurora-1" style={{ animationDuration: '18s' }} />
+          <div className="absolute bottom-[-35%] right-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/30 via-purple-600/15 to-transparent blur-[100px] animate-aurora-2" style={{ animationDuration: '15s' }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-40 -z-20" />
           
           <div className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-xs font-semibold text-brand mb-6 backdrop-blur-md relative z-10">
             {t.cta_badge}
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl mb-4 relative z-10">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl mb-6 relative z-10 leading-tight">
             {t.cta_title}
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto mb-10 relative z-10 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10 relative z-10 leading-relaxed">
             {t.cta_desc}
           </p>
           <div className="relative z-10 inline-block group">
-            {/* Button Glow Halo */}
-            <div className="absolute inset-0 bg-brand/35 blur-xl rounded-xl opacity-70 group-hover:opacity-100 transition-opacity" />
+            {/* Button Glow Halo - with active pulse animation */}
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-brand to-indigo-500 blur-xl rounded-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
             <Link
               href="/contact"
-              className="relative inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300"
+              className="relative inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.03] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300 cursor-pointer"
             >
               {t.cta_btn}
             </Link>
