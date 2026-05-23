@@ -21,7 +21,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-brand-border bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/80 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -46,7 +46,7 @@ export default function Navbar() {
                   className={`text-sm font-medium transition-colors duration-200 ${
                     isActive
                       ? "text-brand"
-                      : "text-brand-muted hover:text-white"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   {link.name}
@@ -60,14 +60,14 @@ export default function Navbar() {
             {/* Language Toggle Button */}
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-3 py-1.5 rounded-lg border border-[#2d3748] hover:border-brand/40 text-xs font-semibold text-white bg-transparent transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+              className="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-brand/40 text-xs font-semibold text-slate-700 bg-white/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
             >
               {lang === "en" ? "العربية" : "English"}
             </button>
             
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(14,179,186,0.35)] transition-all duration-300"
+              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-blue-600 px-5 py-2.5 text-sm font-bold text-white hover:from-brand-hover hover:to-blue-500 hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(14,179,186,0.25)] transition-all duration-300"
             >
               {t.nav_book}
             </Link>
@@ -77,14 +77,14 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-2.5 py-1 rounded-md border border-[#2d3748] text-xs font-semibold text-white transition-all duration-200"
+              className="px-2.5 py-1 rounded-md border border-slate-200 text-xs font-semibold text-slate-700 hover:border-brand/40 transition-all duration-200"
             >
               {lang === "en" ? "AR" : "EN"}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-brand-muted hover:bg-brand-card hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -127,7 +127,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-b border-brand-border bg-background" id="mobile-menu">
+        <div className="md:hidden border-b border-slate-200 bg-white/95 backdrop-blur-md" id="mobile-menu">
           <div className="space-y-1 px-2 pb-4 pt-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -138,8 +138,8 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`block rounded-md px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     isActive
-                      ? "bg-brand-card text-brand"
-                      : "text-brand-muted hover:bg-brand-card hover:text-white"
+                      ? "bg-slate-50 text-brand"
+                      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                   }`}
                 >
                   {link.name}
@@ -152,14 +152,14 @@ export default function Navbar() {
                   setLang(lang === "en" ? "ar" : "en");
                   setIsOpen(false);
                 }}
-                className="flex w-full items-center justify-center rounded-xl border border-[#2d3748] py-3 text-base font-semibold text-white hover:border-brand/40 transition-all duration-300"
+                className="flex w-full items-center justify-center rounded-xl border border-slate-200 py-3 text-base font-semibold text-slate-700 hover:border-brand/40 hover:bg-slate-50 transition-all duration-300"
               >
                 {lang === "en" ? "العربية" : "English"}
               </button>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl bg-brand py-3 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(14,179,186,0.35)] transition-all duration-300"
+                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand to-blue-600 py-3 text-base font-bold text-white hover:from-brand-hover hover:to-blue-500 hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(14,179,186,0.25)] transition-all duration-300"
               >
                 {t.nav_book}
               </Link>

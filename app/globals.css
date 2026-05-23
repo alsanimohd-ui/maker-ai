@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05070a;
-  --foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -10,9 +10,9 @@
   --color-foreground: var(--foreground);
   --color-brand: #0eb3ba;
   --color-brand-hover: #14d2db;
-  --color-brand-card: #0d0f17;
-  --color-brand-border: #1a1f2e;
-  --color-brand-muted: #94a3b8;
+  --color-brand-card: rgba(255, 255, 255, 0.7);
+  --color-brand-border: rgba(226, 232, 240, 0.8);
+  --color-brand-muted: #475569;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
@@ -30,25 +30,49 @@ body {
   inset: 0;
   background-size: 50px 50px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse at 50% 25%, black 40%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 25%, black 40%, transparent 85%);
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at 50% 25%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 25%, black 45%, transparent 85%);
 }
 
-/* Custom scrollbar to match dark theme */
+/* Custom scrollbar to match light theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #08090d;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f2433;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #0eb3ba;
+}
+
+/* Premium Tilt, Glow, Hover & Flow Animations */
+.card-hover-premium {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+.card-hover-premium:hover {
+  transform: translateY(-6px) scale(1.01) rotate(0.3deg);
+  box-shadow: 0 20px 40px -15px rgba(14, 179, 186, 0.12), 
+              0 0 20px 1px rgba(14, 179, 186, 0.03);
+  border-color: rgba(14, 179, 186, 0.3) !important;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+.animate-dash {
+  stroke-dasharray: 8 12;
+  animation: dash 3s linear infinite;
 }
 
 /* Animation Keyframes */

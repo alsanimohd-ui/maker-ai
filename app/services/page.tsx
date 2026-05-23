@@ -141,10 +141,10 @@ export default function ServicesPage() {
       {/* Header section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center mb-16 sm:mb-24">
         <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
-          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-slate-400 sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-900 to-slate-850 sm:text-5xl md:text-6xl">
             {lang === "ar" ? "أتمتة الأعمال المخصصة" : "Bespoke Business Automation"}
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {lang === "ar" 
               ? "أنظمة برمجية مخصصة وموجهة لخدمة الأعمال لمساعدتك في تحسين كفاءة العمليات وتقليل التكاليف وتوفير الوقت."
               : "Tailored, business-focused systems built to optimize operations, cut costs, and save your team hours of manual work."}
@@ -167,21 +167,21 @@ export default function ServicesPage() {
               <div className="w-full lg:w-1/2 flex">
                 <Reveal
                   delay={100}
-                  className="group flex flex-col w-full bg-[#0c0f17] border border-[#1f293d] hover:border-brand/50 rounded-2xl p-8 sm:p-10 relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(14,179,186,0.15)] transition-all duration-300"
+                  className="group flex flex-col w-full bg-white/70 backdrop-blur-md border border-slate-200/60 rounded-2xl p-8 sm:p-10 relative overflow-hidden card-hover-premium shadow-md shadow-slate-100/50 transition-all duration-300"
                 >
                   <div className={`absolute top-0 ${lang === "ar" ? "left-0 rounded-br-full" : "right-0 rounded-bl-full"} w-24 h-24 bg-brand/2`} />
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 transition-all duration-300">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 shadow-[0_0_15px_rgba(14,179,186,0.15)] group-hover:shadow-[0_0_25px_rgba(14,179,186,0.35)] transition-all duration-300">
                     {service.icon}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h2>
                   <p className="text-brand font-semibold text-sm mb-4">{service.subtitle}</p>
-                  <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
                     {service.impact}
                   </p>
 
-                  <div className="mt-4 border-t border-[#1f293d] pt-4 text-xs space-y-3">
-                    <p className="text-slate-400 font-medium">{service.problem}</p>
-                    <p className="text-slate-400 font-medium">{service.stopsDoing}</p>
+                  <div className="mt-4 border-t border-slate-200/80 pt-4 text-xs space-y-3">
+                    <p className="text-slate-500 font-medium">{service.problem}</p>
+                    <p className="text-slate-500 font-medium">{service.stopsDoing}</p>
                   </div>
                 </Reveal>
               </div>
@@ -191,17 +191,17 @@ export default function ServicesPage() {
                 <Reveal delay={255} className="flex flex-col space-y-6">
                   {/* Before / After visual block */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-4">
-                    <div className="flex flex-col bg-[#0c0f17] border border-red-500/10 rounded-xl p-4.5">
-                      <span className="text-red-400 font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "قبل الأتمتة" : "Before Automation"}</span>
-                      <p className="text-slate-400 leading-relaxed">{service.before}</p>
+                    <div className="flex flex-col bg-red-50/50 border border-red-100/80 rounded-xl p-4.5">
+                      <span className="text-red-600 font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "قبل الأتمتة" : "Before Automation"}</span>
+                      <p className="text-slate-500 leading-relaxed">{service.before}</p>
                     </div>
-                    <div className="flex flex-col bg-[#0c0f17] border border-brand/10 rounded-xl p-4.5">
+                    <div className="flex flex-col bg-teal-50/50 border border-brand/20 rounded-xl p-4.5">
                       <span className="text-brand font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "بعد الأتمتة" : "After Automation"}</span>
-                      <p className="text-slate-300 leading-relaxed">{service.after}</p>
+                      <p className="text-slate-600 leading-relaxed">{service.after}</p>
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white uppercase tracking-wide">
+                  <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide">
                     {lang === "ar" ? "تطبيقات وحالات استخدام شائعة" : "Common Applications & Use Cases"}
                   </h3>
                   <ul className="space-y-4">
@@ -212,7 +212,7 @@ export default function ServicesPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        <span className="text-sm sm:text-base text-slate-600 leading-relaxed">
                           {useCase}
                         </span>
                       </li>
@@ -227,9 +227,9 @@ export default function ServicesPage() {
 
       {/* Call to Action */}
       <section className="mt-24 sm:mt-32 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-        <Reveal className="bg-gradient-to-br from-[#0c101c] to-[#05060b] border border-[#1f293d] rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <Reveal className="bg-gradient-to-br from-indigo-950 via-slate-950 to-black border border-slate-900 rounded-3xl p-8 sm:p-16 relative overflow-hidden shadow-2xl shadow-indigo-950/20">
           {/* Background floating glow for CTA */}
-          <div className="absolute top-1/2 left-1/2 -z-10 h-[300px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-brand/20 to-indigo-500/20 blur-3xl animate-float-glow" />
+          <div className="absolute -top-10 -right-10 -z-10 h-72 w-72 rounded-full bg-gradient-to-br from-brand/25 via-indigo-500/20 to-transparent blur-3xl" />
           <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-30 -z-20" />
           
           <div className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-xs font-semibold text-brand mb-6 backdrop-blur-md relative z-10">
@@ -244,10 +244,12 @@ export default function ServicesPage() {
               ? "احجز جلسة تدقيق مجانية مدتها 30 دقيقة لنحدد فيها معاً أين يفقد عملك الوقت والأموال وكيفية أتمتة الأنظمة."
               : "Book a free 30-minute operational audit. We will map out exactly where you are losing time and how to automate it."}
           </p>
-          <div className="relative z-10">
+          <div className="relative z-10 inline-block group">
+            {/* Button Glow Halo */}
+            <div className="absolute inset-0 bg-brand/35 blur-xl rounded-xl opacity-70 group-hover:opacity-100 transition-opacity" />
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300"
+              className="relative inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300"
             >
               {t.services_page_why_btn}
             </Link>

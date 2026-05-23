@@ -72,7 +72,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-[#0c0f17] border border-[#1f293d] rounded-2xl p-6 sm:p-8 hover:shadow-[0_15px_35px_rgba(0,0,0,0.4)] hover:border-brand/35 transition-all duration-300">
+    <div className="w-full max-w-2xl mx-auto bg-white/80 backdrop-blur-md border border-slate-200/60 rounded-2xl p-6 sm:p-8 shadow-xl shadow-slate-100/50 hover:shadow-2xl hover:shadow-indigo-100/55 hover:border-brand/35 transition-all duration-300">
       {status === "success" ? (
         <div className="text-center py-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand/10 text-brand mb-4">
@@ -90,8 +90,8 @@ export default function ContactForm() {
               />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-2">{t.form_success_title}</h3>
-          <p className="text-slate-300 mb-6 font-medium">
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">{t.form_success_title}</h3>
+          <p className="text-slate-600 mb-6 font-medium">
             {t.form_success_desc}
           </p>
           <button
@@ -105,7 +105,7 @@ export default function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
                 {t.form_name_label}
               </label>
               <input
@@ -115,12 +115,12 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
+                className="w-full bg-white border border-slate-200/80 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white/95 focus:border-brand/60 focus:ring-1 focus:ring-brand/35 transition-all duration-200"
                 placeholder={t.form_name_placeholder}
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
                 {t.form_email_label}
               </label>
               <input
@@ -130,7 +130,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
+                className="w-full bg-white border border-slate-200/80 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white/95 focus:border-brand/60 focus:ring-1 focus:ring-brand/35 transition-all duration-200"
                 placeholder={t.form_email_placeholder}
               />
             </div>
@@ -138,7 +138,7 @@ export default function ContactForm() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="company" className="block text-sm font-semibold text-slate-700 mb-2">
                 {t.form_company_label}
               </label>
               <input
@@ -147,12 +147,12 @@ export default function ContactForm() {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
+                className="w-full bg-white border border-slate-200/80 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white/95 focus:border-brand/60 focus:ring-1 focus:ring-brand/35 transition-all duration-200"
                 placeholder={t.form_company_placeholder}
               />
             </div>
             <div>
-              <label htmlFor="service" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="service" className="block text-sm font-semibold text-slate-700 mb-2">
                 {t.form_service_label}
               </label>
               <select
@@ -160,19 +160,19 @@ export default function ContactForm() {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200"
+                className="w-full bg-white border border-slate-200/80 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-brand/60 focus:ring-1 focus:ring-brand/35 transition-all duration-200"
               >
-                <option value="AI Automation" className="bg-[#0c0f17]">{t.form_service_opt1}</option>
-                <option value="AI Chatbots" className="bg-[#0c0f17]">{t.form_service_opt2}</option>
-                <option value="Cloud & DevOps" className="bg-[#0c0f17]">{t.form_service_opt3}</option>
-                <option value="Smart Systems" className="bg-[#0c0f17]">{t.form_service_opt4}</option>
-                <option value="Other" className="bg-[#0c0f17]">{t.form_service_opt5}</option>
+                <option value="AI Automation" className="bg-white text-slate-800">{t.form_service_opt1}</option>
+                <option value="AI Chatbots" className="bg-white text-slate-800">{t.form_service_opt2}</option>
+                <option value="Cloud & DevOps" className="bg-white text-slate-800">{t.form_service_opt3}</option>
+                <option value="Smart Systems" className="bg-white text-slate-800">{t.form_service_opt4}</option>
+                <option value="Other" className="bg-white text-slate-800">{t.form_service_opt5}</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+            <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
               {t.form_msg_label}
             </label>
             <textarea
@@ -182,7 +182,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full bg-[#05070a] border border-[#1f293d] rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand/80 focus:ring-1 focus:ring-brand/40 transition-all duration-200 resize-none"
+              className="w-full bg-white border border-slate-200/80 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:bg-white/95 focus:border-brand/60 focus:ring-1 focus:ring-brand/35 transition-all duration-200 resize-none"
               placeholder={t.form_msg_placeholder}
             />
           </div>
@@ -194,11 +194,11 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.02] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_30px_rgba(14,179,186,0.6)] disabled:opacity-50 transition-all duration-300 cursor-pointer"
+            className="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-indigo-600 px-8 py-4 text-base font-bold text-white hover:from-brand-hover hover:to-indigo-500 hover:scale-[1.02] shadow-md shadow-brand/10 hover:shadow-lg hover:shadow-brand/20 disabled:opacity-50 transition-all duration-300 cursor-pointer"
           >
             {status === "submitting" ? (
               <span className="flex items-center gap-2">
-                <svg className="animate-spin h-5 w-5 text-[#05070a]" fill="none" viewBox="0 0 24 24">
+                <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
@@ -212,12 +212,12 @@ export default function ContactForm() {
       )}
 
       {/* Quick Contacts Footer in the Form */}
-      <div className="mt-8 pt-6 border-t border-[#1f293d] text-center">
-        <p className="text-sm text-brand-muted mb-4">{t.contact_direct_title}</p>
+      <div className="mt-8 pt-6 border-t border-slate-100 text-center">
+        <p className="text-sm text-slate-500 mb-4">{t.contact_direct_title}</p>
         <div className="flex items-center justify-center">
           <a
             href="mailto:info@maker-ai.tech"
-            className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 border border-[#1f293d] hover:border-brand/50 hover:bg-brand/5 rounded-lg text-sm text-white hover:text-brand hover:shadow-[0_0_15px_rgba(14,179,186,0.15)] transition-all duration-300 font-semibold"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 border border-slate-200 hover:border-brand/45 hover:bg-brand/5 rounded-lg text-sm text-slate-700 hover:text-brand hover:shadow-md hover:shadow-indigo-50 transition-all duration-300 font-semibold"
           >
             <svg
               className="h-4 w-4 text-brand"

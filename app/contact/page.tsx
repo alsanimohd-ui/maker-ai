@@ -23,10 +23,10 @@ export default function ContactPage() {
       {/* Header section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center mb-16">
         <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
-          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-slate-400 sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-900 to-slate-850 sm:text-5xl md:text-6xl">
             {t.contact_page_title}
           </h1>
-          <p className="mt-4 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {t.contact_page_sub}
           </p>
         </div>
@@ -38,30 +38,30 @@ export default function ContactPage() {
           {/* Side Info Panel */}
           <Reveal
             delay={100}
-            className="flex flex-col space-y-8 bg-[#0c0f17] border border-[#1f293d] hover:border-brand/40 rounded-2xl p-6 sm:p-8 hover:shadow-[0_12px_24px_rgba(0,0,0,0.3)] transition-all duration-300"
+            className="flex flex-col space-y-8 bg-white/70 backdrop-blur-md border border-slate-200/60 rounded-2xl p-6 sm:p-8 shadow-md shadow-slate-100/50 hover:border-brand/35 hover:shadow-xl transition-all duration-300 card-hover-premium"
           >
             <div>
-              <h2 className="text-xl font-bold text-white mb-2">{t.contact_side_title}</h2>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">{t.contact_side_title}</h2>
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {t.contact_side_desc}
               </p>
             </div>
 
-            <div className="border-t border-[#1f293d] pt-6">
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <div className="border-t border-slate-200/80 pt-6">
+              <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">
                 {t.contact_side_hours_title}
               </h3>
-              <p className="text-sm text-slate-400">{t.contact_side_hours_days}</p>
-              <p className="text-sm text-white font-medium">{t.contact_side_hours_time}</p>
+              <p className="text-sm text-slate-500">{t.contact_side_hours_days}</p>
+              <p className="text-sm text-slate-900 font-semibold">{t.contact_side_hours_time}</p>
             </div>
 
-            <div className="border-t border-[#1f293d] pt-6 flex flex-col space-y-4">
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+            <div className="border-t border-slate-200/80 pt-6 flex flex-col space-y-4">
+              <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider">
                 {t.contact_side_channels}
               </h3>
               <a
                 href="mailto:info@maker-ai.tech"
-                className="flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors duration-200"
+                className="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 transition-colors duration-200 font-semibold"
               >
                 <svg
                   className="h-5 w-5 text-brand"
