@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#030307] text-white flex flex-col justify-center overflow-hidden">
-      {/* 1. Global Color & Ambience Upgrade (Soft Aurora Canvas & Interactive Network Grid) */}
+      {/* Background Ambience (Soft Aurora Canvas & Interactive Network Grid) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
         style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(29, 78, 216, 0.04) 30%, rgba(0, 0, 0, 0) 70%)' }}
@@ -55,8 +55,8 @@ export default function Home() {
         aria-hidden="true"
       />
 
-      {/* 2. Futuristic Hero Section (Asymmetrical Split) */}
-      <section className="relative w-full py-24 sm:py-32">
+      {/* Hero Section */}
+      <section className="relative w-full pt-24 pb-16 sm:pt-32 sm:pb-20 border-b border-white/[0.03]">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Column: Core Value Proposition */}
@@ -70,7 +70,7 @@ export default function Home() {
               </div>
             </Reveal>
 
-            {/* Main Title (Chrome / Cyan-teal hybrid gradients) */}
+            {/* Main Title */}
             <Reveal delay={250}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15]">
                 {titleContent}
@@ -87,7 +87,7 @@ export default function Home() {
             {/* Call to Action buttons */}
             <Reveal delay={550}>
               <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-                {/* Primary Launch button with sub-pixel border overlay & heavy neon glow */}
+                {/* Primary Launch button */}
                 <Link
                   href="#"
                   className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-black tracking-wide uppercase text-[#020205] shadow-[0_0_30px_rgba(0,242,254,0.35)] hover:shadow-[0_0_50px_rgba(0,242,254,0.7)] border border-cyan-300/10 active:scale-95 transition-all duration-300"
@@ -115,11 +115,11 @@ export default function Home() {
             </Reveal>
           </div>
 
-          {/* Right Column: Revitalized Dynamic Cyber-Core */}
+          {/* Right Column: Dynamic Cyber-Core */}
           <div className="col-span-1 lg:col-span-5 flex justify-center items-center relative">
             <Reveal delay={300} className="w-full max-w-[440px] aspect-square relative flex items-center justify-center">
               
-              {/* Layer 1: Outer Ring (delicate, dashed spinning circle clockwise) */}
+              {/* Layer 1: Outer Ring (dashed spinning circle clockwise) */}
               <div 
                 className="animate-[spin_120s_linear_infinite] border border-dashed border-cyan-500/10 rounded-full w-full h-full absolute pointer-events-none" 
                 aria-hidden="true"
@@ -131,13 +131,13 @@ export default function Home() {
                 aria-hidden="true"
               />
 
-              {/* Layer 3: The Core Pulsing Glow Sphere (turquoise blurred ambient shadow sphere) */}
+              {/* Layer 3: The Core Pulsing Glow Sphere */}
               <div 
                 className="w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full absolute pointer-events-none animate-pulse" 
                 aria-hidden="true"
               />
 
-              {/* Layer 4: The Central Node (Micro-floating corporate logo icon) */}
+              {/* Layer 4: The Central Node Icon */}
               <img
                 src="/assets/logo/icon-color.svg"
                 alt="Maker-AI Core Icon"
@@ -148,6 +148,175 @@ export default function Home() {
             </Reveal>
           </div>
 
+        </div>
+      </section>
+
+      {/* SECTION 1: Core Infrastructure Metrics Bar */}
+      <section className="relative w-full border-b border-white/[0.05] bg-white/[0.01] backdrop-blur-md py-10 select-none">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
+          
+          <Reveal delay={100}>
+            <div className="flex flex-col gap-1.5">
+              <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                {t.metric_workflows_value}
+              </span>
+              <span className="text-xs sm:text-sm text-slate-450 font-bold tracking-wider uppercase">
+                {t.metric_workflows_sub}
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={250} className="border-y md:border-y-0 md:border-x border-white/[0.05] py-6 md:py-0">
+            <div className="flex flex-col gap-1.5">
+              <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                {t.metric_uptime_value}
+              </span>
+              <span className="text-xs sm:text-sm text-slate-450 font-bold tracking-wider uppercase">
+                {t.metric_uptime_sub}
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={400}>
+            <div className="flex flex-col gap-1.5">
+              <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                {t.metric_security_value}
+              </span>
+              <span className="text-xs sm:text-sm text-slate-450 font-bold tracking-wider uppercase">
+                {t.metric_security_sub}
+              </span>
+            </div>
+          </Reveal>
+
+        </div>
+      </section>
+
+      {/* SECTION 2: Core Services Architecture Grid */}
+      <section id="services" className="relative w-full py-24 sm:py-32 border-b border-white/[0.05]">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          <Reveal delay={100} className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 uppercase select-none">
+              {t.services_arch_title}
+            </h2>
+          </Reveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* Card 1: SaaS ERP */}
+            <Reveal delay={200}>
+              <div className="h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/30 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.03)] transition-all duration-500 flex flex-col">
+                <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                  {t.services_card1_title}
+                </h3>
+                <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                  {t.services_card1_desc}
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Card 2: High-Scale Automation */}
+            <Reveal delay={350}>
+              <div className="h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/30 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.03)] transition-all duration-500 flex flex-col">
+                <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                  {t.services_card2_title}
+                </h3>
+                <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                  {t.services_card2_desc}
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Card 3: Network Security */}
+            <Reveal delay={500}>
+              <div className="h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/30 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.03)] transition-all duration-500 flex flex-col">
+                <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                  {t.services_card3_title}
+                </h3>
+                <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                  {t.services_card3_desc}
+                </p>
+              </div>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: The Operational Blueprint */}
+      <section className="relative w-full py-24 sm:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          <Reveal delay={100} className="text-center mb-16 sm:mb-20">
+            <span className="text-xs sm:text-sm font-bold tracking-widest text-cyan-400 uppercase">
+              {t.blueprint_subtitle}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 uppercase mt-3 select-none">
+              {t.blueprint_title}
+            </h2>
+          </Reveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
+            
+            {/* Step 1 */}
+            <Reveal delay={200} className="relative flex flex-col items-center text-center">
+              <div className="h-16 w-16 rounded-full bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
+                01
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">
+                {t.blueprint_step1_title}
+              </h3>
+              <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
+                {t.blueprint_step1_desc}
+              </p>
+              {/* Connector line (points opposite direction on RTL) */}
+              <div className="hidden lg:block absolute top-8 left-[65%] rtl:left-auto rtl:right-[65%] w-[70%] h-[1px] bg-gradient-to-r rtl:bg-gradient-to-l from-cyan-500/30 to-transparent -z-10" />
+            </Reveal>
+
+            {/* Step 2 */}
+            <Reveal delay={350} className="relative flex flex-col items-center text-center">
+              <div className="h-16 w-16 rounded-full bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
+                02
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">
+                {t.blueprint_step2_title}
+              </h3>
+              <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
+                {t.blueprint_step2_desc}
+              </p>
+              {/* Connector line (points opposite direction on RTL) */}
+              <div className="hidden lg:block absolute top-8 left-[65%] rtl:left-auto rtl:right-[65%] w-[70%] h-[1px] bg-gradient-to-r rtl:bg-gradient-to-l from-cyan-500/30 to-transparent -z-10" />
+            </Reveal>
+
+            {/* Step 3 */}
+            <Reveal delay={500} className="relative flex flex-col items-center text-center">
+              <div className="h-16 w-16 rounded-full bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
+                03
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">
+                {t.blueprint_step3_title}
+              </h3>
+              <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
+                {t.blueprint_step3_desc}
+              </p>
+            </Reveal>
+
+          </div>
         </div>
       </section>
     </div>

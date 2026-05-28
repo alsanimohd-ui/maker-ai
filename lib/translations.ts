@@ -16,6 +16,33 @@ export const translations = {
     hero_subtitle_secure: "We architect resilient cloud infrastructures, host high-scale automated workflows (100+ n8n pipelines), deploy isolated Dockerized ERP systems, and secure cloud networks with advanced Virtual Firewalls. Moving businesses from manual friction to absolute digital efficiency.",
     hero_btn_launch: "Launch Mi Workspace",
     hero_btn_explore_enterprise: "Explore Enterprise Solutions",
+
+    // Infrastructure Metrics Bar
+    metric_workflows_value: "100+",
+    metric_workflows_sub: "Active Workflows Hosted",
+    metric_uptime_value: "99.9%",
+    metric_uptime_sub: "Cloud Enterprise Uptime",
+    metric_security_value: "Zero",
+    metric_security_sub: "Perimeter Security Breaches",
+
+    // Core Services Architecture
+    services_arch_title: "Core Services Architecture",
+    services_card1_title: "Secure SaaS ERP Deployments",
+    services_card1_desc: "Custom Enterprise Resource Planning infrastructures engineered with secure open-source backends. Fully isolated inside resilient Docker containers for multi-tenant security, custom data persistence, and horizontal scaling.",
+    services_card2_title: "Industrial Automation Hub",
+    services_card2_desc: "Orchestrating 100+ robust, asynchronous n8n workflows. We build fault-tolerant webhooks and custom data transformation pipelines that link your internal applications, eliminating manual file movements and API friction.",
+    services_card3_title: "Virtual Firewalling & Hardening",
+    services_card3_desc: "Advanced perimeter defense blueprints. Utilizing Certified Ethical Hacker (CEH) frameworks to deploy sophisticated virtual firewalls, continuous security auditing, isolated network subnets, and robust access management.",
+
+    // The Operational Blueprint
+    blueprint_title: "The Operational Blueprint",
+    blueprint_subtitle: "How We Automate",
+    blueprint_step1_title: "Audit & Architecture",
+    blueprint_step1_desc: "Deep auditing of current server/business workflows.",
+    blueprint_step2_title: "Secure Deployment",
+    blueprint_step2_desc: "Custom coding workflows in n8n and locking infrastructure.",
+    blueprint_step3_title: "Continuous Monitoring",
+    blueprint_step3_desc: "Live perimeter monitoring and runtime log analytics.",
     hero_badge: "Systems & Process Automation",
     hero_title_1: "We Build",
     hero_title_2: "Systems",
@@ -156,7 +183,7 @@ export const translations = {
     services_page_why_btn: "Book Operational Audit",
 
     // Footer
-    footer_desc: "© 2026 Maker-AI. Engineered securely for digital evolution. Providing Enterprise-Grade SaaS ERP, Scalable n8n Automation Workflows, and Advanced Virtual Firewalling.",
+    footer_desc: "Engineered securely for enterprise evolution. Delivering scalable SaaS ERP, high-performance automation, and zero-trust virtual firewalling.",
     footer_nav_title: "Navigation",
     footer_contact_title: "Get In Touch",
     footer_rights: "All rights reserved.",
@@ -179,6 +206,33 @@ export const translations = {
     hero_subtitle_secure: "نصمم بنى تحتية سحابية مرنة، ونستضيف خطوط عمل مؤتمتة واسعة النطاق (أكثر من 100 خط عمل n8n)، وننشر أنظمة تخطيط موارد المؤسسات (ERP) المعزولة عبر حاويات Docker، ونؤمن الشبكات السحابية بجدران حماية افتراضية متقدمة. ننقل الشركات من الاحتكاك اليدوي إلى الكفاءة الرقمية المطلقة.",
     hero_btn_launch: "تشغيل مساحة عمل Mi",
     hero_btn_explore_enterprise: "استكشف حلول المؤسسات",
+
+    // Infrastructure Metrics Bar
+    metric_workflows_value: "+١٠٠",
+    metric_workflows_sub: "أكثر من 100 خط عمل نشط مستضاف",
+    metric_uptime_value: "٩٩.٩%",
+    metric_uptime_sub: "99.9% جاهزية الخدمة السحابية للمؤسسات",
+    metric_security_value: "صفر",
+    metric_security_sub: "صفر اختراق للأمن المحيطي",
+
+    // Core Services Architecture
+    services_arch_title: "بنية الخدمات الأساسية",
+    services_card1_title: "عمليات نشر أنظمة SaaS ERP الآمنة",
+    services_card1_desc: "بنى تحتية مخصصة لتخطيط موارد المؤسسات (ERP) مصممة بخلفيات مفتوحة المصدر آمنة. معزولة تمامًا داخل حاويات Docker المرنة لأمن المستأجرين المتعددين، ومزامنة البيانات المخصصة، والتوسع الأفقي.",
+    services_card2_title: "مركز الأتمتة الصناعية",
+    services_card2_desc: "تنسيق أكثر من 100 خط عمل n8n قوي وغير متزامن. نقوم ببناء خطوط معالجة طلبات الويب (Webhooks) المقاومة للأعطال ومسارات تحويل البيانات المخصصة التي تربط تطبيقاتك الداخلية، مما يلغي حركات الملفات اليدوية واحتكاك واجهات البرمجيات APIs.",
+    services_card3_title: "جدران الحماية الافتراضية والتحصين",
+    services_card3_desc: "مخططات متقدمة للدفاع المحيطي. استخدام أطر عمل الهاكر الأخلاقي المعتمد (CEH) لنشر جدران حماية افتراضية متطورة، والتدقيق الأمني المستمر، والشبكات الفرعية المعزولة، وإدارة الوصول القوية.",
+
+    // The Operational Blueprint
+    blueprint_title: "المخطط التشغيلي",
+    blueprint_subtitle: "كيف نقوم بالأتمتة",
+    blueprint_step1_title: "التدقيق والتصميم",
+    blueprint_step1_desc: "التدقيق العميق لخوادم وسير العمل الحالية للأعمال.",
+    blueprint_step2_title: "النشر الآمن",
+    blueprint_step2_desc: "كتابة الأكواد المخصصة لخطوط العمل في n8n وتأمين البنية التحتية.",
+    blueprint_step3_title: "المراقبة المستمرة",
+    blueprint_step3_desc: "المراقبة الحية للأمن المحيطي وتحليل سجلات التشغيل.",
     hero_badge: "أتمتة الأنظمة والعمليات",
     hero_title_1: "نحن نبني",
     hero_title_2: "أنظمة",
@@ -319,7 +373,7 @@ export const translations = {
     services_page_why_btn: "احجز تدقيقاً تشغيلياً",
 
     // Footer
-    footer_desc: "© 2026 Maker-AI. تم هندستها بأمان للتطور الرقمي. توفير أنظمة SaaS ERP المخصصة للمؤسسات، وخطوط عمل أتمتة n8n قابلة للتوسع، وحلول جدران الحماية الافتراضية المتقدمة.",
+    footer_desc: "تم هندستها بأمان لتطور المؤسسات. تقديم أنظمة SaaS ERP القابلة للتوسع، والأتمتة عالية الأداء، وجدران الحماية الافتراضية صفري الثقة.",
     footer_nav_title: "التنقل",
     footer_contact_title: "اتصل بنا",
     footer_rights: "جميع الحقوق محفوظة.",
