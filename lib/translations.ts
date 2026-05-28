@@ -156,7 +156,7 @@ export const translations = {
     services_page_why_btn: "Book Operational Audit",
 
     // Footer
-    footer_desc: "We replace manual work with systems that run your business automatically. Stop wasting hours on spreadsheets, emails, and copy-pasting.",
+    footer_desc: "© 2026 Maker-AI. Engineered securely for digital evolution. Providing Enterprise-Grade SaaS ERP, Scalable n8n Automation Workflows, and Advanced Virtual Firewalling.",
     footer_nav_title: "Navigation",
     footer_contact_title: "Get In Touch",
     footer_rights: "All rights reserved.",
@@ -319,7 +319,7 @@ export const translations = {
     services_page_why_btn: "احجز تدقيقاً تشغيلياً",
 
     // Footer
-    footer_desc: "نحن نستبدل العمل اليدوي بأنظمة تدير عملك بشكل تلقائي. توقف عن إضاعة الساعات على الجداول والبريد الإلكتروني والنسخ واللصق.",
+    footer_desc: "© 2026 Maker-AI. تم هندستها بأمان للتطور الرقمي. توفير أنظمة SaaS ERP المخصصة للمؤسسات، وخطوط عمل أتمتة n8n قابلة للتوسع، وحلول جدران الحماية الافتراضية المتقدمة.",
     footer_nav_title: "التنقل",
     footer_contact_title: "اتصل بنا",
     footer_rights: "جميع الحقوق محفوظة.",

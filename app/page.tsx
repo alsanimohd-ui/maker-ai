@@ -9,26 +9,34 @@ export default function Home() {
   const { lang } = useLanguage();
   const t = translations[lang];
 
-  // Title segments with gradient highlights for English and Arabic
+  // Metallic chrome text gradient segments for standard copy and cyan/teal for key highlights
   const titleContent = lang === "ar" ? (
     <>
-      أتمتة{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-extrabold animate-text-gradient-flow">
+      <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 font-black">
+        أتمتة{" "}
+      </span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
         الذكاء الاصطناعي
       </span>{" "}
-      من الجيل القادم. هندسة معززة بـ{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-extrabold animate-text-gradient-flow">
+      <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 font-black">
+        من الجيل القادم. هندسة معززة بـ{" "}
+      </span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
         أمن المؤسسات.
       </span>
     </>
   ) : (
     <>
-      Next-Gen{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-extrabold animate-text-gradient-flow">
+      <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-450 font-black">
+        Next-Gen{" "}
+      </span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
         AI Automation
       </span>
-      . Engineered with Enterprise{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-extrabold animate-text-gradient-flow">
+      <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-450 font-black">
+        . Engineered with Enterprise{" "}
+      </span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
         Security.
       </span>
     </>
@@ -36,14 +44,14 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#030307] text-white flex flex-col justify-center overflow-hidden">
-      {/* 1. Luxury Immersive Background (The Aurora Canvas & Grid Overlay) */}
+      {/* 1. Global Color & Ambience Upgrade (Soft Aurora Canvas & Interactive Network Grid) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
-        style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(0, 0, 0, 0) 60%)' }}
+        style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(29, 78, 216, 0.04) 30%, rgba(0, 0, 0, 0) 70%)' }}
         aria-hidden="true"
       />
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none -z-10"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.25] hover:opacity-100 transition-opacity duration-1000 pointer-events-none -z-10"
         aria-hidden="true"
       />
 
@@ -62,9 +70,9 @@ export default function Home() {
               </div>
             </Reveal>
 
-            {/* Main Title */}
+            {/* Main Title (Chrome / Cyan-teal hybrid gradients) */}
             <Reveal delay={250}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15]">
                 {titleContent}
               </h1>
             </Reveal>
@@ -79,10 +87,10 @@ export default function Home() {
             {/* Call to Action buttons */}
             <Reveal delay={550}>
               <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-                {/* Primary Launch button with sub-pixel border overlay & neon shadow */}
+                {/* Primary Launch button with sub-pixel border overlay & heavy neon glow */}
                 <Link
                   href="#"
-                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-bold text-[#020205] shadow-[0_0_25px_rgba(0,242,254,0.2)] hover:shadow-[0_0_35px_rgba(0,242,254,0.4)] border border-cyan-300/10 active:scale-95 transition-all duration-300"
+                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-black tracking-wide uppercase text-[#020205] shadow-[0_0_30px_rgba(0,242,254,0.35)] hover:shadow-[0_0_50px_rgba(0,242,254,0.7)] border border-cyan-300/10 active:scale-95 transition-all duration-300"
                 >
                   {t.hero_btn_launch}
                   <svg 
@@ -107,11 +115,11 @@ export default function Home() {
             </Reveal>
           </div>
 
-          {/* Right Column: Redesigned Dynamic Cyber-Core */}
+          {/* Right Column: Revitalized Dynamic Cyber-Core */}
           <div className="col-span-1 lg:col-span-5 flex justify-center items-center relative">
             <Reveal delay={300} className="w-full max-w-[440px] aspect-square relative flex items-center justify-center">
               
-              {/* Layer 1: Outer Ring (delicate, dashed spinning circle) */}
+              {/* Layer 1: Outer Ring (delicate, dashed spinning circle clockwise) */}
               <div 
                 className="animate-[spin_120s_linear_infinite] border border-dashed border-cyan-500/10 rounded-full w-full h-full absolute pointer-events-none" 
                 aria-hidden="true"
@@ -119,14 +127,13 @@ export default function Home() {
 
               {/* Layer 2: Inner Ring (dotted concentric circle spinning counter-clockwise) */}
               <div 
-                className="animate-[spin_60s_linear_infinite] border border-dotted border-white/5 rounded-full w-[80%] h-[80%] absolute pointer-events-none" 
-                style={{ animationDirection: "reverse" }}
+                className="animate-[spin_60s_linear_infinite] [animation-direction:reverse] border border-dotted border-white/5 rounded-full w-[80%] h-[80%] absolute pointer-events-none" 
                 aria-hidden="true"
               />
 
-              {/* Layer 3: The Core Glow (turquoise blurred ambient shadow sphere) */}
+              {/* Layer 3: The Core Pulsing Glow Sphere (turquoise blurred ambient shadow sphere) */}
               <div 
-                className="w-32 h-32 bg-cyan-500/10 blur-[60px] rounded-full absolute pointer-events-none" 
+                className="w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full absolute pointer-events-none animate-pulse" 
                 aria-hidden="true"
               />
 
