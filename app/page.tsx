@@ -62,17 +62,9 @@ export default function Home() {
           {/* Left Column: Core Value Proposition */}
           <div className="col-span-1 lg:col-span-7 flex flex-col text-left rtl:text-right select-none">
             
-            {/* Micro-badge */}
-            <Reveal delay={100} className="self-start">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-950/20 px-4 py-1.5 text-[10px] sm:text-xs font-bold tracking-widest text-cyan-400 uppercase backdrop-blur-md shadow-[0_0_15px_rgba(6,182,212,0.1)] mb-8">
-                <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse-glow" />
-                {t.hero_badge_secure}
-              </div>
-            </Reveal>
-
             {/* Main Title */}
-            <Reveal delay={250}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15]">
+            <Reveal delay={100}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15] pt-2">
                 {titleContent}
               </h1>
             </Reveal>
