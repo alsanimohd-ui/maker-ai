@@ -35,14 +35,15 @@ export default function Home() {
   );
 
   return (
-    <div className="relative min-h-screen bg-[#020205] text-white flex flex-col justify-center overflow-hidden">
-      {/* 1. Subtle Radial Glow & Grid Overlay */}
+    <div className="relative min-h-screen bg-[#030307] text-white flex flex-col justify-center overflow-hidden">
+      {/* 1. Luxury Immersive Background (The Aurora Canvas & Grid Overlay) */}
       <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] bg-cyan-500/8 blur-[130px] rounded-full pointer-events-none -z-10"
+        className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
+        style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(0, 0, 0, 0) 60%)' }}
         aria-hidden="true"
       />
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:45px_45px] [mask-image:radial-gradient(ellipse_at_top,black_55%,transparent_100%)] pointer-events-none -z-10"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none -z-10"
         aria-hidden="true"
       />
 
@@ -70,7 +71,7 @@ export default function Home() {
 
             {/* Subtitle statement */}
             <Reveal delay={400}>
-              <p className="text-slate-400 text-base sm:text-lg lg:text-xl leading-relaxed mt-6 mb-10 max-w-2xl font-light">
+              <p className="text-slate-400/90 text-base sm:text-lg lg:text-xl leading-relaxed mt-6 mb-10 max-w-2xl font-light">
                 {t.hero_subtitle_secure}
               </p>
             </Reveal>
@@ -78,10 +79,10 @@ export default function Home() {
             {/* Call to Action buttons */}
             <Reveal delay={550}>
               <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-                {/* Primary Launch button */}
+                {/* Primary Launch button with sub-pixel border overlay & neon shadow */}
                 <Link
                   href="#"
-                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-bold text-[#020205] shadow-[0_0_15px_rgba(0,242,254,0.15)] hover:shadow-[0_0_30px_rgba(0,242,254,0.5)] active:scale-95 transition-all duration-300"
+                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-bold text-[#020205] shadow-[0_0_25px_rgba(0,242,254,0.2)] hover:shadow-[0_0_35px_rgba(0,242,254,0.4)] border border-cyan-300/10 active:scale-95 transition-all duration-300"
                 >
                   {t.hero_btn_launch}
                   <svg 
@@ -106,54 +107,37 @@ export default function Home() {
             </Reveal>
           </div>
 
-          {/* Right Column: The Holographic Core */}
+          {/* Right Column: Redesigned Dynamic Cyber-Core */}
           <div className="col-span-1 lg:col-span-5 flex justify-center items-center relative">
-            <Reveal delay={300} className="w-full max-w-[400px] aspect-square">
+            <Reveal delay={300} className="w-full max-w-[440px] aspect-square relative flex items-center justify-center">
               
-              {/* Pulsing glow underlay */}
+              {/* Layer 1: Outer Ring (delicate, dashed spinning circle) */}
               <div 
-                className="absolute -inset-4 bg-gradient-to-tr from-cyan-400/8 to-blue-500/8 blur-[30px] rounded-[40px] pointer-events-none -z-10 opacity-80 animate-pulse" 
-                style={{ animationDuration: "4s" }}
+                className="animate-[spin_120s_linear_infinite] border border-dashed border-cyan-500/10 rounded-full w-full h-full absolute pointer-events-none" 
+                aria-hidden="true"
               />
 
-              {/* Holographic glass container */}
-              <div className="w-full h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.08] rounded-[32px] flex items-center justify-center relative shadow-[0_0_50px_rgba(0,242,254,0.03)] overflow-hidden group">
-                
-                {/* Slow spinning technical SVG rings */}
-                <svg 
-                  className="absolute w-[80%] h-[80%] animate-spin-slow opacity-25 pointer-events-none" 
-                  viewBox="0 0 100 100"
-                  style={{ animationDuration: "25s" }}
-                >
-                  <circle cx="50" cy="50" r="45" stroke="url(#cyan-hologram)" strokeWidth="0.5" fill="none" strokeDasharray="12 18 35 12" />
-                  <circle cx="50" cy="50" r="38" stroke="url(#cyan-hologram)" strokeWidth="0.25" fill="none" strokeDasharray="4 6" />
-                  <defs>
-                    <linearGradient id="cyan-hologram" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#00f2fe" />
-                      <stop offset="100%" stopColor="#4facfe" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+              {/* Layer 2: Inner Ring (dotted concentric circle spinning counter-clockwise) */}
+              <div 
+                className="animate-[spin_60s_linear_infinite] border border-dotted border-white/5 rounded-full w-[80%] h-[80%] absolute pointer-events-none" 
+                style={{ animationDirection: "reverse" }}
+                aria-hidden="true"
+              />
 
-                {/* Ambient glow directly behind the icon */}
-                <div 
-                  className="absolute w-36 h-36 bg-cyan-400/20 blur-[50px] rounded-full pointer-events-none" 
-                />
+              {/* Layer 3: The Core Glow (turquoise blurred ambient shadow sphere) */}
+              <div 
+                className="w-32 h-32 bg-cyan-500/10 blur-[60px] rounded-full absolute pointer-events-none" 
+                aria-hidden="true"
+              />
 
-                {/* Pulser visual node element */}
-                <div className="absolute w-52 h-52 border border-cyan-400/10 rounded-full scale-75 animate-ping opacity-15 pointer-events-none" style={{ animationDuration: "3s" }} />
-
-                {/* Floating Logo Icon */}
-                <img
-                  src="/assets/logo/icon-color.svg"
-                  alt="Maker-AI Core Icon"
-                  className="w-1/3 h-1/3 object-contain select-none pointer-events-none z-10 animate-float-gentle"
-                  style={{ animationDuration: "5s" }}
-                />
-
-                {/* Cyberpunk grid overlay lines inside the holographic core card */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(2,2,5,0.85)_100%)] pointer-events-none" />
-              </div>
+              {/* Layer 4: The Central Node (Micro-floating corporate logo icon) */}
+              <img
+                src="/assets/logo/icon-color.svg"
+                alt="Maker-AI Core Icon"
+                className="w-1/3 h-1/3 object-contain select-none pointer-events-none z-10 animate-float-gentle"
+                style={{ animationDuration: "5s" }}
+              />
+              
             </Reveal>
           </div>
 
