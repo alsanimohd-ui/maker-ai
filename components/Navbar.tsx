@@ -15,43 +15,41 @@ export default function Navbar() {
   const t = translations[lang];
 
   const navLinks = [
-    { name: t.nav_home, href: "/" },
     { name: t.nav_services, href: "/services" },
-    { name: t.nav_use_cases, href: "/#use-cases" },
-    { name: t.nav_how_it_works, href: "/#how-it-works" },
-    { name: t.nav_contact, href: "/contact" },
+    { name: t.nav_workspace, href: "#" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[var(--navbar-bg)] backdrop-blur-xl shadow-[var(--navbar-shadow)] transition-all duration-300 navbar-neon-glow">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/[0.02] border-b border-white/[0.05] transition-all duration-300">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo inside small premium glass pill */}
+          {/* Logo with crisp, locked aspect ratio */}
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="flex items-center gap-2 px-3.5 py-2 bg-slate-50/50 dark:bg-slate-900/40 hover:bg-slate-100/80 dark:hover:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60 rounded-full shadow-[0_2px_8px_rgba(15,23,42,0.03)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.15)] hover:scale-[1.01] transition-all duration-300"
+              className="flex items-center gap-2 hover:scale-[1.01] transition-all duration-300"
             >
               <img
-                src={theme === "dark" ? "/assets/logo/logo-white.svg" : "/assets/logo/logo-dark.svg"}
+                src="/assets/logo/logo-color.svg"
                 alt="Maker AI Logo"
-                className="h-8 w-auto"
+                className="h-9 w-auto object-contain"
+                style={{ aspectRatio: "240/64" }} // Locked aspect ratio
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 ${
+                  className={`text-sm font-medium transition-all duration-200 tracking-wide uppercase hover:text-cyan-400 ${
                     isActive
-                      ? "text-brand"
-                      : "text-slate-600 dark:text-slate-350 hover:text-slate-900 dark:hover:text-white"
+                      ? "text-cyan-450 font-bold"
+                      : "text-slate-300"
                   }`}
                 >
                   {link.name}
@@ -60,20 +58,20 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop CTA & Language Toggle */}
+          {/* Desktop CTA, Language Toggle, and Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl border border-slate-200/60 hover:border-brand/45 text-slate-600 dark:text-slate-300 bg-white/60 dark:bg-slate-900/40 transition-all duration-300 hover:scale-105 cursor-pointer shadow-[0_2px_8px_rgba(15,23,42,0.02)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] flex items-center justify-center"
+              className="p-2.5 rounded-xl border border-white/[0.08] hover:border-cyan-400/40 text-slate-300 bg-white/[0.01] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? (
-                <svg className="w-4.5 h-4.5 text-amber-500 animate-spin" style={{ animationDuration: '30s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '30s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M3 12h2.25m13.5 0H21M5.75 5.75l1.636 1.636m10.228 10.228l1.636 1.636M5.75 18.25l1.636-1.636m10.228-10.228l1.636-1.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                 </svg>
               ) : (
-                <svg className="w-4.5 h-4.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                 </svg>
               )}
@@ -82,33 +80,32 @@ export default function Navbar() {
             {/* Language Toggle Button */}
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-brand/40 text-xs font-semibold text-slate-700 dark:text-slate-300 bg-white/50 dark:bg-slate-900/40 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+              className="px-3.5 py-1.5 rounded-xl border border-white/[0.08] hover:border-cyan-400/40 text-xs font-semibold text-slate-300 bg-white/[0.01] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
             >
               {lang === "en" ? "العربية" : "English"}
             </button>
             
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-blue-600 px-5 py-2.5 text-sm font-bold text-white hover:from-brand-hover hover:to-blue-500 hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(14,179,186,0.25)] transition-all duration-300"
+              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-5 py-2.5 text-sm font-bold text-[#020205] shadow-[0_0_15px_rgba(0,242,254,0.2)] hover:shadow-[0_0_25px_rgba(0,242,254,0.45)] hover:scale-[1.02] transition-all duration-300"
             >
-              {t.nav_book}
+              {t.nav_consult}
             </Link>
           </div>
 
-          {/* Mobile menu button & Language Toggle */}
+          {/* Mobile menu button, Language & Theme Toggle */}
           <div className="flex md:hidden items-center gap-3">
-            {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 bg-white/50 dark:bg-slate-900/40 transition-all duration-200 flex items-center justify-center cursor-pointer"
+              className="p-2 rounded-lg border border-white/[0.08] text-slate-300 bg-white/[0.01] flex items-center justify-center cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? (
-                <svg className="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M3 12h2.25m13.5 0H21M5.75 5.75l1.636 1.636m10.228 10.228l1.636 1.636M5.75 18.25l1.636-1.636m10.228-10.228l1.636-1.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                 </svg>
               ) : (
-                <svg className="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                 </svg>
               )}
@@ -116,14 +113,14 @@ export default function Navbar() {
 
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-350 hover:border-brand/40 transition-all duration-200"
+              className="px-2.5 py-1 rounded-md border border-white/[0.08] text-xs font-semibold text-slate-350 bg-white/[0.01] hover:border-cyan-400/40 transition-all duration-200"
             >
               {lang === "en" ? "AR" : "EN"}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-slate-900 dark:hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-white/[0.05] hover:text-white focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -166,8 +163,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-b border-slate-200 dark:border-slate-800 bg-[var(--navbar-bg)] backdrop-blur-xl" id="mobile-menu">
-          <div className="space-y-1 px-2 pb-4 pt-2">
+        <div className="md:hidden border-b border-white/[0.05] bg-[#020205]/95 backdrop-blur-xl" id="mobile-menu">
+          <div className="space-y-1 px-4 pb-4 pt-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -175,32 +172,23 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block rounded-md px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                  className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     isActive
-                      ? "bg-slate-50 dark:bg-slate-900 text-brand"
-                      : "text-slate-600 dark:text-slate-350 hover:bg-slate-50 dark:hover:bg-slate-900 hover:text-slate-900 dark:hover:text-white"
+                      ? "bg-white/[0.03] text-cyan-400"
+                      : "text-slate-350 hover:bg-white/[0.02] hover:text-white"
                   }`}
                 >
                   {link.name}
                 </Link>
               );
             })}
-            <div className="mt-4 px-3 flex flex-col gap-3">
-              <button
-                onClick={() => {
-                  setLang(lang === "en" ? "ar" : "en");
-                  setIsOpen(false);
-                }}
-                className="flex w-full items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 py-3 text-base font-semibold text-slate-700 dark:text-slate-300 hover:border-brand/40 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all duration-300"
-              >
-                {lang === "en" ? "العربية" : "English"}
-              </button>
+            <div className="mt-4 flex flex-col gap-3">
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-brand to-blue-600 py-3 text-base font-bold text-white hover:from-brand-hover hover:to-blue-500 hover:scale-[1.02] hover:shadow-[0_4px_15px_rgba(14,179,186,0.25)] transition-all duration-300"
+                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] py-3 text-base font-bold text-[#020205] shadow-[0_0_15px_rgba(0,242,254,0.2)] hover:scale-[1.02] transition-all duration-300"
               >
-                {t.nav_book}
+                {t.nav_consult}
               </Link>
             </div>
           </div>

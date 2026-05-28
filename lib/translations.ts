@@ -7,8 +7,15 @@ export const translations = {
     nav_book: "Book Consultation",
     nav_use_cases: "Use Cases",
     nav_how_it_works: "How It Works",
+    nav_workspace: "Mi Workspace",
+    nav_consult: "Request Demo / Consult",
 
     // Hero
+    hero_badge_secure: "MAKER-AI // SECURE AUTOMATION ENGINE",
+    hero_title_secure: "Next-Gen AI Automation. Engineered with Enterprise Security.",
+    hero_subtitle_secure: "We architect resilient cloud infrastructures, host high-scale automated workflows (100+ n8n pipelines), deploy isolated Dockerized ERP systems, and secure cloud networks with advanced Virtual Firewalls. Moving businesses from manual friction to absolute digital efficiency.",
+    hero_btn_launch: "Launch Mi Workspace",
+    hero_btn_explore_enterprise: "Explore Enterprise Solutions",
     hero_badge: "Systems & Process Automation",
     hero_title_1: "We Build",
     hero_title_2: "Systems",
@@ -163,8 +170,15 @@ export const translations = {
     nav_book: "احجز استشارة",
     nav_use_cases: "حالات الاستخدام",
     nav_how_it_works: "كيف نعمل",
+    nav_workspace: "مساحة عمل Mi",
+    nav_consult: "طلب عرض تجريبي / استشارة",
 
     // Hero
+    hero_badge_secure: "مايكر إي آي // محرك الأتمتة الآمن",
+    hero_title_secure: "أتمتة الذكاء الاصطناعي من الجيل القادم. هندسة معززة بأمن المؤسسات.",
+    hero_subtitle_secure: "نصمم بنى تحتية سحابية مرنة، ونستضيف خطوط عمل مؤتمتة واسعة النطاق (أكثر من 100 خط عمل n8n)، وننشر أنظمة تخطيط موارد المؤسسات (ERP) المعزولة عبر حاويات Docker، ونؤمن الشبكات السحابية بجدران حماية افتراضية متقدمة. ننقل الشركات من الاحتكاك اليدوي إلى الكفاءة الرقمية المطلقة.",
+    hero_btn_launch: "تشغيل مساحة عمل Mi",
+    hero_btn_explore_enterprise: "استكشف حلول المؤسسات",
     hero_badge: "أتمتة الأنظمة والعمليات",
     hero_title_1: "نحن نبني",
     hero_title_2: "أنظمة",
