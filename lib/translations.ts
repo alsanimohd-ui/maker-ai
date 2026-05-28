@@ -28,11 +28,11 @@ export const translations = {
     // Core Services Architecture
     services_arch_title: "Core Services Architecture",
     services_card1_title: "Secure SaaS ERP Deployments",
-    services_card1_desc: "Custom Enterprise Resource Planning infrastructures engineered with secure open-source backends. Fully isolated inside resilient Docker containers for multi-tenant security, custom data persistence, and horizontal scaling.",
+    services_card1_desc: "We deploy isolated, multi-tenant ERP environments inside resilient Docker containers, ensuring robust data persistence and custom volume orchestration. The core architecture is specifically engineered to seamlessly integrate with local Jordanian e-invoicing (JoFotara) requirements, automating compliance and reporting.",
     services_card2_title: "Industrial Automation Hub",
-    services_card2_desc: "Orchestrating 100+ robust, asynchronous n8n workflows. We build fault-tolerant webhooks and custom data transformation pipelines that link your internal applications, eliminating manual file movements and API friction.",
+    services_card2_desc: "Orchestrating 100+ active, asynchronous n8n workflows hosted on optimized Linux runtime instances. We engineer fault-tolerant webhooks, queue management systems, and high-frequency cross-platform API pipelines to synchronize operational data without human friction.",
     services_card3_title: "Virtual Firewalling & Hardening",
-    services_card3_desc: "Advanced perimeter defense blueprints. Utilizing Certified Ethical Hacker (CEH) frameworks to deploy sophisticated virtual firewalls, continuous security auditing, isolated network subnets, and robust access management.",
+    services_card3_desc: "Engineered under Certified Ethical Hacker (CEH) frameworks to secure modern network perimeters. We deploy sophisticated virtual firewalls, establish strict zero-trust network boundaries, conduct automated vulnerability auditing, and design real-time threat-scoring dashboards.",
 
     // The Operational Blueprint
     blueprint_title: "The Operational Blueprint",
@@ -218,11 +218,11 @@ export const translations = {
     // Core Services Architecture
     services_arch_title: "بنية الخدمات الأساسية",
     services_card1_title: "عمليات نشر أنظمة SaaS ERP الآمنة",
-    services_card1_desc: "بنى تحتية مخصصة لتخطيط موارد المؤسسات (ERP) مصممة بخلفيات مفتوحة المصدر آمنة. معزولة تمامًا داخل حاويات Docker المرنة لأمن المستأجرين المتعددين، ومزامنة البيانات المخصصة، والتوسع الأفقي.",
+    services_card1_desc: "نحن ننشر بيئات تخطيط موارد المؤسسات (ERP) المعزولة ومتعددة المستأجرين داخل حاويات Docker المرنة، مع ضمان استمرارية قوية للبيانات وتنسيق مخصص لوحدات التخزين. تم تصميم البنية الأساسية خصيصاً لتتكامل بسلاسة مع متطلبات نظام الفوترة الإلكترونية الأردني (جو فوتورة - JoFotara)، مما يؤتمت الامتثال والتقارير.",
     services_card2_title: "مركز الأتمتة الصناعية",
-    services_card2_desc: "تنسيق أكثر من 100 خط عمل n8n قوي وغير متزامن. نقوم ببناء خطوط معالجة طلبات الويب (Webhooks) المقاومة للأعطال ومسارات تحويل البيانات المخصصة التي تربط تطبيقاتك الداخلية، مما يلغي حركات الملفات اليدوية واحتكاك واجهات البرمجيات APIs.",
+    services_card2_desc: "تنسيق أكثر من 100 سير عمل نشط وغير متزامن في n8n المستضافة على مثيلات تشغيل Linux المحسّنة. نحن نصمم خطوط معالجة طلبات الويب (Webhooks) المقاومة للأعطال، وأنظمة إدارة زمام الأمور، ومسارات واجهة البرمجة (API) عالية التردد لمزامنة البيانات التشغيلية دون أي تدخل بشري.",
     services_card3_title: "جدران الحماية الافتراضية والتحصين",
-    services_card3_desc: "مخططات متقدمة للدفاع المحيطي. استخدام أطر عمل الهاكر الأخلاقي المعتمد (CEH) لنشر جدران حماية افتراضية متطورة، والتدقيق الأمني المستمر، والشبكات الفرعية المعزولة، وإدارة الوصول القوية.",
+    services_card3_desc: "تم هندستها بموجب أطر عمل الهكر الأخلاقي المعتمد (CEH) لتأمين محيط الشبكات الحديثة. نحن ننشر جدران حماية افتراضية متطورة، وننشئ حدوداً صارمة للشبكات القائمة على مبدأ صفري الثقة، ونجري عمليات تدقيق تلقائية للثغرات الأمنية، ونصمم لوحات معلومات لقياس مؤشرات التهديد في الوقت الفعلي.",
 
     // The Operational Blueprint
     blueprint_title: "المخطط التشغيلي",

@@ -20,7 +20,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/[0.02] border-b border-white/[0.05] transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#030307]/60 border-b border-white/[0.05] transition-all duration-300">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo with crisp, locked aspect ratio */}

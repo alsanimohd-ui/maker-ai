@@ -44,14 +44,14 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#030307] text-white flex flex-col justify-center overflow-hidden">
-      {/* Background Ambience (Soft Aurora Canvas & Interactive Network Grid) */}
+      {/* 1. Global Ambience Upgrades (Soft Aurora Canvas & Faint 2% Opacity Cybernetic Grid Matrix) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
         style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(29, 78, 216, 0.04) 30%, rgba(0, 0, 0, 0) 70%)' }}
         aria-hidden="true"
       />
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.25] hover:opacity-100 transition-opacity duration-1000 pointer-events-none -z-10"
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none -z-10"
         aria-hidden="true"
       />
 
@@ -160,7 +160,7 @@ export default function Home() {
               <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 {t.metric_workflows_value}
               </span>
-              <span className="text-xs sm:text-sm text-slate-450 font-bold tracking-wider uppercase">
+              <span className="text-xs sm:text-sm text-slate-455 font-bold tracking-wider uppercase">
                 {t.metric_workflows_sub}
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function Home() {
               <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 {t.metric_uptime_value}
               </span>
-              <span className="text-xs sm:text-sm text-slate-450 font-bold tracking-wider uppercase">
+              <span className="text-xs sm:text-sm text-slate-455 font-bold tracking-wider uppercase">
                 {t.metric_uptime_sub}
               </span>
             </div>
@@ -182,7 +182,7 @@ export default function Home() {
               <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 {t.metric_security_value}
               </span>
-              <span className="text-xs sm:text-sm text-slate-450 font-bold tracking-wider uppercase">
+              <span className="text-xs sm:text-sm text-slate-455 font-bold tracking-wider uppercase">
                 {t.metric_security_sub}
               </span>
             </div>
@@ -203,54 +203,78 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            {/* Card 1: SaaS ERP */}
-            <Reveal delay={200}>
-              <div className="h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/30 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.03)] transition-all duration-500 flex flex-col">
-                <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-                  </svg>
+            {/* Card 1: SaaS ERP (Isolated Multi-tenant ERP in Docker & JoFotara E-Invoicing) */}
+            <Reveal delay={200} className="h-full">
+              <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
+                {/* Immersive inner top radial glow on hover */}
+                <div 
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  aria-hidden="true"
+                />
+                
+                <div className="relative z-10">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                    {t.services_card1_title}
+                  </h3>
+                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                    {t.services_card1_desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
-                  {t.services_card1_title}
-                </h3>
-                <p className="text-slate-400/90 text-sm leading-relaxed font-light">
-                  {t.services_card1_desc}
-                </p>
               </div>
             </Reveal>
 
-            {/* Card 2: High-Scale Automation */}
-            <Reveal delay={350}>
-              <div className="h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/30 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.03)] transition-all duration-500 flex flex-col">
-                <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                  </svg>
+            {/* Card 2: High-Scale Automation (Orchestrating 100+ n8n workflows on optimized Linux runtime) */}
+            <Reveal delay={350} className="h-full">
+              <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
+                {/* Immersive inner top radial glow on hover */}
+                <div 
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                <div className="relative z-10">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                    {t.services_card2_title}
+                  </h3>
+                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                    {t.services_card2_desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
-                  {t.services_card2_title}
-                </h3>
-                <p className="text-slate-400/90 text-sm leading-relaxed font-light">
-                  {t.services_card2_desc}
-                </p>
               </div>
             </Reveal>
 
-            {/* Card 3: Network Security */}
-            <Reveal delay={500}>
-              <div className="h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/30 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.03)] transition-all duration-500 flex flex-col">
-                <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
+            {/* Card 3: Network Security (CEH Framework & Virtual Firewalling perimeter defense) */}
+            <Reveal delay={500} className="h-full">
+              <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
+                {/* Immersive inner top radial glow on hover */}
+                <div 
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                <div className="relative z-10">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                    {t.services_card3_title}
+                  </h3>
+                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                    {t.services_card3_desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
-                  {t.services_card3_title}
-                </h3>
-                <p className="text-slate-400/90 text-sm leading-relaxed font-light">
-                  {t.services_card3_desc}
-                </p>
               </div>
             </Reveal>
 
