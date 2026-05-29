@@ -43,11 +43,11 @@ export default function Home() {
   );
 
   return (
-    <div className="relative min-h-screen bg-[#030307] text-white flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen bg-[#030308] text-white flex flex-col justify-center overflow-hidden">
       {/* 1. Global Ambience Upgrades (Soft Aurora Canvas & Faint 2% Opacity Cybernetic Grid Matrix) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
-        style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(29, 78, 216, 0.04) 30%, rgba(0, 0, 0, 0) 70%)' }}
+        style={{ background: 'radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.07) 0%, rgba(2, 2, 5, 0) 70%)' }}
         aria-hidden="true"
       />
       <div 
@@ -128,6 +128,12 @@ export default function Home() {
               {/* Layer 3: The Core Pulsing Glow Sphere */}
               <div 
                 className="w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full absolute pointer-events-none animate-pulse" 
+                aria-hidden="true"
+              />
+
+              {/* Localized ambient turquoise flare behind central logo */}
+              <div 
+                className="bg-cyan-500/10 blur-[70px] w-48 h-48 rounded-full absolute -z-10"
                 aria-hidden="true"
               />
 

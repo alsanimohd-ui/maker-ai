@@ -22,12 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#030307]/70 border-b border-cyan-500/10 transition-all duration-300">
-      {/* Dynamic Glow Line Leak */}
-      <div 
-        className="bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent blur-md h-[2px] w-full absolute bottom-0 left-0"
-        aria-hidden="true"
-      />
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#030308]/40 border-b border-white/[0.03] transition-all duration-300">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo with crisp, locked aspect ratio */}

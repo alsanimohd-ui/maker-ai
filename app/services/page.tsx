@@ -80,11 +80,11 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#030307] text-white flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen bg-[#030308] text-white flex flex-col justify-center overflow-hidden">
       {/* Background Ambience (Soft Aurora Canvas & Faint 2% Opacity Cybernetic Grid Matrix) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
-        style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(29, 78, 216, 0.04) 30%, rgba(0, 0, 0, 0) 70%)' }}
+        style={{ background: 'radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.07) 0%, rgba(2, 2, 5, 0) 70%)' }}
         aria-hidden="true"
       />
       <div 
