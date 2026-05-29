@@ -24,17 +24,17 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "Maker AI | Custom AI Systems & Business Automation",
-  description: "We build tailored AI automation systems, chatbots, smart analytics software, and robust cloud architectures to streamline your operations, reduce costs, and scale your business.",
-  keywords: ["AI automation", "AI chatbots", "business automation", "Cloud DevOps", "smart systems", "artificial intelligence services"],
+  title: "Maker AI | Secure Infrastructure & Business Automation",
+  description: "Delivering secure, scalable multi-tenant SaaS ERP integration, high-performance Linux n8n automation engines, and CEH zero-trust virtual firewalling topologies.",
+  keywords: ["SaaS ERP Integration", "JoFotara compliance", "n8n automation", "Linux automation", "CEH network security", "Virtual Firewalling", "zero-trust architecture", "Maker AI"],
   icons: {
     icon: "/assets/logo/icon-dark.svg",
     shortcut: "/assets/logo/icon-dark.svg",
     apple: "/assets/logo/icon-dark.svg",
   },
   openGraph: {
-    title: "Maker AI | Custom AI Systems & Business Automation",
-    description: "Tailored artificial intelligence systems to automate workflows, engage customers, and optimize systems.",
+    title: "Maker AI | Secure Infrastructure & Business Automation",
+    description: "Delivering secure, scalable multi-tenant SaaS ERP integration, high-performance Linux n8n automation engines, and CEH zero-trust virtual firewalling topologies.",
     type: "website",
     locale: "en_US",
   },

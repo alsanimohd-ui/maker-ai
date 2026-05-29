@@ -85,13 +85,6 @@ export default function Navbar() {
             >
               {lang === "en" ? "العربية" : "English"}
             </button>
-            
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-5 py-2.5 text-sm font-bold text-[#020205] shadow-[0_0_15px_rgba(0,242,254,0.2)] hover:shadow-[0_0_25px_rgba(0,242,254,0.45)] hover:scale-[1.02] transition-all duration-300"
-            >
-              {t.nav_consult}
-            </Link>
           </div>
 
           {/* Mobile menu button, Language & Theme Toggle */}
@@ -183,15 +176,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <div className="mt-4 flex flex-col gap-3">
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] py-3 text-base font-bold text-[#020205] shadow-[0_0_15px_rgba(0,242,254,0.2)] hover:scale-[1.02] transition-all duration-300"
-              >
-                {t.nav_consult}
-              </Link>
-            </div>
           </div>
         </div>
       )}

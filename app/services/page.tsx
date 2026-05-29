@@ -18,30 +18,20 @@ export default function ServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  // 3 true core infrastructure pillars
+  // 3 true core infrastructure pillars loaded dynamically from translations
   const serviceDetails = [
     {
-      title: lang === "ar" ? "عمليات نشر أنظمة SaaS ERP الآمنة" : "Enterprise SaaS ERP Integration",
-      subtitle: lang === "ar" ? "تخطيط موارد المؤسسات داخل بيئات Docker معزولة وممتثلة لـ JoFotara" : "Isolated multi-tenant ERP environments compliant with JoFotara invoicing",
-      impact: lang === "ar"
-        ? "نحن ننشر بيئات تخطيط موارد المؤسسات (ERP) المعزولة ومتعددة المستأجرين داخل حاويات Docker المرنة، مع ضمان استمرارية قوية للبيانات وتنسيق مخصص لوحدات التخزين. تم تصميم البنية الأساسية خصيصاً لتتكامل بسلاسة مع متطلبات نظام الفوترة الإلكترونية الأردني (جو فوتورة - JoFotara)، مما يؤتمت الامتثال والتقارير."
-        : "We deploy isolated, multi-tenant ERP environments inside resilient Docker containers, ensuring robust data persistence and custom volume orchestration. The core architecture is specifically engineered to seamlessly integrate with local Jordanian e-invoicing (JoFotara) requirements, automating compliance and reporting.",
-      problem: lang === "ar" 
-        ? "المشكلة: صعوبة الامتثال لقوانين الفوترة المحلية JoFotara مع الحفاظ على خصوصية بيانات العملاء المتعددين."
-        : "Problem: Navigating local JoFotara invoicing compliance while ensuring tenant data isolation and persistence.",
-      stopsDoing: lang === "ar"
-        ? "ما يتوقف عملك عن فعله يدوياً: إعداد الفواتير الضريبية يدوياً ورفعها للهيئة، وتخزين سجلات البيانات في قواعد بيانات مشتركة غير آمنة."
-        : "What you stop doing manually: Generating taxation invoices by hand for reporting, and managing shared unisolated DB systems.",
-      before: lang === "ar" ? "عمليات يدوية متعبة لإدخال الفواتير ومخاطر عالية في تسريب البيانات." : "Manual tax calculation entries and data vulnerability in shared multi-tenant space.",
-      after: lang === "ar" ? "امتثال فوري مؤتمت لـ JoFotara مع عزل تام للبيانات بفضل Docker." : "Fully automated JoFotara compliance report dispatching and isolated container network.",
-      useCases: lang === "ar" ? [
-        "نشر أنظمة ERP مخصصة ومعزولة لكل فرع أو شركة تابعة",
-        "تكامل مباشر وتلقائي مع نظام الفوترة الإلكترونية الأردني JoFotara",
-        "تأمين قواعد البيانات بالكامل مع نسخ احتياطي دوري مؤتمت",
-      ] : [
-        "Deploying custom ERP software stacks isolated per subsidiary or department",
-        "Direct webhook integrations pushing tax records to JoFotara portal in real-time",
-        "Hardened database storage configuration with automatic volume backups",
+      title: t.services_card1_title,
+      subtitle: t.services_pillar1_subtitle,
+      impact: t.services_pillar1_impact,
+      problem: t.services_pillar1_problem,
+      stopsDoing: t.services_pillar1_stops,
+      before: t.services_pillar1_before,
+      after: t.services_pillar1_after,
+      useCases: [
+        t.services_pillar1_usecase1,
+        t.services_pillar1_usecase2,
+        t.services_pillar1_usecase3,
       ],
       icon: (
         <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -50,27 +40,17 @@ export default function ServicesPage() {
       ),
     },
     {
-      title: lang === "ar" ? "محرك أتمتة Linux واسع النطاق" : "High-Scale Linux Automation Engine",
-      subtitle: lang === "ar" ? "استضافة وإدارة أكثر من 100 خط عمل نشط على بنية n8n تحتية" : "Hosting 100+ active asynchronous n8n workflows on optimized runtimes",
-      impact: lang === "ar"
-        ? "تنسيق أكثر من 100 سير عمل نشط وغير متزامن في n8n المستضافة على مثيلات تشغيل Linux المحسّنة. نحن نصمم خطوط معالجة طلبات الويب (Webhooks) المقاومة للأعطال، وأنظمة إدارة زمام الأمور، ومسارات واجهة البرمجة (API) عالية التردد لمزامنة البيانات التشغيلية دون أي تدخل بشري."
-        : "Orchestrating 100+ active, asynchronous n8n workflows hosted on optimized Linux runtime instances. We engineer fault-tolerant webhooks, queue management systems, and high-frequency cross-platform API pipelines to synchronize operational data without human friction.",
-      problem: lang === "ar"
-        ? "المشكلة: بطء معالجة طلبات الويب وتعطل المهام بسبب ضعف خوادم الأتمتة وصعوبة تكامل الأنظمة المشتتة."
-        : "Problem: Webhook processing drops and delayed jobs due to weak pipeline infrastructure.",
-      stopsDoing: lang === "ar"
-        ? "ما يتوقف عملك عن فعله يدوياً: مزامنة قواعد البيانات التشغيلية يدوياً، وحل مشكلات تعطل واجهات البرمجة (APIs) باستمرار."
-        : "What you stop doing manually: Executing manual CSV reports between tools and debugging broken API hooks daily.",
-      before: lang === "ar" ? "عمليات نقل ملفات بطيئة ومهام متوقفة بسبب انقطاع الاتصال بين الأنظمة." : "Fragmented operations and job failures due to weak server setups and data delays.",
-      after: lang === "ar" ? "سير عمل مؤتمت بالكامل بنسبة تشغيل عالية مع مراقبة حية لأعطال n8n." : "Instant asynchronous n8n workflow pipeline running on hardened CentOS/Ubuntu layers.",
-      useCases: lang === "ar" ? [
-        "بناء مسارات تدفق ومزامنة البيانات التشغيلية لحظياً بين الأنظمة المختلفة",
-        "تصميم نقاط نهاية (Webhooks) آمنة ومقاومة للأعطال والضغط العالي",
-        "تنسيق خطوط العمل على خوادم Ubuntu/CentOS مع معالجة الأخطاء تلقائياً",
-      ] : [
-        "Constructing real-time operational database synchronizations across platforms",
-        "Engineering high-volume secure webhooks that resist request floods",
-        "Managing n8n automation workloads hosted on hardened Ubuntu/CentOS servers",
+      title: t.services_card2_title,
+      subtitle: t.services_pillar2_subtitle,
+      impact: t.services_pillar2_impact,
+      problem: t.services_pillar2_problem,
+      stopsDoing: t.services_pillar2_stops,
+      before: t.services_pillar2_before,
+      after: t.services_pillar2_after,
+      useCases: [
+        t.services_pillar2_usecase1,
+        t.services_pillar2_usecase2,
+        t.services_pillar2_usecase3,
       ],
       icon: (
         <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -79,27 +59,17 @@ export default function ServicesPage() {
       ),
     },
     {
-      title: lang === "ar" ? "جدران الحماية الافتراضية وهندسة صفري الثقة" : "Virtual Firewalling & Zero-Trust Architecture",
-      subtitle: lang === "ar" ? "دفاع محيطي وتحصين أمني مبني وفق معايير الهاكر الأخلاقي CEH" : "Perimeter defense blueprints built under Certified Ethical Hacker standards",
-      impact: lang === "ar"
-        ? "تم هندستها بموجب أطر عمل الهكر الأخلاقي المعتمد (CEH) لتأمين محيط الشبكات الحديثة. نحن ننشر جدران حماية افتراضية متطورة، وننشئ حدوداً صارمة للشبكات القائمة على مبدأ صفري الثقة، ونجري عمليات تدقيق تلقائية للثغرات الأمنية، ونصمم لوحات معلومات لقياس مؤشرات التهديد في الوقت الفعلي."
-        : "Engineered under Certified Ethical Hacker (CEH) frameworks to secure modern network perimeters. We deploy sophisticated virtual firewalls, establish strict zero-trust network boundaries, conduct automated vulnerability auditing, and design real-time threat-scoring dashboards.",
-      problem: lang === "ar"
-        ? "المشكلة: تعرض شبكات الأعمال الداخلية والوصول السحابي لخطر التسلل والهجمات بسبب ضعف الدفاع المحيطي."
-        : "Problem: Exposure of internal subnet hosts to open networks without perimeter defense validation.",
-      stopsDoing: lang === "ar"
-        ? "ما يتوقف عملك عن فعله يدوياً: القلق بشأن نقاط ضعف خوادم السحاب وتتبع الثغرات الأمنية بشكل يدوي."
-        : "What you stop doing manually: Manually checking port listening states and worrying about network breaches.",
-      before: lang === "ar" ? "شبكات غير محمية تفتقر لعزل السيرفرات وأنظمة كشف التهديدات الحية." : "Open, unsegmented subnets easily vulnerable to scanning and privilege escalation.",
-      after: lang === "ar" ? "شبكة محصنة بجدران حماية FortiGate مع عزل تام وتدقيق أمني مستمر." : "Segmented subnets behind FortiGate virtual firewalls with zero-trust credentials.",
-      useCases: lang === "ar" ? [
-        "نشر وإعداد جدران حماية افتراضية متقدمة (مثل FortiGate)",
-        "تقسيم الشبكات السحابية إلى شبكات فرعية معزولة لمنع تسلل الهجمات",
-        "تأسيس نظام متكامل لقياس التهديدات ومراقبة المحيط الأمني لحظياً",
-      ] : [
-        "Deploying and hardening enterprise virtual firewalls (e.g. FortiGate architectures)",
-        "Isolating cloud server instances into secure network subnets to prevent lateral movement",
-        "Establishing continuous perimeter security auditing and real-time threat telemetry",
+      title: t.services_card3_title,
+      subtitle: t.services_pillar3_subtitle,
+      impact: t.services_pillar3_impact,
+      problem: t.services_pillar3_problem,
+      stopsDoing: t.services_pillar3_stops,
+      before: t.services_pillar3_before,
+      after: t.services_pillar3_after,
+      useCases: [
+        t.services_pillar3_usecase1,
+        t.services_pillar3_usecase2,
+        t.services_pillar3_usecase3,
       ],
       icon: (
         <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -127,12 +97,10 @@ export default function ServicesPage() {
         <section className="max-w-7xl mx-auto px-6 w-full text-center mb-16 sm:mb-24">
           <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
             <h1 className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 sm:text-5xl md:text-6xl uppercase">
-              {lang === "ar" ? "أنظمة أتمتة الأعمال المخصصة" : "Bespoke Business Automation"}
+              {t.services_page_title}
             </h1>
             <p className="mt-4 text-lg sm:text-xl text-slate-400/90 max-w-2xl mx-auto leading-relaxed font-light">
-              {lang === "ar" 
-                ? "أنظمة برمجية مخصصة وموجهة لخدمة الأعمال لمساعدتك في تحسين كفاءة العمليات وتقليل التكاليف وتوفير الوقت."
-                : "Tailored, business-focused systems built to optimize operations, cut costs, and secure your workflows."}
+              {t.services_page_sub}
             </p>
           </div>
         </section>
