@@ -18,245 +18,243 @@ export default function ServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
+  // 3 true core infrastructure pillars
   const serviceDetails = [
     {
-      title: lang === "ar" ? "أتمتة البيانات والعمليات" : "Data & Process Automation",
-      subtitle: lang === "ar" ? "تخلص من إدخال البيانات اليدوي بالكامل وسرّع سير العمل." : "Eliminate manual data entry entirely and speed up daily workflows.",
+      title: lang === "ar" ? "عمليات نشر أنظمة SaaS ERP الآمنة" : "Enterprise SaaS ERP Integration",
+      subtitle: lang === "ar" ? "تخطيط موارد المؤسسات داخل بيئات Docker معزولة وممتثلة لـ JoFotara" : "Isolated multi-tenant ERP environments compliant with JoFotara invoicing",
       impact: lang === "ar"
-        ? "نوفر ما يصل إلى 20-30 ساعة أسبوعياً لكل موظف عن طريق جعل الأنظمة تقرأ المستندات، وتنقل البيانات، وتحدث السجلات بشكل تلقائي."
-        : "We save up to 20-30 hours per week per employee by getting systems to read documents, transfer data, and update records automatically.",
+        ? "نحن ننشر بيئات تخطيط موارد المؤسسات (ERP) المعزولة ومتعددة المستأجرين داخل حاويات Docker المرنة، مع ضمان استمرارية قوية للبيانات وتنسيق مخصص لوحدات التخزين. تم تصميم البنية الأساسية خصيصاً لتتكامل بسلاسة مع متطلبات نظام الفوترة الإلكترونية الأردني (جو فوتورة - JoFotara)، مما يؤتمت الامتثال والتقارير."
+        : "We deploy isolated, multi-tenant ERP environments inside resilient Docker containers, ensuring robust data persistence and custom volume orchestration. The core architecture is specifically engineered to seamlessly integrate with local Jordanian e-invoicing (JoFotara) requirements, automating compliance and reporting.",
       problem: lang === "ar" 
-        ? "المشكلة: الموظفون يضيعون ساعات في نسخ الفواتير، ونقل البيانات بين الأنظمة، وتحديث جداول البيانات يدوياً."
-        : "Problem: Employees waste hours copy-pasting invoice details, transferring files between tools, and updating spreadsheets manually.",
+        ? "المشكلة: صعوبة الامتثال لقوانين الفوترة المحلية JoFotara مع الحفاظ على خصوصية بيانات العملاء المتعددين."
+        : "Problem: Navigating local JoFotara invoicing compliance while ensuring tenant data isolation and persistence.",
       stopsDoing: lang === "ar"
-        ? "ما يتوقف المستخدم عن فعله يدوياً: تنزيل الفواتير، إعادة كتابة الأسماء والأرقام، وتنسيق الملفات يدوياً."
-        : "What you stop doing manually: Downloading PDFs, retyping vendor names and totals, and formatting reports by hand.",
-      before: lang === "ar" ? "إدخال يدوي للبيانات وتكرار العمل مع احتمالية كبيرة للخطأ البشري." : "Repetitive manual data entry and formatting with a high risk of human error.",
-      after: lang === "ar" ? "تتدفق البيانات تلقائيًا بين الأنظمة مع انعدام إدخال البيانات اليدوي." : "Data flows automatically between tools in seconds with zero manual input required.",
+        ? "ما يتوقف عملك عن فعله يدوياً: إعداد الفواتير الضريبية يدوياً ورفعها للهيئة، وتخزين سجلات البيانات في قواعد بيانات مشتركة غير آمنة."
+        : "What you stop doing manually: Generating taxation invoices by hand for reporting, and managing shared unisolated DB systems.",
+      before: lang === "ar" ? "عمليات يدوية متعبة لإدخال الفواتير ومخاطر عالية في تسريب البيانات." : "Manual tax calculation entries and data vulnerability in shared multi-tenant space.",
+      after: lang === "ar" ? "امتثال فوري مؤتمت لـ JoFotara مع عزل تام للبيانات بفضل Docker." : "Fully automated JoFotara compliance report dispatching and isolated container network.",
       useCases: lang === "ar" ? [
-        "معالجة فواتير PDF تلقائياً وإرسالها مباشرة إلى نظام المحاسبة",
-        "تحديث قواعد بيانات العملاء لحظياً فور حدوث عمليات الشراء",
-        "استخراج البيانات من رسائل البريد الإلكتروني وتحديث أنظمة إدارة علاقات العملاء CRM",
+        "نشر أنظمة ERP مخصصة ومعزولة لكل فرع أو شركة تابعة",
+        "تكامل مباشر وتلقائي مع نظام الفوترة الإلكترونية الأردني JoFotara",
+        "تأمين قواعد البيانات بالكامل مع نسخ احتياطي دوري مؤتمت",
       ] : [
-        "Processing PDF invoices and uploading them directly to your accounting system",
-        "Updating client database records instantly when a new purchase occurs",
-        "Extracting customer data from incoming emails to update CRM pipelines",
+        "Deploying custom ERP software stacks isolated per subsidiary or department",
+        "Direct webhook integrations pushing tax records to JoFotara portal in real-time",
+        "Hardened database storage configuration with automatic volume backups",
       ],
       icon: (
-        <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+        <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
         </svg>
       ),
     },
     {
-      title: lang === "ar" ? "روبوتات الدردشة والدعم الذكي" : "AI Chatbots & Support",
-      subtitle: lang === "ar" ? "دعم وتأهيل للمبيعات على مدار الساعة دون طوابير انتظار يدوية." : "Support and sales qualification around the clock without manual support queues.",
+      title: lang === "ar" ? "محرك أتمتة Linux واسع النطاق" : "High-Scale Linux Automation Engine",
+      subtitle: lang === "ar" ? "استضافة وإدارة أكثر من 100 خط عمل نشط على بنية n8n تحتية" : "Hosting 100+ active asynchronous n8n workflows on optimized runtimes",
       impact: lang === "ar"
-        ? "يستجيب على الفور لـ 80% من أسئلة العملاء الروتينية، مما يقلل تكاليف الدعم مع تصفية وتأهيل العملاء المحتملين تلقائياً."
-        : "Responds instantly to 80% of routine client questions, reducing support costs while filtering and qualifying incoming leads automatically.",
+        ? "تنسيق أكثر من 100 سير عمل نشط وغير متزامن في n8n المستضافة على مثيلات تشغيل Linux المحسّنة. نحن نصمم خطوط معالجة طلبات الويب (Webhooks) المقاومة للأعطال، وأنظمة إدارة زمام الأمور، ومسارات واجهة البرمجة (API) عالية التردد لمزامنة البيانات التشغيلية دون أي تدخل بشري."
+        : "Orchestrating 100+ active, asynchronous n8n workflows hosted on optimized Linux runtime instances. We engineer fault-tolerant webhooks, queue management systems, and high-frequency cross-platform API pipelines to synchronize operational data without human friction.",
       problem: lang === "ar"
-        ? "المشكلة: بطء وقت الاستجابة للعملاء خارج ساعات العمل مما يؤدي لخسارة عملاء محتملين."
-        : "Problem: Slow response times to customer inquiries outside business hours leads to missed pipeline opportunities.",
+        ? "المشكلة: بطء معالجة طلبات الويب وتعطل المهام بسبب ضعف خوادم الأتمتة وصعوبة تكامل الأنظمة المشتتة."
+        : "Problem: Webhook processing drops and delayed jobs due to weak pipeline infrastructure.",
       stopsDoing: lang === "ar"
-        ? "ما يتوقف المستخدم عن فعله يدوياً: الرد على نفس الأسئلة الشائعة وتأهيل العملاء المحتملين البسيط يدوياً."
-        : "What you stop doing manually: Answering the exact same support questions repeatedly and profiling basic leads yourself.",
-      before: lang === "ar" ? "تراكم تذاكر الدعم وخسارة العملاء المحتملين لعدم الرد خارج ساعات العمل." : "Lead drop-offs and support ticket backlogs because of delayed off-hours responses.",
-      after: lang === "ar" ? "ردود فورية على الأسئلة الشائعة وتصفية وتأهيل فوري للعملاء على مدار الساعة." : "Instant support answers and automated lead profiling active 24 hours a day.",
+        ? "ما يتوقف عملك عن فعله يدوياً: مزامنة قواعد البيانات التشغيلية يدوياً، وحل مشكلات تعطل واجهات البرمجة (APIs) باستمرار."
+        : "What you stop doing manually: Executing manual CSV reports between tools and debugging broken API hooks daily.",
+      before: lang === "ar" ? "عمليات نقل ملفات بطيئة ومهام متوقفة بسبب انقطاع الاتصال بين الأنظمة." : "Fragmented operations and job failures due to weak server setups and data delays.",
+      after: lang === "ar" ? "سير عمل مؤتمت بالكامل بنسبة تشغيل عالية مع مراقبة حية لأعطال n8n." : "Instant asynchronous n8n workflow pipeline running on hardened CentOS/Ubuntu layers.",
       useCases: lang === "ar" ? [
-        "روبوتات دردشة ذكية تجيب على الأسئلة الشائعة للعملاء بدقة",
-        "تأهيل مسبق للعملاء المحتملين وحجز المواعيد على التقويم تلقائياً",
-        "توجيه القضايا المعقدة تلقائياً إلى موظف الدعم البشري المناسب",
+        "بناء مسارات تدفق ومزامنة البيانات التشغيلية لحظياً بين الأنظمة المختلفة",
+        "تصميم نقاط نهاية (Webhooks) آمنة ومقاومة للأعطال والضغط العالي",
+        "تنسيق خطوط العمل على خوادم Ubuntu/CentOS مع معالجة الأخطاء تلقائياً",
       ] : [
-        "Intelligent chatbots that resolve website visitor questions accurately",
-        "Pre-qualifying leads and booking consultation calls on calendars automatically",
-        "Routing complex support issues to the correct human support member instantly",
+        "Constructing real-time operational database synchronizations across platforms",
+        "Engineering high-volume secure webhooks that resist request floods",
+        "Managing n8n automation workloads hosted on hardened Ubuntu/CentOS servers",
       ],
       icon: (
-        <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+        <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
       ),
     },
     {
-      title: lang === "ar" ? "تكامل الأنظمة والسحابة" : "System Integration & Cloud",
-      subtitle: lang === "ar" ? "بنية تحتية سحابية آمنة وسريعة تربط جميع برمجياتك معاً." : "Secure, fast cloud setup that connects all your software tools together.",
+      title: lang === "ar" ? "جدران الحماية الافتراضية وهندسة صفري الثقة" : "Virtual Firewalling & Zero-Trust Architecture",
+      subtitle: lang === "ar" ? "دفاع محيطي وتحصين أمني مبني وفق معايير الهاكر الأخلاقي CEH" : "Perimeter defense blueprints built under Certified Ethical Hacker standards",
       impact: lang === "ar"
-        ? "نضمن بقاء أنظمتك متصلة بالإنترنت دائماً بنسبة تشغيل 99.9%، ونربط الأدوات ببعضها لتجنب الجزر المنعزلة للبيانات."
-        : "We guarantee your systems stay online with 99.9% uptime, connecting tools directly so your business data isn't siloed.",
+        ? "تم هندستها بموجب أطر عمل الهكر الأخلاقي المعتمد (CEH) لتأمين محيط الشبكات الحديثة. نحن ننشر جدران حماية افتراضية متطورة، وننشئ حدوداً صارمة للشبكات القائمة على مبدأ صفري الثقة، ونجري عمليات تدقيق تلقائية للثغرات الأمنية، ونصمم لوحات معلومات لقياس مؤشرات التهديد في الوقت الفعلي."
+        : "Engineered under Certified Ethical Hacker (CEH) frameworks to secure modern network perimeters. We deploy sophisticated virtual firewalls, establish strict zero-trust network boundaries, conduct automated vulnerability auditing, and design real-time threat-scoring dashboards.",
       problem: lang === "ar"
-        ? "المشكلة: الأدوات لا تتحدث مع بعضها، مما يتطلب تنزيل البيانات يدوياً ورفعها لتحديث قواعد البيانات."
-        : "Problem: Operations software tools don't communicate, forcing manual updates and siloed records.",
+        ? "المشكلة: تعرض شبكات الأعمال الداخلية والوصول السحابي لخطر التسلل والهجمات بسبب ضعف الدفاع المحيطي."
+        : "Problem: Exposure of internal subnet hosts to open networks without perimeter defense validation.",
       stopsDoing: lang === "ar"
-        ? "ما يتوقف المستخدم عن فعله يدوياً: تصدير ورفع ملفات CSV يدوياً وتتبع تحديثات البيانات بين الأنظمة المختلفة."
-        : "What you stop doing manually: Exporting CSVs, uploading user credentials, and tracking data syncs across tools.",
-      before: lang === "ar" ? "تحديث يدوي للملفات وتشتت البيانات بين أدوات متعددة غير مترابطة." : "Manual data syncing and siloed records across multiple disconnected platforms.",
+        ? "ما يتوقف عملك عن فعله يدوياً: القلق بشأن نقاط ضعف خوادم السحاب وتتبع الثغرات الأمنية بشكل يدوي."
+        : "What you stop doing manually: Manually checking port listening states and worrying about network breaches.",
+      before: lang === "ar" ? "شبكات غير محمية تفتقر لعزل السيرفرات وأنظمة كشف التهديدات الحية." : "Open, unsegmented subnets easily vulnerable to scanning and privilege escalation.",
+      after: lang === "ar" ? "شبكة محصنة بجدران حماية FortiGate مع عزل تام وتدقيق أمني مستمر." : "Segmented subnets behind FortiGate virtual firewalls with zero-trust credentials.",
       useCases: lang === "ar" ? [
-        "ربط المتاجر الإلكترونية بموردي المخزون تلقائياً عبر واجهات البرمجة APIs",
-        "تأمين وتشفير استضافات قواعد بيانات العملاء على سحابة AWS أو Google Cloud",
-        "إجراء نسخ احتياطي مؤتمت وخطة تعافي تشغيلية كاملة لحماية البيانات",
+        "نشر وإعداد جدران حماية افتراضية متقدمة (مثل FortiGate)",
+        "تقسيم الشبكات السحابية إلى شبكات فرعية معزولة لمنع تسلل الهجمات",
+        "تأسيس نظام متكامل لقياس التهديدات ومراقبة المحيط الأمني لحظياً",
       ] : [
-        "Connecting storefronts with supply chains and suppliers via custom APIs",
-        "Securing and hosting customer database environments on AWS or Google Cloud",
-        "Automated backup pipelines and database disaster recovery plans",
+        "Deploying and hardening enterprise virtual firewalls (e.g. FortiGate architectures)",
+        "Isolating cloud server instances into secure network subnets to prevent lateral movement",
+        "Establishing continuous perimeter security auditing and real-time threat telemetry",
       ],
       icon: (
-        <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-        </svg>
-      ),
-    },
-    {
-      title: lang === "ar" ? "التقارير ولوحات البيانات" : "Reporting & Dashboards",
-      subtitle: lang === "ar" ? "لوحات معلومات تفاعلية تجمع بياناتك لحظياً في مكان واحد." : "Data dashboards that collect and display your metrics in one place.",
-      impact: lang === "ar"
-        ? "نحول السجلات المعقدة والبيانات المشتتة إلى لوحات معلومات نظيفة ومحدثة باستمرار لمساعدتك في اتخاذ قرارات دقيقة."
-        : "We compile complex business records and spreadsheet files into clean visual summaries to help management make accurate decisions.",
-      problem: lang === "ar"
-        ? "المشكلة: قضاء الساعات في نهاية كل أسبوع لتجميع التقارير وحساب العائد على الاستثمار يدوياً."
-        : "Problem: Spending hours at the end of the week gathering reports and typing calculations manually.",
-      stopsDoing: lang === "ar"
-        ? "ما يتوقف المستخدم عن فعله يدوياً: سحب البيانات من منصات الإعلانات، المبيعات، والتحليلات وحساب الأرقام يدوياً."
-        : "What you stop doing manually: Pulling records from ad networks, sales CRM, and Web analytics to build weekly tables.",
-      before: lang === "ar" ? "سجلات مشتتة وتقارير متأخرة أو غير دقيقة تُبنى يدوياً." : "Siloed sheets and delayed weekly reports that require manual mathematical entries.",
-      useCases: lang === "ar" ? [
-        "لوحات تحليلات تفاعلية تجمع المبيعات والمصروفات والتكاليف لحظياً",
-        "نظام إرسال تقرير الأداء التشغيلي تلقائياً صباح كل جمعة إلى بريد الإدارة",
-        "تنبيهات فورية للمشكلات والأعطال في العمليات التشغيلية",
-      ] : [
-        "Interactive analytics dashboards compiling sales and advertising spend in real-time",
-        "Automated report deliveries sent to management email addresses every week",
-        "Anomaly detection alerts notifying operations teams of processing drops instantly",
-      ],
-      icon: (
-        <svg className="h-10 w-10 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+        <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
       ),
     },
   ];
 
   return (
-    <div className="flex flex-col w-full py-16 sm:py-24 overflow-hidden">
-      {/* Header section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center mb-16 sm:mb-24">
-        <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
-          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-900 to-slate-850 dark:from-slate-100 dark:via-slate-50 dark:to-slate-200 sm:text-5xl md:text-6xl">
-            {lang === "ar" ? "أتمتة الأعمال المخصصة" : "Bespoke Business Automation"}
-          </h1>
-          <p className="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            {lang === "ar" 
-              ? "أنظمة برمجية مخصصة وموجهة لخدمة الأعمال لمساعدتك في تحسين كفاءة العمليات وتقليل التكاليف وتوفير الوقت."
-              : "Tailored, business-focused systems built to optimize operations, cut costs, and save your team hours of manual work."}
-          </p>
-        </div>
-      </section>
+    <div className="relative min-h-screen bg-[#030307] text-white flex flex-col justify-center overflow-hidden">
+      {/* Background Ambience (Soft Aurora Canvas & Faint 2% Opacity Cybernetic Grid Matrix) */}
+      <div 
+        className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
+        style={{ backgroundImage: 'radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, rgba(29, 78, 216, 0.04) 30%, rgba(0, 0, 0, 0) 70%)' }}
+        aria-hidden="true"
+      />
+      <div 
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none -z-10"
+        aria-hidden="true"
+      />
 
-      {/* Services detailed listing */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-24 sm:space-y-36">
-        {serviceDetails.map((service, index) => {
-          const isEven = index % 2 === 0;
-          return (
-            <div
-              key={index}
-              className={`flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-stretch ${
-                isEven ? "" : "lg:flex-row-reverse"
-              }`}
-            >
-              {/* Service Details Card */}
-              <div className="w-full lg:w-1/2 flex">
-                <Reveal
-                  delay={100}
-                  className="group flex flex-col w-full rounded-3xl p-8 sm:p-10 relative overflow-hidden card-neon-border"
-                >
-                  <div className={`absolute top-0 ${lang === "ar" ? "left-0 rounded-br-full" : "right-0 rounded-bl-full"} w-24 h-24 bg-brand/2`} />
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand/10 border border-brand/20 mb-6 group-hover:border-brand/45 group-hover:bg-brand/20 shadow-[0_0_15px_rgba(14,179,186,0.15)] group-hover:shadow-[0_0_25px_rgba(14,179,186,0.35)] transition-all duration-300">
-                    {service.icon}
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-brand transition-colors duration-300">{service.title}</h2>
-                  <p className="text-brand font-semibold text-sm mb-4">{service.subtitle}</p>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                    {service.impact}
-                  </p>
+      <div className="flex flex-col w-full py-24 sm:py-32 z-10">
+        {/* Header section */}
+        <section className="max-w-7xl mx-auto px-6 w-full text-center mb-16 sm:mb-24">
+          <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
+            <h1 className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 sm:text-5xl md:text-6xl uppercase">
+              {lang === "ar" ? "أنظمة أتمتة الأعمال المخصصة" : "Bespoke Business Automation"}
+            </h1>
+            <p className="mt-4 text-lg sm:text-xl text-slate-400/90 max-w-2xl mx-auto leading-relaxed font-light">
+              {lang === "ar" 
+                ? "أنظمة برمجية مخصصة وموجهة لخدمة الأعمال لمساعدتك في تحسين كفاءة العمليات وتقليل التكاليف وتوفير الوقت."
+                : "Tailored, business-focused systems built to optimize operations, cut costs, and secure your workflows."}
+            </p>
+          </div>
+        </section>
 
-                  <div className="mt-4 border-t border-slate-200/80 dark:border-slate-800/80 pt-4 text-xs space-y-3">
-                    <p className="text-slate-500 dark:text-slate-400 font-medium">{service.problem}</p>
-                    <p className="text-slate-500 dark:text-slate-400 font-medium">{service.stopsDoing}</p>
-                  </div>
-                </Reveal>
-              </div>
+        {/* Services detailed listing */}
+        <section className="max-w-7xl mx-auto px-6 w-full space-y-24 sm:space-y-36">
+          {serviceDetails.map((service, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div
+                key={index}
+                className={`flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-stretch ${
+                  isEven ? "" : "lg:flex-row-reverse"
+                }`}
+              >
+                {/* Service Details Card */}
+                <div className="w-full lg:w-1/2 flex">
+                  <Reveal
+                    delay={100}
+                    className="group flex flex-col w-full rounded-[24px] p-8 sm:p-10 relative overflow-hidden backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500"
+                  >
+                    {/* Immersive inner top radial glow on hover */}
+                    <div 
+                      className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      aria-hidden="true"
+                    />
 
-              {/* Before/After and Common Use Cases */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-between py-2">
-                <Reveal delay={255} className="flex flex-col space-y-6">
-                  {/* Before / After visual block */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-4">
-                    <div className="flex flex-col bg-red-50/50 dark:bg-red-950/20 border border-red-100/80 dark:border-red-900/40 rounded-xl p-4.5">
-                      <span className="text-red-600 dark:text-red-400 font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "قبل الأتمتة" : "Before Automation"}</span>
-                      <p className="text-slate-500 dark:text-slate-400 leading-relaxed">{service.before}</p>
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-955/20 border border-cyan-500/20 mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                        {service.icon}
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.title}
+                      </h2>
+                      <p className="text-cyan-400 font-semibold text-sm mb-4">
+                        {service.subtitle}
+                      </p>
+                      <p className="text-sm text-slate-400/90 leading-relaxed mb-6 font-light">
+                        {service.impact}
+                      </p>
+
+                      <div className="mt-auto border-t border-white/[0.05] pt-4 text-xs space-y-3">
+                        <p className="text-slate-500 font-medium">{service.problem}</p>
+                        <p className="text-slate-500 font-medium">{service.stopsDoing}</p>
+                      </div>
                     </div>
-                    <div className="flex flex-col bg-teal-50/50 dark:bg-teal-950/20 border border-brand/20 dark:border-brand/40 rounded-xl p-4.5">
-                      <span className="text-brand font-bold uppercase tracking-wider mb-2">{lang === "ar" ? "بعد الأتمتة" : "After Automation"}</span>
-                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.after}</p>
-                    </div>
-                  </div>
+                  </Reveal>
+                </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white uppercase tracking-wide">
-                    {lang === "ar" ? "تطبيقات وحالات استخدام شائعة" : "Common Applications & Use Cases"}
-                  </h3>
-                  <ul className="space-y-4">
-                    {service.useCases.map((useCase, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand/10 text-brand flex items-center justify-center">
-                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-                          {useCase}
+                {/* Before/After and Common Use Cases */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-between py-2">
+                  <Reveal delay={255} className="flex flex-col space-y-6">
+                    {/* Before / After visual block */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-4">
+                      <div className="flex flex-col bg-red-950/20 border border-red-900/40 rounded-xl p-4.5">
+                        <span className="text-red-500 font-bold uppercase tracking-wider mb-2">
+                          {lang === "ar" ? "قبل الأتمتة" : "Before Automation"}
                         </span>
-                      </li>
-                    ))}
-                  </ul>
-                </Reveal>
+                        <p className="text-slate-400 leading-relaxed font-light">{service.before}</p>
+                      </div>
+                      <div className="flex flex-col bg-cyan-955/20 border border-cyan-500/20 rounded-xl p-4.5">
+                        <span className="text-cyan-400 font-bold uppercase tracking-wider mb-2">
+                          {lang === "ar" ? "بعد الأتمتة" : "After Automation"}
+                        </span>
+                        <p className="text-slate-300 leading-relaxed font-medium">{service.after}</p>
+                      </div>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-white uppercase tracking-wide">
+                      {lang === "ar" ? "تطبيقات وحالات استخدام شائعة" : "Common Applications & Use Cases"}
+                    </h3>
+                    <ul className="space-y-4">
+                      {service.useCases.map((useCase, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-cyan-400/10 text-cyan-400 flex items-center justify-center">
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <span className="text-sm sm:text-base text-slate-400/90 leading-relaxed font-light">
+                            {useCase}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                </div>
               </div>
+            );
+          })}
+        </section>
+
+        {/* Call to Action */}
+        <section className="mt-24 sm:mt-32 max-w-6xl mx-auto px-6 w-full text-center">
+          <Reveal className="backdrop-blur-xl bg-white/[0.01] border border-white/[0.05] rounded-3xl p-10 sm:p-20 relative overflow-hidden shadow-2xl shadow-cyan-950/25">
+            <div className="absolute top-[-35%] left-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent blur-[100px]" />
+            <div className="absolute bottom-[-35%] right-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/10 via-purple-600/5 to-transparent blur-[100px]" />
+            
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-950/20 px-3.5 py-1 text-xs font-semibold text-cyan-400 mb-6 backdrop-blur-md relative z-10">
+              {lang === "ar" ? "التدقيق التشغيلي" : "Operational Audit"}
             </div>
-          );
-        })}
-      </section>
 
-      {/* Call to Action */}
-      <section className="mt-24 sm:mt-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-        <Reveal className="bg-gradient-to-br from-indigo-950 via-slate-950 to-black border border-slate-900 rounded-3xl p-10 sm:p-20 relative overflow-hidden shadow-2xl shadow-indigo-950/40">
-          {/* Background floating glow for CTA */}
-          <div className="absolute top-[-35%] left-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-brand/30 via-cyan-500/15 to-transparent blur-[100px]" />
-          <div className="absolute bottom-[-35%] right-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/30 via-purple-600/15 to-transparent blur-[100px]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand/5 via-transparent to-indigo-500/5 opacity-40 -z-20" />
-          
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-xs font-semibold text-brand mb-6 backdrop-blur-md relative z-10">
-            {lang === "ar" ? "التدقيق التشغيلي" : "Operational Audit"}
-          </div>
-
-          <h2 className="text-3xl font-extrabold text-white mb-6 relative z-10 leading-tight">
-            {lang === "ar" ? "هل تبحث عن إزالة الاختناقات التشغيلية؟" : "Looking to remove operational bottlenecks?"}
-          </h2>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed relative z-10">
-            {lang === "ar" 
-              ? "احجز جلسة تدقيق مجانية مدتها 30 دقيقة لنحدد فيها معاً أين يفقد عملك الوقت والأموال وكيفية أتمتة الأنظمة."
-              : "Book a free 30-minute operational audit. We will map out exactly where you are losing time and how to automate it."}
-          </p>
-          <div className="relative z-10 inline-block group">
-            {/* Button Glow Halo */}
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-brand to-indigo-500 blur-xl rounded-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow" />
-            <Link
-              href="/contact"
-              className="relative inline-flex items-center justify-center rounded-xl bg-brand px-8 py-4 text-base font-bold text-[#05070a] hover:bg-brand-hover hover:scale-[1.03] shadow-[0_0_20px_rgba(14,179,186,0.35)] hover:shadow-[0_0_35px_rgba(14,179,186,0.6)] transition-all duration-300 cursor-pointer"
-            >
-              {t.services_page_why_btn}
-            </Link>
-          </div>
-        </Reveal>
-      </section>
+            <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 relative z-10 leading-tight">
+              {lang === "ar" ? "هل تبحث عن إزالة الاختناقات التشغيلية؟" : "Looking to remove operational bottlenecks?"}
+            </h2>
+            <p className="text-slate-400/90 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed relative z-10 font-light">
+              {lang === "ar" 
+                ? "احجز جلسة تدقيق مجانية مدتها 30 دقيقة لنحدد فيها معاً أين يفقد عملك الوقت والأموال وكيفية أتمتة الأنظمة."
+                : "Book a free 30-minute operational audit. We will map out exactly where you are losing time and how to automate it."}
+            </p>
+            <div className="relative z-10 inline-block group">
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-teal-500 blur-xl rounded-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+              <Link
+                href="/contact"
+                className="relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-black tracking-wide uppercase text-[#020205] shadow-[0_0_20px_rgba(0,242,254,0.2)] hover:scale-[1.02] border border-cyan-300/10 transition-all duration-300 cursor-pointer"
+              >
+                {t.services_page_why_btn}
+              </Link>
+            </div>
+          </Reveal>
+        </section>
+      </div>
     </div>
   );
 }
