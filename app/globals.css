@@ -4,7 +4,7 @@
 
 :root {
   /* Default Theme = DARK Mode Variables */
-  --background: #05070a;
+  --background: #030308;
   --foreground: #f8fafc;
   --card-bg: rgba(13, 18, 30, 0.45);
   --card-border-default: rgba(255, 255, 255, 0.08);
@@ -23,9 +23,9 @@
   --scrollbar-thumb-hover: #0eb3ba;
   
   /* Dynamic Background Gradients */
-  --bg-gradient-from: #05070a;
-  --bg-gradient-via: #0a0e17;
-  --bg-gradient-to: #05070a;
+  --bg-gradient-from: #030308;
+  --bg-gradient-via: #05050c;
+  --bg-gradient-to: #030308;
 }
 
 html.light {

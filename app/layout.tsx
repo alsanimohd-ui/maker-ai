@@ -52,7 +52,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground relative overflow-x-hidden">
         {/* Dynamic Background System */}
-        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none bg-gradient-to-tr from-[var(--bg-gradient-from)] via-[var(--bg-gradient-via)] to-[var(--bg-gradient-to)] transition-colors duration-500 animate-bg-slow">
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none select-none bg-gradient-to-tr from-[var(--bg-gradient-from)] via-[var(--bg-gradient-via)] to-[var(--bg-gradient-to)] transition-colors duration-500 animate-bg-slow">
           {/* Ambient Grid Overlay */}
           <div className="absolute inset-0 bg-grid-masked" />
 
@@ -84,14 +84,17 @@ export default function RootLayout({
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[45vh] min-w-[650px] rounded-full bg-brand/[0.06] blur-[120px] animate-spotlight" />
         </div>
 
-        <ThemeProvider>
-          <LanguageProvider>
-            <Navbar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-            <ChatBot />
-          </LanguageProvider>
-        </ThemeProvider>
+        {/* Content Stacking Layer wrapper */}
+        <div className="relative z-10 min-h-full flex flex-col flex-grow">
+          <ThemeProvider>
+            <LanguageProvider>
+              <Navbar />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+              <ChatBot />
+            </LanguageProvider>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
