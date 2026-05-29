@@ -15,13 +15,19 @@ export default function Navbar() {
   const t = translations[lang];
 
   const navLinks = [
+    { name: t.nav_home, href: "/" },
     { name: t.nav_services, href: "/services" },
-    { name: t.nav_workspace, href: "#" },
+    { name: t.nav_workspace, href: "https://mi.maker-ai.tech" },
     { name: t.nav_contact, href: "/contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#030307]/60 border-b border-white/[0.05] transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#030307]/70 border-b border-cyan-500/10 transition-all duration-300">
+      {/* Dynamic Glow Line Leak */}
+      <div 
+        className="bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent blur-md h-[2px] w-full absolute bottom-0 left-0"
+        aria-hidden="true"
+      />
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo with crisp, locked aspect ratio */}
@@ -43,14 +49,16 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
+              const isExternal = link.href.startsWith("http");
               return (
                 <Link
                   key={link.name}
                   href={link.href}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`text-sm font-medium transition-all duration-200 tracking-wide uppercase hover:text-cyan-400 ${
                     isActive
                       ? "text-cyan-450 font-bold"
-                      : "text-slate-300"
+                      : "text-slate-350"
                   }`}
                 >
                   {link.name}
@@ -161,11 +169,13 @@ export default function Navbar() {
           <div className="space-y-1 px-4 pb-4 pt-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
+              const isExternal = link.href.startsWith("http");
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     isActive
                       ? "bg-white/[0.03] text-cyan-400"

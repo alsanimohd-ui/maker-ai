@@ -81,7 +81,9 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
                 {/* Primary Launch button */}
                 <Link
-                  href="#"
+                  href="https://mi.maker-ai.tech"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-black tracking-wide uppercase text-[#020205] shadow-[0_0_30px_rgba(0,242,254,0.35)] hover:shadow-[0_0_50px_rgba(0,242,254,0.7)] border border-cyan-300/10 active:scale-95 transition-all duration-300"
                 >
                   {t.hero_btn_launch}
