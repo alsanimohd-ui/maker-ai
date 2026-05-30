@@ -15,14 +15,15 @@ export default function Navbar() {
   const t = translations[lang];
 
   const navLinks = [
-    { name: t.nav_home, href: "/" },
-    { name: t.nav_services, href: "/services" },
-    { name: t.nav_workspace, href: "https://mi.maker-ai.tech" },
-    { name: t.nav_contact, href: "/contact" },
+    { name: t.nav_home,      href: "/" },
+    { name: t.nav_services,  href: "/services" },
+    { name: t.nav_workspace, href: "https://mi.maker-ai.tech", external: true },
+    { name: t.nav_contact,   href: "/contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[var(--navbar-bg)] border-b border-[var(--card-border-default)] shadow-[var(--navbar-shadow)] transition-all duration-300">
+    <header className="navbar-neon-glow sticky top-0 z-50 w-full backdrop-blur-2xl bg-[var(--navbar-bg)] border-b border-[var(--navbar-border)] transition-all duration-300"
+      style={{ boxShadow: 'var(--navbar-shadow)' }}>
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo with crisp, locked aspect ratio */}
@@ -32,10 +33,10 @@ export default function Navbar() {
               className="flex items-center gap-2 hover:scale-[1.01] transition-all duration-300"
             >
               <img
-                src="/assets/logo/logo-color.svg"
+                src={theme === "dark" ? "/assets/logo/logo-color.svg" : "/assets/logo/logo-color.svg"}
                 alt="Maker AI Logo"
                 className="h-9 w-auto object-contain"
-                style={{ aspectRatio: "240/64" }} // Locked aspect ratio
+                style={{ aspectRatio: "240/64" }}
               />
             </Link>
           </div>

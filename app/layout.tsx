@@ -52,36 +52,44 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground relative overflow-x-hidden">
         {/* Dynamic Background System */}
-        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none select-none bg-gradient-to-tr from-[var(--bg-gradient-from)] via-[var(--bg-gradient-via)] to-[var(--bg-gradient-to)] transition-colors duration-500 animate-bg-slow">
-          {/* Ambient Grid Overlay */}
-          <div className="absolute inset-0 bg-grid-masked" />
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none select-none transition-colors duration-500"
+          style={{ background: 'linear-gradient(135deg, var(--bg-gradient-from) 0%, var(--bg-gradient-via) 50%, var(--bg-gradient-to) 100%)' }}>
 
-          {/* SVG filter definition for liquid smoke distortion */}
-          <svg className="hidden" xmlns="http://www.w3.org/2000/svg">
+          {/* Ultra-subtle micro-mesh grid (80px cells, radially masked, ≤2% opacity) */}
+          <div className="absolute inset-0 bg-grid-masked" aria-hidden="true" />
+
+          {/* SVG filter: organic liquid-smoke distortion for aurora blobs */}
+          <svg className="hidden" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <filter id="liquid-smoke">
-                <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" result="noise">
-                  <animate attributeName="baseFrequency" values="0.006 0.009; 0.010 0.014; 0.006 0.009" dur="45s" repeatCount="indefinite" />
+                <feTurbulence type="fractalNoise" baseFrequency="0.005 0.008" numOctaves="4" result="noise">
+                  <animate attributeName="baseFrequency" values="0.005 0.008;0.009 0.013;0.005 0.008" dur="50s" repeatCount="indefinite" />
                 </feTurbulence>
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="35" xChannelSelector="R" yChannelSelector="G" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="28" xChannelSelector="R" yChannelSelector="G" />
               </filter>
             </defs>
           </svg>
-          
-          {/* Distorted Liquid Aurora Blob Container */}
-          <div className="absolute inset-0" style={{ filter: 'url(#liquid-smoke)', opacity: 'var(--blob-opacity)', transition: 'opacity 0.5s ease' }}>
-            {/* Orb 1: Vibrant Teal (Top Left) */}
-            <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] min-w-[380px] min-h-[380px] rounded-full bg-gradient-to-br from-brand/20 via-cyan-400/8 to-transparent blur-[90px] animate-aurora-1" />
-            
-            {/* Orb 2: Royal Purple/Indigo (Bottom Right) */}
-            <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] min-w-[420px] min-h-[420px] rounded-full bg-gradient-to-tr from-indigo-500/18 via-purple-500/8 to-transparent blur-[100px] animate-aurora-2" />
-            
-            {/* Orb 3: Sky Blue (Center Left) */}
-            <div className="absolute top-[35%] left-[5%] w-[45vw] h-[45vw] min-w-[300px] min-h-[300px] rounded-full bg-gradient-to-r from-blue-400/15 via-brand/8 to-transparent blur-[85px] animate-aurora-3" />
+
+          {/* ── DARK MODE AURORA BLOBS ── */}
+          <div className="absolute inset-0 animate-aurora-1" style={{ filter: 'url(#liquid-smoke)', opacity: 'var(--blob-opacity)', transition: 'opacity 0.6s ease' }}>
+            {/* Blob 1: Teal (Top-left sweep) */}
+            <div className="absolute top-[-15%] left-[-12%] w-[60vw] h-[60vw] min-w-[400px] min-h-[400px] rounded-full bg-gradient-to-br from-brand/25 via-cyan-400/10 to-transparent blur-[110px]" />
+            {/* Blob 2: Indigo/Violet (Bottom-right anchor) */}
+            <div className="absolute bottom-[-12%] right-[-12%] w-[65vw] h-[65vw] min-w-[450px] min-h-[450px] rounded-full bg-gradient-to-tl from-indigo-600/20 via-violet-500/10 to-transparent blur-[120px] animate-aurora-2" />
+            {/* Blob 3: Azure (Center-left drift) */}
+            <div className="absolute top-[30%] left-[3%] w-[50vw] h-[50vw] min-w-[320px] min-h-[320px] rounded-full bg-gradient-to-r from-blue-500/16 via-brand/8 to-transparent blur-[95px] animate-aurora-3" />
           </div>
-          
-          {/* Hero Premium Accent Spotlight (Center Top) */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[45vh] min-w-[650px] rounded-full bg-brand/[0.06] blur-[120px] animate-spotlight" />
+
+          {/* ── LIGHT MODE AMBIENT FLARES (separate opacity layer) ── */}
+          <div className="bg-light-flares">
+            {/* Flare 1: Soft teal wash top-left */}
+            <div className="absolute top-[-20%] left-[-15%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-br from-cyan-200/60 via-teal-100/30 to-transparent blur-[140px]" />
+            {/* Flare 2: Lavender bottom-right */}
+            <div className="absolute bottom-[-20%] right-[-15%] w-[65vw] h-[65vw] rounded-full bg-gradient-to-tl from-indigo-200/50 via-violet-100/25 to-transparent blur-[150px]" />
+          </div>
+
+          {/* Hero crown spotlight (top-center glow beacon) */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] min-w-[600px] rounded-full bg-brand/[0.055] blur-[130px] animate-spotlight" aria-hidden="true" />
         </div>
 
         {/* Content Stacking Layer wrapper */}
