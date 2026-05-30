@@ -100,7 +100,11 @@ export default function ChatBot() {
   const thinkingText = lang === "ar" ? "يفكر..." : "Thinking...";
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none" dir={lang === "ar" ? "rtl" : "ltr"}>
+    <div
+      className={`fixed bottom-6 z-50 flex flex-col pointer-events-none ${
+        lang === "ar" ? "left-6 items-start" : "right-6 items-end"
+      }`}
+    >
 
       {/* ════════════════════════════════════════════
           CHAT WINDOW

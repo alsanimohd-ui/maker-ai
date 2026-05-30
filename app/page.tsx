@@ -105,20 +105,7 @@ export default function Home() {
         {/* ── Content stack (logo → tagline → description → CTAs) ── */}
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 sm:gap-8">
 
-          {/* Agency micro-label */}
-          <Reveal delay={0}>
-            <div
-              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold tracking-[0.2em] uppercase"
-              style={{
-                background: isDark ? "rgba(14,179,186,0.08)" : "rgba(14,179,186,0.1)",
-                border: `1px solid ${isDark ? "rgba(14,179,186,0.2)" : "rgba(14,179,186,0.25)"}`,
-                color: "#0eb3ba",
-              }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse flex-shrink-0" />
-              {t.hero_badge_secure}
-            </div>
-          </Reveal>
+          {/* Badge removed — logo anchors the brand identity directly */}
 
           {/* ── Mega Logo — centred showpiece ── */}
           <Reveal delay={150}>
@@ -137,14 +124,12 @@ export default function Home() {
                 aria-hidden="true"
               />
               <img
-                src={isDark ? "/assets/logo/logo-white.svg" : "/assets/logo/logo-dark.svg"}
+                src="/assets/logo/logo-color.svg"
                 alt="Maker AI — Enterprise Automation Engineering"
                 className="relative w-full object-contain animate-float-gentle select-none"
                 style={{
                   maxWidth: "min(480px, 78vw)",
-                  filter: isDark
-                    ? "drop-shadow(0 0 40px rgba(14,179,186,0.25))"
-                    : "drop-shadow(0 4px 24px rgba(14,179,186,0.2))",
+                  filter: "drop-shadow(0 0 44px rgba(14,179,186,0.28))",
                   animationDuration: "6s",
                 }}
               />
@@ -226,6 +211,184 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════
+          ABOUT US — Premium Identity Section
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="relative w-full border-b border-[var(--card-border-default)] overflow-hidden" style={{ padding: "clamp(4rem,8vw,7rem) 1rem" }}>
+
+        {/* Background accent */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: isDark ? "rgba(10,14,26,0.35)" : "rgba(248,250,252,0.6)" }}
+          aria-hidden="true"
+        />
+        {/* Subtle right-side glow accent */}
+        <div
+          className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
+          style={{ background: isDark ? "radial-gradient(ellipse 60% 80% at 100% 50%, rgba(14,179,186,0.05), transparent)" : "radial-gradient(ellipse 60% 80% at 100% 50%, rgba(14,179,186,0.04), transparent)" }}
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+
+          {/* ── Two-column layout: left label col + right rich text col ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
+
+            {/* Left: section label + decorative line */}
+            <Reveal delay={0} className="lg:col-span-4">
+              <div className="flex flex-col gap-4">
+                <div
+                  className="inline-flex items-center gap-2 self-start"
+                  style={{ color: "#0eb3ba" }}
+                >
+                  <div className="w-8 h-px" style={{ background: "#0eb3ba" }} />
+                  <span
+                    className="font-bold tracking-[0.2em] uppercase"
+                    style={{ fontSize: "clamp(0.65rem,1.2vw,0.75rem)" }}
+                  >
+                    {lang === "ar" ? "من نحن" : "About Us"}
+                  </span>
+                </div>
+
+                <h2
+                  className={`font-black tracking-tight leading-[1.1] select-none ${headingGradient}`}
+                  style={{ fontSize: "clamp(2rem,5vw,3.25rem)" }}
+                >
+                  {lang === "ar"
+                    ? (<>بناء مستقبل <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">الأتمتة</span> الرقمية</>)
+                    : (<>Building the Future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">Digital Automation</span></>)
+                  }
+                </h2>
+
+                {/* Decorative vertical rule */}
+                <div
+                  className="hidden lg:block w-px self-start mt-2"
+                  style={{
+                    height: "clamp(3rem,6vw,5rem)",
+                    background: isDark
+                      ? "linear-gradient(to bottom, rgba(14,179,186,0.4), transparent)"
+                      : "linear-gradient(to bottom, rgba(14,179,186,0.35), transparent)",
+                  }}
+                  aria-hidden="true"
+                />
+              </div>
+            </Reveal>
+
+            {/* Right: rich content stack */}
+            <div className="lg:col-span-8 flex flex-col gap-8">
+
+              {/* Lead paragraph */}
+              <Reveal delay={120}>
+                <p
+                  className="leading-relaxed font-light"
+                  style={{
+                    fontSize: "clamp(1rem,2.2vw,1.2rem)",
+                    color: isDark ? "#cbd5e1" : "#334155",
+                  }}
+                >
+                  {lang === "ar"
+                    ? "نحن Maker AI — شركة هندسة وأتمتة متخصصة في بناء البنى التحتية الرقمية للمؤسسات. نصمم أنظمة متكاملة تربط أدواتك وتحوّل عملياتك اليدوية إلى ماكينة رقمية دقيقة تعمل دون توقف."
+                    : "We are Maker AI — an engineering and automation firm specializing in building digital infrastructure for businesses. We design integrated systems that connect your tools and transform manual operations into a precise, always-on digital engine."}
+                </p>
+              </Reveal>
+
+              {/* Divider line */}
+              <Reveal delay={200}>
+                <div
+                  className="w-full h-px"
+                  style={{ background: isDark ? "rgba(255,255,255,0.06)" : "rgba(15,23,42,0.06)" }}
+                  aria-hidden="true"
+                />
+              </Reveal>
+
+              {/* Three identity pillars — inline stat-style layout */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {[
+                  {
+                    icon: (
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      </svg>
+                    ),
+                    label: lang === "ar" ? "أمن المؤسسات" : "Enterprise Security",
+                    desc: lang === "ar" ? "بنية محمية بمنهجية Zero-Trust" : "Zero-trust perimeter architecture",
+                  },
+                  {
+                    icon: (
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                      </svg>
+                    ),
+                    label: lang === "ar" ? "أتمتة n8n" : "n8n Automation",
+                    desc: lang === "ar" ? "تشغيل أكثر من 100 خط عمل مؤتمت" : "100+ orchestrated workflow pipelines",
+                  },
+                  {
+                    icon: (
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008z" />
+                      </svg>
+                    ),
+                    label: lang === "ar" ? "أنظمة ERP المعزولة" : "Isolated ERP Systems",
+                    desc: lang === "ar" ? "نشر Docker مؤمّن ومتعدد المستأجرين" : "Secure multi-tenant Docker deployment",
+                  },
+                ].map((item, i) => (
+                  <Reveal key={i} delay={260 + i * 80}>
+                    <div
+                      className="flex flex-col gap-3 rounded-2xl p-5 transition-all duration-300 group"
+                      style={{
+                        background: isDark ? "rgba(14,179,186,0.04)" : "rgba(14,179,186,0.03)",
+                        border: `1px solid ${isDark ? "rgba(14,179,186,0.1)" : "rgba(14,179,186,0.12)"}`,
+                      }}
+                    >
+                      <div
+                        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                        style={{
+                          background: isDark ? "rgba(14,179,186,0.1)" : "rgba(14,179,186,0.08)",
+                          border: `1px solid ${isDark ? "rgba(14,179,186,0.22)" : "rgba(14,179,186,0.2)"}`,
+                          color: "#0eb3ba",
+                        }}
+                      >
+                        {item.icon}
+                      </div>
+                      <div>
+                        <div
+                          className="font-bold mb-1"
+                          style={{ fontSize: "clamp(0.85rem,1.6vw,0.95rem)", color: isDark ? "#f1f5f9" : "#0f172a" }}
+                        >
+                          {item.label}
+                        </div>
+                        <div
+                          className="font-light leading-snug"
+                          style={{ fontSize: "clamp(0.75rem,1.3vw,0.825rem)", color: isDark ? "#94a3b8" : "#475569" }}
+                        >
+                          {item.desc}
+                        </div>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+
+              {/* Secondary body paragraph */}
+              <Reveal delay={520}>
+                <p
+                  className="leading-relaxed font-light"
+                  style={{
+                    fontSize: "clamp(0.875rem,1.8vw,1rem)",
+                    color: isDark ? "#94a3b8" : "#475569",
+                  }}
+                >
+                  {lang === "ar"
+                    ? "نؤمن بأن كل مؤسسة تستحق منظومة رقمية مفصّلة تماماً لاحتياجاتها. لا حلول جاهزة، لا اختصارات. نبني من الصفر، بمعايير هندسة احترافية، ونضمن استمرارية الأعمال وأمانها على المدى الطويل."
+                    : "We believe every business deserves a digital ecosystem tailored precisely to its needs. No off-the-shelf shortcuts. We engineer from the ground up, to professional standards, ensuring long-term business continuity and security."}
+                </p>
+              </Reveal>
+
+            </div>
+          </div>
         </div>
       </section>
 
