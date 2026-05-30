@@ -43,7 +43,7 @@ export default function Home() {
   );
 
   return (
-    <div className="relative min-h-screen bg-[#030308] text-white flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen text-foreground flex flex-col justify-center overflow-hidden">
       {/* 1. Global Ambience Upgrades (Soft Aurora Canvas & Faint 2% Opacity Cybernetic Grid Matrix) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
@@ -56,7 +56,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative w-full pt-24 pb-16 sm:pt-32 sm:pb-20 border-b border-white/[0.03]">
+      <section className="relative w-full pt-24 pb-16 sm:pt-32 sm:pb-20 border-b border-[var(--card-border-default)]">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Column: Core Value Proposition */}
@@ -71,7 +71,7 @@ export default function Home() {
 
             {/* Subtitle statement */}
             <Reveal delay={400}>
-              <p className="text-slate-400/90 text-base sm:text-lg lg:text-xl leading-relaxed mt-6 mb-10 max-w-2xl font-light">
+              <p className="text-slate-600 dark:text-slate-400/90 text-base sm:text-lg lg:text-xl leading-relaxed mt-6 mb-10 max-w-2xl font-light">
                 {t.hero_subtitle_secure}
               </p>
             </Reveal>
@@ -101,7 +101,7 @@ export default function Home() {
                 {/* Secondary solutions button */}
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/20 px-8 py-4 text-base font-bold text-white hover:scale-[1.01] active:scale-95 transition-all duration-300 backdrop-blur-md"
+                  className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/50 dark:bg-white/[0.03] hover:bg-slate-200/50 dark:hover:bg-white/[0.08] text-slate-800 dark:text-white hover:scale-[1.01] active:scale-95 transition-all duration-300 backdrop-blur-md"
                 >
                   {t.hero_btn_explore_enterprise}
                 </Link>
@@ -152,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 1: Core Infrastructure Metrics Bar */}
-      <section className="relative w-full border-b border-white/[0.05] bg-white/[0.01] backdrop-blur-md py-10 select-none">
+      <section className="relative w-full border-b border-[var(--card-border-default)] bg-[var(--card-bg)]/30 backdrop-blur-md py-10 select-none">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
           
           <Reveal delay={100}>
@@ -160,18 +160,18 @@ export default function Home() {
               <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 {t.metric_workflows_value}
               </span>
-              <span className="text-xs sm:text-sm text-slate-455 font-bold tracking-wider uppercase">
+              <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase">
                 {t.metric_workflows_sub}
               </span>
             </div>
           </Reveal>
 
-          <Reveal delay={250} className="border-y md:border-y-0 md:border-x border-white/[0.05] py-6 md:py-0">
+          <Reveal delay={250} className="border-y md:border-y-0 md:border-x border-[var(--card-border-default)] py-6 md:py-0">
             <div className="flex flex-col gap-1.5">
               <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 {t.metric_uptime_value}
               </span>
-              <span className="text-xs sm:text-sm text-slate-455 font-bold tracking-wider uppercase">
+              <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase">
                 {t.metric_uptime_sub}
               </span>
             </div>
@@ -182,7 +182,7 @@ export default function Home() {
               <span className="text-3xl sm:text-4xl font-black text-cyan-400 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                 {t.metric_security_value}
               </span>
-              <span className="text-xs sm:text-sm text-slate-455 font-bold tracking-wider uppercase">
+              <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase">
                 {t.metric_security_sub}
               </span>
             </div>
@@ -192,11 +192,11 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: Core Services Architecture Grid */}
-      <section id="services" className="relative w-full py-24 sm:py-32 border-b border-white/[0.05]">
+      <section id="services" className="relative w-full py-24 sm:py-32 border-b border-[var(--card-border-default)]">
         <div className="max-w-7xl mx-auto px-6">
           
           <Reveal delay={100} className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 uppercase select-none">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 dark:from-white dark:via-slate-100 dark:to-slate-400 uppercase select-none">
               {t.services_arch_title}
             </h2>
           </Reveal>
@@ -205,21 +205,21 @@ export default function Home() {
             
             {/* Card 1: Premium Web Platforms */}
             <Reveal delay={150} className="h-full">
-              <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
+              <div className="card-neon-border border border-brand-border rounded-[24px] p-8 flex flex-col justify-between overflow-hidden group">
                 <div 
                   className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   aria-hidden="true"
                 />
                 <div className="relative z-10">
-                  <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-500/10 dark:bg-cyan-950/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-500 dark:text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 tracking-wide">
                     {t.pillar1_title}
                   </h3>
-                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                  <p className="text-slate-600 dark:text-slate-400/90 text-sm leading-relaxed font-light">
                     {t.pillar1_desc}
                   </p>
                 </div>
@@ -228,21 +228,21 @@ export default function Home() {
 
             {/* Card 2: Bespoke Software Solutions */}
             <Reveal delay={250} className="h-full">
-              <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
+              <div className="card-neon-border border border-brand-border rounded-[24px] p-8 flex flex-col justify-between overflow-hidden group">
                 <div 
                   className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   aria-hidden="true"
                 />
                 <div className="relative z-10">
-                  <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-500/10 dark:bg-cyan-950/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-500 dark:text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 tracking-wide">
                     {t.pillar2_title}
                   </h3>
-                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                  <p className="text-slate-600 dark:text-slate-400/90 text-sm leading-relaxed font-light">
                     {t.pillar2_desc}
                   </p>
                 </div>
@@ -251,21 +251,21 @@ export default function Home() {
 
             {/* Card 3: Smart Workflow Automation */}
             <Reveal delay={350} className="h-full">
-              <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
+              <div className="card-neon-border border border-brand-border rounded-[24px] p-8 flex flex-col justify-between overflow-hidden group">
                 <div 
                   className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   aria-hidden="true"
                 />
                 <div className="relative z-10">
-                  <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-500/10 dark:bg-cyan-950/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-500 dark:text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 tracking-wide">
                     {t.pillar3_title}
                   </h3>
-                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                  <p className="text-slate-600 dark:text-slate-400/90 text-sm leading-relaxed font-light">
                     {t.pillar3_desc}
                   </p>
                 </div>
@@ -285,10 +285,10 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.003 9.003 0 018.716 6.747M12 3a9.003 9.003 0 00-8.716 6.747M3 12h18" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 tracking-wide">
                     {t.pillar4_title}
                   </h3>
-                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                  <p className="text-slate-600 dark:text-slate-400/90 text-sm leading-relaxed font-light">
                     {t.pillar4_desc}
                   </p>
                 </div>
@@ -300,14 +300,14 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: The Operational Blueprint */}
-      <section className="relative w-full py-24 sm:py-32 border-b border-white/[0.03]">
+      <section className="relative w-full py-24 sm:py-32 border-b border-[var(--card-border-default)]">
         <div className="max-w-7xl mx-auto px-6">
           
           <Reveal delay={100} className="text-center mb-16 sm:mb-20">
             <span className="text-xs sm:text-sm font-bold tracking-widest text-cyan-400 uppercase">
               {t.blueprint_subtitle}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 uppercase mt-3 select-none">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 dark:from-white dark:via-slate-100 dark:to-slate-400 uppercase mt-3 select-none">
               {t.blueprint_title}
             </h2>
           </Reveal>
@@ -316,13 +316,13 @@ export default function Home() {
             
             {/* Step 1 */}
             <Reveal delay={200} className="relative flex flex-col items-center text-center">
-              <div className="h-16 w-16 rounded-full bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
+              <div className="h-16 w-16 rounded-full bg-cyan-500/10 dark:bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-500 dark:text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
                 01
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
                 {t.blueprint_step1_title}
               </h3>
-              <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
+              <p className="text-slate-600 dark:text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
                 {t.blueprint_step1_desc}
               </p>
               {/* Connector line */}
@@ -331,13 +331,13 @@ export default function Home() {
 
             {/* Step 2 */}
             <Reveal delay={350} className="relative flex flex-col items-center text-center">
-              <div className="h-16 w-16 rounded-full bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
+              <div className="h-16 w-16 rounded-full bg-cyan-500/10 dark:bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-500 dark:text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
                 02
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
                 {t.blueprint_step2_title}
               </h3>
-              <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
+              <p className="text-slate-600 dark:text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
                 {t.blueprint_step2_desc}
               </p>
               {/* Connector line */}
@@ -346,13 +346,13 @@ export default function Home() {
 
             {/* Step 3 */}
             <Reveal delay={500} className="relative flex flex-col items-center text-center">
-              <div className="h-16 w-16 rounded-full bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
+              <div className="h-16 w-16 rounded-full bg-cyan-500/10 dark:bg-cyan-950/40 border border-cyan-500/30 flex items-center justify-center text-xl font-black text-cyan-500 dark:text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-6 z-10">
                 03
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
                 {t.blueprint_step3_title}
               </h3>
-              <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
+              <p className="text-slate-600 dark:text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
                 {t.blueprint_step3_desc}
               </p>
             </Reveal>
@@ -362,7 +362,7 @@ export default function Home() {
       </section>
 
       {/* Bottomities High-Conversion CTA Section */}
-      <section className="relative py-24 border-t border-white/[0.03] bg-white/[0.01]">
+      <section className="relative py-24 border-t border-[var(--card-border-default)]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Reveal delay={100}>
             <div className="relative z-10 inline-block group">

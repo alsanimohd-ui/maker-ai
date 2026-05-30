@@ -10,7 +10,7 @@ export default function Footer() {
   const t = translations[lang];
 
   return (
-    <footer className="mt-auto border-t border-white/[0.05] bg-[#030307] py-12 md:py-16 text-slate-400 transition-colors duration-300">
+    <footer className="mt-auto border-t border-brand-border bg-brand-card/30 backdrop-blur-md py-12 md:py-16 text-brand-muted transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           
@@ -24,14 +24,14 @@ export default function Footer() {
                 style={{ aspectRatio: "240/64" }} // Locked aspect ratio
               />
             </Link>
-            <p className="text-sm text-slate-400/80 max-w-sm leading-relaxed">
+            <p className="text-sm text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed">
               {t.footer_desc}
             </p>
           </div>
 
           {/* Center Column: Quick Navigation Links */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
               {t.footer_nav_title}
             </h3>
             <ul className="space-y-2">
@@ -64,13 +64,13 @@ export default function Footer() {
 
           {/* Right Column: Contact Details & Direct Connect */}
           <div className="flex flex-col space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
               {t.footer_contact_title}
             </h3>
             <div className="flex flex-col space-y-3">
               <a
                 href="mailto:info@maker-ai.tech"
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 font-semibold"
+              className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-white transition-colors duration-200 font-semibold"
               >
                 <svg
                   className="h-5 w-5 text-cyan-400"
@@ -92,7 +92,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Row */}
-        <div className="mt-12 border-t border-white/[0.05] pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
+        <div className="mt-12 border-t border-brand-border pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500">
           <p>
             &copy; {currentYear} Maker AI. {t.footer_rights}
           </p>

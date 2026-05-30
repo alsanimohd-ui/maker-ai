@@ -58,7 +58,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#030308] text-white flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen text-foreground flex flex-col justify-center overflow-hidden">
       {/* Background Ambience (Soft Aurora Canvas & Faint 2% Opacity Cybernetic Grid Matrix) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
@@ -74,10 +74,10 @@ export default function ServicesPage() {
         {/* Header section */}
         <section className="max-w-7xl mx-auto px-6 w-full text-center mb-16 sm:mb-24">
           <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
-            <h1 className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 sm:text-5xl md:text-6xl uppercase">
+            <h1 className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 dark:from-white dark:via-slate-200 dark:to-slate-400 sm:text-5xl md:text-6xl uppercase">
               {t.services_page_title}
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-slate-400/90 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-400/90 max-w-2xl mx-auto leading-relaxed font-light">
               {t.services_page_sub}
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function ServicesPage() {
               <Reveal
                 key={index}
                 delay={100 * (index + 1)}
-                className="group flex flex-col justify-between rounded-[24px] p-8 sm:p-10 relative overflow-hidden backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 min-h-[250px]"
+                className="card-neon-border border border-brand-border rounded-[24px] p-8 sm:p-10 flex flex-col justify-between min-h-[250px] overflow-hidden group"
               >
                 {/* Immersive inner top radial glow on hover */}
                 <div 
@@ -99,13 +99,13 @@ export default function ServicesPage() {
                 />
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-955/20 border border-cyan-500/20 mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 dark:bg-cyan-950/20 border border-cyan-500/20 mb-6 text-cyan-500 dark:text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     {pillar.icon}
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">
                     {pillar.title}
                   </h2>
-                  <p className="text-sm text-slate-400/90 leading-relaxed font-light">
+                  <p className="text-sm text-slate-600 dark:text-slate-400/90 leading-relaxed font-light">
                     {pillar.desc}
                   </p>
                 </div>
@@ -116,18 +116,18 @@ export default function ServicesPage() {
 
         {/* High-Conversion CTA */}
         <section className="max-w-4xl mx-auto px-6 w-full text-center">
-          <Reveal className="backdrop-blur-xl bg-white/[0.01] border border-white/[0.05] rounded-3xl p-10 sm:p-20 relative overflow-hidden shadow-2xl shadow-cyan-950/25">
+          <Reveal className="card-neon-border border border-brand-border rounded-3xl p-10 sm:p-20 relative overflow-hidden shadow-2xl shadow-cyan-950/25">
             <div className="absolute top-[-35%] left-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent blur-[100px]" />
             <div className="absolute bottom-[-35%] right-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/10 via-purple-600/5 to-transparent blur-[100px]" />
             
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-950/20 px-3.5 py-1 text-xs font-semibold text-cyan-400 mb-6 backdrop-blur-md relative z-10">
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 dark:bg-cyan-950/20 px-3.5 py-1 text-xs font-semibold text-cyan-600 dark:text-cyan-400 mb-6 backdrop-blur-md relative z-10">
               {lang === "ar" ? "التدقيق التشغيلي" : "Operational Audit"}
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 relative z-10 leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mb-6 relative z-10 leading-tight">
               {lang === "ar" ? "هل تبحث عن إزالة الاختناقات التشغيلية؟" : "Looking to remove operational bottlenecks?"}
             </h2>
-            <p className="text-slate-400/90 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed relative z-10 font-light">
+            <p className="text-slate-600 dark:text-slate-400/90 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed relative z-10 font-light">
               {lang === "ar" 
                 ? "احجز جلسة تدقيق مجانية مدتها 30 دقيقة لنحدد فيها معاً أين يفقد عملك الوقت والأموال وكيفية أتمتة الأنظمة."
                 : "Book a free 30-minute operational audit. We will map out exactly where you are losing time and how to automate it."}

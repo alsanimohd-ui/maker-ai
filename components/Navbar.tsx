@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#030308]/40 border-b border-white/[0.03] transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[var(--navbar-bg)] border-b border-[var(--card-border-default)] shadow-[var(--navbar-shadow)] transition-all duration-300">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo with crisp, locked aspect ratio */}
@@ -52,8 +52,8 @@ export default function Navbar() {
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`text-sm font-medium transition-all duration-200 tracking-wide uppercase hover:text-cyan-400 ${
                     isActive
-                      ? "text-cyan-450 font-bold"
-                      : "text-slate-350"
+                      ? "text-cyan-500 dark:text-cyan-400 font-bold"
+                      : "text-slate-600 dark:text-slate-300"
                   }`}
                 >
                   {link.name}
@@ -67,7 +67,7 @@ export default function Navbar() {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl border border-white/[0.08] hover:border-cyan-400/40 text-slate-300 bg-white/[0.01] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
+              className="p-2.5 rounded-xl border border-[var(--card-border-default)] hover:border-cyan-400/40 text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? (
@@ -84,7 +84,7 @@ export default function Navbar() {
             {/* Language Toggle Button */}
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-3.5 py-1.5 rounded-xl border border-white/[0.08] hover:border-cyan-400/40 text-xs font-semibold text-slate-300 bg-white/[0.01] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+              className="px-3.5 py-1.5 rounded-xl border border-[var(--card-border-default)] hover:border-cyan-400/40 text-xs font-semibold text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
             >
               {lang === "en" ? "العربية" : "English"}
             </button>
@@ -94,7 +94,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg border border-white/[0.08] text-slate-300 bg-white/[0.01] flex items-center justify-center cursor-pointer"
+              className="p-2 rounded-lg border border-[var(--card-border-default)] text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] flex items-center justify-center cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? (
@@ -110,14 +110,14 @@ export default function Navbar() {
 
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-2.5 py-1 rounded-md border border-white/[0.08] text-xs font-semibold text-slate-350 bg-white/[0.01] hover:border-cyan-400/40 transition-all duration-200"
+              className="px-2.5 py-1 rounded-md border border-[var(--card-border-default)] text-xs font-semibold text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] hover:border-cyan-400/40 transition-all duration-200"
             >
               {lang === "en" ? "AR" : "EN"}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-white/[0.05] hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-white/[0.05] hover:text-slate-900 dark:hover:text-white focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -160,7 +160,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-b border-white/[0.05] bg-[#020205]/95 backdrop-blur-xl" id="mobile-menu">
+        <div className="md:hidden border-b border-[var(--card-border-default)] bg-[var(--background)]/95 backdrop-blur-xl" id="mobile-menu">
           <div className="space-y-1 px-4 pb-4 pt-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -173,8 +173,8 @@ export default function Navbar() {
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     isActive
-                      ? "bg-white/[0.03] text-cyan-400"
-                      : "text-slate-350 hover:bg-white/[0.02] hover:text-white"
+                      ? "bg-cyan-500/10 text-cyan-500 dark:text-cyan-400"
+                      : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.02] hover:text-cyan-500 dark:hover:text-white"
                   }`}
                 >
                   {link.name}

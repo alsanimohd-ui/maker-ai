@@ -19,7 +19,7 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#030308] text-white flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen text-foreground flex flex-col justify-center overflow-hidden">
       {/* Background Ambience (Soft Aurora Canvas & Faint 2% Opacity Cybernetic Grid Matrix) */}
       <div 
         className="absolute top-0 inset-x-0 h-full pointer-events-none -z-10"
@@ -35,10 +35,10 @@ export default function ContactPage() {
         {/* Header section */}
         <section className="max-w-7xl mx-auto px-6 w-full text-center mb-16 sm:mb-24">
           <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
-            <h1 className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 sm:text-5xl md:text-6xl uppercase">
+            <h1 className="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 dark:from-white dark:via-slate-200 dark:to-slate-400 sm:text-5xl md:text-6xl uppercase">
               {t.contact_page_title}
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-slate-400/90 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-400/90 max-w-2xl mx-auto leading-relaxed font-light">
               {t.contact_page_sub}
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
             {/* Side Info Panel - Restyled with hover radial glow container */}
             <Reveal
               delay={100}
-              className="group flex flex-col space-y-8 p-8 rounded-[24px] relative overflow-hidden backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500"
+              className="card-neon-border border border-brand-border rounded-[24px] p-8 flex flex-col space-y-8 overflow-hidden group"
             >
               {/* Immersive inner top radial glow on hover */}
               <div 
@@ -60,7 +60,7 @@ export default function ContactPage() {
               />
               
               <div className="relative z-10">
-                <h2 className="text-xl font-bold text-white mb-6 uppercase tracking-wide">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wide">
                   {t.contact_side_title}
                 </h2>
                 
@@ -73,7 +73,7 @@ export default function ContactPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-sm text-slate-400/90 leading-relaxed font-light">
+                      <span className="text-sm text-slate-600 dark:text-slate-400/90 leading-relaxed font-light">
                         {benefit}
                       </span>
                     </li>
@@ -82,22 +82,22 @@ export default function ContactPage() {
               </div>
 
               {/* Amman Operating Hours */}
-              <div className="relative z-10 border-t border-white/[0.05] pt-6">
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
+              <div className="relative z-10 border-t border-[var(--card-border-default)] pt-6">
+                <h3 className="text-sm font-semibold text-slate-800 dark:text-white uppercase tracking-wider mb-3">
                   {t.contact_side_hours_title}
                 </h3>
-                <p className="text-sm text-slate-400/80 font-light">{t.contact_side_hours_days}</p>
-                <p className="text-sm text-white font-bold">{t.contact_side_hours_time}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400/80 font-light">{t.contact_side_hours_days}</p>
+                <p className="text-sm text-slate-900 dark:text-white font-bold">{t.contact_side_hours_time}</p>
               </div>
 
               {/* Direct Channels */}
-              <div className="relative z-10 border-t border-white/[0.05] pt-6 flex flex-col space-y-4">
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+              <div className="relative z-10 border-t border-[var(--card-border-default)] pt-6 flex flex-col space-y-4">
+                <h3 className="text-sm font-semibold text-slate-800 dark:text-white uppercase tracking-wider">
                   {t.contact_side_channels}
                 </h3>
                 <a
                   href="mailto:info@maker-ai.tech"
-                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 font-semibold"
+                  className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-white transition-colors duration-200 font-semibold"
                 >
                   <svg
                     className="h-5 w-5 text-cyan-400"

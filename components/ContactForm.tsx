@@ -77,7 +77,7 @@ export default function ContactForm() {
       <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-cyan-400/20 via-indigo-500/5 to-blue-500/10 blur-2xl opacity-40 group-hover/form:opacity-80 transition-opacity duration-700 pointer-events-none" />
 
       {/* Form Container - Restyled with premium glassmorphic border & background tokens */}
-      <div className="relative w-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] rounded-[24px] p-6 sm:p-8 hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(0,242,254,0.03)] transition-all duration-500">
+      <div className="card-neon-border border border-brand-border rounded-[24px] p-6 sm:p-8">
         
         {status === "success" ? (
           <div className="text-center py-10">
@@ -96,15 +96,15 @@ export default function ContactForm() {
                 />
               </svg>
             </div>
-            <h3 className="text-3xl font-extrabold text-white mb-3 tracking-tight">
+            <h3 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">
               {t.form_success_title}
             </h3>
-            <p className="text-slate-400 mb-8 font-medium max-w-md mx-auto">
+            <p className="text-slate-655 dark:text-slate-400 mb-8 font-medium max-w-md mx-auto">
               {t.form_success_desc}
             </p>
             <button
               onClick={() => setStatus("idle")}
-              className="px-6 py-2.5 rounded-xl border border-white/[0.08] hover:border-cyan-400/40 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors duration-200 cursor-pointer"
+              className="px-6 py-2.5 rounded-xl border border-[var(--card-border-default)] hover:border-cyan-400/40 text-sm font-semibold text-cyan-500 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors duration-200 cursor-pointer"
             >
               {t.form_success_btn}
             </button>
@@ -113,7 +113,7 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                   {t.form_name_label}
                 </label>
                 <input
@@ -123,12 +123,12 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white/[0.01] border border-white/[0.08] hover:border-white/[0.15] rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-white/[0.02] focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 placeholder:text-slate-500"
+                  className="w-full bg-[var(--form-input-bg)] border border-[var(--form-input-border)] hover:border-slate-300 dark:hover:border-white/[0.15] rounded-xl px-4 py-3 text-[var(--foreground)] placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 placeholder:text-slate-400/80 dark:placeholder:text-slate-500"
                   placeholder={t.form_name_placeholder}
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                   {t.form_email_label}
                 </label>
                 <input
@@ -138,7 +138,7 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white/[0.01] border border-white/[0.08] hover:border-white/[0.15] rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-white/[0.02] focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 placeholder:text-slate-500"
+                  className="w-full bg-[var(--form-input-bg)] border border-[var(--form-input-border)] hover:border-slate-300 dark:hover:border-white/[0.15] rounded-xl px-4 py-3 text-[var(--foreground)] placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 placeholder:text-slate-400/80 dark:placeholder:text-slate-500"
                   placeholder={t.form_email_placeholder}
                 />
               </div>
@@ -146,7 +146,7 @@ export default function ContactForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="company" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <label htmlFor="company" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                   {t.form_company_label}
                 </label>
                 <input
@@ -155,12 +155,12 @@ export default function ContactForm() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full bg-white/[0.01] border border-white/[0.08] hover:border-white/[0.15] rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-white/[0.02] focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 placeholder:text-slate-500"
+                  className="w-full bg-[var(--form-input-bg)] border border-[var(--form-input-border)] hover:border-slate-300 dark:hover:border-white/[0.15] rounded-xl px-4 py-3 text-[var(--foreground)] placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 placeholder:text-slate-400/80 dark:placeholder:text-slate-500"
                   placeholder={t.form_company_placeholder}
                 />
               </div>
               <div>
-                <label htmlFor="service" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <label htmlFor="service" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                   {t.form_service_label}
                 </label>
                 <select
@@ -168,18 +168,18 @@ export default function ContactForm() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full bg-white/[0.01] border border-white/[0.08] hover:border-white/[0.15] rounded-xl px-4 py-3 text-white focus:outline-none focus:bg-[#030307] focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300"
+                  className="w-full bg-[var(--form-input-bg)] border border-[var(--form-input-border)] hover:border-slate-300 dark:hover:border-white/[0.15] rounded-xl px-4 py-3 text-[var(--foreground)] focus:outline-none focus:bg-[var(--form-input-bg)] focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300"
                 >
-                  <option value="Enterprise SaaS ERP Integration" className="bg-[#030307] text-white">{t.form_service_opt1}</option>
-                  <option value="High-Scale Linux Automation Engine" className="bg-[#030307] text-white">{t.form_service_opt2}</option>
-                  <option value="Virtual Firewalling & Zero-Trust Architecture" className="bg-[#030307] text-white">{t.form_service_opt3}</option>
-                  <option value="Other Consultation" className="bg-[#030307] text-white">{t.form_service_opt4}</option>
+                  <option value="Enterprise SaaS ERP Integration" className="bg-background text-foreground">{t.form_service_opt1}</option>
+                  <option value="High-Scale Linux Automation Engine" className="bg-background text-foreground">{t.form_service_opt2}</option>
+                  <option value="Virtual Firewalling & Zero-Trust Architecture" className="bg-background text-foreground">{t.form_service_opt3}</option>
+                  <option value="Other Consultation" className="bg-background text-foreground">{t.form_service_opt4}</option>
                 </select>
               </div>
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                 {t.form_msg_label}
               </label>
               <textarea
@@ -189,7 +189,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full bg-white/[0.01] border border-white/[0.08] hover:border-white/[0.15] rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-white/[0.02] focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 resize-none placeholder:text-slate-500"
+                className="w-full bg-[var(--form-input-bg)] border border-[var(--form-input-border)] hover:border-slate-300 dark:hover:border-white/[0.15] rounded-xl px-4 py-3 text-[var(--foreground)] placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 resize-none placeholder:text-slate-400/80 dark:placeholder:text-slate-500"
                 placeholder={t.form_msg_placeholder}
               />
             </div>
@@ -225,7 +225,7 @@ export default function ContactForm() {
           <div className="flex items-center justify-center">
             <a
               href="mailto:info@maker-ai.tech"
-              className="group/mail flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 border border-white/[0.08] hover:border-cyan-400/40 hover:bg-cyan-400/[0.02] rounded-xl text-sm text-slate-400 hover:text-cyan-400 hover:shadow-md hover:shadow-cyan-950/20 transition-all duration-300 font-semibold"
+              className="group/mail flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 border border-[var(--card-border-default)] hover:border-cyan-400/40 hover:bg-cyan-400/[0.02] rounded-xl text-sm text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 hover:shadow-md hover:shadow-cyan-950/20 transition-all duration-300 font-semibold"
             >
               <svg
                 className="h-4 w-4 text-cyan-400 group-hover/mail:scale-110 transition-transform duration-200"
