@@ -2,6 +2,7 @@ export const translations = {
   en: {
     // Navbar
     nav_home: "Home",
+    nav_about: "About Us",
     nav_services: "Services",
     nav_contact: "Contact",
     nav_book: "Book Consultation",
@@ -115,6 +116,7 @@ export const translations = {
   ar: {
     // Navbar
     nav_home: "الرئيسية",
+    nav_about: "من نحن",
     nav_services: "الخدمات",
     nav_contact: "اتصل بنا",
     nav_book: "احجز استشارة",

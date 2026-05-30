@@ -1,0 +1,494 @@
+﻿"use client";
+
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
+import { translations } from "@/lib/translations";
+
+export default function Home() {
+  const { lang } = useLanguage();
+  const { theme } = useTheme();
+  const t = translations[lang];
+  const isDark = theme === "dark";
+  const isRtl = lang === "ar";
+
+  // ظ¤ظ¤ Shared heading gradient ظ¤ظ¤
+  const headingGradient = isDark
+    ? "text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400"
+    : "text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-700 to-slate-500";
+
+  // ظ¤ظ¤ Service pillar data ظ¤ظ¤
+  const pillars = [
+    {
+      key: "pillar1",
+      title: t.pillar1_title,
+      desc: t.pillar1_desc,
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+        </svg>
+      ),
+    },
+    {
+      key: "pillar2",
+      title: t.pillar2_title,
+      desc: t.pillar2_desc,
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+        </svg>
+      ),
+    },
+    {
+      key: "pillar3",
+      title: t.pillar3_title,
+      desc: t.pillar3_desc,
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+        </svg>
+      ),
+    },
+    {
+      key: "pillar4",
+      title: t.pillar4_title,
+      desc: t.pillar4_desc,
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.003 9.003 0 018.716 6.747M12 3a9.003 9.003 0 00-8.716 6.747M3 12h18" />
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <div
+      className="relative flex flex-col w-full overflow-x-hidden"
+      dir={isRtl ? "rtl" : "ltr"}
+    >
+
+      {/* ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ
+          HERO ظ¤ Premium Centered "About Us" Canvas
+      ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ */}
+      <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden border-b border-[var(--card-border-default)] px-4 sm:px-6 py-20 sm:py-28 lg:py-36">
+
+        {/* ظ¤ظ¤ Centred radial glow behind logo ظ¤ظ¤ */}
+        <div
+          className="absolute inset-x-0 top-0 pointer-events-none"
+          style={{ height: "70%", background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(14,179,186,0.12) 0%, transparent 70%)" }}
+          aria-hidden="true"
+        />
+
+        {/* ظ¤ظ¤ Slow-spin decorative orbit circle ظ¤ظ¤ */}
+        <div
+          className="absolute w-[min(600px,90vw)] h-[min(600px,90vw)] rounded-full pointer-events-none animate-ring-slow"
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            border: `1px solid ${isDark ? "rgba(14,179,186,0.08)" : "rgba(14,179,186,0.12)"}`,
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute w-[min(480px,72vw)] h-[min(480px,72vw)] rounded-full pointer-events-none animate-ring-reverse"
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            border: `1px solid ${isDark ? "rgba(99,102,241,0.06)" : "rgba(99,102,241,0.1)"}`,
+          }}
+          aria-hidden="true"
+        />
+
+        {/* ظ¤ظ¤ Content stack (logo ظْ tagline ظْ description ظْ CTAs) ظ¤ظ¤ */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 sm:gap-8">
+
+          {/* Agency micro-label */}
+          <Reveal delay={0}>
+            <div
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold tracking-[0.2em] uppercase"
+              style={{
+                background: isDark ? "rgba(14,179,186,0.08)" : "rgba(14,179,186,0.1)",
+                border: `1px solid ${isDark ? "rgba(14,179,186,0.2)" : "rgba(14,179,186,0.25)"}`,
+                color: "#0eb3ba",
+              }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse flex-shrink-0" />
+              {t.hero_badge_secure}
+            </div>
+          </Reveal>
+
+          {/* ظ¤ظ¤ Mega Logo ظ¤ centred showpiece ظ¤ظ¤ */}
+          <Reveal delay={150}>
+            <div className="relative flex items-center justify-center">
+              {/* Glow halo behind logo */}
+              <div
+                className="absolute rounded-full pointer-events-none"
+                style={{
+                  width: "min(520px, 80vw)",
+                  height: "min(180px, 30vw)",
+                  background: isDark
+                    ? "radial-gradient(ellipse, rgba(14,179,186,0.14) 0%, transparent 70%)"
+                    : "radial-gradient(ellipse, rgba(14,179,186,0.1) 0%, transparent 70%)",
+                  filter: "blur(20px)",
+                }}
+                aria-hidden="true"
+              />
+              <img
+                src={isDark ? "/assets/logo/logo-white.svg" : "/assets/logo/logo-dark.svg"}
+                alt="Maker AI ظ¤ Enterprise Automation Engineering"
+                className="relative w-full object-contain animate-float-gentle select-none"
+                style={{
+                  maxWidth: "min(480px, 78vw)",
+                  filter: isDark
+                    ? "drop-shadow(0 0 40px rgba(14,179,186,0.25))"
+                    : "drop-shadow(0 4px 24px rgba(14,179,186,0.2))",
+                  animationDuration: "6s",
+                }}
+              />
+            </div>
+          </Reveal>
+
+          {/* ظ¤ظ¤ Hero headline ظ¤ظ¤ */}
+          <Reveal delay={300}>
+            <h1
+              className={`font-black tracking-tight leading-[1.1] select-none ${headingGradient}`}
+              style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.5rem)" }}
+            >
+              {lang === "ar"
+                ? "┘ç┘╪»╪│╪ر ╪د┘╪ث╪ز┘à╪ز╪ر ╪د┘╪▒┘é┘à┘è╪ر. ┘à┘ê╪س┘ê┘é┘è╪ر ╪د┘┘à╪ج╪│╪│╪د╪ز."
+                : "Engineering Digital Automation. Enterprise-Grade Reliability."}
+            </h1>
+          </Reveal>
+
+          {/* ظ¤ظ¤ About Us body text ظ¤ premium typographic placeholder ظ¤ظ¤ */}
+          <Reveal delay={450}>
+            <p
+              className={`leading-relaxed font-light max-w-2xl mx-auto ${
+                isDark ? "text-slate-400" : "text-slate-600"
+              }`}
+              style={{ fontSize: "clamp(0.95rem, 2vw, 1.15rem)" }}
+            >
+              {t.hero_subtitle_secure}
+            </p>
+          </Reveal>
+
+          {/* ظ¤ظ¤ Decorative divider ظ¤ظ¤ */}
+          <Reveal delay={500}>
+            <div className="flex items-center gap-3 w-full max-w-xs mx-auto">
+              <div className="flex-1 h-px" style={{ background: `linear-gradient(to right, transparent, ${isDark ? "rgba(14,179,186,0.3)" : "rgba(14,179,186,0.4)"})` }} />
+              <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 flex-shrink-0" />
+              <div className="flex-1 h-px" style={{ background: `linear-gradient(to left, transparent, ${isDark ? "rgba(14,179,186,0.3)" : "rgba(14,179,186,0.4)"})` }} />
+            </div>
+          </Reveal>
+
+          {/* ظ¤ظ¤ CTA Buttons ظ¤ظ¤ */}
+          <Reveal delay={600}>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center">
+
+              {/* Primary ظ¤ Launch Mi Tools */}
+              <Link
+                href="https://mi.maker-ai.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-xl font-black tracking-widest uppercase text-[#020209] transition-all duration-300 active:scale-[0.97]"
+                style={{
+                  padding: "clamp(0.85rem,2vw,1rem) clamp(1.75rem,4vw,2.5rem)",
+                  fontSize: "clamp(0.75rem,1.5vw,0.875rem)",
+                  background: "linear-gradient(135deg, #22d3ee 0%, #0eb3ba 100%)",
+                  boxShadow: "0 0 32px rgba(14,179,186,0.45)",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 55px rgba(14,179,186,0.75)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 32px rgba(14,179,186,0.45)"; }}
+              >
+                {t.hero_btn_launch}
+                <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+
+              {/* Secondary ظ¤ Explore Solutions */}
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded-xl font-bold tracking-wide transition-all duration-300 active:scale-[0.97] backdrop-blur-md"
+                style={{
+                  padding: "clamp(0.85rem,2vw,1rem) clamp(1.75rem,4vw,2.5rem)",
+                  fontSize: "clamp(0.75rem,1.5vw,0.875rem)",
+                  border: `1px solid ${isDark ? "rgba(255,255,255,0.1)" : "rgba(15,23,42,0.15)"}`,
+                  background: isDark ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.7)",
+                  color: isDark ? "#e2e8f0" : "#1e293b",
+                  boxShadow: isDark ? "none" : "0 2px 8px rgba(15,23,42,0.06)",
+                }}
+              >
+                {t.hero_btn_explore_enterprise}
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ
+          METRICS BAR ظ¤ Authentic Operational Indicators
+      ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ */}
+      <section
+        className="relative w-full border-b border-[var(--card-border-default)] select-none"
+        style={{
+          background: isDark ? "rgba(10,14,26,0.6)" : "rgba(255,255,255,0.7)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+        }}
+      >
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[var(--card-border-default)]">
+
+            {[
+              { value: t.metric_workflows_value, label: t.metric_workflows_sub },
+              { value: t.metric_uptime_value,    label: t.metric_uptime_sub },
+              { value: t.metric_security_value,  label: t.metric_security_sub },
+            ].map((m, i) => (
+              <Reveal key={i} delay={100 + i * 130}>
+                <div className="flex flex-col items-center gap-2 text-center py-8 sm:py-10 px-4 sm:px-8">
+                  <span
+                    className="font-black leading-none"
+                    style={{
+                      fontSize: "clamp(2rem, 5vw, 3rem)",
+                      color: "#0eb3ba",
+                      textShadow: isDark ? "0 0 24px rgba(14,179,186,0.4)" : "none",
+                    }}
+                  >
+                    {m.value}
+                  </span>
+                  <span
+                    className="font-semibold tracking-wide leading-snug"
+                    style={{
+                      fontSize: "clamp(0.65rem, 1.2vw, 0.8rem)",
+                      color: isDark ? "#94a3b8" : "#475569",
+                      maxWidth: "14ch",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                    }}
+                  >
+                    {m.label}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ
+          SECTION 2 ظ¤ Core Services Architecture Grid
+      ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ */}
+      <section id="services" className="relative w-full border-b border-[var(--card-border-default)] py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+          <Reveal delay={100} className="text-center mb-12 sm:mb-16">
+            <h2
+              className={`font-black tracking-tight uppercase select-none ${headingGradient}`}
+              style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)" }}
+            >
+              {t.services_arch_title}
+            </h2>
+          </Reveal>
+
+          {/* Responsive auto-fill grid ظ¤ collapses gracefully at every breakpoint */}
+          <div
+            className="grid gap-5"
+            style={{ gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 260px), 1fr))" }}
+          >
+            {pillars.map((p, i) => (
+              <Reveal key={p.key} delay={150 + i * 90} className="h-full">
+                <div className="card-neon-border rounded-2xl flex flex-col h-full group overflow-hidden" style={{ padding: "clamp(1.25rem, 3vw, 1.75rem)" }}>
+
+                  {/* Hover radial flare */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+                    style={{ background: "radial-gradient(ellipse at top, rgba(14,179,186,0.08), transparent 65%)" }}
+                    aria-hidden="true"
+                  />
+
+                  {/* Icon */}
+                  <div
+                    className="relative z-10 flex-shrink-0 rounded-xl flex items-center justify-center mb-5 transition-all duration-300"
+                    style={{
+                      width: "2.75rem",
+                      height: "2.75rem",
+                      background: isDark ? "rgba(14,179,186,0.08)" : "rgba(14,179,186,0.07)",
+                      border: `1px solid ${isDark ? "rgba(14,179,186,0.22)" : "rgba(14,179,186,0.2)"}`,
+                      color: isDark ? "#22d3ee" : "#0891b2",
+                      boxShadow: isDark ? "0 0 16px rgba(14,179,186,0.12)" : "0 2px 8px rgba(14,179,186,0.1)",
+                    }}
+                  >
+                    {p.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className="relative z-10 font-bold mb-2.5 tracking-wide transition-colors duration-300"
+                    style={{
+                      fontSize: "clamp(1rem, 2vw, 1.125rem)",
+                      color: isDark ? "#f1f5f9" : "#0f172a",
+                    }}
+                  >
+                    {p.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    className="relative z-10 leading-relaxed font-light flex-grow"
+                    style={{
+                      fontSize: "clamp(0.8rem, 1.4vw, 0.875rem)",
+                      color: isDark ? "#94a3b8" : "#475569",
+                    }}
+                  >
+                    {p.desc}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ
+          SECTION 3 ظ¤ The Operational Blueprint
+      ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ */}
+      <section className="relative w-full border-b border-[var(--card-border-default)] py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+          <Reveal delay={100} className="text-center mb-12 sm:mb-16">
+            <span
+              className="block font-bold tracking-[0.18em] uppercase mb-3"
+              style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.8rem)", color: "#0eb3ba" }}
+            >
+              {t.blueprint_subtitle}
+            </span>
+            <h2
+              className={`font-black tracking-tight uppercase select-none ${headingGradient}`}
+              style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)" }}
+            >
+              {t.blueprint_title}
+            </h2>
+          </Reveal>
+
+          {/* Steps ظ¤ fluid column layout, no fixed widths */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 lg:gap-12 relative">
+            {[
+              { num: "01", title: t.blueprint_step1_title, desc: t.blueprint_step1_desc },
+              { num: "02", title: t.blueprint_step2_title, desc: t.blueprint_step2_desc },
+              { num: "03", title: t.blueprint_step3_title, desc: t.blueprint_step3_desc },
+            ].map((step, i) => (
+              <Reveal key={step.num} delay={180 + i * 140} className="relative flex flex-col items-center text-center">
+
+                {/* Step number circle */}
+                <div
+                  className="flex items-center justify-center font-black mb-5 transition-all duration-300 flex-shrink-0"
+                  style={{
+                    width: "clamp(3rem, 5vw, 4rem)",
+                    height: "clamp(3rem, 5vw, 4rem)",
+                    borderRadius: "50%",
+                    fontSize: "clamp(0.9rem, 1.5vw, 1.125rem)",
+                    background: isDark ? "rgba(14,179,186,0.08)" : "rgba(14,179,186,0.07)",
+                    border: `1.5px solid ${isDark ? "rgba(14,179,186,0.35)" : "rgba(14,179,186,0.3)"}`,
+                    color: isDark ? "#22d3ee" : "#0891b2",
+                    boxShadow: isDark ? "0 0 22px rgba(14,179,186,0.22)" : "0 4px 16px rgba(14,179,186,0.12)",
+                  }}
+                >
+                  {step.num}
+                </div>
+
+                <h3
+                  className="font-bold mb-2"
+                  style={{
+                    fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)",
+                    color: isDark ? "#f1f5f9" : "#0f172a",
+                  }}
+                >
+                  {step.title}
+                </h3>
+                <p
+                  className="leading-relaxed font-light"
+                  style={{
+                    fontSize: "clamp(0.8rem, 1.4vw, 0.875rem)",
+                    color: isDark ? "#94a3b8" : "#475569",
+                    maxWidth: "26ch",
+                  }}
+                >
+                  {step.desc}
+                </p>
+
+                {/* Connector line (tablet+ only, between steps 1ظْ2 and 2ظْ3) */}
+                {i < 2 && (
+                  <div
+                    className="hidden sm:block absolute top-[calc(clamp(1.5rem,2.5vw,2rem))] h-px -z-10"
+                    style={{
+                      left: isRtl ? "auto" : "62%",
+                      right: isRtl ? "62%" : "auto",
+                      width: "76%",
+                      background: isRtl
+                        ? "linear-gradient(to left, rgba(14,179,186,0.3), rgba(14,179,186,0.12), transparent)"
+                        : "linear-gradient(to right, rgba(14,179,186,0.3), rgba(14,179,186,0.12), transparent)",
+                    }}
+                    aria-hidden="true"
+                  />
+                )}
+              </Reveal>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ
+          SECTION 4 ظ¤ High-Conversion CTA
+      ظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـظـ */}
+      <section className="relative overflow-hidden" style={{ padding: "clamp(4rem, 8vw, 9rem) 1rem" }}>
+
+        {/* Ambient glow behind CTA */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: isDark
+              ? "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(14,179,186,0.06), transparent)"
+              : "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(14,179,186,0.04), transparent)",
+          }}
+          aria-hidden="true"
+        />
+
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <Reveal delay={100}>
+            <div className="relative inline-block group">
+              {/* Halo glow behind button */}
+              <div
+                className="absolute -inset-3 rounded-2xl opacity-50 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none blur-2xl"
+                style={{ background: "linear-gradient(135deg, rgba(14,179,186,0.7), rgba(20,210,219,0.6))" }}
+                aria-hidden="true"
+              />
+              <Link
+                href="/contact"
+                className="relative inline-flex items-center justify-center rounded-xl font-black tracking-wide text-[#020209] transition-all duration-300 hover:scale-[1.025] active:scale-[0.98] cursor-pointer"
+                style={{
+                  padding: "clamp(1rem, 2.5vw, 1.5rem) clamp(2rem, 5vw, 3.5rem)",
+                  fontSize: "clamp(0.875rem, 2vw, 1.1rem)",
+                  background: "linear-gradient(135deg, #22d3ee 0%, #0eb3ba 50%, #14b8a6 100%)",
+                  boxShadow: "0 0 40px rgba(14,179,186,0.38)",
+                  border: "1px solid rgba(34,211,238,0.2)",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 70px rgba(14,179,186,0.7)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 40px rgba(14,179,186,0.38)"; }}
+              >
+                {t.cta_complexities}
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+    </div>
+  );
+}

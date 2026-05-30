@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
@@ -12,7 +12,7 @@ export default function Home() {
   const t = translations[lang];
   const isDark = theme === "dark";
 
-  // ── Hero title: sharp chrome in dark, deep corporate ink in light ──
+  // ظ¤ظ¤ Hero title: sharp chrome in dark, deep corporate ink in light ظ¤ظ¤
   const titleContent = lang === "ar" ? (
     <>
       <span className={`text-transparent bg-clip-text font-black ${
@@ -20,20 +20,20 @@ export default function Home() {
           ? "bg-gradient-to-b from-white via-slate-100 to-slate-400"
           : "bg-gradient-to-b from-slate-900 via-slate-800 to-slate-600"
       }`}>
-        أتمتة{" "}
+        ╪ث╪ز┘à╪ز╪ر{" "}
       </span>
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
-        الذكاء الاصطناعي
+        ╪د┘╪░┘â╪د╪ة ╪د┘╪د╪╡╪╖┘╪د╪╣┘è
       </span>{" "}
       <span className={`text-transparent bg-clip-text font-black ${
         isDark
           ? "bg-gradient-to-b from-white via-slate-100 to-slate-400"
           : "bg-gradient-to-b from-slate-900 via-slate-800 to-slate-600"
       }`}>
-        من الجيل القادم. هندسة معززة بـ{" "}
+        ┘à┘ ╪د┘╪ش┘è┘ ╪د┘┘é╪د╪»┘à. ┘ç┘╪»╪│╪ر ┘à╪╣╪▓╪▓╪ر ╪ذ┘{" "}
       </span>
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
-        أمن المؤسسات.
+        ╪ث┘à┘ ╪د┘┘à╪ج╪│╪│╪د╪ز.
       </span>
     </>
   ) : (
@@ -61,12 +61,12 @@ export default function Home() {
     </>
   );
 
-  // ── Section heading gradient class (shared) ──
+  // ظ¤ظ¤ Section heading gradient class (shared) ظ¤ظ¤
   const headingGradient = isDark
     ? "text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400"
     : "text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-800 to-slate-500";
 
-  // ── Service pillar data ──
+  // ظ¤ظ¤ Service pillar data ظ¤ظ¤
   const pillars = [
     {
       key: "pillar1",
@@ -113,7 +113,7 @@ export default function Home() {
   return (
     <div className="relative text-foreground flex flex-col overflow-hidden">
 
-      {/* ── HERO SECTION ──────────────────────────────────────────── */}
+      {/* ظ¤ظ¤ HERO SECTION ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ */}
       <section className="relative w-full pt-24 pb-16 sm:pt-32 sm:pb-20 border-b border-[var(--card-border-default)]">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
@@ -137,7 +137,7 @@ export default function Home() {
             <Reveal delay={530}>
               <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
 
-                {/* Primary CTA — launch Mi Tools */}
+                {/* Primary CTA ظ¤ launch Mi Tools */}
                 <Link
                   href="https://mi.maker-ai.tech"
                   target="_blank"
@@ -156,7 +156,7 @@ export default function Home() {
                   </svg>
                 </Link>
 
-                {/* Secondary CTA — explore solutions */}
+                {/* Secondary CTA ظ¤ explore solutions */}
                 <Link
                   href="/services"
                   className={`inline-flex items-center justify-center gap-2 rounded-xl
@@ -177,7 +177,7 @@ export default function Home() {
           <div className="col-span-1 lg:col-span-5 flex justify-center items-center relative">
             <Reveal delay={250} className="w-full max-w-[420px] aspect-square relative flex items-center justify-center">
 
-              {/* ── Deep ambient glow pool behind the entire composition ── */}
+              {/* ظ¤ظ¤ Deep ambient glow pool behind the entire composition ظ¤ظ¤ */}
               <div
                 className={`absolute inset-[-15%] rounded-full blur-[80px] pointer-events-none ${
                   isDark
@@ -187,7 +187,7 @@ export default function Home() {
                 aria-hidden="true"
               />
 
-              {/* ── Outer ring: ultra-slow clockwise, single-pixel, gradient ── */}
+              {/* ظ¤ظ¤ Outer ring: ultra-slow clockwise, single-pixel, gradient ظ¤ظ¤ */}
               <div
                 className="absolute inset-0 rounded-full animate-ring-slow pointer-events-none"
                 style={{
@@ -202,7 +202,7 @@ export default function Home() {
                 aria-hidden="true"
               />
 
-              {/* ── Inner orbit ring: reverse slow spin ── */}
+              {/* ظ¤ظ¤ Inner orbit ring: reverse slow spin ظ¤ظ¤ */}
               <div
                 className="absolute w-[76%] h-[76%] rounded-full animate-ring-reverse pointer-events-none"
                 style={{
@@ -212,7 +212,7 @@ export default function Home() {
                 aria-hidden="true"
               />
 
-              {/* ── Orbiting accent dot — rides the outer ring ── */}
+              {/* ظ¤ظ¤ Orbiting accent dot ظ¤ rides the outer ring ظ¤ظ¤ */}
               <div
                 className="absolute inset-0 rounded-full animate-ring-slow pointer-events-none"
                 aria-hidden="true"
@@ -222,7 +222,7 @@ export default function Home() {
                 }`} />
               </div>
 
-              {/* ── Secondary orbiting dot on inner ring (phase-shifted) ── */}
+              {/* ظ¤ظ¤ Secondary orbiting dot on inner ring (phase-shifted) ظ¤ظ¤ */}
               <div
                 className="absolute w-[76%] h-[76%] rounded-full animate-ring-reverse pointer-events-none"
                 aria-hidden="true"
@@ -232,7 +232,7 @@ export default function Home() {
                 }`} />
               </div>
 
-              {/* ── Central pulsing core glow sphere ── */}
+              {/* ظ¤ظ¤ Central pulsing core glow sphere ظ¤ظ¤ */}
               <div
                 className={`w-36 h-36 rounded-full absolute pointer-events-none animate-pulse ${
                   isDark ? "bg-cyan-500/15 blur-[45px]" : "bg-cyan-400/12 blur-[40px]"
@@ -240,7 +240,7 @@ export default function Home() {
                 aria-hidden="true"
               />
 
-              {/* ── Localized brand flare behind icon ── */}
+              {/* ظ¤ظ¤ Localized brand flare behind icon ظ¤ظ¤ */}
               <div
                 className={`w-52 h-52 rounded-full absolute -z-10 pointer-events-none animate-hero-orb ${
                   isDark
@@ -250,7 +250,7 @@ export default function Home() {
                 aria-hidden="true"
               />
 
-              {/* ── Hexagonal accent lines (SVG, purely decorative) ── */}
+              {/* ظ¤ظ¤ Hexagonal accent lines (SVG, purely decorative) ظ¤ظ¤ */}
               <svg
                 className="absolute inset-0 w-full h-full opacity-[0.07] pointer-events-none"
                 viewBox="0 0 400 400"
@@ -261,12 +261,12 @@ export default function Home() {
                 {/* Cross-hair fine lines */}
                 <line x1="200" y1="0" x2="200" y2="400" stroke="#0eb3ba" strokeWidth="0.5" strokeDasharray="6 14" />
                 <line x1="0" y1="200" x2="400" y2="200" stroke="#0eb3ba" strokeWidth="0.5" strokeDasharray="6 14" />
-                {/* 45° diagonals */}
+                {/* 45┬░ diagonals */}
                 <line x1="0" y1="0" x2="400" y2="400" stroke="#6366f1" strokeWidth="0.5" strokeDasharray="4 18" />
                 <line x1="400" y1="0" x2="0" y2="400" stroke="#6366f1" strokeWidth="0.5" strokeDasharray="4 18" />
               </svg>
 
-              {/* ── Central Icon ── */}
+              {/* ظ¤ظ¤ Central Icon ظ¤ظ¤ */}
               <img
                 src="/assets/logo/icon-color.svg"
                 alt="Maker-AI Core Icon"
@@ -280,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 1: Metrics Bar ─────────────────────────────────── */}
+      {/* ظ¤ظ¤ SECTION 1: Metrics Bar ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ */}
       <section className="relative w-full border-b border-[var(--card-border-default)] py-10 select-none" style={{ background: 'var(--card-bg)' }}>
         <div className="absolute inset-0 backdrop-blur-md pointer-events-none" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
@@ -307,7 +307,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 2: Core Services Grid ─────────────────────────── */}
+      {/* ظ¤ظ¤ SECTION 2: Core Services Grid ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ */}
       <section id="services" className="relative w-full py-24 sm:py-32 border-b border-[var(--card-border-default)]">
         <div className="max-w-7xl mx-auto px-6">
 
@@ -358,7 +358,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 3: Operational Blueprint ──────────────────────── */}
+      {/* ظ¤ظ¤ SECTION 3: Operational Blueprint ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ */}
       <section className="relative w-full py-24 sm:py-32 border-b border-[var(--card-border-default)]">
         <div className="max-w-7xl mx-auto px-6">
 
@@ -402,7 +402,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 4: High-Conversion CTA ────────────────────────── */}
+      {/* ظ¤ظ¤ SECTION 4: High-Conversion CTA ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ظ¤ */}
       <section className="relative py-28 sm:py-36 overflow-hidden">
 
         {/* Radial glow behind CTA button */}

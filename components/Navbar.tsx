@@ -16,6 +16,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t.nav_home,      href: "/" },
+    { name: t.nav_about,     href: "/about" },
     { name: t.nav_services,  href: "/services" },
     { name: t.nav_workspace, href: "https://mi.maker-ai.tech", external: true },
     { name: t.nav_contact,   href: "/contact" },
