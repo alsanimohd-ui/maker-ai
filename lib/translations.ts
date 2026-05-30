@@ -18,12 +18,12 @@ export const translations = {
     hero_btn_explore_enterprise: "Explore Enterprise Solutions",
 
     // Infrastructure Metrics Bar
-    metric_workflows_value: "100+",
-    metric_workflows_sub: "Active Workflows Hosted",
-    metric_uptime_value: "99.9%",
-    metric_uptime_sub: "Cloud Enterprise Uptime",
-    metric_security_value: "Zero",
-    metric_security_sub: "Perimeter Security Breaches",
+    metric_workflows_value: "24/7",
+    metric_workflows_sub: "Continuous Automated Execution",
+    metric_uptime_value: "0%",
+    metric_uptime_sub: "Human Error Margin via n8n & Code Orchestration",
+    metric_security_value: "Bespoke",
+    metric_security_sub: "Custom Tailored Architectures",
 
     // Core Services Architecture / 4 Pillars
     services_arch_title: "Core Services Architecture",
@@ -131,12 +131,12 @@ export const translations = {
     hero_btn_explore_enterprise: "استكشف حلول المؤسسات",
 
     // Infrastructure Metrics Bar
-    metric_workflows_value: "+١٠٠",
-    metric_workflows_sub: "أكثر من 100 خط عمل نشط مستضاف",
-    metric_uptime_value: "٩٩.٩%",
-    metric_uptime_sub: "99.9% جاهزية الخدمة السحابية للمؤسسات",
-    metric_security_value: "صفر",
-    metric_security_sub: "صفر اختراق للأمن المحيطي",
+    metric_workflows_value: "٢٤/٧",
+    metric_workflows_sub: "أنظمة تعمل على مدار الساعة دون توقف",
+    metric_uptime_value: "٠٪",
+    metric_uptime_sub: "منع الأخطاء البشرية تماماً في نقل البيانات",
+    metric_security_value: "مخصص",
+    metric_security_sub: "حلول مفصلة بالكامل حسب متطلبات العميل",
 
     // Core Services Architecture / 4 Pillars
     services_arch_title: "بنية الخدمات الأساسية",
