@@ -33,9 +33,9 @@ export default function Navbar() {
               className="flex items-center gap-2 hover:scale-[1.01] transition-all duration-300"
             >
               <img
-                src={theme === "dark" ? "/assets/logo/logo-color.svg" : "/assets/logo/logo-color.svg"}
+                src={theme === "dark" ? "/assets/logo/logo-white.svg" : "/assets/logo/logo-dark.svg"}
                 alt="Maker AI Logo"
-                className="h-9 w-auto object-contain"
+                className="h-9 w-auto object-contain transition-all duration-300"
                 style={{ aspectRatio: "240/64" }}
               />
             </Link>

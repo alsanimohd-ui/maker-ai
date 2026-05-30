@@ -111,7 +111,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen text-foreground flex flex-col justify-center overflow-hidden">
+    <div className="relative text-foreground flex flex-col overflow-hidden">
 
       {/* ── HERO SECTION ──────────────────────────────────────────── */}
       <section className="relative w-full pt-24 pb-16 sm:pt-32 sm:pb-20 border-b border-[var(--card-border-default)]">
