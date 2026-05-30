@@ -18,62 +18,40 @@ export default function ServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  // 3 true core infrastructure pillars loaded dynamically from translations
-  const serviceDetails = [
+  const servicePillars = [
     {
-      title: t.services_card1_title,
-      subtitle: t.services_pillar1_subtitle,
-      impact: t.services_pillar1_impact,
-      problem: t.services_pillar1_problem,
-      stopsDoing: t.services_pillar1_stops,
-      before: t.services_pillar1_before,
-      after: t.services_pillar1_after,
-      useCases: [
-        t.services_pillar1_usecase1,
-        t.services_pillar1_usecase2,
-        t.services_pillar1_usecase3,
-      ],
+      title: t.pillar1_title,
+      desc: t.pillar1_desc,
       icon: (
-        <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
         </svg>
       ),
     },
     {
-      title: t.services_card2_title,
-      subtitle: t.services_pillar2_subtitle,
-      impact: t.services_pillar2_impact,
-      problem: t.services_pillar2_problem,
-      stopsDoing: t.services_pillar2_stops,
-      before: t.services_pillar2_before,
-      after: t.services_pillar2_after,
-      useCases: [
-        t.services_pillar2_usecase1,
-        t.services_pillar2_usecase2,
-        t.services_pillar2_usecase3,
-      ],
+      title: t.pillar2_title,
+      desc: t.pillar2_desc,
       icon: (
-        <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+        </svg>
+      ),
+    },
+    {
+      title: t.pillar3_title,
+      desc: t.pillar3_desc,
+      icon: (
+        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
       ),
     },
     {
-      title: t.services_card3_title,
-      subtitle: t.services_pillar3_subtitle,
-      impact: t.services_pillar3_impact,
-      problem: t.services_pillar3_problem,
-      stopsDoing: t.services_pillar3_stops,
-      before: t.services_pillar3_before,
-      after: t.services_pillar3_after,
-      useCases: [
-        t.services_pillar3_usecase1,
-        t.services_pillar3_usecase2,
-        t.services_pillar3_usecase3,
-      ],
+      title: t.pillar4_title,
+      desc: t.pillar4_desc,
       icon: (
-        <svg className="h-10 w-10 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.003 9.003 0 018.716 6.747M12 3a9.003 9.003 0 00-8.716 6.747M3 12h18" />
         </svg>
       ),
     },
@@ -105,96 +83,39 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Services detailed listing */}
-        <section className="max-w-7xl mx-auto px-6 w-full space-y-24 sm:space-y-36">
-          {serviceDetails.map((service, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <div
+        {/* 4 Pillars Grid Showcase */}
+        <section className="max-w-7xl mx-auto px-6 w-full mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {servicePillars.map((pillar, index) => (
+              <Reveal
                 key={index}
-                className={`flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-stretch ${
-                  isEven ? "" : "lg:flex-row-reverse"
-                }`}
+                delay={100 * (index + 1)}
+                className="group flex flex-col justify-between rounded-[24px] p-8 sm:p-10 relative overflow-hidden backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 min-h-[250px]"
               >
-                {/* Service Details Card */}
-                <div className="w-full lg:w-1/2 flex">
-                  <Reveal
-                    delay={100}
-                    className="group flex flex-col w-full rounded-[24px] p-8 sm:p-10 relative overflow-hidden backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500"
-                  >
-                    {/* Immersive inner top radial glow on hover */}
-                    <div 
-                      className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      aria-hidden="true"
-                    />
+                {/* Immersive inner top radial glow on hover */}
+                <div 
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  aria-hidden="true"
+                />
 
-                    <div className="relative z-10 flex flex-col h-full">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-955/20 border border-cyan-500/20 mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                        {service.icon}
-                      </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                        {service.title}
-                      </h2>
-                      <p className="text-cyan-400 font-semibold text-sm mb-4">
-                        {service.subtitle}
-                      </p>
-                      <p className="text-sm text-slate-400/90 leading-relaxed mb-6 font-light">
-                        {service.impact}
-                      </p>
-
-                      <div className="mt-auto border-t border-white/[0.05] pt-4 text-xs space-y-3">
-                        <p className="text-slate-500 font-medium">{service.problem}</p>
-                        <p className="text-slate-500 font-medium">{service.stopsDoing}</p>
-                      </div>
-                    </div>
-                  </Reveal>
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-955/20 border border-cyan-500/20 mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                    {pillar.icon}
+                  </div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                    {pillar.title}
+                  </h2>
+                  <p className="text-sm text-slate-400/90 leading-relaxed font-light">
+                    {pillar.desc}
+                  </p>
                 </div>
-
-                {/* Before/After and Common Use Cases */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-between py-2">
-                  <Reveal delay={255} className="flex flex-col space-y-6">
-                    {/* Before / After visual block */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-4">
-                      <div className="flex flex-col bg-red-950/20 border border-red-900/40 rounded-xl p-4.5">
-                        <span className="text-red-500 font-bold uppercase tracking-wider mb-2">
-                          {lang === "ar" ? "قبل الأتمتة" : "Before Automation"}
-                        </span>
-                        <p className="text-slate-400 leading-relaxed font-light">{service.before}</p>
-                      </div>
-                      <div className="flex flex-col bg-cyan-955/20 border border-cyan-500/20 rounded-xl p-4.5">
-                        <span className="text-cyan-400 font-bold uppercase tracking-wider mb-2">
-                          {lang === "ar" ? "بعد الأتمتة" : "After Automation"}
-                        </span>
-                        <p className="text-slate-300 leading-relaxed font-medium">{service.after}</p>
-                      </div>
-                    </div>
-
-                    <h3 className="text-lg font-bold text-white uppercase tracking-wide">
-                      {lang === "ar" ? "تطبيقات وحالات استخدام شائعة" : "Common Applications & Use Cases"}
-                    </h3>
-                    <ul className="space-y-4">
-                      {service.useCases.map((useCase, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-cyan-400/10 text-cyan-400 flex items-center justify-center">
-                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-sm sm:text-base text-slate-400/90 leading-relaxed font-light">
-                            {useCase}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Reveal>
-                </div>
-              </div>
-            );
-          })}
+              </Reveal>
+            ))}
+          </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="mt-24 sm:mt-32 max-w-6xl mx-auto px-6 w-full text-center">
+        {/* High-Conversion CTA */}
+        <section className="max-w-4xl mx-auto px-6 w-full text-center">
           <Reveal className="backdrop-blur-xl bg-white/[0.01] border border-white/[0.05] rounded-3xl p-10 sm:p-20 relative overflow-hidden shadow-2xl shadow-cyan-950/25">
             <div className="absolute top-[-35%] left-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent blur-[100px]" />
             <div className="absolute bottom-[-35%] right-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/10 via-purple-600/5 to-transparent blur-[100px]" />
@@ -215,9 +136,9 @@ export default function ServicesPage() {
               <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-teal-500 blur-xl rounded-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
               <Link
                 href="/contact"
-                className="relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-base font-black tracking-wide uppercase text-[#020205] shadow-[0_0_20px_rgba(0,242,254,0.2)] hover:scale-[1.02] border border-cyan-300/10 transition-all duration-300 cursor-pointer"
+                className="relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-5 text-base sm:text-lg font-black tracking-wide text-[#020205] shadow-[0_0_20px_rgba(0,242,254,0.2)] hover:scale-[1.02] border border-cyan-300/10 transition-all duration-300 cursor-pointer"
               >
-                {t.services_page_why_btn}
+                {t.cta_complexities}
               </Link>
             </div>
           </Reveal>

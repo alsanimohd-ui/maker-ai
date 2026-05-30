@@ -25,14 +25,23 @@ export const translations = {
     metric_security_value: "Zero",
     metric_security_sub: "Perimeter Security Breaches",
 
-    // Core Services Architecture
+    // Core Services Architecture / 4 Pillars
     services_arch_title: "Core Services Architecture",
-    services_card1_title: "Enterprise SaaS ERP Integration",
-    services_card1_desc: "Building multi-tenant ERP environments isolated inside robust Docker containers, engineered strictly to comply with the Jordanian e-invoicing framework (JoFotara), handling localized data structures, reporting, and absolute volume persistence.",
-    services_card2_title: "High-Scale Linux Automation Engine",
-    services_card2_desc: "Maintaining and hosting over 100+ active asynchronous workflows on managed n8n runtime infrastructure. Orchestrating fault-tolerant custom webhooks, secure backend system configurations, and cross-platform API pipelines that run flawlessly on Ubuntu/CentOS layers.",
-    services_card3_title: "Virtual Firewalling & Zero-Trust Architecture",
-    services_card3_desc: "Network security framed around Certified Ethical Hacker (CEH) methodologies. Focus on deploying virtual firewalls (like FortiGate architectures), auditing cloud network subnets, establishing hard zero-trust boundaries, and real-time perimeter threat scoring telemetry.",
+    
+    pillar1_title: "Premium Web Platforms",
+    pillar1_desc: "Designing and building luxury, ultra-fast web platforms tailored to your corporate identity to attract clients. Fully responsive and optimized for mobile to ensure a commanding digital presence that sets you apart from competitors.",
+    
+    pillar2_title: "Bespoke Software Solutions",
+    pillar2_desc: "Architecting tailored management and financial systems designed around your precise workflows. Offering total flexibility between standard, production-ready modules or fully customized software built from scratch to match your specific business logic and budget.",
+    
+    pillar3_title: "Smart Workflow Automation",
+    pillar3_desc: "Replacing manual, repetitive daily employee tasks with intelligent software running behind the scenes 24/7. Saving your enterprise hundreds of hours monthly in data transfer and file synchronization with absolute precision and zero human error.",
+    
+    pillar4_title: "Next-Gen Infrastructure & Cloud",
+    pillar4_desc: "Providing engineering consulting and managed solutions for your network architectures, cloud environments, and official corporate emails. Ensuring seamless business continuity and maximum operational security without interruptions.",
+
+    // Dynamic Call-to-Action (CTA)
+    cta_complexities: "Show us your daily business complexities... and let us engineer the solutions",
 
     // The Operational Blueprint
     blueprint_title: "The Operational Blueprint",
@@ -52,93 +61,6 @@ export const translations = {
     hero_btn_book: "Book Consultation",
     hero_btn_explore: "Explore Services",
 
-    // Services Section Home
-    services_title: "What We Automate",
-    services_sub: "We replace repetitive tasks with software systems that do the work for you.",
-    service_1_title: "Data & Process Automation",
-    service_1_desc: "Automatically process invoices, extract data, and send it to your accounting system without manual entry.",
-    service_2_title: "AI Chatbots & Support",
-    service_2_desc: "Answer routine customer questions instantly and qualify leads 24/7 without manual support queues.",
-    service_3_title: "System Integration & Cloud",
-    service_3_desc: "Connect your tools and databases to share data in real-time, keeping your systems synced.",
-    service_4_title: "Reporting & Dashboards",
-    service_4_desc: "Pull data from multiple sources and build clean summaries to help you see exactly how your business is performing.",
-
-    // Why Choose Us
-    why_title: "Why Work With Maker AI",
-    why_sub: "We focus on delivering measurable business results, not just implementing technology.",
-    why_1_stat: "80%+",
-    why_1_title: "Efficiency Increase",
-    why_1_desc: "By automating repetitive tasks, emails, and data entry, we give your team their hours back to focus on high-impact work.",
-    why_2_stat: "Cost Reduction",
-    why_2_title: "Lesser Overhead",
-    why_2_desc: "Automated pipelines and smart bots handle high volumes of tasks seamlessly, lowering operational costs significantly.",
-    why_3_stat: "Bespoke Custom",
-    why_3_title: "Built for Your Logic",
-    why_3_desc: "No generic boxes. We study your custom workflows and build systems that adapt perfectly to how your business actually runs.",
-
-    // Who This Is For
-    who_title: "Who This Is For",
-    who_sub: "We build systems tailored to your business model to solve specific operational pains.",
-    who_agencies_title: "Agencies",
-    who_agencies_pain: "Pain: Spending hours compiling client reports and onboarding clients manually.",
-    who_agencies_solve: "Solve: We build systems that pull client data, generate reports, and trigger onboarding sequences automatically.",
-    who_ecommerce_title: "E-Commerce",
-    who_ecommerce_pain: "Pain: Manually managing inventory syncs and copy-pasting order details to suppliers.",
-    who_ecommerce_solve: "Solve: We link your storefront to suppliers' APIs, automating order fulfillment and inventory updates.",
-    who_services_title: "Service Companies",
-    who_services_pain: "Pain: Losing leads because of slow response times and spending too much time scheduling calls.",
-    who_services_solve: "Solve: We implement immediate lead responses and automatic booking systems that sync directly with calendars.",
-    who_ops_title: "Operations Teams",
-    who_ops_pain: "Pain: Bottlenecks from copy-pasting data between legacy databases and modern tools.",
-    who_ops_solve: "Solve: We write custom integration scripts that sync your databases in real-time, eliminating data entry.",
-
-    // How It Works
-    how_title: "How It Works",
-    how_sub: "A simple process to turn your business into an automated system",
-    how_1_title: "We Analyze Your Business",
-    how_1_desc: "We look at your spreadsheets, daily tasks, and tools to find exactly where you are losing time.",
-    how_2_title: "We Build Your System",
-    how_2_desc: "We write custom scripts and set up integrations tailored to your workflows — no generic boxes.",
-    how_3_title: "You Save Time & Scale",
-    how_3_desc: "Your processes run automatically, without copy-pasting, so your team can focus on actual growth.",
-
-    // Real Use Cases (New Section)
-    cases_title: "Real Use Cases",
-    cases_sub: "Concrete examples of systems we build and run for our clients.",
-    cases_1_title: "Automated Lead Qualification",
-    cases_1_input: "Input: Unqualified leads from forms & social media.",
-    cases_1_process: "Process: AI analyzes company size, budget, and requirements.",
-    cases_1_output: "Output: Auto-categorized leads in CRM; calendar link sent to high-value leads.",
-    cases_2_title: "Invoice Processing System",
-    cases_2_input: "Input: Incoming emails with PDF invoices.",
-    cases_2_process: "Process: System extracts vendor, totals, items, and tax info.",
-    cases_2_output: "Output: Auto-uploaded to accounting system (like Xero) with draft approval.",
-    cases_3_title: "Customer Support AI Assistant",
-    cases_3_input: "Input: Common customer tickets & refund questions.",
-    cases_3_process: "Process: System checks docs and database to draft the reply.",
-    cases_3_output: "Output: Resolves routine support issues instantly, escalates complex ones.",
-    cases_4_title: "Internal Reporting Automation",
-    cases_4_input: "Input: Weekly raw data files from ads, sales, and analytics.",
-    cases_4_process: "Process: Scripts clean, merge, and calculate ROI metrics.",
-    cases_4_output: "Output: Clean PDF report sent to Slack channel every Friday morning.",
-
-    // Real Impact (Proof)
-    proof_title: "Real Impact",
-    proof_sub: "Tangible results delivered through custom automated systems",
-    proof_1_title: "Data Efficiency",
-    proof_1_desc: "Reduced manual data entry time by up to 80%",
-    proof_2_title: "24/7 Availability",
-    proof_2_desc: "Automated customer inquiries with 24/7 AI responses",
-    proof_3_title: "Seamless Scaling",
-    proof_3_desc: "Replaced repetitive workflows with fully automated systems",
-
-    // CTA
-    cta_badge: "Optimize & Scale",
-    cta_title: "Let’s Find Where You’re Losing Time",
-    cta_desc: "We’ll identify automation opportunities and show you exactly how to improve your operations.",
-    cta_btn: "Schedule Consultation",
-
     // Contact Page/Form Intro
     contact_title: "Get Started Today",
     contact_sub: "Submit your project scope and our solution engineers will reach out to schedule a discovery call.",
@@ -151,13 +73,13 @@ export const translations = {
     form_email_placeholder: "john@company.com",
     form_company_label: "Company Name (Optional)",
     form_company_placeholder: "Company Inc.",
-    form_service_label: "Infrastructure Pillar",
-    form_service_opt1: "Enterprise SaaS ERP Integration",
-    form_service_opt2: "High-Scale Linux Automation Engine",
-    form_service_opt3: "Virtual Firewalling & Zero-Trust Architecture",
-    form_service_opt4: "Other Consultation",
+    form_service_label: "Service Area",
+    form_service_opt1: "Premium Web Platforms",
+    form_service_opt2: "Bespoke Software Solutions",
+    form_service_opt3: "Smart Workflow Automation",
+    form_service_opt4: "Next-Gen Infrastructure & Cloud",
     form_msg_label: "Project Brief & Requirements",
-    form_msg_placeholder: "Tell us about the processes you want to automate or systems you need built...",
+    form_msg_placeholder: "Tell us about the complexities you want to automate or systems you need built...",
     form_btn_submit: "Submit Inquiry",
     form_btn_submitting: "Processing Request...",
     form_success_title: "Message Sent!",
@@ -182,37 +104,6 @@ export const translations = {
     services_page_why_title: "Why Automate?",
     services_page_why_desc: "Custom automations eliminate human error, process transactions around the clock, and reduce monthly overhead costs.",
     services_page_why_btn: "Book Operational Audit",
-
-    // Services Page Pillars Details
-    services_pillar1_subtitle: "Isolated multi-tenant ERP environments compliant with JoFotara invoicing",
-    services_pillar1_impact: "We deploy isolated, multi-tenant ERP environments inside resilient Docker containers, ensuring robust data persistence and custom volume orchestration. The core architecture is specifically engineered to seamlessly integrate with local Jordanian e-invoicing (JoFotara) requirements, automating compliance and reporting.",
-    services_pillar1_problem: "Problem: Navigating local JoFotara invoicing compliance while ensuring tenant data isolation and persistence.",
-    services_pillar1_stops: "What you stop doing manually: Generating taxation invoices by hand for reporting, and managing shared unisolated DB systems.",
-    services_pillar1_before: "Manual tax calculation entries and data vulnerability in shared multi-tenant space.",
-    services_pillar1_after: "Fully automated JoFotara compliance report dispatching and isolated container network.",
-    services_pillar1_usecase1: "Deploying custom ERP software stacks isolated per subsidiary or department",
-    services_pillar1_usecase2: "Direct webhook integrations pushing tax records to JoFotara portal in real-time",
-    services_pillar1_usecase3: "Hardened database storage configuration with automatic volume backups",
-
-    services_pillar2_subtitle: "Hosting 100+ active asynchronous n8n workflows on optimized runtimes",
-    services_pillar2_impact: "Orchestrating 100+ active, asynchronous n8n workflows hosted on optimized Linux runtime instances. We engineer fault-tolerant webhooks, queue management systems, and high-frequency cross-platform API pipelines to synchronize operational data without human friction.",
-    services_pillar2_problem: "Problem: Webhook processing drops and delayed jobs due to weak pipeline infrastructure.",
-    services_pillar2_stops: "What you stop doing manually: Executing manual CSV reports between tools and debugging broken API daily.",
-    services_pillar2_before: "Fragmented operations and job failures due to weak server setups and data delays.",
-    services_pillar2_after: "Instant asynchronous n8n workflow pipeline running on hardened CentOS/Ubuntu layers.",
-    services_pillar2_usecase1: "Constructing real-time operational database synchronizations across platforms",
-    services_pillar2_usecase2: "Engineering high-volume secure webhooks that resist request floods",
-    services_pillar2_usecase3: "Managing n8n automation workloads hosted on hardened Ubuntu/CentOS servers",
-
-    services_pillar3_subtitle: "Perimeter defense blueprints built under Certified Ethical Hacker standards",
-    services_pillar3_impact: "Engineered under Certified Ethical Hacker (CEH) frameworks to secure modern network perimeters. We deploy sophisticated virtual firewalls, establish strict zero-trust network boundaries, conduct automated vulnerability auditing, and design real-time threat-scoring dashboards.",
-    services_pillar3_problem: "Problem: Exposure of internal subnet hosts to open networks without perimeter defense validation.",
-    services_pillar3_stops: "What you stop doing manually: Manually checking port listening states and worrying about network breaches.",
-    services_pillar3_before: "Open, unsegmented subnets easily vulnerable to scanning and privilege escalation.",
-    services_pillar3_after: "Segmented subnets behind FortiGate virtual firewalls with zero-trust credentials.",
-    services_pillar3_usecase1: "Deploying and hardening enterprise virtual firewalls (e.g. FortiGate architectures)",
-    services_pillar3_usecase2: "Isolating cloud server instances into secure network subnets to prevent lateral movement",
-    services_pillar3_usecase3: "Establishing continuous perimeter security auditing and real-time threat telemetry",
 
     // Footer
     footer_desc: "Engineered securely for enterprise evolution. Delivering scalable SaaS ERP, high-performance automation, and zero-trust virtual firewalling.",
@@ -247,14 +138,23 @@ export const translations = {
     metric_security_value: "صفر",
     metric_security_sub: "صفر اختراق للأمن المحيطي",
 
-    // Core Services Architecture
+    // Core Services Architecture / 4 Pillars
     services_arch_title: "بنية الخدمات الأساسية",
-    services_card1_title: "تكامل أنظمة SaaS ERP للمؤسسات",
-    services_card1_desc: "بناء بيئات تخطيط موارد المؤسسات (ERP) متعددة المستأجرين والمعزولة داخل حاويات Docker متينة، والمصممة خصيصاً للتوافق مع نظام الفوترة الإلكترونية الأردني (JoFotara)، ومعالجة هياكل البيانات المحلية، والتقارير، واستمرارية البيانات المطلقة.",
-    services_card2_title: "محرك أتمتة Linux واسع النطاق",
-    services_card2_desc: "صيانة واستضافة أكثر من 100 سير عمل نشط وغير متزامن على بنية تحتية مدارة لتشغيل n8n. تنسيق طلبات الويب (Webhooks) المخصصة والمقاومة للأعطال، وإعدادات الأنظمة الخلفية الآمنة، ومسارات واجهات البرمجة (API) عبر المنصات والتي تعمل بسلاسة على بيئات Ubuntu/CentOS.",
-    services_card3_title: "جدران الحماية الافتراضية وهندسة صفري الثقة",
-    services_card3_desc: "أمن الشبكات المصمم وفق منهجيات الهكر الأخلاقي المعتمد (CEH). التركيز على نشر جدران الحماية الافتراضية (مثل بنيات FortiGate)، وتدقيق الشبكات الفرعية السحابية، وتأسيس حدود صارمة لصفري الثقة، وقياس التهديدات المحيطية في الوقت الفعلي.",
+    
+    pillar1_title: "منصات الويب الممتازة",
+    pillar1_desc: "تصميم وبناء منصات ويب فاخرة وفائقة السرعة مصممة خصيصاً لهوية شركتك لجذب العملاء. متوافقة بالكامل ومحسّنة للهواتف المحمولة لضمان حضور رقمي قوي يميزك عن المنافسين.",
+    
+    pillar2_title: "حلول البرمجيات المخصصة",
+    pillar2_desc: "تصميم وهندسة أنظمة مالية وإدارية مخصصة ومصممة بدقة حول سير عملك الخاص. نقدم مرونة كاملة بين الوحدات الجاهزة للإنتاج أو البرمجيات المخصصة بالكامل والمبنية من الصفر لتناسب منطق عملك وميزانيتك المحددة.",
+    
+    pillar3_title: "أتمتة سير العمل الذكية",
+    pillar3_desc: "استبدال المهام اليومية اليدوية والمتكررة للموظفين ببرمجيات ذكية تعمل في الخلفية على مدار الساعة طوال أيام الأسبوع. توفير مئات الساعات شهرياً لشركتك في نقل البيانات ومزامنة الملفات بدقة مطلقة وخالية من الأخطاء البشرية.",
+    
+    pillar4_title: "البنية التحتية والحلول السحابية من الجيل القادم",
+    pillar4_desc: "تقديم الاستشارات الهندسية والحلول المدارة لبنيات الشبكات الخاصة بك، والبيئات السحابية، ورسائل البريد الإلكتروني الرسمية للشركات. ضمان استمرارية الأعمال بسلاسة وأقصى درجات الأمان التشغيلي دون أي انقطاع.",
+
+    // Dynamic Call-to-Action (CTA)
+    cta_complexities: "أرنا تعقيدات عملك اليومية.. ودعنا نتولى هندسة الحلول",
 
     // The Operational Blueprint
     blueprint_title: "المخطط التشغيلي",
@@ -274,93 +174,6 @@ export const translations = {
     hero_btn_book: "احجز استشارة",
     hero_btn_explore: "استكشف الخدمات",
 
-    // Services Section Home
-    services_title: "ما نقوم بأتمتته",
-    services_sub: "نحن نستبدل المهام المتكررة بأنظمة برمجية تقوم بالعمل نيابة عنك.",
-    service_1_title: "أتمتة البيانات والعمليات",
-    service_1_desc: "معالجة الفواتير تلقائيًا، واستخراج البيانات منها، وإرسالها إلى نظام المحاسبة الخاص بك دون إدخال يدوي.",
-    service_2_title: "روبوتات الدردشة والدعم الذكي",
-    service_2_desc: "الإجابة على أسئلة العملاء الروتينية فورًا وتأهيل العملاء المحتملين 24/7 دون طوابير دعم يدوية.",
-    service_3_title: "تكامل الأنظمة والسحابة",
-    service_3_desc: "ربط أدواتك وقواعد بياناتك لمشاركة البيانات في الوقت الفعلي، مما يحافظ على مزامنة أنظمتك.",
-    service_4_title: "التقارير ولوحات البيانات",
-    service_4_desc: "سحب البيانات من مصادر متعددة وبناء ملخصات واضحة لمساعدتك في رؤية أداء عملك بدقة.",
-
-    // Why Choose Us
-    why_title: "لماذا تعمل مع Maker AI؟",
-    why_sub: "نحن نركز على تحقيق نتائج أعمال ملموسة، وليس مجرد تطبيق التكنولوجيا.",
-    why_1_stat: "+80%",
-    why_1_title: "زيادة الكفاءة",
-    why_1_desc: "من خلال أتمتة المهام المتكررة ورسائل البريد الإلكتروني وإدخال البيانات، نعيد لفريقك ساعات عملهم للتركيز على المهام ذات الأثر العالي.",
-    why_2_stat: "تقليل التكاليف",
-    why_2_title: "نفقات أقل",
-    why_2_desc: "تتعامل خطوط العمل المؤتمتة والروبوتات الذكية مع كميات هائلة من المهام بسلاسة، مما يقلل التكاليف التشغيلية بشكل كبير.",
-    why_3_stat: "تخصيص كامل",
-    why_3_title: "مبني وفق منطق عملك",
-    why_3_desc: "لا حلول جاهزة ومعلبة. نحن ندرس سير عملك المخصص ونبني أنظمة تتكيف تماماً مع طريقة إدارة عملك بالفعل.",
-
-    // Who This Is For
-    who_title: "من نستهدف؟",
-    who_sub: "نحن نبني أنظمة مخصصة لنموذج عملك لحل مشاكل تشغيلية محددة.",
-    who_agencies_title: "الوكالات والشركات الإعلانية",
-    who_agencies_pain: "المشكلة: قضاء ساعات في تجميع تقارير العملاء وتهيئتهم يدوياً.",
-    who_agencies_solve: "الحل: نبني أنظمة تسحب بيانات العملاء وتنشئ التقارير وتطلق تسلسلات التهيئة تلقائياً.",
-    who_ecommerce_title: "التجارة الإلكترونية",
-    who_ecommerce_pain: "المشكلة: إدارة مزامنة المخزون يدوياً ونسخ تفاصيل الطلب ولصقها للموردين.",
-    who_ecommerce_solve: "الحل: نربط متجرك بواجهات برمجة التطبيقات للموردين، مما يؤتمت تلبية الطلبات وتحديثات المخزون.",
-    who_services_title: "شركات الخدمات",
-    who_services_pain: "المشكلة: خسارة العملاء المحتملين بسبب بطء وقت الاستجابة وقضاء الكثير من الوقت في جدولة المكالمات.",
-    who_services_solve: "الحل: نقوم بتنفيذ استجابات فورية للعملاء المحتملين وأنظمة حجز تلقائية تتزامن مباشرة مع التقاويم.",
-    who_ops_title: "فرق العمليات التشغيلية",
-    who_ops_pain: "المشكلة: الاختناقات الناتجة عن نسخ البيانات ولصقها بين قواعد البيانات القديمة والأدوات الحديثة.",
-    who_ops_solve: "الحل: نكتب نصوص تكامل مخصصة تزامن قواعد بياناتك في الوقت الفعلي، وتلغي إدخال البيانات اليدوي.",
-
-    // How It Works
-    how_title: "كيف نعمل؟",
-    how_sub: "عملية بسيطة لتحويل عملك إلى نظام مؤتمت بالكامل",
-    how_1_title: "نحن نحلل عملك",
-    how_1_desc: "ننظر إلى الجداول والمهام اليومية والأدوات الخاصة بك لنحدد بدقة أين تضيع وقتك.",
-    how_2_title: "نحن نبني نظامك",
-    how_2_desc: "نكتب أكواد تكامل مخصصة ونقوم بإعداد عمليات الربط المناسبة لسير عملك - لا قوالب جاهزة.",
-    how_3_title: "أنت توفر الوقت وتتوسع",
-    how_3_desc: "تعمل عملياتك تلقائيًا، دون الحاجة للنسخ واللصق، مما يتيح لفريقك التركيز على النمو الفعلي للشركة.",
-
-    // Real Use Cases (New Section)
-    cases_title: "حالات استخدام حقيقية",
-    cases_sub: "أمثلة ملموسة للأنظمة التي نقوم ببنائها وتشغيلها لعملائنا.",
-    cases_1_title: "التأهيل التلقائي للعملاء المحتملين",
-    cases_1_input: "المدخلات: عملاء محتملون غير مؤهلين من النماذج ووسائل التواصل الاجتماعي.",
-    cases_1_process: "العملية: يحلل النظام حجم الشركة والميزانية والمتطلبات تلقائياً.",
-    cases_1_output: "المخرجات: تصنيف العملاء تلقائياً في CRM وإرسال رابط الحجز للعملاء ذوي القيمة العالية.",
-    cases_2_title: "نظام معالجة الفواتير",
-    cases_2_input: "المدخلات: رسائل البريد الإلكتروني الواردة التي تحتوي على فواتير PDF.",
-    cases_2_process: "العملية: يستخرج النظام المورد والمبالغ الإجمالية والبنود ومعلومات الضرائب.",
-    cases_2_output: "المخرجات: رفع الفواتير تلقائيًا إلى نظام المحاسبة (مثل Xero) كمسودات جاهزة للموافقة.",
-    cases_3_title: "مساعد دعم العملاء الذكي",
-    cases_3_input: "المدخلات: تذاكر الدعم الشائعة وأسئلة الاسترداد للعملاء.",
-    cases_3_process: "العملية: يفحص النظام المستندات وقاعدة البيانات لصياغة الرد المناسب بدقة.",
-    cases_3_output: "المخرجات: حل مشكلات الدعم الروتينية فورياً وتصعيد القضايا المعقدة للبشر.",
-    cases_4_title: "أتمتة التقارير الداخلية",
-    cases_4_input: "المدخلات: ملفات البيانات الخام الأسبوعية من الإعلانات والمبيعات والتحليلات.",
-    cases_4_process: "العملية: تقوم برمجياتنا بتنظيف البيانات ودمجها وحساب مقاييس العائد على الاستثمار.",
-    cases_4_output: "المخرجات: تقرير PDF نظيف يتم إرساله إلى قناة Slack الخاصة بالشركة صباح كل جمعة.",
-
-    // Real Impact (Proof)
-    proof_title: "الأثر الحقيقي",
-    proof_sub: "نتائج ملموسة يتم تقديمها من خلال أنظمة مؤتمتة مخصصة",
-    proof_1_title: "كفاءة البيانات",
-    proof_1_desc: "تقليل وقت إدخال البيانات اليدوي بنسبة تصل إلى 80%",
-    proof_2_title: "توفر على مدار الساعة",
-    proof_2_desc: "أتمتة استفسارات العملاء باستجابات الذكاء الاصطناعي على مدار الساعة",
-    proof_3_title: "توسع سلس",
-    proof_3_desc: "استبدال سير العمل المتكرر بأنظمة مؤتمتة بالكامل",
-
-    // CTA
-    cta_badge: "تحسين وتوسيع",
-    cta_title: "دعنا نكتشف أين تضيع وقتك",
-    cta_desc: "سنحدد فرص الأتمتة ونوضح لك بدقة كيفية تحسين عملياتك.",
-    cta_btn: "جدول استشارة الآن",
-
     // Contact Page/Form Intro
     contact_title: "ابدأ اليوم",
     contact_sub: "أرسل نطاق مشروعك وسيتواصل معك مهندسو الحلول لدينا لجدولة مكالمة استكشافية.",
@@ -373,13 +186,13 @@ export const translations = {
     form_email_placeholder: "john@company.com",
     form_company_label: "اسم الشركة (اختياري)",
     form_company_placeholder: "شركة مساهمة.",
-    form_service_label: "ركيزة البنية التحتية",
-    form_service_opt1: "تكامل أنظمة SaaS ERP للمؤسسات",
-    form_service_opt2: "محرك أتمتة Linux واسع النطاق",
-    form_service_opt3: "جدران الحماية الافتراضية وهندسة صفري الثقة",
-    form_service_opt4: "استشارة أخرى",
+    form_service_label: "مجال الخدمة",
+    form_service_opt1: "منصات الويب الممتازة",
+    form_service_opt2: "حلول البرمجيات المخصصة",
+    form_service_opt3: "أتمتة سير العمل الذكية",
+    form_service_opt4: "البنية التحتية والحلول السحابية من الجيل القادم",
     form_msg_label: "نبذة عن المشروع ومتطلباته",
-    form_msg_placeholder: "أخبرنا عن العمليات التي تريد أتمتتها أو الأنظمة التي تحتاج إلى بنائها...",
+    form_msg_placeholder: "أخبرنا عن التعقيدات التي تريد أتمتتها أو الأنظمة التي تحتاج إلى بنائها...",
     form_btn_submit: "إرسال الاستفسار",
     form_btn_submitting: "جاري معالجة الطلب...",
     form_success_title: "تم إرسال الرسالة!",
@@ -404,37 +217,6 @@ export const translations = {
     services_page_why_title: "Why Automate?",
     services_page_why_desc: "تزيل أتمتة الأنظمة المخصصة الأخطاء البشرية، وتعالج المعاملات على مدار الساعة، وتقلل من تكاليف التشغيل الشهرية.",
     services_page_why_btn: "احجز تدقيقاً تشغيلياً",
-
-    // Services Page Pillars Details
-    services_pillar1_subtitle: "تخطيط موارد المؤسسات داخل بيئات Docker معزولة وممتثلة لـ JoFotara",
-    services_pillar1_impact: "نحن ننشر بيئات تخطيط موارد المؤسسات (ERP) المعزولة ومتعددة المستأجرين داخل حاويات Docker المرنة، مع ضمان استمرارية قوية للبيانات وتنسيق مخصص لوحدات التخزين. تم تصميم البنية الأساسية خصيصاً لتتكامل بسلاسة مع متطلبات نظام الفوترة الإلكترونية الأردني (جو فوتورة - JoFotara)، مما يؤتمت الامتثال والتقارير.",
-    services_pillar1_problem: "المشكلة: صعوبة الامتثال لقوانين الفوترة المحلية JoFotara مع الحفاظ على خصوصية بيانات العملاء المتعددين.",
-    services_pillar1_stops: "ما يتوقف عملك عن فعله يدوياً: إعداد الفواتير الضريبية يدوياً ورفعها للهيئة، وتخزين سجلات البيانات في قواعد بيانات مشتركة غير آمنة.",
-    services_pillar1_before: "عمليات يدوية متعبة لإدخال الفواتير ومخاطر عالية في تسريب البيانات.",
-    services_pillar1_after: "امتثال فوري مؤتمت لـ JoFotara مع عزل تام للبيانات بفضل Docker.",
-    services_pillar1_usecase1: "نشر أنظمة ERP مخصصة ومعزولة لكل فرع أو شركة تابعة",
-    services_pillar1_usecase2: "تكامل مباشر وتلقائي مع نظام الفوترة الإلكترونية الأردني JoFotara",
-    services_pillar1_usecase3: "تأمين قواعد البيانات بالكامل مع نسخ احتياطي دوري مؤتمت",
-
-    services_pillar2_subtitle: "استضافة وإدارة أكثر من 100 خط عمل نشط على بنية n8n تحتية",
-    services_pillar2_impact: "تنسيق أكثر من 100 سير عمل نشط وغير متزامن في n8n المستضافة على مثيلات تشغيل Linux المحسّنة. نحن نصمم خطوط معالجة طلبات الويب (Webhooks) المقاومة للأعطال، وأنظمة إدارة زمام الأمور، ومسارات واجهة البرمجة (API) عالية التردد لمزامنة البيانات التشغيلية دون أي تدخل بشري.",
-    services_pillar2_problem: "المشكلة: بطء معالجة طلبات الويب وتعطل المهام بسبب ضعف خوادم الأتمتة وصعوبة تكامل الأنظمة المشتتة.",
-    services_pillar2_stops: "ما يتوقف عملك عن فعله يدوياً: مزامنة قواعد البيانات التشغيلية يدوياً، وحل مشكلات تعطل واجهات البرمجة (APIs) باستمرار.",
-    services_pillar2_before: "عمليات نقل ملفات بطيئة ومهام متوقفة بسبب انقطاع الاتصال بين الأنظمة.",
-    services_pillar2_after: "سير عمل مؤتمت بالكامل بنسبة تشغيل عالية مع مراقبة حية لأعطال n8n.",
-    services_pillar2_usecase1: "بناء مسارات تدفق ومزامنة البيانات التشغيلية لحظياً بين الأنظمة المختلفة",
-    services_pillar2_usecase2: "تصميم نقاط نهاية (Webhooks) آمنة ومقاومة للأعطال والضغط العالي",
-    services_pillar2_usecase3: "تنسيق خطوط العمل على خوادم Ubuntu/CentOS مع معالجة الأخطاء تلقائياً",
-
-    services_pillar3_subtitle: "دفاع محيطي وتحصين أمني مبني وفق معايير الهاكر الأخلاقي CEH",
-    services_pillar3_impact: "تم هندستها بموجب أطر عمل الهكر الأخلاقي المعتمد (CEH) لتأمين محيط الشبكات الحديثة. نحن ننشر جدران حماية افتراضية متطورة، وننشئ حدوداً صارمة للشبكات القائمة على مبدأ صفري الثقة، ونجري عمليات تدقيق تلقائية للثغرات الأمنية، ونصمم لوحات معلومات لقياس مؤشرات التهديد في الوقت الفعلي.",
-    services_pillar3_problem: "المشكلة: تعرض شبكات الأعمال الداخلية والوصول السحابي لخطر التسلل والهجمات بسبب ضعف الدفاع المحيطي.",
-    services_pillar3_stops: "ما يتوقف عملك عن فعله يدوياً: القلق بشأن نقاط ضعف خوادم السحاب وتتبع الثغرات الأمنية بشكل يدوي.",
-    services_pillar3_before: "شبكات غير محمية تفتقر لعزل السيرفرات وأنظمة كشف التهديدات الحية.",
-    services_pillar3_after: "شبكة محصنة بجدران حماية FortiGate مع عزل تام وتدقيق أمني مستمر.",
-    services_pillar3_usecase1: "نشر وإعداد جدران حماية افتراضية متقدمة (مثل FortiGate)",
-    services_pillar3_usecase2: "تقسيم الشبكات السحابية إلى شبكات فرعية معزولة لمنع تسلل الهجمات",
-    services_pillar3_usecase3: "تأسيس نظام متكامل لقياس التهديدات ومراقبة المحيط الأمني لحظياً",
 
     // Footer
     footer_desc: "تم هندستها بأمان لتطور المؤسسات. تقديم أنظمة SaaS ERP القابلة للتوسع، والأتمتة عالية الأداء، وجدران الحماية الافتراضية صفري الثقة.",

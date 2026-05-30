@@ -201,17 +201,15 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            {/* Card 1: SaaS ERP (Isolated Multi-tenant ERP in Docker & JoFotara E-Invoicing) */}
-            <Reveal delay={200} className="h-full">
+            {/* Card 1: Premium Web Platforms */}
+            <Reveal delay={150} className="h-full">
               <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
-                {/* Immersive inner top radial glow on hover */}
                 <div 
                   className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   aria-hidden="true"
                 />
-                
                 <div className="relative z-10">
                   <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -219,24 +217,45 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
-                    {t.services_card1_title}
+                    {t.pillar1_title}
                   </h3>
                   <p className="text-slate-400/90 text-sm leading-relaxed font-light">
-                    {t.services_card1_desc}
+                    {t.pillar1_desc}
                   </p>
                 </div>
               </div>
             </Reveal>
 
-            {/* Card 2: High-Scale Automation (Orchestrating 100+ n8n workflows on optimized Linux runtime) */}
-            <Reveal delay={350} className="h-full">
+            {/* Card 2: Bespoke Software Solutions */}
+            <Reveal delay={250} className="h-full">
               <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
-                {/* Immersive inner top radial glow on hover */}
                 <div 
                   className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   aria-hidden="true"
                 />
+                <div className="relative z-10">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
+                    {t.pillar2_title}
+                  </h3>
+                  <p className="text-slate-400/90 text-sm leading-relaxed font-light">
+                    {t.pillar2_desc}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
 
+            {/* Card 3: Smart Workflow Automation */}
+            <Reveal delay={350} className="h-full">
+              <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
+                <div 
+                  className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  aria-hidden="true"
+                />
                 <div className="relative z-10">
                   <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -244,35 +263,33 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
-                    {t.services_card2_title}
+                    {t.pillar3_title}
                   </h3>
                   <p className="text-slate-400/90 text-sm leading-relaxed font-light">
-                    {t.services_card2_desc}
+                    {t.pillar3_desc}
                   </p>
                 </div>
               </div>
             </Reveal>
 
-            {/* Card 3: Network Security (CEH Framework & Virtual Firewalling perimeter defense) */}
-            <Reveal delay={500} className="h-full">
+            {/* Card 4: Next-Gen Infrastructure & Cloud */}
+            <Reveal delay={450} className="h-full">
               <div className="relative group overflow-hidden h-full backdrop-blur-xl bg-white/[0.01] border border-white/[0.04] hover:border-cyan-400/40 rounded-[24px] p-8 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(0,242,254,0.05)] transition-all duration-500 flex flex-col justify-between">
-                {/* Immersive inner top radial glow on hover */}
                 <div 
                   className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,242,254,0.05),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   aria-hidden="true"
                 />
-
                 <div className="relative z-10">
                   <div className="h-12 w-12 rounded-xl bg-cyan-955/20 border border-cyan-500/20 flex items-center justify-center mb-6 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.003 9.003 0 018.716 6.747M12 3a9.003 9.003 0 00-8.716 6.747M3 12h18" />
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4 tracking-wide">
-                    {t.services_card3_title}
+                    {t.pillar4_title}
                   </h3>
                   <p className="text-slate-400/90 text-sm leading-relaxed font-light">
-                    {t.services_card3_desc}
+                    {t.pillar4_desc}
                   </p>
                 </div>
               </div>
@@ -283,7 +300,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: The Operational Blueprint */}
-      <section className="relative w-full py-24 sm:py-32">
+      <section className="relative w-full py-24 sm:py-32 border-b border-white/[0.03]">
         <div className="max-w-7xl mx-auto px-6">
           
           <Reveal delay={100} className="text-center mb-16 sm:mb-20">
@@ -308,7 +325,7 @@ export default function Home() {
               <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
                 {t.blueprint_step1_desc}
               </p>
-              {/* Connector line (points opposite direction on RTL) */}
+              {/* Connector line */}
               <div className="hidden lg:block absolute top-8 left-[65%] rtl:left-auto rtl:right-[65%] w-[70%] h-[1px] bg-gradient-to-r rtl:bg-gradient-to-l from-cyan-500/30 to-transparent -z-10" />
             </Reveal>
 
@@ -323,7 +340,7 @@ export default function Home() {
               <p className="text-slate-400/90 text-sm leading-relaxed font-light max-w-xs">
                 {t.blueprint_step2_desc}
               </p>
-              {/* Connector line (points opposite direction on RTL) */}
+              {/* Connector line */}
               <div className="hidden lg:block absolute top-8 left-[65%] rtl:left-auto rtl:right-[65%] w-[70%] h-[1px] bg-gradient-to-r rtl:bg-gradient-to-l from-cyan-500/30 to-transparent -z-10" />
             </Reveal>
 
@@ -341,6 +358,23 @@ export default function Home() {
             </Reveal>
 
           </div>
+        </div>
+      </section>
+
+      {/* Bottomities High-Conversion CTA Section */}
+      <section className="relative py-24 border-t border-white/[0.03] bg-white/[0.01]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Reveal delay={100}>
+            <div className="relative z-10 inline-block group">
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-teal-500 blur-xl rounded-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+              <Link
+                href="/contact"
+                className="relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-5 text-base sm:text-lg font-black tracking-wide text-[#020205] shadow-[0_0_30px_rgba(0,242,254,0.3)] hover:scale-[1.02] border border-cyan-300/10 transition-all duration-300 cursor-pointer"
+              >
+                {t.cta_complexities}
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>

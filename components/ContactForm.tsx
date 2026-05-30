@@ -12,7 +12,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     company: "",
-    service: "Enterprise SaaS ERP Integration",
+    service: "Premium Web Platforms",
     message: "",
   });
 
@@ -54,7 +54,7 @@ export default function ContactForm() {
           name: "",
           email: "",
           company: "",
-          service: "Enterprise SaaS ERP Integration",
+          service: "Premium Web Platforms",
           message: "",
         });
       } else {
