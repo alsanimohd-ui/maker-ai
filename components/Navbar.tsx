@@ -38,12 +38,11 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`navbar-neon-glow fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-premium ${
+      className={`navbar-neon-glow fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-premium border-b border-[var(--navbar-border)] ${
         isScrolled 
-          ? "top-4 w-[92%] sm:w-[90%] max-w-7xl rounded-2xl border border-[var(--navbar-border)] bg-[var(--navbar-bg)]/80 backdrop-blur-xl shadow-lg"
-          : "top-0 w-full border-b border-[var(--navbar-border)] bg-[var(--navbar-bg)]/40 backdrop-blur-md"
+          ? "bg-[var(--navbar-bg)]/90 backdrop-blur-xl shadow-[0_4px_30px_-10px_rgba(0,0,0,0.3)]"
+          : "bg-[var(--navbar-bg)]/55 backdrop-blur-md"
       }`}
-      style={{ boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.3)' : 'var(--navbar-shadow)' }}
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className={`flex items-center justify-between transition-all duration-500 ease-premium ${isScrolled ? "h-16" : "h-20"}`}>
