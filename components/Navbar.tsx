@@ -46,7 +46,7 @@ export default function Navbar() {
       style={{ boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.3)' : 'var(--navbar-shadow)' }}
     >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex h-20 items-center justify-between">
+        <div className={`flex items-center justify-between transition-all duration-500 ease-premium ${isScrolled ? "h-16" : "h-20"}`}>
           {/* Logo with crisp, locked aspect ratio */}
           <div className="flex-shrink-0">
             <Link 
@@ -56,14 +56,14 @@ export default function Navbar() {
               <img
                 src={theme === "dark" ? "/assets/logo/logo-white.svg" : "/assets/logo/logo-dark.svg"}
                 alt="Maker AI Logo"
-                className="h-9 w-auto object-contain transition-all duration-300"
+                className={`w-auto object-contain transition-all duration-300 ${isScrolled ? "h-8" : "h-9"}`}
                 style={{ aspectRatio: "240/64" }}
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
+          <nav className="hidden md:flex items-center gap-x-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               const isExternal = link.href.startsWith("http");
@@ -72,7 +72,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className={`text-sm font-medium transition-all duration-200 tracking-wide uppercase hover:text-cyan-400 ${
+                  className={`text-sm font-medium transition-all duration-200 tracking-wide uppercase whitespace-nowrap hover:text-cyan-400 ${
                     isActive
                       ? "text-cyan-500 dark:text-cyan-400 font-bold"
                       : "text-slate-600 dark:text-slate-300"
@@ -141,7 +141,7 @@ export default function Navbar() {
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-white/[0.05] hover:text-slate-900 dark:hover:text-white focus:outline-none"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
@@ -182,7 +182,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-b border-[var(--card-border-default)] bg-[var(--background)]/95 backdrop-blur-xl" id="mobile-menu">
+        <div className={`md:hidden border-b border-[var(--card-border-default)] bg-[var(--background)]/95 backdrop-blur-xl ${isScrolled ? "rounded-b-2xl" : ""}`} id="mobile-menu">
           <div className="space-y-1 px-4 pb-4 pt-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
