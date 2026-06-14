@@ -42,7 +42,7 @@ export const translations = {
     pillar4_desc: "Providing engineering consulting and managed solutions for your network architectures, cloud environments, and official corporate emails. Ensuring seamless business continuity and maximum operational security without interruptions.",
 
     // Dynamic Call-to-Action (CTA)
-    cta_complexities: "Show us your daily business complexities... and let us engineer the solutions",
+    cta_complexities: "Schedule a Consultation",
 
     // The Operational Blueprint
     blueprint_title: "The Operational Blueprint",
@@ -156,7 +156,7 @@ export const translations = {
     pillar4_desc: "تقديم الاستشارات الهندسية والحلول المدارة لبنيات الشبكات الخاصة بك، والبيئات السحابية، ورسائل البريد الإلكتروني الرسمية للشركات. ضمان استمرارية الأعمال بسلاسة وأقصى درجات الأمان التشغيلي دون أي انقطاع.",
 
     // Dynamic Call-to-Action (CTA)
-    cta_complexities: "أرنا تعقيدات عملك اليومية.. ودعنا نتولى هندسة الحلول",
+    cta_complexities: "احجز مكالمة استشارية",
 
     // The Operational Blueprint
     blueprint_title: "المخطط التشغيلي",

@@ -19,13 +19,13 @@ export default function About() {
 
   return (
     <div
-      className="relative flex flex-col w-full min-h-screen overflow-x-hidden pt-10"
+      className="relative flex flex-col w-full min-h-screen overflow-x-hidden pt-0"
       dir={isRtl ? "rtl" : "ltr"}
     >
       {/* ══════════════════════════════════════════════════════════════
           HERO — Premium Centered "About Us" Canvas
       ══════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden border-b border-[var(--card-border-default)] px-4 sm:px-6 py-20 sm:py-28 lg:py-36">
+      <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden border-b border-[var(--card-border-default)] px-4 sm:px-6 pt-12 pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-16">
 
         {/* ── Centred radial glow behind logo ── */}
         <div
@@ -171,7 +171,7 @@ export default function About() {
       {/* ══════════════════════════════════════════════════════════════
           ABOUT US — Premium Identity Section
       ══════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full border-b border-[var(--card-border-default)] overflow-hidden" style={{ padding: "clamp(4rem,8vw,7rem) 1rem" }}>
+      <section className="relative w-full border-b border-[var(--card-border-default)] overflow-hidden" style={{ padding: "clamp(2.5rem, 5vw, 4.5rem) 1rem" }}>
 
         {/* Background accent */}
         <div
@@ -259,7 +259,7 @@ export default function About() {
               </Reveal>
 
               {/* Three identity pillars — inline stat-style layout */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
                 {[
                   {
                     icon: (
@@ -289,14 +289,19 @@ export default function About() {
                     desc: lang === "ar" ? "نشر Docker مؤمّن ومتعدد المستأجرين" : "Secure multi-tenant Docker deployment",
                   },
                 ].map((item, i) => (
-                  <Reveal key={i} delay={260 + i * 80}>
+                  <Reveal key={i} delay={260 + i * 80} className="h-full">
                     <div
-                      className="flex flex-col gap-3 rounded-2xl p-5 transition-all duration-300 group"
+                      className="relative flex flex-col gap-4 rounded-2xl p-6 h-full transition-all duration-300 group card-neon-border overflow-hidden"
                       style={{
                         background: isDark ? "rgba(14,179,186,0.04)" : "rgba(14,179,186,0.03)",
                         border: `1px solid ${isDark ? "rgba(14,179,186,0.1)" : "rgba(14,179,186,0.12)"}`,
                       }}
                     >
+                      {/* Hover radial flare */}
+                      <div
+                        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(14,179,186,0.08),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+                        aria-hidden="true"
+                      />
                       <div
                         className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                         style={{

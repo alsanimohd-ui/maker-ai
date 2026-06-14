@@ -403,24 +403,35 @@ export default function Home() {
       </section>
 
       {/* ── SECTION 4: High-Conversion CTA ────────────────────────── */}
-      <section className="relative py-28 sm:py-36 overflow-hidden">
+      <section className="relative py-20 sm:py-28 overflow-hidden border-t border-[var(--card-border-default)]">
 
-        {/* Radial glow behind CTA button */}
+        {/* Ambient background glow sweep */}
         <div
-          className={`absolute inset-0 pointer-events-none ${
+          className={`absolute inset-0 pointer-events-none -z-10 ${
             isDark
-              ? "bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(14,179,186,0.06),transparent)]"
-              : "bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(14,179,186,0.04),transparent)]"
+              ? "bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(14,179,186,0.04),transparent)]"
+              : "bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(14,179,186,0.02),transparent)]"
           }`}
           aria-hidden="true"
         />
 
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <Reveal delay={100}>
-            {/* Glowing halo layer */}
+        <div className="relative max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+          <Reveal delay={100} className="mb-10 text-center">
+            <h2 className={`text-3xl sm:text-4xl font-black tracking-tight uppercase select-none ${headingGradient}`}>
+              {lang === "ar" ? "هل أنت مستعد لأتمتة أعمالك؟" : "Ready to Automate Your Business?"}
+            </h2>
+            <p className={`text-sm sm:text-base leading-relaxed mt-4 max-w-lg mx-auto font-light ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+              {lang === "ar" 
+                ? "تخلص من المهام اليدوية المكررة ودعنا نهندس لك الحلول المناسبة لتسريع نموك."
+                : "Remove manual operational bottlenecks. Partner with us to engineer robust digital systems."}
+            </p>
+          </Reveal>
+
+          <Reveal delay={250}>
+            {/* Glowing halo layer - subtle premium glow */}
             <div className="relative inline-block group">
               <div
-                className="absolute -inset-3 bg-gradient-to-r from-cyan-400/70 to-teal-500/70 blur-2xl rounded-2xl opacity-50 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"
+                className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-teal-500 blur-xl rounded-xl opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none"
                 aria-hidden="true"
               />
               <Link
@@ -428,11 +439,11 @@ export default function Home() {
                 className="relative inline-flex items-center justify-center rounded-xl
                   bg-gradient-to-r from-cyan-400 via-[#0eb3ba] to-teal-500
                   hover:from-cyan-300 hover:via-[#14d2db] hover:to-teal-400
-                  px-8 sm:px-12 py-5 sm:py-6
-                  text-base sm:text-lg font-black tracking-wide text-[#020209]
-                  shadow-[0_0_40px_rgba(14,179,186,0.35)] hover:shadow-[0_0_70px_rgba(14,179,186,0.65)]
-                  border border-cyan-300/20
-                  hover:scale-[1.025] active:scale-[0.98]
+                  px-8 py-4
+                  text-sm font-bold tracking-wider uppercase text-[#020209]
+                  shadow-[0_4px_20px_rgba(14,179,186,0.15)] hover:shadow-[0_4px_30px_rgba(14,179,186,0.25)]
+                  border border-cyan-300/10
+                  hover:scale-[1.01] active:scale-[0.98]
                   transition-all duration-300 cursor-pointer"
               >
                 {t.cta_complexities}

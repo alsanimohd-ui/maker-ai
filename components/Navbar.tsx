@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
@@ -13,6 +13,20 @@ export default function Navbar() {
   const { lang, setLang } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const t = translations[lang];
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: t.nav_home,      href: "/" },
@@ -23,8 +37,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="navbar-neon-glow sticky top-0 z-50 w-full backdrop-blur-2xl bg-[var(--navbar-bg)] border-b border-[var(--navbar-border)] transition-all duration-300"
-      style={{ boxShadow: 'var(--navbar-shadow)' }}>
+    <header 
+      className={`navbar-neon-glow fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-premium ${
+        isScrolled 
+          ? "top-4 w-[92%] sm:w-[90%] max-w-7xl rounded-2xl border border-[var(--navbar-border)] bg-[var(--navbar-bg)]/80 backdrop-blur-xl shadow-lg"
+          : "top-0 w-full border-b border-[var(--navbar-border)] bg-[var(--navbar-bg)]/40 backdrop-blur-md"
+      }`}
+      style={{ boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.3)' : 'var(--navbar-shadow)' }}
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo with crisp, locked aspect ratio */}
