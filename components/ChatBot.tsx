@@ -12,10 +12,26 @@ interface Message {
   timestamp: Date;
 }
 
-// Welcome message shown on auto-open — high-converting, personalised
+// Welcome message shown on auto-open — professional, transparent, and helpful
 const WELCOME_MESSAGE = {
-  en: "👋 Hey, I'm **Mi** — Maker AI's automation assistant.\n\nI can help you identify bottlenecks, scope a project, or simply answer questions about our services.\n\nWhat's the biggest operational challenge slowing your business down right now?",
-  ar: "👋 مرحباً، أنا **Mi** — مساعد أتمتة Maker AI.\n\nيمكنني مساعدتك في تحديد نقاط الضعف التشغيلية، تحديد نطاق المشاريع، أو الإجابة على أي أسئلة حول خدماتنا.\n\nما هو أكبر تحدٍّ تشغيلي يُعيق عملك الآن؟",
+  en: "Hello, I'm **Mi**, Maker AI's AI assistant.\n\nI can help you explore our automation services, answer questions about workflows, security, and infrastructure, or guide you through getting started.\n\nHow can I help your business today?",
+  ar: "مرحباً، أنا **Mi**، المساعد الذكي لـ Maker AI.\n\nيمكنني مساعدتك في استكشاف خدمات الأتمتة لدينا، والإجابة عن أسئلتك حول سير العمل والأمن والبنية التحتية، أو توجيهك للبدء.\n\nكيف يمكنني مساعدة عملك اليوم؟",
+};
+
+// Suggested starter prompts to help users begin the conversation
+const SUGGESTED_PROMPTS = {
+  en: [
+    "How can AI help my business?",
+    "What services do you provide?",
+    "Can you automate my workflow?",
+    "How do I get started?",
+  ],
+  ar: [
+    "كيف يمكن للذكاء الاصطناعي مساعدة عملي؟",
+    "ما الخدمات التي تقدمونها؟",
+    "هل يمكنكم أتمتة سير العمل لدي؟",
+    "كيف أبدأ؟",
+  ],
 };
 
 export default function ChatBot() {
@@ -68,13 +84,13 @@ export default function ChatBot() {
     }
   }, [hasAutoOpened, isOpen]);
 
-  const handleSend = async () => {
-    const textToSend = inputValue.trim();
+  const handleSend = async (text?: string) => {
+    const textToSend = (text ?? inputValue).trim();
     if (!textToSend || isTyping) return;
 
     const userMsgId = Date.now().toString() + Math.random().toString(36).substring(2, 5);
     setMessages((prev) => [...prev, { id: userMsgId, sender: "user", text: textToSend, timestamp: new Date() }]);
-    setInputValue("");
+    if (text === undefined) setInputValue("");
     setIsTyping(true);
 
     try {
@@ -85,19 +101,19 @@ export default function ChatBot() {
       });
       if (!res.ok) throw new Error("Network response was not ok");
       const data = await res.json();
-      const miReply = data.reply || "Sorry, I received an empty response. Let's try again.";
+      const miReply = data.reply || "I'm sorry, I didn't receive a response from our systems. Please try again.";
       setMessages((prev) => [...prev, { id: Date.now().toString() + "_mi", sender: "mi", text: miReply, timestamp: new Date() }]);
     } catch (error) {
       console.error("ChatBot integration error:", error);
-      setMessages((prev) => [...prev, { id: Date.now().toString() + "_err", sender: "mi", text: "I hit a snag connecting to my brain. Mind asking that again?", timestamp: new Date() }]);
+      setMessages((prev) => [...prev, { id: Date.now().toString() + "_err", sender: "mi", text: "I'm having trouble connecting to Maker AI's systems right now. Please try again in a moment.", timestamp: new Date() }]);
     } finally {
       setIsTyping(false);
     }
   };
 
   const t = translations[lang as "en" | "ar"];
-  const placeholder = lang === "ar" ? "اسأل Mi أي شيء..." : "Ask Mi anything...";
-  const thinkingText = lang === "ar" ? "يفكر..." : "Thinking...";
+  const placeholder = lang === "ar" ? "اكتب سؤالك هنا..." : "Type your question here...";
+  const thinkingText = lang === "ar" ? "يكتب الرد..." : "Mi is typing...";
 
   return (
     <div
@@ -154,12 +170,14 @@ export default function ChatBot() {
               >
                 Mi
               </div>
-              {/* Online indicator */}
-              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[var(--background)] animate-pulse" />
+              {/* Subtle status indicator */}
+              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-cyan-400 border-2 border-[var(--background)]" />
             </div>
             <div>
               <div className={`text-sm font-extrabold ${isDark ? "text-white" : "text-slate-900"}`}>Mi</div>
-              <div className="text-[11px] font-semibold text-cyan-500">Automations Expert · Online</div>
+              <div className="text-[11px] font-semibold text-cyan-500">
+                {lang === "ar" ? "مساعد ذكي" : "AI Assistant"}
+              </div>
             </div>
           </div>
 
@@ -233,6 +251,27 @@ export default function ChatBot() {
             </div>
           ))}
 
+          {/* Suggested starter prompts */}
+          {messages.length === 1 && !isTyping && (
+            <div className="self-start max-w-[95%]">
+              <div className="flex flex-wrap gap-2">
+                {SUGGESTED_PROMPTS[lang as "en" | "ar"].map((prompt) => (
+                  <button
+                    key={prompt}
+                    onClick={() => handleSend(prompt)}
+                    className={`text-xs font-medium px-3 py-2 rounded-full border transition-all duration-200 cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${
+                      isDark
+                        ? "border-cyan-500/25 text-cyan-300 bg-cyan-950/20 hover:border-cyan-500/50 hover:bg-cyan-900/30"
+                        : "border-cyan-500/30 text-cyan-700 bg-cyan-50/60 hover:border-cyan-500/60 hover:bg-cyan-100/80"
+                    }`}
+                  >
+                    {prompt}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Typing indicator */}
           {isTyping && (
             <div className="flex items-end gap-2 max-w-[85%] self-start">
@@ -278,7 +317,7 @@ export default function ChatBot() {
             }}
           />
           <button
-            onClick={handleSend}
+            onClick={() => handleSend()}
             disabled={!inputValue.trim() || isTyping}
             className="w-10 h-10 rounded-xl flex items-center justify-center text-white flex-shrink-0 transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed hover:scale-[1.05] active:scale-95"
             style={{ background: "linear-gradient(135deg, #0eb3ba 0%, #6366f1 100%)", boxShadow: "0 4px 14px rgba(14,179,186,0.3)" }}
