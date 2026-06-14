@@ -38,10 +38,10 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`navbar-neon-glow fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-premium border-b border-[var(--navbar-border)] ${
+      className={`navbar-neon-glow fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ease-premium border-b border-[var(--navbar-border)] ${
         isScrolled 
-          ? "bg-[var(--navbar-bg)]/90 backdrop-blur-xl shadow-[0_4px_30px_-10px_rgba(0,0,0,0.3)]"
-          : "bg-[var(--navbar-bg)]/55 backdrop-blur-md"
+          ? "bg-[var(--navbar-bg)]/95 backdrop-blur-xl shadow-[0_4px_30px_-10px_rgba(0,0,0,0.35)]"
+          : "bg-[var(--navbar-bg)]/80 backdrop-blur-md"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6">

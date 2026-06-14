@@ -369,8 +369,6 @@ html.light .card-neon-border:hover {
 /* ═══════════════════════════════════════════════════════════
    NAVBAR GLOW EDGE
 ═══════════════════════════════════════════════════════════ */
-.navbar-neon-glow { position: relative; }
-
 .navbar-neon-glow::after {
   content: '';
   position: absolute;
