@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -103,6 +104,7 @@ export default function RootLayout({
             </LanguageProvider>
           </ThemeProvider>
         </div>
+        <Analytics />
       </body>
     </html>
   );
