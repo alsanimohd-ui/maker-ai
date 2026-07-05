@@ -70,6 +70,13 @@
   --text-ocean-deep: #294364;   /* 30% Structure / Headings & Body (Deep navy) */
   --stone-gray: #8d8f8e;        /* Subtle accents, icons & borders */
   --accent-crimson: #8f2a1e;    /* 10% Conversion / Action items & brand */
+
+  /* Raw colors for Cinematic Gallery Motion Palette */
+  --bg-gallery-wall: #7e8182;   /* 60% Base / Backgrounds (Mid-tone concrete gray) */
+  --bg-gallery-floor: #a6a8a9;  /* Alternate / Cards (Lighter cement tone) */
+  --text-rust-dress: #ac4b31;    /* Accent borders & subheadings (Terracota-rust) */
+  --text-shadow-deep: #1c1c1d;   /* 30% Structure / Headings & Body (Near-black) */
+  --accent-ochre-gold: #dfb242;  /* 10% Conversion / Action items & brand (Golden-yellow) */
 }
 
 html.light {
@@ -303,6 +310,95 @@ html.theme-nordic button.btn-primary {
 html.theme-nordic .btn-primary:hover,
 html.theme-nordic button.btn-primary:hover {
   background-color: #722016 !important; /* Slightly darker crimson hover */
+}
+
+html.theme-cinematic {
+  /* ─── CINEMATIC MODE (Concrete / Rust / Gold) ────────── */
+  --background: var(--bg-gallery-wall);
+  --foreground: var(--text-shadow-deep);
+
+  /* Cards & Surfaces */
+  --card-bg: var(--bg-gallery-floor);
+  --card-border-default: rgba(172, 75, 49, 0.25);
+  --card-border-hover: var(--text-rust-dress);
+  --card-shadow: 0 4px 24px -4px rgba(28, 28, 29, 0.12);
+
+  /* Text */
+  --text-muted: var(--text-rust-dress);
+  --text-body: var(--text-shadow-deep);
+
+  /* Nav */
+  --navbar-bg: rgba(126, 129, 130, 0.88);
+  --navbar-border: rgba(172, 75, 49, 0.25);
+  --navbar-shadow: 0 1px 0 rgba(28, 28, 29, 0.08);
+
+  /* Forms */
+  --form-input-bg: var(--white-pure);
+  --form-input-border: rgba(172, 75, 49, 0.4);
+  --form-input-text: var(--text-shadow-deep);
+
+  /* Chat */
+  --chat-msg-bot-bg: var(--bg-gallery-floor);
+  --chat-msg-bot-border: rgba(172, 75, 49, 0.2);
+  --chat-msg-bot-text: var(--text-shadow-deep);
+
+  /* Aurora blobs */
+  --blob-opacity: 0;
+  --blob-light-opacity: 0.15;
+
+  /* Scrollbar */
+  --scrollbar-thumb: var(--text-rust-dress);
+  --scrollbar-thumb-hover: var(--accent-ochre-gold);
+
+  /* Background gradient canvas */
+  --bg-gradient-from: var(--bg-gallery-wall);
+  --bg-gradient-via: var(--bg-gallery-floor);
+  --bg-gradient-to: var(--bg-gallery-wall);
+
+  /* Micro-mesh grid */
+  --grid-line-color: rgba(172, 75, 49, 0.08);
+
+  /* Brand color overrides */
+  --brand-color: var(--accent-ochre-gold);
+  --brand-color-hover: #ebd060;
+
+  /* Typography dynamic variables */
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: var(--font-space-grotesk), Georgia, serif;
+}
+
+/* ─── Editorial styling rules for Cinematic Theme ─────── */
+html.theme-cinematic h1,
+html.theme-cinematic h2,
+html.theme-cinematic h3 {
+  font-family: var(--serif-font) !important;
+  font-weight: 700;
+}
+
+html.theme-cinematic .card-neon-border,
+html.theme-cinematic button,
+html.theme-cinematic input,
+html.theme-cinematic textarea,
+html.theme-cinematic [class*="rounded-xl"],
+html.theme-cinematic [class*="rounded-lg"],
+html.theme-cinematic [class*="rounded-md"],
+html.theme-cinematic [class*="rounded-2xl"],
+html.theme-cinematic [class*="rounded-3xl"] {
+  border-radius: 4px !important;
+}
+
+html.theme-cinematic .btn-primary,
+html.theme-cinematic button.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+html.theme-cinematic .btn-primary:hover,
+html.theme-cinematic button.btn-primary:hover {
+  background-color: #c79b32 !important; /* Slightly darker gold hover */
 }
 
 /* ─── Tailwind design token bridge ─────────────────────── */
