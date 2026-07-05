@@ -52,6 +52,10 @@
   --brand-color: #0eb3ba;
   --brand-color-hover: #14d2db;
 
+  /* Typography dynamic variables */
+  --sans-font: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: Georgia, serif;
+
   /* Raw colors for Parchment Palette (60-30-10) */
   --bg-parchment: #e1e2e2;      /* 60% Base / Backgrounds */
   --bg-alabaster: #f6f4f2;      /* Alternate / Cards */
@@ -117,6 +121,10 @@ html.light {
   /* Brand color */
   --brand-color: #0eb3ba;
   --brand-color-hover: #14d2db;
+
+  /* Typography dynamic variables */
+  --sans-font: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: Georgia, serif;
 }
 
 html.theme-parchment {
@@ -168,6 +176,44 @@ html.theme-parchment {
   /* Brand color overrides */
   --brand-color: var(--accent-terracotta);
   --brand-color-hover: #b96c43;
+
+  /* Typography dynamic variables */
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: var(--font-playfair-display), Georgia, serif;
+}
+
+/* ─── Editorial styling rules for Parchment Theme ─────── */
+html.theme-parchment h1,
+html.theme-parchment h2,
+html.theme-parchment h3 {
+  font-family: var(--serif-font) !important;
+  font-weight: 700;
+}
+
+html.theme-parchment .card-neon-border,
+html.theme-parchment button,
+html.theme-parchment input,
+html.theme-parchment textarea,
+html.theme-parchment [class*="rounded-xl"],
+html.theme-parchment [class*="rounded-lg"],
+html.theme-parchment [class*="rounded-md"],
+html.theme-parchment [class*="rounded-2xl"],
+html.theme-parchment [class*="rounded-3xl"] {
+  border-radius: 4px !important;
+}
+
+html.theme-parchment .btn-primary,
+html.theme-parchment button.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+html.theme-parchment .btn-primary:hover,
+html.theme-parchment button.btn-primary:hover {
+  background-color: #8c4b2b !important;
 }
 
 html.theme-nordic {
@@ -219,6 +265,10 @@ html.theme-nordic {
   /* Brand color overrides */
   --brand-color: var(--accent-crimson);
   --brand-color-hover: #a83627;
+
+  /* Typography dynamic variables */
+  --sans-font: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: Georgia, serif;
 }
 
 /* ─── Tailwind design token bridge ─────────────────────── */
@@ -230,7 +280,8 @@ html.theme-nordic {
   --color-brand-card: var(--card-bg);
   --color-brand-border: var(--card-border-default);
   --color-brand-muted: var(--text-muted);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--sans-font);
+  --font-serif: var(--serif-font);
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -239,7 +290,7 @@ html.theme-nordic {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--sans-font);
 }
 
 /* ─── Micro-mesh grid (ultra-subtle, radially masked) ───── */

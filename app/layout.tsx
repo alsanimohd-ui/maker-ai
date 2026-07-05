@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Tajawal } from "next/font/google";
+import { Geist, Geist_Mono, Tajawal, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,6 +21,16 @@ const tajawal = Tajawal({
   variable: "--font-tajawal",
   subsets: ["arabic"],
   weight: ["400", "500", "700", "800", "900"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -48,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${tajawal.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${tajawal.variable} ${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground relative overflow-x-hidden">
         {/* Dynamic Background System */}
