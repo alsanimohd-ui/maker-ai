@@ -71,12 +71,20 @@
   --stone-gray: #8d8f8e;        /* Subtle accents, icons & borders */
   --accent-crimson: #8f2a1e;    /* 10% Conversion / Action items & brand */
 
+
   /* Raw colors for Gallery Palette (from performance image) */
   --bg-gallery-wall: #7a7d7e;   /* 60% Base / Backgrounds (Concrete wall gray) */
   --bg-gallery-floor: #a1a4a5;  /* Alternate / Cards (Concrete floor gray) */
   --text-rust-dress: #b04c32;   /* Subtle accents, subheadings & borders (Rust-orange) */
   --text-shadow-deep: #1e1e1f;  /* 30% Structure / Headings & Body (Deep charcoal shadow) */
   --accent-ochre-gold: #e0ad2f; /* 10% Conversion / Action items & brand (Flowing gold) */
+
+  /* Raw colors for Market Palette (from market image) */
+  --bg-market-plaster: #e9e6e2;  /* 60% Base / Backgrounds (Soft plaster white) */
+  --bg-market-sky: #c8d0d2;      /* Alternate / Cards (Slate-blue gray) */
+  --text-market-charcoal: #212122; /* 30% Structure / Headings & Body (Charcoal shadow) */
+  --accent-market-terracotta: #bc563b; /* Subtle accents, subheadings & borders (Terracotta orange) */
+  --accent-market-crimson: #a32c21; /* 10% Conversion / Action items & brand (Crimson tassel red) */
 }
 
 html.light {
@@ -309,7 +317,7 @@ html.theme-nordic button.btn-primary {
 
 html.theme-nordic .btn-primary:hover,
 html.theme-nordic button.btn-primary:hover {
-  background-color: #722016 !important; /* Slightly darker crimson hover */
+  background-color: #722016 !important;
 }
 
 html.theme-gallery {
@@ -394,12 +402,101 @@ html.theme-gallery button.btn-primary {
   font-size: 0.875rem;
   font-weight: 600;
   transition: background-color 0.2s ease;
-  color: var(--text-shadow-deep) !important; /* High-contrast dark charcoal text on gold button */
+  color: var(--text-shadow-deep) !important;
 }
 
 html.theme-gallery .btn-primary:hover,
 html.theme-gallery button.btn-primary:hover {
-  background-color: #c09222 !important; /* Slightly darker gold hover */
+  background-color: #c09222 !important;
+}
+
+html.theme-market {
+  /* ─── MARKET MODE (Plaster / Terracotta / Crimson) ──── */
+  --background: var(--bg-market-plaster);
+  --foreground: var(--text-market-charcoal);
+
+  /* Cards & Surfaces */
+  --card-bg: var(--bg-market-sky);
+  --card-border-default: rgba(188, 86, 59, 0.25);
+  --card-border-hover: var(--accent-market-terracotta);
+  --card-shadow: 0 4px 24px -4px rgba(33, 33, 34, 0.08);
+
+  /* Text */
+  --text-muted: var(--accent-market-terracotta);
+  --text-body: var(--text-market-charcoal);
+
+  /* Nav */
+  --navbar-bg: rgba(233, 230, 226, 0.88);
+  --navbar-border: rgba(188, 86, 59, 0.25);
+  --navbar-shadow: 0 1px 0 rgba(33, 33, 34, 0.06);
+
+  /* Forms */
+  --form-input-bg: var(--white-pure);
+  --form-input-border: rgba(188, 86, 59, 0.4);
+  --form-input-text: var(--text-market-charcoal);
+
+  /* Chat */
+  --chat-msg-bot-bg: var(--bg-market-sky);
+  --chat-msg-bot-border: rgba(188, 86, 59, 0.2);
+  --chat-msg-bot-text: var(--text-market-charcoal);
+
+  /* Aurora blobs */
+  --blob-opacity: 0;
+  --blob-light-opacity: 0.15;
+
+  /* Scrollbar */
+  --scrollbar-thumb: var(--accent-market-terracotta);
+  --scrollbar-thumb-hover: var(--accent-market-crimson);
+
+  /* Background gradient canvas */
+  --bg-gradient-from: var(--bg-market-plaster);
+  --bg-gradient-via: var(--bg-market-sky);
+  --bg-gradient-to: var(--bg-market-plaster);
+
+  /* Micro-mesh grid */
+  --grid-line-color: rgba(188, 86, 59, 0.08);
+
+  /* Brand color overrides */
+  --brand-color: var(--accent-market-crimson);
+  --brand-color-hover: #bd392e;
+
+  /* Typography dynamic variables */
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: var(--font-space-grotesk), Georgia, serif;
+}
+
+/* ─── Editorial styling rules for Market Theme ────────── */
+html.theme-market h1,
+html.theme-market h2,
+html.theme-market h3 {
+  font-family: var(--serif-font) !important;
+  font-weight: 700;
+}
+
+html.theme-market .card-neon-border,
+html.theme-market button,
+html.theme-market input,
+html.theme-market textarea,
+html.theme-market [class*="rounded-xl"],
+html.theme-market [class*="rounded-lg"],
+html.theme-market [class*="rounded-md"],
+html.theme-market [class*="rounded-2xl"],
+html.theme-market [class*="rounded-3xl"] {
+  border-radius: 4px !important;
+}
+
+html.theme-market .btn-primary,
+html.theme-market button.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+html.theme-market .btn-primary:hover,
+html.theme-market button.btn-primary:hover {
+  background-color: #8c2217 !important;
 }
 
 

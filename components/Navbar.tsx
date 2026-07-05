@@ -119,6 +119,11 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                   </svg>
                 )}
+                {theme === "market" && (
+                  <svg className="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75V21m-9-3h18m-18-6L12 3l9 9M3 12v9a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 21v-9" />
+                  </svg>
+                )}
               </button>
 
               {themeMenuOpen && (
@@ -171,6 +176,15 @@ export default function Navbar() {
                       </svg>
                       Gallery
                     </button>
+                    <button
+                      onClick={() => { setTheme("market"); setThemeMenuOpen(false); }}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "market" ? "text-red-500 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                    >
+                      <svg className="w-3.5 h-3.5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75V21m-9-3h18m-18-6L12 3l9 9M3 12v9a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 21v-9" />
+                      </svg>
+                      Market
+                    </button>
                   </div>
                 </>
               )}
@@ -216,6 +230,11 @@ export default function Navbar() {
               {theme === "gallery" && (
                 <svg className="w-4 h-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+              )}
+              {theme === "market" && (
+                <svg className="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75V21m-9-3h18m-18-6L12 3l9 9M3 12v9a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 21v-9" />
                 </svg>
               )}
             </button>
