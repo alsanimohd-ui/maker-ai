@@ -59,6 +59,13 @@
   --stroke-kraft: #c29f7c;      /* Subtle accents, subheadings & borders */
   --accent-terracotta: #a35c37; /* 10% Conversion / Action items & brand */
   --white-pure: #ffffff;
+
+  /* Raw colors for Nordic Surrealist Palette */
+  --bg-horizon-pale: #b4c9d8;   /* 60% Base / Backgrounds (Light sky-blue) */
+  --bg-linen-pure: #ededeb;     /* Alternate / Cards (Clean contrasting) */
+  --text-ocean-deep: #294364;   /* 30% Structure / Headings & Body (Deep navy) */
+  --stone-gray: #8d8f8e;        /* Subtle accents, icons & borders */
+  --accent-crimson: #8f2a1e;    /* 10% Conversion / Action items & brand */
 }
 
 html.light {
@@ -161,6 +168,57 @@ html.theme-parchment {
   /* Brand color overrides */
   --brand-color: var(--accent-terracotta);
   --brand-color-hover: #b96c43;
+}
+
+html.theme-nordic {
+  /* ─── NORDIC SURREALIST MODE (Surreal Light) ─────────── */
+  --background: var(--bg-horizon-pale);
+  --foreground: var(--text-ocean-deep);
+
+  /* Cards & Surfaces */
+  --card-bg: var(--bg-linen-pure);
+  --card-border-default: rgba(141, 143, 142, 0.25);
+  --card-border-hover: var(--stone-gray);
+  --card-shadow: 0 4px 24px -4px rgba(41, 67, 100, 0.08);
+
+  /* Text */
+  --text-muted: rgba(41, 67, 100, 0.65);
+  --text-body: var(--text-ocean-deep);
+
+  /* Nav */
+  --navbar-bg: rgba(180, 201, 216, 0.88);
+  --navbar-border: rgba(141, 143, 142, 0.25);
+  --navbar-shadow: 0 1px 0 rgba(41, 67, 100, 0.06);
+
+  /* Forms */
+  --form-input-bg: var(--white-pure);
+  --form-input-border: rgba(141, 143, 142, 0.4);
+  --form-input-text: var(--text-ocean-deep);
+
+  /* Chat */
+  --chat-msg-bot-bg: var(--bg-linen-pure);
+  --chat-msg-bot-border: rgba(141, 143, 142, 0.2);
+  --chat-msg-bot-text: var(--text-ocean-deep);
+
+  /* Aurora blobs */
+  --blob-opacity: 0;
+  --blob-light-opacity: 0.15;
+
+  /* Scrollbar */
+  --scrollbar-thumb: var(--stone-gray);
+  --scrollbar-thumb-hover: var(--accent-crimson);
+
+  /* Background gradient canvas */
+  --bg-gradient-from: var(--bg-horizon-pale);
+  --bg-gradient-via: var(--bg-linen-pure);
+  --bg-gradient-to: var(--bg-horizon-pale);
+
+  /* Micro-mesh grid */
+  --grid-line-color: rgba(141, 143, 142, 0.1);
+
+  /* Brand color overrides */
+  --brand-color: var(--accent-crimson);
+  --brand-color-hover: #a83627;
 }
 
 /* ─── Tailwind design token bridge ─────────────────────── */

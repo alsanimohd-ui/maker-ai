@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type Theme = "dark" | "light" | "parchment";
+export type Theme = "dark" | "light" | "parchment" | "nordic";
 
 interface ThemeContextType {
   theme: Theme;
@@ -18,7 +18,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("maker_ai_theme") as Theme;
-    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "parchment") {
+    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "parchment" || savedTheme === "nordic") {
       setThemeState(savedTheme);
     } else {
       setThemeState("dark");
@@ -29,13 +29,15 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     if (isMounted) {
       const root = document.documentElement;
-      root.classList.remove("dark", "light", "theme-parchment");
+      root.classList.remove("dark", "light", "theme-parchment", "theme-nordic");
       if (theme === "dark") {
         root.classList.add("dark");
       } else if (theme === "light") {
         root.classList.add("light");
       } else if (theme === "parchment") {
         root.classList.add("theme-parchment");
+      } else if (theme === "nordic") {
+        root.classList.add("theme-nordic");
       }
       localStorage.setItem("maker_ai_theme", theme);
     }
@@ -49,6 +51,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setThemeState((prev) => {
       if (prev === "dark") return "light";
       if (prev === "light") return "parchment";
+      if (prev === "parchment") return "nordic";
       return "dark";
     });
   };
