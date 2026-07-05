@@ -70,6 +70,13 @@
   --text-ocean-deep: #294364;   /* 30% Structure / Headings & Body (Deep navy) */
   --stone-gray: #8d8f8e;        /* Subtle accents, icons & borders */
   --accent-crimson: #8f2a1e;    /* 10% Conversion / Action items & brand */
+
+  /* Raw colors for Gallery Palette (from performance image) */
+  --bg-gallery-wall: #7a7d7e;   /* 60% Base / Backgrounds (Concrete wall gray) */
+  --bg-gallery-floor: #a1a4a5;  /* Alternate / Cards (Concrete floor gray) */
+  --text-rust-dress: #b04c32;   /* Subtle accents, subheadings & borders (Rust-orange) */
+  --text-shadow-deep: #1e1e1f;  /* 30% Structure / Headings & Body (Deep charcoal shadow) */
+  --accent-ochre-gold: #e0ad2f; /* 10% Conversion / Action items & brand (Flowing gold) */
 }
 
 html.light {
@@ -303,6 +310,96 @@ html.theme-nordic button.btn-primary {
 html.theme-nordic .btn-primary:hover,
 html.theme-nordic button.btn-primary:hover {
   background-color: #722016 !important; /* Slightly darker crimson hover */
+}
+
+html.theme-gallery {
+  /* ─── GALLERY MODE (Concrete / Rust / Gold) ────────── */
+  --background: var(--bg-gallery-wall);
+  --foreground: var(--text-shadow-deep);
+
+  /* Cards & Surfaces */
+  --card-bg: var(--bg-gallery-floor);
+  --card-border-default: rgba(176, 76, 50, 0.25);
+  --card-border-hover: var(--text-rust-dress);
+  --card-shadow: 0 4px 24px -4px rgba(30, 30, 31, 0.12);
+
+  /* Text */
+  --text-muted: var(--text-rust-dress);
+  --text-body: var(--text-shadow-deep);
+
+  /* Nav */
+  --navbar-bg: rgba(122, 125, 126, 0.88);
+  --navbar-border: rgba(176, 76, 50, 0.25);
+  --navbar-shadow: 0 1px 0 rgba(30, 30, 31, 0.08);
+
+  /* Forms */
+  --form-input-bg: var(--white-pure);
+  --form-input-border: rgba(176, 76, 50, 0.4);
+  --form-input-text: var(--text-shadow-deep);
+
+  /* Chat */
+  --chat-msg-bot-bg: var(--bg-gallery-floor);
+  --chat-msg-bot-border: rgba(176, 76, 50, 0.2);
+  --chat-msg-bot-text: var(--text-shadow-deep);
+
+  /* Aurora blobs */
+  --blob-opacity: 0;
+  --blob-light-opacity: 0.15;
+
+  /* Scrollbar */
+  --scrollbar-thumb: var(--text-rust-dress);
+  --scrollbar-thumb-hover: var(--accent-ochre-gold);
+
+  /* Background gradient canvas */
+  --bg-gradient-from: var(--bg-gallery-wall);
+  --bg-gradient-via: var(--bg-gallery-floor);
+  --bg-gradient-to: var(--bg-gallery-wall);
+
+  /* Micro-mesh grid */
+  --grid-line-color: rgba(176, 76, 50, 0.08);
+
+  /* Brand color overrides */
+  --brand-color: var(--accent-ochre-gold);
+  --brand-color-hover: #ebd060;
+
+  /* Typography dynamic variables */
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: var(--font-space-grotesk), Georgia, serif;
+}
+
+/* ─── Editorial styling rules for Gallery Theme ────────── */
+html.theme-gallery h1,
+html.theme-gallery h2,
+html.theme-gallery h3 {
+  font-family: var(--serif-font) !important;
+  font-weight: 700;
+}
+
+html.theme-gallery .card-neon-border,
+html.theme-gallery button,
+html.theme-gallery input,
+html.theme-gallery textarea,
+html.theme-gallery [class*="rounded-xl"],
+html.theme-gallery [class*="rounded-lg"],
+html.theme-gallery [class*="rounded-md"],
+html.theme-gallery [class*="rounded-2xl"],
+html.theme-gallery [class*="rounded-3xl"] {
+  border-radius: 4px !important;
+}
+
+html.theme-gallery .btn-primary,
+html.theme-gallery button.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  color: var(--text-shadow-deep) !important; /* High-contrast dark charcoal text on gold button */
+}
+
+html.theme-gallery .btn-primary:hover,
+html.theme-gallery button.btn-primary:hover {
+  background-color: #c09222 !important; /* Slightly darker gold hover */
 }
 
 
