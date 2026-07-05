@@ -324,96 +324,7 @@ html.theme-nordic button.btn-primary:hover {
   background-color: #722016 !important;
 }
 
-html.theme-gallery {
-  /* ─── GALLERY MODE (Concrete / Rust / Gold) ────────── */
-  --background: var(--bg-gallery-wall);
-  --foreground: var(--text-shadow-deep);
 
-  /* Cards & Surfaces */
-  --card-bg: var(--bg-gallery-floor);
-  --card-border-default: rgba(176, 76, 50, 0.25);
-  --card-border-hover: var(--text-rust-dress);
-  --card-shadow: 0 4px 24px -4px rgba(30, 30, 31, 0.12);
-
-  /* Text */
-  --text-muted: var(--text-rust-dress);
-  --text-body: var(--text-shadow-deep);
-
-  /* Nav */
-  --navbar-bg: rgba(122, 125, 126, 0.88);
-  --navbar-border: rgba(176, 76, 50, 0.25);
-  --navbar-shadow: 0 1px 0 rgba(30, 30, 31, 0.08);
-
-  /* Forms */
-  --form-input-bg: var(--white-pure);
-  --form-input-border: rgba(176, 76, 50, 0.4);
-  --form-input-text: var(--text-shadow-deep);
-
-  /* Chat */
-  --chat-msg-bot-bg: var(--bg-gallery-floor);
-  --chat-msg-bot-border: rgba(176, 76, 50, 0.2);
-  --chat-msg-bot-text: var(--text-shadow-deep);
-
-  /* Aurora blobs */
-  --blob-opacity: 0;
-  --blob-light-opacity: 0.15;
-
-  /* Scrollbar */
-  --scrollbar-thumb: var(--text-rust-dress);
-  --scrollbar-thumb-hover: var(--accent-ochre-gold);
-
-  /* Background gradient canvas */
-  --bg-gradient-from: var(--bg-gallery-wall);
-  --bg-gradient-via: var(--bg-gallery-floor);
-  --bg-gradient-to: var(--bg-gallery-wall);
-
-  /* Micro-mesh grid */
-  --grid-line-color: rgba(176, 76, 50, 0.08);
-
-  /* Brand color overrides */
-  --brand-color: var(--accent-ochre-gold);
-  --brand-color-hover: #ebd060;
-
-  /* Typography dynamic variables */
-  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-space-grotesk), Georgia, serif;
-}
-
-/* ─── Editorial styling rules for Gallery Theme ────────── */
-html.theme-gallery h1,
-html.theme-gallery h2,
-html.theme-gallery h3 {
-  font-family: var(--serif-font) !important;
-  font-weight: 700;
-}
-
-html.theme-gallery .card-neon-border,
-html.theme-gallery button,
-html.theme-gallery input,
-html.theme-gallery textarea,
-html.theme-gallery [class*="rounded-xl"],
-html.theme-gallery [class*="rounded-lg"],
-html.theme-gallery [class*="rounded-md"],
-html.theme-gallery [class*="rounded-2xl"],
-html.theme-gallery [class*="rounded-3xl"] {
-  border-radius: 4px !important;
-}
-
-html.theme-gallery .btn-primary,
-html.theme-gallery button.btn-primary {
-  background-color: var(--brand-color) !important;
-  color: var(--text-shadow-deep) !important; /* high contrast concrete grey */
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-html.theme-gallery .btn-primary:hover,
-html.theme-gallery button.btn-primary:hover {
-  background-color: #c09222 !important;
-}
 
 html.theme-market {
   /* ─── MARKET MODE (Plaster / Terracotta / Crimson) ──── */
@@ -507,61 +418,61 @@ html.theme-market button.btn-primary:hover {
 }
 
 html.theme-symphony {
-  /* ─── SYMPHONY SURREAL GLASS MODE (Charcoal / Seafoam / Gold / Glass) ─── */
-  --background: #141617;
-  --foreground: #f4f1ea;
+  /* ─── SYMPHONY SURREAL LIGHT GLASS MODE (Alabaster / Seafoam / Gold / Frosted Glass) ─── */
+  --background: #f7f5f0;
+  --foreground: #1d1f20;
 
   /* Cards & Surfaces */
-  --card-bg: rgba(20, 22, 23, 0.45);
-  --card-border-default: rgba(197, 168, 112, 0.16);
-  --card-border-hover: rgba(125, 168, 166, 0.45);
-  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --card-bg: rgba(255, 255, 255, 0.45);
+  --card-border-default: rgba(166, 140, 89, 0.18);
+  --card-border-hover: rgba(107, 163, 160, 0.45);
+  --card-shadow: 0 8px 32px 0 rgba(29, 31, 32, 0.06);
 
   /* Text */
-  --text-muted: #9bbab9;
-  --text-body: #d4d0c7;
+  --text-muted: #5d7f7e;
+  --text-body: #323b3b;
 
   /* Nav */
-  --navbar-bg: rgba(20, 22, 23, 0.4);
-  --navbar-border: rgba(197, 168, 112, 0.15);
-  --navbar-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --navbar-bg: rgba(247, 245, 240, 0.65);
+  --navbar-border: rgba(166, 140, 89, 0.18);
+  --navbar-shadow: 0 4px 30px rgba(29, 31, 32, 0.04);
 
   /* Forms */
-  --form-input-bg: rgba(20, 22, 23, 0.3);
-  --form-input-border: rgba(197, 168, 112, 0.2);
-  --form-input-text: #f4f1ea;
+  --form-input-bg: rgba(255, 255, 255, 0.5);
+  --form-input-border: rgba(166, 140, 89, 0.25);
+  --form-input-text: #1d1f20;
 
   /* Chat */
-  --chat-msg-bot-bg: rgba(125, 168, 166, 0.08);
-  --chat-msg-bot-border: rgba(125, 168, 166, 0.2);
-  --chat-msg-bot-text: #9ecbc9;
+  --chat-msg-bot-bg: rgba(107, 163, 160, 0.06);
+  --chat-msg-bot-border: rgba(107, 163, 160, 0.18);
+  --chat-msg-bot-text: #3a6966;
 
   /* Aurora blobs */
-  --blob-opacity: 0.12;
-  --blob-light-opacity: 0.08;
+  --blob-opacity: 0.08;
+  --blob-light-opacity: 0.15;
 
   /* Scrollbar */
-  --scrollbar-thumb: #7da8a6;
-  --scrollbar-thumb-hover: #9cc7c5;
+  --scrollbar-thumb: #6ba3a0;
+  --scrollbar-thumb-hover: #568f8c;
 
   /* Background gradient canvas */
-  --bg-gradient-from: #141617;
-  --bg-gradient-via: #1c1e1f;
-  --bg-gradient-to: #141617;
+  --bg-gradient-from: #f7f5f0;
+  --bg-gradient-via: #fbfaf7;
+  --bg-gradient-to: #f7f5f0;
 
   /* Micro-mesh grid */
-  --grid-line-color: rgba(197, 168, 112, 0.04);
+  --grid-line-color: rgba(166, 140, 89, 0.06);
 
   /* Brand color overrides */
-  --brand-color: #7da8a6;
-  --brand-color-hover: #9cc7c5;
+  --brand-color: #6ba3a0;
+  --brand-color-hover: #568f8c;
 
   /* Typography dynamic variables */
   --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --serif-font: var(--font-space-grotesk), Georgia, serif;
 }
 
-/* Glassmorphism overrides for Symphony theme */
+/* Glassmorphism overrides for Symphony theme (Light Theme variant) */
 html.theme-symphony .card-neon-border,
 html.theme-symphony .premium-kpi-card,
 html.theme-symphony .chart-panel,
@@ -573,10 +484,10 @@ html.theme-symphony div[class*="border-brand-border"],
 html.theme-symphony div[class*="card-neon-border"] {
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  background-color: rgba(20, 22, 23, 0.45) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), 
-              inset 0 1px 1px 0 rgba(255, 255, 255, 0.1) !important; /* Specular glossy highlight */
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important; /* Brighter high-specular glass border */
+  box-shadow: 0 8px 32px 0 rgba(29, 31, 32, 0.06), 
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.8) !important; /* Brighter glossy highlight */
   border-radius: 12px !important;
 }
 
@@ -586,8 +497,8 @@ html.theme-symphony textarea,
 html.theme-symphony select {
   backdrop-filter: blur(10px) saturate(140%) !important;
   -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
-  background-color: rgba(20, 22, 23, 0.3) !important;
-  border: 1px solid rgba(197, 168, 112, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(166, 140, 89, 0.25) !important;
   color: var(--foreground) !important;
   border-radius: 8px !important;
 }
@@ -603,7 +514,7 @@ html.theme-symphony select:focus {
 html.theme-symphony .btn-primary,
 html.theme-symphony button.btn-primary {
   background-color: var(--brand-color) !important;
-  color: #141617 !important; /* Dark obsidian text */
+  color: #ffffff !important; /* White contrast text on light seafoam */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.875rem;

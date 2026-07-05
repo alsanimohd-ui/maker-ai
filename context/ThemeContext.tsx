@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type Theme = "dark" | "light" | "parchment" | "nordic" | "gallery" | "market" | "symphony";
+export type Theme = "dark" | "light" | "parchment" | "nordic" | "market" | "symphony";
 
 interface ThemeContextType {
   theme: Theme;
@@ -18,7 +18,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("maker_ai_theme") as Theme;
-    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "parchment" || savedTheme === "nordic" || savedTheme === "gallery" || savedTheme === "market" || savedTheme === "symphony") {
+    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "parchment" || savedTheme === "nordic" || savedTheme === "market" || savedTheme === "symphony") {
       setThemeState(savedTheme);
     } else {
       setThemeState("dark");
@@ -29,7 +29,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     if (isMounted) {
       const root = document.documentElement;
-      root.classList.remove("dark", "light", "theme-parchment", "theme-nordic", "theme-gallery", "theme-market", "theme-symphony");
+      root.classList.remove("dark", "light", "theme-parchment", "theme-nordic", "theme-market", "theme-symphony");
       if (theme === "dark") {
         root.classList.add("dark");
       } else if (theme === "light") {
@@ -38,8 +38,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         root.classList.add("theme-parchment");
       } else if (theme === "nordic") {
         root.classList.add("theme-nordic");
-      } else if (theme === "gallery") {
-        root.classList.add("theme-gallery");
       } else if (theme === "market") {
         root.classList.add("theme-market");
       } else if (theme === "symphony") {
@@ -58,8 +56,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (prev === "dark") return "light";
       if (prev === "light") return "parchment";
       if (prev === "parchment") return "nordic";
-      if (prev === "nordic") return "gallery";
-      if (prev === "gallery") return "market";
+      if (prev === "nordic") return "market";
       if (prev === "market") return "symphony";
       return "dark";
     });
