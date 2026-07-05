@@ -506,6 +506,119 @@ html.theme-market button.btn-primary:hover {
   background-color: #8c2217 !important;
 }
 
+html.theme-symphony {
+  /* ─── SYMPHONY SURREAL GLASS MODE (Charcoal / Seafoam / Gold / Glass) ─── */
+  --background: #141617;
+  --foreground: #f4f1ea;
+
+  /* Cards & Surfaces */
+  --card-bg: rgba(20, 22, 23, 0.45);
+  --card-border-default: rgba(197, 168, 112, 0.16);
+  --card-border-hover: rgba(125, 168, 166, 0.45);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Text */
+  --text-muted: #9bbab9;
+  --text-body: #d4d0c7;
+
+  /* Nav */
+  --navbar-bg: rgba(20, 22, 23, 0.4);
+  --navbar-border: rgba(197, 168, 112, 0.15);
+  --navbar-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+  /* Forms */
+  --form-input-bg: rgba(20, 22, 23, 0.3);
+  --form-input-border: rgba(197, 168, 112, 0.2);
+  --form-input-text: #f4f1ea;
+
+  /* Chat */
+  --chat-msg-bot-bg: rgba(125, 168, 166, 0.08);
+  --chat-msg-bot-border: rgba(125, 168, 166, 0.2);
+  --chat-msg-bot-text: #9ecbc9;
+
+  /* Aurora blobs */
+  --blob-opacity: 0.12;
+  --blob-light-opacity: 0.08;
+
+  /* Scrollbar */
+  --scrollbar-thumb: #7da8a6;
+  --scrollbar-thumb-hover: #9cc7c5;
+
+  /* Background gradient canvas */
+  --bg-gradient-from: #141617;
+  --bg-gradient-via: #1c1e1f;
+  --bg-gradient-to: #141617;
+
+  /* Micro-mesh grid */
+  --grid-line-color: rgba(197, 168, 112, 0.04);
+
+  /* Brand color overrides */
+  --brand-color: #7da8a6;
+  --brand-color-hover: #9cc7c5;
+
+  /* Typography dynamic variables */
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: var(--font-space-grotesk), Georgia, serif;
+}
+
+/* Glassmorphism overrides for Symphony theme */
+html.theme-symphony .card-neon-border,
+html.theme-symphony .premium-kpi-card,
+html.theme-symphony .chart-panel,
+html.theme-symphony .quick-stats-panel,
+html.theme-symphony .navbar-neon-glow,
+html.theme-symphony div[class*="border border-[var(--card-border-default)]"],
+html.theme-symphony div[class*="border border-white/[0.05]"],
+html.theme-symphony div[class*="border-brand-border"],
+html.theme-symphony div[class*="card-neon-border"] {
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  background-color: rgba(20, 22, 23, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), 
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.1) !important; /* Specular glossy highlight */
+  border-radius: 12px !important;
+}
+
+/* Inputs and interactive elements */
+html.theme-symphony input,
+html.theme-symphony textarea,
+html.theme-symphony select {
+  backdrop-filter: blur(10px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+  background-color: rgba(20, 22, 23, 0.3) !important;
+  border: 1px solid rgba(197, 168, 112, 0.2) !important;
+  color: var(--foreground) !important;
+  border-radius: 8px !important;
+}
+
+html.theme-symphony input:focus,
+html.theme-symphony textarea:focus,
+html.theme-symphony select:focus {
+  border-color: var(--brand-color) !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--brand-color) 30%, transparent) !important;
+}
+
+/* Primary Button customization for Symphony */
+html.theme-symphony .btn-primary,
+html.theme-symphony button.btn-primary {
+  background-color: var(--brand-color) !important;
+  color: #141617 !important; /* Dark obsidian text */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--brand-color) 30%, transparent) !important;
+}
+
+html.theme-symphony .btn-primary:hover,
+html.theme-symphony button.btn-primary:hover {
+  background-color: var(--brand-color-hover) !important;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--brand-color) 60%, transparent) !important;
+}
+
 
 /* ─── Tailwind design token bridge ─────────────────────── */
 @theme inline {

@@ -124,6 +124,11 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75V21m-9-3h18m-18-6L12 3l9 9M3 12v9a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 21v-9" />
                   </svg>
                 )}
+                {theme === "symphony" && (
+                  <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 0v15m0-15l-10.5 3m0 0v15m0-15v15M9 18a3 3 0 11-6 0 3 3 0 016 0zm10.5-3a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                )}
               </button>
 
               {themeMenuOpen && (
@@ -185,6 +190,15 @@ export default function Navbar() {
                       </svg>
                       Market
                     </button>
+                    <button
+                      onClick={() => { setTheme("symphony"); setThemeMenuOpen(false); }}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-brand/10 transition-colors duration-150 cursor-pointer ${theme === "symphony" ? "text-brand font-semibold" : "text-brand-muted"}`}
+                    >
+                      <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 0v15m0-15l-10.5 3m0 0v15m0-15v15M9 18a3 3 0 11-6 0 3 3 0 016 0zm10.5-3a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      Symphony
+                    </button>
                   </div>
                 </>
               )}
@@ -235,6 +249,11 @@ export default function Navbar() {
               {theme === "market" && (
                 <svg className="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75V21m-9-3h18m-18-6L12 3l9 9M3 12v9a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 21v-9" />
+                </svg>
+              )}
+              {theme === "symphony" && (
+                <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 0v15m0-15l-10.5 3m0 0v15m0-15v15M9 18a3 3 0 11-6 0 3 3 0 016 0zm10.5-3a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               )}
             </button>
