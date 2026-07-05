@@ -72,10 +72,10 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className={`text-sm font-medium transition-all duration-200 tracking-wide uppercase whitespace-nowrap hover:text-cyan-400 ${
+                  className={`text-sm font-medium transition-all duration-200 tracking-wide uppercase whitespace-nowrap hover:text-brand-hover ${
                     isActive
-                      ? "text-cyan-500 dark:text-cyan-400 font-bold"
-                      : "text-slate-600 dark:text-slate-300"
+                      ? "text-brand font-bold"
+                      : "text-brand-muted"
                   }`}
                 >
                   {link.name}
@@ -90,7 +90,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setThemeMenuOpen(!themeMenuOpen)}
-                className="p-2.5 rounded-xl border border-[var(--card-border-default)] hover:border-cyan-400/40 text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
+                className="p-2.5 rounded-xl border border-[var(--card-border-default)] hover:border-brand/40 text-brand-muted bg-[var(--card-bg)] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
                 aria-label="Theme Menu"
               >
                 {theme === "dark" && (
@@ -132,7 +132,7 @@ export default function Navbar() {
                   <div className="absolute right-0 mt-2 w-36 rounded-xl border border-[var(--card-border-default)] bg-[var(--card-bg)] backdrop-blur-xl shadow-xl z-50 py-1.5 animate-fadeIn">
                     <button
                       onClick={() => { setTheme("dark"); setThemeMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "dark" ? "text-cyan-500 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-brand/10 transition-colors duration-150 cursor-pointer ${theme === "dark" ? "text-brand font-semibold" : "text-brand-muted"}`}
                     >
                       <svg className="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M3 12h2.25m13.5 0H21M5.75 5.75l1.636 1.636m10.228 10.228l1.636 1.636M5.75 18.25l1.636-1.636m10.228-10.228l1.636-1.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
@@ -141,7 +141,7 @@ export default function Navbar() {
                     </button>
                     <button
                       onClick={() => { setTheme("light"); setThemeMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "light" ? "text-cyan-500 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-brand/10 transition-colors duration-150 cursor-pointer ${theme === "light" ? "text-brand font-semibold" : "text-brand-muted"}`}
                     >
                       <svg className="w-3.5 h-3.5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
@@ -150,7 +150,7 @@ export default function Navbar() {
                     </button>
                     <button
                       onClick={() => { setTheme("parchment"); setThemeMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "parchment" ? "text-orange-600 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-brand/10 transition-colors duration-150 cursor-pointer ${theme === "parchment" ? "text-brand font-semibold" : "text-brand-muted"}`}
                     >
                       <svg className="w-3.5 h-3.5 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122l9.37-9.37a2.25 2.25 0 113.182 3.182l-9.37 9.39a1.5 1.5 0 01-1.06.44h-2.12a.75.75 0 01-.75-.75v-2.12a1.5 1.5 0 01.44-1.06z" />
@@ -160,7 +160,7 @@ export default function Navbar() {
                     </button>
                     <button
                       onClick={() => { setTheme("nordic"); setThemeMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "nordic" ? "text-sky-700 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-brand/10 transition-colors duration-150 cursor-pointer ${theme === "nordic" ? "text-brand font-semibold" : "text-brand-muted"}`}
                     >
                       <svg className="w-3.5 h-3.5 text-sky-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18M12 3l4 4M12 21l-4-4M3 12l4 4M21 12l-4-4" />
@@ -169,7 +169,7 @@ export default function Navbar() {
                     </button>
                     <button
                       onClick={() => { setTheme("gallery"); setThemeMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "gallery" ? "text-orange-500 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-brand/10 transition-colors duration-150 cursor-pointer ${theme === "gallery" ? "text-brand font-semibold" : "text-brand-muted"}`}
                     >
                       <svg className="w-3.5 h-3.5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
@@ -178,7 +178,7 @@ export default function Navbar() {
                     </button>
                     <button
                       onClick={() => { setTheme("market"); setThemeMenuOpen(false); }}
-                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "market" ? "text-red-500 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-brand/10 transition-colors duration-150 cursor-pointer ${theme === "market" ? "text-brand font-semibold" : "text-brand-muted"}`}
                     >
                       <svg className="w-3.5 h-3.5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75V21m-9-3h18m-18-6L12 3l9 9M3 12v9a1.5 1.5 0 001.5 1.5h15A1.5 1.5 0 0021 21v-9" />
@@ -193,7 +193,7 @@ export default function Navbar() {
             {/* Language Toggle Button */}
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-3.5 py-1.5 rounded-xl border border-[var(--card-border-default)] hover:border-cyan-400/40 text-xs font-semibold text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+              className="px-3.5 py-1.5 rounded-xl border border-[var(--card-border-default)] hover:border-brand/40 text-xs font-semibold text-brand-muted bg-[var(--card-bg)] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
             >
               {lang === "en" ? "العربية" : "English"}
             </button>
@@ -203,7 +203,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg border border-[var(--card-border-default)] text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] flex items-center justify-center cursor-pointer"
+              className="p-2 rounded-lg border border-[var(--card-border-default)] text-brand-muted bg-[var(--card-bg)] flex items-center justify-center cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === "dark" && (
@@ -241,14 +241,14 @@ export default function Navbar() {
 
             <button
               onClick={() => setLang(lang === "en" ? "ar" : "en")}
-              className="px-2.5 py-1 rounded-md border border-[var(--card-border-default)] text-xs font-semibold text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] hover:border-cyan-400/40 transition-all duration-200"
+              className="px-2.5 py-1 rounded-md border border-[var(--card-border-default)] text-xs font-semibold text-brand-muted bg-[var(--card-bg)] hover:border-brand/40 transition-all duration-200"
             >
               {lang === "en" ? "AR" : "EN"}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-white/[0.05] hover:text-slate-900 dark:hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-brand-muted hover:bg-brand/10 hover:text-brand focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -304,8 +304,8 @@ export default function Navbar() {
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`block rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     isActive
-                      ? "bg-cyan-500/10 text-cyan-500 dark:text-cyan-400"
-                      : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.02] hover:text-cyan-500 dark:hover:text-white"
+                      ? "bg-brand/10 text-brand"
+                      : "text-brand-muted hover:bg-brand/5 hover:text-brand"
                   }`}
                 >
                   {link.name}

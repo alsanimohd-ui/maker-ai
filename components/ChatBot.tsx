@@ -171,11 +171,11 @@ export default function ChatBot() {
                 Mi
               </div>
               {/* Subtle status indicator */}
-              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-cyan-400 border-2 border-[var(--background)]" />
+              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-brand border-2 border-[var(--background)]" />
             </div>
             <div>
               <div className={`text-sm font-extrabold ${isDark ? "text-white" : "text-slate-900"}`}>Mi</div>
-              <div className="text-[11px] font-semibold text-cyan-500">
+              <div className="text-[11px] font-semibold text-brand">
                 {lang === "ar" ? "مساعد ذكي" : "AI Assistant"}
               </div>
             </div>
@@ -184,9 +184,7 @@ export default function ChatBot() {
           {/* Close */}
           <button
             onClick={() => setIsOpen(false)}
-            className={`p-1.5 rounded-lg transition-all duration-200 cursor-pointer ${
-              isDark ? "text-slate-400 hover:text-white hover:bg-white/[0.06]" : "text-slate-500 hover:text-slate-900 hover:bg-slate-100"
-            }`}
+            className={`p-1.5 rounded-lg transition-all duration-200 cursor-pointer text-brand-muted hover:text-brand hover:bg-brand/10`}
             aria-label="Close Chat"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -206,14 +204,7 @@ export default function ChatBot() {
             >
               {/* Mi avatar on bot messages */}
               {msg.sender === "mi" && (
-                <div
-                  className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 select-none"
-                  style={{
-                    background: "rgba(14,179,186,0.1)",
-                    border: "1px solid rgba(14,179,186,0.25)",
-                    color: "#0eb3ba",
-                  }}
-                >
+                <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 select-none bg-brand/10 border border-brand/20 text-brand">
                   Mi
                 </div>
               )}
@@ -222,22 +213,9 @@ export default function ChatBot() {
               <div
                 className={`p-3.5 text-sm leading-relaxed whitespace-pre-line rounded-2xl ${
                   msg.sender === "user"
-                    ? "rounded-br-none text-white font-medium"
-                    : "rounded-bl-none"
+                    ? "rounded-br-none bg-brand text-slate-900 dark:text-white font-medium shadow-md"
+                    : "rounded-bl-none bg-[var(--chat-msg-bot-bg)] border border-[var(--chat-msg-bot-border)] text-[var(--chat-msg-bot-text)] shadow-sm"
                 }`}
-                style={
-                  msg.sender === "user"
-                    ? {
-                        background: "linear-gradient(135deg, #0eb3ba 0%, #6366f1 100%)",
-                        boxShadow: "0 4px 14px rgba(14,179,186,0.25)",
-                      }
-                    : {
-                        background: isDark ? "rgba(14, 22, 42, 0.7)" : "rgba(241, 245, 249, 0.9)",
-                        border: `1px solid ${isDark ? "rgba(255,255,255,0.07)" : "rgba(14,179,186,0.12)"}`,
-                        color: isDark ? "#e2e8f0" : "#1e293b",
-                        boxShadow: isDark ? "none" : "0 2px 8px rgba(15,23,42,0.06)",
-                      }
-                }
               >
                 {/* Render **bold** markdown-like syntax */}
                 {msg.text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
@@ -259,11 +237,7 @@ export default function ChatBot() {
                   <button
                     key={prompt}
                     onClick={() => handleSend(prompt)}
-                    className={`text-xs font-medium px-3 py-2 rounded-full border transition-all duration-200 cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${
-                      isDark
-                        ? "border-cyan-500/25 text-cyan-300 bg-cyan-950/20 hover:border-cyan-500/50 hover:bg-cyan-900/30"
-                        : "border-cyan-500/30 text-cyan-700 bg-cyan-50/60 hover:border-cyan-500/60 hover:bg-cyan-100/80"
-                    }`}
+                    className="text-xs font-medium px-3 py-2 rounded-full border border-brand/20 text-brand bg-brand/5 hover:border-brand/40 hover:bg-brand/10 transition-all duration-200 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
                   >
                     {prompt}
                   </button>
@@ -275,22 +249,13 @@ export default function ChatBot() {
           {/* Typing indicator */}
           {isTyping && (
             <div className="flex items-end gap-2 max-w-[85%] self-start">
-              <div
-                className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0"
-                style={{ background: "rgba(14,179,186,0.1)", border: "1px solid rgba(14,179,186,0.25)", color: "#0eb3ba" }}
-              >
+              <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 select-none bg-brand/10 border border-brand/20 text-brand">
                 Mi
               </div>
-              <div
-                className="px-4 py-3 rounded-2xl rounded-bl-none flex items-center gap-1.5"
-                style={{
-                  background: isDark ? "rgba(14,22,42,0.7)" : "rgba(241,245,249,0.9)",
-                  border: `1px solid ${isDark ? "rgba(255,255,255,0.07)" : "rgba(14,179,186,0.12)"}`,
-                }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+              <div className="px-4 py-3 rounded-2xl rounded-bl-none flex items-center gap-1.5 bg-[var(--chat-msg-bot-bg)] border border-[var(--chat-msg-bot-border)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand animate-bounce" style={{ animationDelay: "0ms" }} />
+                <span className="w-1.5 h-1.5 rounded-full bg-brand animate-bounce" style={{ animationDelay: "150ms" }} />
+                <span className="w-1.5 h-1.5 rounded-full bg-brand animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
           )}
@@ -298,10 +263,7 @@ export default function ChatBot() {
         </div>
 
         {/* ── Input Bar ── */}
-        <div
-          className="relative z-10 p-3.5 flex items-center gap-2 border-t"
-          style={{ borderColor: isDark ? "rgba(255,255,255,0.06)" : "rgba(14,179,186,0.1)" }}
-        >
+        <div className="relative z-10 p-3.5 flex items-center gap-2 border-t border-brand/10 bg-[var(--card-bg)]">
           <input
             type="text"
             value={inputValue}
@@ -309,18 +271,12 @@ export default function ChatBot() {
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             disabled={isTyping}
             placeholder={isTyping ? thinkingText : placeholder}
-            className="flex-grow rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/30 transition-all duration-300 disabled:opacity-50"
-            style={{
-              background: isDark ? "rgba(255,255,255,0.05)" : "#ffffff",
-              border: `1px solid ${isDark ? "rgba(255,255,255,0.09)" : "rgba(14,179,186,0.2)"}`,
-              color: isDark ? "#f1f5f9" : "#0a0f1e",
-            }}
+            className="flex-grow rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 transition-all duration-300 disabled:opacity-50 bg-[var(--form-input-bg)] border border-[var(--form-input-border)] text-[var(--foreground)] placeholder-brand-muted/60"
           />
           <button
             onClick={() => handleSend()}
             disabled={!inputValue.trim() || isTyping}
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-white flex-shrink-0 transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed hover:scale-[1.05] active:scale-95"
-            style={{ background: "linear-gradient(135deg, #0eb3ba 0%, #6366f1 100%)", boxShadow: "0 4px 14px rgba(14,179,186,0.3)" }}
+            className="btn-primary w-10 h-10 rounded-xl flex items-center justify-center bg-brand hover:bg-brand-hover text-slate-900 dark:text-white flex-shrink-0 transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed hover:scale-[1.05] active:scale-95 shadow-md"
             aria-label="Send"
           >
             <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">

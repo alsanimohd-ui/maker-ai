@@ -513,6 +513,22 @@ html.theme-market button.btn-primary:hover {
   --font-serif: var(--serif-font);
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Bridge legacy hardcoded Tailwind colors to dynamic theme variables */
+  --color-cyan-50: rgba(14, 179, 186, 0.1);
+  --color-cyan-300: var(--brand-color);
+  --color-cyan-400: var(--brand-color);
+  --color-cyan-500: var(--brand-color);
+  --color-cyan-600: var(--brand-color-hover);
+  --color-cyan-700: var(--brand-color-hover);
+  --color-cyan-900: var(--brand-color-hover);
+  --color-cyan-950: var(--brand-color-hover);
+
+  --color-slate-300: var(--text-muted);
+  --color-slate-400: var(--text-muted);
+  --color-slate-500: var(--text-muted);
+  --color-slate-600: var(--text-muted);
+  --color-slate-900: var(--foreground);
 }
 
 /* ─── Base reset ─────────────────────────────────────────── */
