@@ -179,7 +179,7 @@ html.theme-parchment {
 
   /* Typography dynamic variables */
   --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-playfair-display), Georgia, serif;
+  --serif-font: var(--font-space-grotesk), Georgia, serif;
 }
 
 /* ─── Editorial styling rules for Parchment Theme ─────── */
@@ -268,7 +268,7 @@ html.theme-nordic {
 
   /* Typography dynamic variables */
   --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-playfair-display), Georgia, serif;
+  --serif-font: var(--font-space-grotesk), Georgia, serif;
 }
 
 /* ─── Editorial styling rules for Nordic Theme ────────── */
