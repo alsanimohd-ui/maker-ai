@@ -2,25 +2,26 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-type Theme = "dark" | "light";
+export type Theme = "dark" | "light" | "parchment";
 
 interface ThemeContextType {
   theme: Theme;
+  setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("dark");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("maker_ai_theme") as Theme;
-    if (savedTheme === "light") {
-      setTheme("light");
+    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "parchment") {
+      setThemeState(savedTheme);
     } else {
-      setTheme("dark");
+      setThemeState("dark");
     }
     setIsMounted(true);
   }, []);
@@ -28,19 +29,28 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     if (isMounted) {
       const root = document.documentElement;
+      root.classList.remove("dark", "light", "theme-parchment");
       if (theme === "dark") {
         root.classList.add("dark");
-        root.classList.remove("light");
-      } else {
+      } else if (theme === "light") {
         root.classList.add("light");
-        root.classList.remove("dark");
+      } else if (theme === "parchment") {
+        root.classList.add("theme-parchment");
       }
       localStorage.setItem("maker_ai_theme", theme);
     }
   }, [theme, isMounted]);
 
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme);
+  };
+
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setThemeState((prev) => {
+      if (prev === "dark") return "light";
+      if (prev === "light") return "parchment";
+      return "dark";
+    });
   };
 
   if (!isMounted) {
@@ -48,7 +58,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
@@ -59,6 +69,7 @@ export const useTheme = () => {
   if (!context) {
     return {
       theme: "dark" as Theme,
+      setTheme: () => {},
       toggleTheme: () => {},
     };
   }

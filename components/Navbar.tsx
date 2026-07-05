@@ -10,8 +10,9 @@ import { useTheme } from "@/context/ThemeContext";
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
   const { lang, setLang } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme, toggleTheme } = useTheme();
   const t = translations[lang];
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -85,22 +86,67 @@ export default function Navbar() {
 
           {/* Desktop CTA, Language Toggle, and Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              className="p-2.5 rounded-xl border border-[var(--card-border-default)] hover:border-cyan-400/40 text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
-              aria-label="Toggle Theme"
-            >
-              {theme === "dark" ? (
-                <svg className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '30s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M3 12h2.25m13.5 0H21M5.75 5.75l1.636 1.636m10.228 10.228l1.636 1.636M5.75 18.25l1.636-1.636m10.228-10.228l1.636-1.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                </svg>
-              ) : (
-                <svg className="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                </svg>
+            {/* Desktop Theme Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setThemeMenuOpen(!themeMenuOpen)}
+                className="p-2.5 rounded-xl border border-[var(--card-border-default)] hover:border-cyan-400/40 text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
+                aria-label="Theme Menu"
+              >
+                {theme === "dark" && (
+                  <svg className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '30s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M3 12h2.25m13.5 0H21M5.75 5.75l1.636 1.636m10.228 10.228l1.636 1.636M5.75 18.25l1.636-1.636m10.228-10.228l1.636-1.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                  </svg>
+                )}
+                {theme === "light" && (
+                  <svg className="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                  </svg>
+                )}
+                {theme === "parchment" && (
+                  <svg className="w-4 h-4 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122l9.37-9.37a2.25 2.25 0 113.182 3.182l-9.37 9.39a1.5 1.5 0 01-1.06.44h-2.12a.75.75 0 01-.75-.75v-2.12a1.5 1.5 0 01.44-1.06z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 8.25l3 3" />
+                  </svg>
+                )}
+              </button>
+
+              {themeMenuOpen && (
+                <>
+                  <div className="fixed inset-0 z-40" onClick={() => setThemeMenuOpen(false)} />
+                  <div className="absolute right-0 mt-2 w-36 rounded-xl border border-[var(--card-border-default)] bg-[var(--card-bg)] backdrop-blur-xl shadow-xl z-50 py-1.5 animate-fadeIn">
+                    <button
+                      onClick={() => { setTheme("dark"); setThemeMenuOpen(false); }}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "dark" ? "text-cyan-500 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                    >
+                      <svg className="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M3 12h2.25m13.5 0H21M5.75 5.75l1.636 1.636m10.228 10.228l1.636 1.636M5.75 18.25l1.636-1.636m10.228-10.228l1.636-1.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                      </svg>
+                      Dark
+                    </button>
+                    <button
+                      onClick={() => { setTheme("light"); setThemeMenuOpen(false); }}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "light" ? "text-cyan-500 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                    >
+                      <svg className="w-3.5 h-3.5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                      </svg>
+                      Light
+                    </button>
+                    <button
+                      onClick={() => { setTheme("parchment"); setThemeMenuOpen(false); }}
+                      className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-white/[0.05] transition-colors duration-150 cursor-pointer ${theme === "parchment" ? "text-orange-600 font-semibold" : "text-slate-600 dark:text-slate-300"}`}
+                    >
+                      <svg className="w-3.5 h-3.5 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122l9.37-9.37a2.25 2.25 0 113.182 3.182l-9.37 9.39a1.5 1.5 0 01-1.06.44h-2.12a.75.75 0 01-.75-.75v-2.12a1.5 1.5 0 01.44-1.06z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 8.25l3 3" />
+                      </svg>
+                      Parchment
+                    </button>
+                  </div>
+                </>
               )}
-            </button>
+            </div>
 
             {/* Language Toggle Button */}
             <button
@@ -118,13 +164,20 @@ export default function Navbar() {
               className="p-2 rounded-lg border border-[var(--card-border-default)] text-slate-600 dark:text-slate-300 bg-[var(--card-bg)] flex items-center justify-center cursor-pointer"
               aria-label="Toggle Theme"
             >
-              {theme === "dark" ? (
-                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              {theme === "dark" && (
+                <svg className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '30s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M3 12h2.25m13.5 0H21M5.75 5.75l1.636 1.636m10.228 10.228l1.636 1.636M5.75 18.25l1.636-1.636m10.228-10.228l1.636-1.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                 </svg>
-              ) : (
+              )}
+              {theme === "light" && (
                 <svg className="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+              )}
+              {theme === "parchment" && (
+                <svg className="w-4 h-4 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122l9.37-9.37a2.25 2.25 0 113.182 3.182l-9.37 9.39a1.5 1.5 0 01-1.06.44h-2.12a.75.75 0 01-.75-.75v-2.12a1.5 1.5 0 01.44-1.06z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 8.25l3 3" />
                 </svg>
               )}
             </button>
