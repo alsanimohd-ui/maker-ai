@@ -131,10 +131,10 @@ export default function ServicesPage() {
                 : "Book a free 30-minute operational audit. We will map out exactly where you are losing time and how to automate it."}
             </p>
             <div className="relative z-10 inline-block group">
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-teal-500 blur-xl rounded-xl opacity-20 group-hover:opacity-35 transition-opacity duration-300" />
+              <div className="absolute -inset-1.5 bg-brand blur-xl rounded-xl opacity-20 group-hover:opacity-35 transition-opacity duration-300" />
               <Link
                 href="/contact"
-                className="relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-[#0eb3ba] hover:from-cyan-300 hover:to-[#14d2db] px-8 py-4 text-sm font-bold tracking-wider uppercase text-[#020205] shadow-[0_4px_20px_rgba(14,179,186,0.15)] hover:scale-[1.01] border border-cyan-300/10 transition-all duration-300 cursor-pointer"
+                className="btn-primary relative inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer"
               >
                 {t.cta_complexities}
               </Link>

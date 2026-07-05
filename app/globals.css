@@ -219,11 +219,13 @@ html.theme-parchment [class*="rounded-3xl"] {
 
 html.theme-parchment .btn-primary,
 html.theme-parchment button.btn-primary {
+  background-color: var(--brand-color) !important;
+  color: var(--bg-alabaster) !important; /* Parchment contrast text */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 html.theme-parchment .btn-primary:hover,
@@ -308,11 +310,13 @@ html.theme-nordic [class*="rounded-3xl"] {
 
 html.theme-nordic .btn-primary,
 html.theme-nordic button.btn-primary {
+  background-color: var(--brand-color) !important;
+  color: var(--bg-linen-pure) !important; /* light linen contrast text */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 html.theme-nordic .btn-primary:hover,
@@ -397,12 +401,13 @@ html.theme-gallery [class*="rounded-3xl"] {
 
 html.theme-gallery .btn-primary,
 html.theme-gallery button.btn-primary {
+  background-color: var(--brand-color) !important;
+  color: var(--text-shadow-deep) !important; /* high contrast concrete grey */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: background-color 0.2s ease;
-  color: var(--text-shadow-deep) !important;
+  transition: all 0.3s ease;
 }
 
 html.theme-gallery .btn-primary:hover,
@@ -487,11 +492,13 @@ html.theme-market [class*="rounded-3xl"] {
 
 html.theme-market .btn-primary,
 html.theme-market button.btn-primary {
+  background-color: var(--brand-color) !important;
+  color: var(--bg-market-plaster) !important; /* plaster white contrast text */
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 html.theme-market .btn-primary:hover,
@@ -536,6 +543,30 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--sans-font);
+}
+
+/* Base primary button styles */
+.btn-primary, button.btn-primary {
+  background-color: var(--brand-color) !important;
+  color: #020209 !important; /* high-contrast dark text by default */
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--brand-color) 20%, transparent) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-primary:hover, button.btn-primary:hover {
+  background-color: var(--brand-color-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--brand-color) 45%, transparent) !important;
+}
+
+.btn-primary:active, button.btn-primary:active {
+  transform: translateY(0) scale(0.98) !important;
 }
 
 /* ─── Micro-mesh grid (ultra-subtle, radially masked) ───── */

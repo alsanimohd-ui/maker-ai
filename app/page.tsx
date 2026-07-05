@@ -142,16 +142,10 @@ export default function Home() {
                   href="https://mi.maker-ai.tech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl
-                    bg-gradient-to-r from-cyan-400 to-[#0eb3ba]
-                    hover:from-cyan-300 hover:to-[#14d2db]
-                    px-8 py-4 text-sm font-black tracking-widest uppercase text-[#020209]
-                    shadow-[0_0_28px_rgba(14,179,186,0.4)] hover:shadow-[0_0_50px_rgba(14,179,186,0.75)]
-                    border border-cyan-300/20 active:scale-[0.97]
-                    transition-all duration-300"
+                  className="btn-primary group relative inline-flex items-center justify-center gap-2.5 rounded-xl px-8 py-4 text-sm font-black tracking-widest uppercase transition-all duration-300"
                 >
                   {t.hero_btn_launch}
-                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </Link>
@@ -431,20 +425,12 @@ export default function Home() {
             {/* Glowing halo layer - subtle premium glow */}
             <div className="relative inline-block group">
               <div
-                className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-teal-500 blur-xl rounded-xl opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none"
+                className="absolute -inset-1.5 bg-brand blur-xl rounded-xl opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none"
                 aria-hidden="true"
               />
               <Link
                 href="/contact"
-                className="relative inline-flex items-center justify-center rounded-xl
-                  bg-gradient-to-r from-cyan-400 via-[#0eb3ba] to-teal-500
-                  hover:from-cyan-300 hover:via-[#14d2db] hover:to-teal-400
-                  px-8 py-4
-                  text-sm font-bold tracking-wider uppercase text-[#020209]
-                  shadow-[0_4px_20px_rgba(14,179,186,0.15)] hover:shadow-[0_4px_30px_rgba(14,179,186,0.25)]
-                  border border-cyan-300/10
-                  hover:scale-[1.01] active:scale-[0.98]
-                  transition-all duration-300 cursor-pointer"
+                className="btn-primary relative inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer"
               >
                 {t.cta_complexities}
               </Link>
