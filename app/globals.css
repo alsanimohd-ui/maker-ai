@@ -267,8 +267,42 @@ html.theme-nordic {
   --brand-color-hover: #a83627;
 
   /* Typography dynamic variables */
-  --sans-font: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: Georgia, serif;
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: var(--font-playfair-display), Georgia, serif;
+}
+
+/* ─── Editorial styling rules for Nordic Theme ────────── */
+html.theme-nordic h1,
+html.theme-nordic h2,
+html.theme-nordic h3 {
+  font-family: var(--serif-font) !important;
+  font-weight: 700;
+}
+
+html.theme-nordic .card-neon-border,
+html.theme-nordic button,
+html.theme-nordic input,
+html.theme-nordic textarea,
+html.theme-nordic [class*="rounded-xl"],
+html.theme-nordic [class*="rounded-lg"],
+html.theme-nordic [class*="rounded-md"],
+html.theme-nordic [class*="rounded-2xl"],
+html.theme-nordic [class*="rounded-3xl"] {
+  border-radius: 4px !important;
+}
+
+html.theme-nordic .btn-primary,
+html.theme-nordic button.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+html.theme-nordic .btn-primary:hover,
+html.theme-nordic button.btn-primary:hover {
+  background-color: #722016 !important; /* Slightly darker crimson hover */
 }
 
 /* ─── Tailwind design token bridge ─────────────────────── */
