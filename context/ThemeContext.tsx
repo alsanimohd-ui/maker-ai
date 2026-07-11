@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type Theme = "dark" | "light" | "parchment" | "nordic" | "market" | "symphony";
+export type Theme = "nordic" | "dark" | "light" | "parchment" | "market" | "symphony";
 
 interface ThemeContextType {
   theme: Theme;
@@ -13,16 +13,11 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("nordic");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("maker_ai_theme") as Theme;
-    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "parchment" || savedTheme === "nordic" || savedTheme === "market" || savedTheme === "symphony") {
-      setThemeState(savedTheme);
-    } else {
-      setThemeState("dark");
-    }
+    setThemeState("nordic");
     setIsMounted(true);
   }, []);
 
@@ -30,36 +25,17 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (isMounted) {
       const root = document.documentElement;
       root.classList.remove("dark", "light", "theme-parchment", "theme-nordic", "theme-market", "theme-symphony");
-      if (theme === "dark") {
-        root.classList.add("dark");
-      } else if (theme === "light") {
-        root.classList.add("light");
-      } else if (theme === "parchment") {
-        root.classList.add("theme-parchment");
-      } else if (theme === "nordic") {
-        root.classList.add("theme-nordic");
-      } else if (theme === "market") {
-        root.classList.add("theme-market");
-      } else if (theme === "symphony") {
-        root.classList.add("theme-symphony");
-      }
-      localStorage.setItem("maker_ai_theme", theme);
+      root.classList.add("theme-nordic");
+      localStorage.setItem("maker_ai_theme", "nordic");
     }
   }, [theme, isMounted]);
 
   const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
+    setThemeState("nordic");
   };
 
   const toggleTheme = () => {
-    setThemeState((prev) => {
-      if (prev === "dark") return "light";
-      if (prev === "light") return "parchment";
-      if (prev === "parchment") return "nordic";
-      if (prev === "nordic") return "market";
-      if (prev === "market") return "symphony";
-      return "dark";
-    });
+    setThemeState("nordic");
   };
 
   if (!isMounted) {
@@ -77,7 +53,7 @@ export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
     return {
-      theme: "dark" as Theme,
+      theme: "nordic" as Theme,
       setTheme: () => {},
       toggleTheme: () => {},
     };
