@@ -108,6 +108,16 @@ export default function Home() {
         </svg>
       ),
     },
+    {
+      key: "pillar5",
+      title: t.pillar5_title,
+      desc: t.pillar5_desc,
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m1.5 7.5H3m3.75 3.75V21m7.5-3.75V21m3.75-12.75H21m-1.5 7.5H21M12 3v1.5m6 3.75v10.5A2.25 2.25 0 0115.75 21H8.25A2.25 2.25 0 016 18.75V8.25A2.25 2.25 0 0118 8.25zM10.5 12h3M12 10.5v3" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -311,36 +321,47 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pillars.map((p, i) => (
-              <Reveal key={p.key} delay={150 + i * 100} className="h-full">
-                <div className="card-neon-border rounded-2xl p-7 flex flex-col h-full overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+            {pillars.map((p, i) => {
+              const getColSpan = (idx: number) => {
+                if (idx < 3) {
+                  return "md:col-span-3 lg:col-span-2";
+                } else if (idx === 3) {
+                  return "md:col-span-3 lg:col-span-3";
+                } else {
+                  return "md:col-span-6 lg:col-span-3";
+                }
+              };
+              return (
+                <Reveal key={p.key} delay={150 + i * 100} className={`h-full ${getColSpan(i)}`}>
+                  <div className="card-neon-border rounded-2xl p-7 flex flex-col h-full overflow-hidden">
 
-                  {/* Icon badge */}
-                  <div className={`relative z-10 h-11 w-11 rounded-xl flex items-center justify-center mb-5 transition-all duration-300
-                    ${isDark
-                      ? "bg-cyan-900/30 border border-cyan-500/25 text-cyan-400 shadow-[0_0_16px_rgba(14,179,186,0.12)]"
-                      : "bg-cyan-50 border border-cyan-200 text-cyan-600 shadow-sm"
-                    }`}>
-                    {p.icon}
+                    {/* Icon badge */}
+                    <div className={`relative z-10 h-11 w-11 rounded-xl flex items-center justify-center mb-5 transition-all duration-300
+                      ${isDark
+                        ? "bg-cyan-900/30 border border-cyan-500/25 text-cyan-400 shadow-[0_0_16px_rgba(14,179,186,0.12)]"
+                        : "bg-cyan-50 border border-cyan-200 text-cyan-600 shadow-sm"
+                      }`}>
+                      {p.icon}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className={`relative z-10 text-lg font-bold mb-3 tracking-wide transition-colors duration-300
+                      ${isDark
+                        ? "text-white"
+                        : "text-slate-900"
+                      }`}>
+                      {p.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className={`relative z-10 text-sm leading-relaxed font-light ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                      {p.desc}
+                    </p>
                   </div>
-
-                  {/* Title */}
-                  <h3 className={`relative z-10 text-lg font-bold mb-3 tracking-wide transition-colors duration-300
-                    ${isDark
-                      ? "text-white"
-                      : "text-slate-900"
-                    }`}>
-                    {p.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className={`relative z-10 text-sm leading-relaxed font-light ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                    {p.desc}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
 
         </div>
