@@ -785,9 +785,8 @@ body {
   box-shadow: var(--card-shadow),
               inset 0 1px 0 rgba(255, 255, 255, 0.06);
   transition:
-    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, box-shadow;
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: box-shadow;
 }
 
 /* Sub-pixel gradient border — the "neon thread" around each card */
@@ -807,21 +806,25 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  transition: background 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-neon-border:hover {
   transform: none;
-  box-shadow: var(--card-shadow),
-              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  /* Very subtle, premium shadow highlight */
+  box-shadow:
+    0 16px 36px -12px rgba(14, 179, 186, 0.12),
+    0 0 20px 1px rgba(14, 179, 186, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .card-neon-border:hover::before {
+  /* Brighter, more defined border on hover */
   background: linear-gradient(
     135deg,
-    rgba(14, 179, 186, 0.22) 0%,
-    rgba(99, 102, 241, 0.14) 50%,
-    rgba(14, 179, 186, 0.08) 100%
+    rgba(14, 179, 186, 0.55) 0%,
+    rgba(99, 102, 241, 0.4) 50%,
+    rgba(20, 210, 219, 0.3) 100%
   );
 }
 
@@ -835,9 +838,9 @@ html.light .card-neon-border {
 
 html.light .card-neon-border:hover {
   box-shadow:
-    0 4px 24px -4px rgba(15, 23, 42, 0.08),
-    0 1px 3px rgba(15, 23, 42, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 8px 30px -6px rgba(14, 179, 186, 0.08),
+    0 2px 6px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 /* ═══════════════════════════════════════════════════════════
