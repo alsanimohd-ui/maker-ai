@@ -49,13 +49,7 @@ export default function ContactPage() {
               delay={100}
               className="h-full"
             >
-              <div className="card-neon-border rounded-2xl p-8 flex flex-col space-y-8 overflow-hidden group h-full">
-                {/* Immersive inner top radial glow on hover */}
-                <div 
-                  className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(14,179,186,0.08),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
-                  aria-hidden="true"
-                />
-                
+              <div className="card-neon-border rounded-2xl p-8 flex flex-col space-y-8 overflow-hidden h-full">
                 <div className="relative z-10">
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wide">
                     {t.contact_side_title}

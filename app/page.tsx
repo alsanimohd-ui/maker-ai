@@ -314,19 +314,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((p, i) => (
               <Reveal key={p.key} delay={150 + i * 100} className="h-full">
-                <div className="card-neon-border rounded-2xl p-7 flex flex-col h-full group overflow-hidden">
-
-                  {/* Hover radial flare */}
-                  <div
-                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(14,179,186,0.08),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
-                    aria-hidden="true"
-                  />
+                <div className="card-neon-border rounded-2xl p-7 flex flex-col h-full overflow-hidden">
 
                   {/* Icon badge */}
                   <div className={`relative z-10 h-11 w-11 rounded-xl flex items-center justify-center mb-5 transition-all duration-300
                     ${isDark
-                      ? "bg-cyan-900/30 border border-cyan-500/25 text-cyan-400 shadow-[0_0_16px_rgba(14,179,186,0.12)] group-hover:shadow-[0_0_24px_rgba(14,179,186,0.25)]"
-                      : "bg-cyan-50 border border-cyan-200 text-cyan-600 shadow-sm group-hover:shadow-[0_0_16px_rgba(14,179,186,0.2)]"
+                      ? "bg-cyan-900/30 border border-cyan-500/25 text-cyan-400 shadow-[0_0_16px_rgba(14,179,186,0.12)]"
+                      : "bg-cyan-50 border border-cyan-200 text-cyan-600 shadow-sm"
                     }`}>
                     {p.icon}
                   </div>
@@ -334,8 +328,8 @@ export default function Home() {
                   {/* Title */}
                   <h3 className={`relative z-10 text-lg font-bold mb-3 tracking-wide transition-colors duration-300
                     ${isDark
-                      ? "text-white group-hover:text-cyan-300"
-                      : "text-slate-900 group-hover:text-cyan-700"
+                      ? "text-white"
+                      : "text-slate-900"
                     }`}>
                     {p.title}
                   </h3>

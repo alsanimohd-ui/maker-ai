@@ -97,18 +97,12 @@ export default function ServicesPage() {
                 delay={100 * (index + 1)}
                 className={`h-full ${index === 4 ? "md:col-span-2" : ""}`}
               >
-                <div className="card-neon-border rounded-2xl p-8 sm:p-10 flex flex-col h-full overflow-hidden group">
-                  {/* Immersive inner top radial glow on hover */}
-                  <div 
-                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(14,179,186,0.08),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
-                    aria-hidden="true"
-                  />
-
+                <div className="card-neon-border rounded-2xl p-8 sm:p-10 flex flex-col h-full overflow-hidden">
                   <div className="relative z-10 flex flex-col h-full">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 dark:bg-cyan-950/20 border border-cyan-500/20 mb-6 text-cyan-500 dark:text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                       {pillar.icon}
                     </div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
                       {pillar.title}
                     </h2>
                     <p className={`text-sm leading-relaxed font-light ${isDark ? "text-slate-400" : "text-slate-600"}`}>
