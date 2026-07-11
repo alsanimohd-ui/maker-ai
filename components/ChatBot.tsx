@@ -12,7 +12,7 @@ interface Message {
   timestamp: Date;
 }
 
-// Welcome message shown on auto-open — professional, transparent, and helpful
+// Welcome message shown on auto-open - professional, transparent, and helpful
 const WELCOME_MESSAGE = {
   en: "Hello, I'm **Mi**, Maker AI's AI assistant.\n\nI can help you explore our automation services, answer questions about workflows, security, and infrastructure, or guide you through getting started.\n\nHow can I help your business today?",
   ar: "مرحباً، أنا **Mi**، المساعد الذكي لـ Maker AI.\n\nيمكنني مساعدتك في استكشاف خدمات الأتمتة لدينا، والإجابة عن أسئلتك حول سير العمل والأمن والبنية التحتية، أو توجيهك للبدء.\n\nكيف يمكنني مساعدة عملك اليوم؟",

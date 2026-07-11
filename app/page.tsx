@@ -137,7 +137,7 @@ export default function Home() {
             <Reveal delay={530}>
               <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
 
-                {/* Primary CTA — launch Mi Tools */}
+                {/* Primary CTA - launch Mi Tools */}
                 <Link
                   href="https://mi.maker-ai.tech"
                   target="_blank"
@@ -150,7 +150,7 @@ export default function Home() {
                   </svg>
                 </Link>
 
-                {/* Secondary CTA — explore solutions */}
+                {/* Secondary CTA - explore solutions */}
                 <Link
                   href="/services"
                   className={`inline-flex items-center justify-center gap-2 rounded-xl
@@ -206,7 +206,7 @@ export default function Home() {
                 aria-hidden="true"
               />
 
-              {/* ── Orbiting accent dot — rides the outer ring ── */}
+              {/* ── Orbiting accent dot - rides the outer ring ── */}
               <div
                 className="absolute inset-0 rounded-full animate-ring-slow pointer-events-none"
                 aria-hidden="true"

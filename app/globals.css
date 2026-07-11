@@ -45,7 +45,7 @@
   --bg-gradient-via: #04040e;
   --bg-gradient-to: #03030a;
 
-  /* Micro-mesh grid — dark (1.5% max, near-invisible) */
+  /* Micro-mesh grid - dark (1.5% max, near-invisible) */
   --grid-line-color: rgba(255, 255, 255, 0.015);
 
   /* Brand color */
@@ -117,7 +117,7 @@ html.light {
   --chat-msg-bot-border: rgba(15, 23, 42, 0.06);
   --chat-msg-bot-text: #1e293b;
 
-  /* Aurora blobs — much softer in light mode */
+  /* Aurora blobs - much softer in light mode */
   --blob-opacity: 0;
   --blob-light-opacity: 0.35;
 
@@ -130,7 +130,7 @@ html.light {
   --bg-gradient-via: #eaf4fd;
   --bg-gradient-to: #f0f4f8;
 
-  /* Micro-mesh grid — light (barely visible ink lines at 2%) */
+  /* Micro-mesh grid - light (barely visible ink lines at 2%) */
   --grid-line-color: rgba(14, 30, 64, 0.02);
 
   /* Brand color */
@@ -595,7 +595,7 @@ body {
 
 /* ─── Micro-mesh grid (ultra-subtle, radially masked) ───── */
 /* Completely redesigned: 80px cells, <2% opacity, soft radial mask so it
-   fades entirely toward edges — no more "math notebook" look */
+   fades entirely toward edges - no more "math notebook" look */
 .bg-grid-masked {
   position: absolute;
   inset: 0;
@@ -632,7 +632,7 @@ body {
    ANIMATION KEYFRAMES
 ═══════════════════════════════════════════════════════════ */
 
-/* Aurora blobs — slow, organic drift */
+/* Aurora blobs - slow, organic drift */
 @keyframes aurora-flow-1 {
   0%   { transform: translate(0, 0)     scale(1)    rotate(0deg); }
   33%  { transform: translate(5vw, 4vh)  scale(1.1)  rotate(90deg); }
@@ -776,7 +776,7 @@ body {
    PREMIUM GLASSMORPHIC CARD SYSTEM
 ═══════════════════════════════════════════════════════════ */
 
-/* Universal luxury card — adapts to both themes via CSS vars */
+/* Universal luxury card - adapts to both themes via CSS vars */
 .card-neon-border {
   position: relative;
   background: var(--card-bg);
@@ -789,7 +789,7 @@ body {
   will-change: box-shadow;
 }
 
-/* Sub-pixel gradient border — the "neon thread" around each card */
+/* Sub-pixel gradient border - the "neon thread" around each card */
 .card-neon-border::before {
   content: "";
   position: absolute;

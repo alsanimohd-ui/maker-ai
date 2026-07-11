@@ -23,7 +23,7 @@ export default function About() {
       dir={isRtl ? "rtl" : "ltr"}
     >
       {/* ══════════════════════════════════════════════════════════════
-          HERO — Premium Centered "About Us" Canvas
+          HERO - Premium Centered "About Us" Canvas
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden border-b border-[var(--card-border-default)] px-4 sm:px-6 pt-12 pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-16">
 
@@ -59,9 +59,9 @@ export default function About() {
         {/* ── Content stack (logo → tagline → description → CTAs) ── */}
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 sm:gap-8">
 
-          {/* Badge removed — logo anchors the brand identity directly */}
+          {/* Badge removed - logo anchors the brand identity directly */}
 
-          {/* ── Mega Logo — centred showpiece ── */}
+          {/* ── Mega Logo - centred showpiece ── */}
           <Reveal delay={150}>
             <div className="relative flex items-center justify-center">
               {/* Glow halo behind logo */}
@@ -79,7 +79,7 @@ export default function About() {
               />
               <img
                 src="/assets/logo/logo-color.svg"
-                alt="Maker AI — Enterprise Automation Engineering"
+                alt="Maker AI - Enterprise Automation Engineering"
                 className="relative w-full object-contain animate-float-gentle select-none"
                 style={{
                   maxWidth: "min(480px, 78vw)",
@@ -102,7 +102,7 @@ export default function About() {
             </h1>
           </Reveal>
 
-          {/* ── About Us body text — premium typographic placeholder ── */}
+          {/* ── About Us body text - premium typographic placeholder ── */}
           <Reveal delay={450}>
             <p
               className={`leading-relaxed font-light max-w-2xl mx-auto ${
@@ -127,7 +127,7 @@ export default function About() {
           <Reveal delay={600}>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center">
 
-              {/* Primary — Launch Mi Tools */}
+              {/* Primary - Launch Mi Tools */}
               <Link
                 href="https://mi.maker-ai.tech"
                 target="_blank"
@@ -148,7 +148,7 @@ export default function About() {
                 </svg>
               </Link>
 
-              {/* Secondary — Explore Solutions */}
+              {/* Secondary - Explore Solutions */}
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center rounded-xl font-bold tracking-wide transition-all duration-300 active:scale-[0.97] backdrop-blur-md"
@@ -169,7 +169,7 @@ export default function About() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          ABOUT US — Premium Identity Section
+          ABOUT US - Premium Identity Section
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative w-full border-b border-[var(--card-border-default)] overflow-hidden" style={{ padding: "clamp(2.5rem, 5vw, 4.5rem) 1rem" }}>
 
@@ -244,8 +244,8 @@ export default function About() {
                   }}
                 >
                   {lang === "ar"
-                    ? "نحن Maker AI — شركة هندسة وأتمتة متخصصة في بناء البنى التحتية الرقمية للمؤسسات. نصمم أنظمة متكاملة تربط أدواتك وتحوّل عملياتك اليدوية إلى ماكينة رقمية دقيقة تعمل دون توقف."
-                    : "We are Maker AI — an engineering and automation firm specializing in building digital infrastructure for businesses. We design integrated systems that connect your tools and transform manual operations into a precise, always-on digital engine."}
+                    ? "نحن Maker AI - شركة هندسة وأتمتة متخصصة في بناء البنى التحتية الرقمية للمؤسسات. نصمم أنظمة متكاملة تربط أدواتك وتحوّل عملياتك اليدوية إلى ماكينة رقمية دقيقة تعمل دون توقف."
+                    : "We are Maker AI - an engineering and automation firm specializing in building digital infrastructure for businesses. We design integrated systems that connect your tools and transform manual operations into a precise, always-on digital engine."}
                 </p>
               </Reveal>
 
@@ -258,7 +258,7 @@ export default function About() {
                 />
               </Reveal>
 
-              {/* Three identity pillars — inline stat-style layout */}
+              {/* Three identity pillars - inline stat-style layout */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
                 {[
                   {
