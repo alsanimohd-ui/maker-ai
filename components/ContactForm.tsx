@@ -173,6 +173,7 @@ export default function ContactForm() {
                   <option value="Enterprise SaaS ERP Integration" className="bg-background text-foreground">{t.form_service_opt1}</option>
                   <option value="High-Scale Linux Automation Engine" className="bg-background text-foreground">{t.form_service_opt2}</option>
                   <option value="Virtual Firewalling & Zero-Trust Architecture" className="bg-background text-foreground">{t.form_service_opt3}</option>
+                  <option value="Specialized AI Solutions" className="bg-background text-foreground">{t.form_service_opt5}</option>
                   <option value="Other Consultation" className="bg-background text-foreground">{t.form_service_opt4}</option>
                 </select>
               </div>

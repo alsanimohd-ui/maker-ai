@@ -40,6 +40,9 @@ export const translations = {
     
     pillar4_title: "Next-Gen Infrastructure & Cloud",
     pillar4_desc: "Providing engineering consulting and managed solutions for your network architectures, cloud environments, and official corporate emails. Ensuring seamless business continuity and maximum operational security without interruptions.",
+    
+    pillar5_title: "Specialized AI Solutions",
+    pillar5_desc: "Enabling businesses with domain-specific AI models. We design multi-modal retrieval systems (RAG) that synthesize technical texts, tables, and figures, build high-resolution visual classifiers, and deploy autonomous AI agents to digitize complex operations with custom cognitive intelligence.",
 
     // Dynamic Call-to-Action (CTA)
     cta_complexities: "Schedule a Consultation",
@@ -79,6 +82,7 @@ export const translations = {
     form_service_opt2: "Bespoke Software Solutions",
     form_service_opt3: "Smart Workflow Automation",
     form_service_opt4: "Next-Gen Infrastructure & Cloud",
+    form_service_opt5: "Specialized AI Solutions",
     form_msg_label: "Project Brief & Requirements",
     form_msg_placeholder: "Tell us about the complexities you want to automate or systems you need built...",
     form_btn_submit: "Submit Inquiry",
@@ -154,6 +158,9 @@ export const translations = {
     
     pillar4_title: "البنية التحتية والحلول السحابية من الجيل القادم",
     pillar4_desc: "تقديم الاستشارات الهندسية والحلول المدارة لبنيات الشبكات الخاصة بك، والبيئات السحابية، ورسائل البريد الإلكتروني الرسمية للشركات. ضمان استمرارية الأعمال بسلاسة وأقصى درجات الأمان التشغيلي دون أي انقطاع.",
+    
+    pillar5_title: "حلول الذكاء الاصطناعي المتخصصة",
+    pillar5_desc: "تمكين الشركات بأنظمة ذكاء اصطناعي مخصصة لمجالاتها. نقوم بتصميم أنظمة استرجاع متعددة الوسائط (RAG) لتحليل النصوص والجداول البيانية المعقدة، وبناء مصنفات بصرية عالية الدقة، ونشر وكلاء ذكاء اصطناعي مستقلين لأتمتة العمليات المعقدة بكفاءة تشغيلية فائقة.",
 
     // Dynamic Call-to-Action (CTA)
     cta_complexities: "احجز مكالمة استشارية",
@@ -193,6 +200,7 @@ export const translations = {
     form_service_opt2: "حلول البرمجيات المخصصة",
     form_service_opt3: "أتمتة سير العمل الذكية",
     form_service_opt4: "البنية التحتية والحلول السحابية من الجيل القادم",
+    form_service_opt5: "حلول الذكاء الاصطناعي المتخصصة",
     form_msg_label: "نبذة عن المشروع ومتطلباته",
     form_msg_placeholder: "أخبرنا عن التعقيدات التي تريد أتمتتها أو الأنظمة التي تحتاج إلى بنائها...",
     form_btn_submit: "إرسال الاستفسار",

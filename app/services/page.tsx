@@ -62,6 +62,15 @@ export default function ServicesPage() {
         </svg>
       ),
     },
+    {
+      title: t.pillar5_title,
+      desc: t.pillar5_desc,
+      icon: (
+        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m1.5 7.5H3m3.75 3.75V21m7.5-3.75V21m3.75-12.75H21m-1.5 7.5H21M12 3v1.5m6 3.75v10.5A2.25 2.25 0 0115.75 21H8.25A2.25 2.25 0 016 18.75V8.25A2.25 2.25 0 018.25 6h7.5A2.25 2.25 0 0118 8.25zM10.5 12h3M12 10.5v3" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -79,14 +88,14 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* 4 Pillars Grid Showcase */}
+        {/* 5 Pillars Grid Showcase */}
         <section className="max-w-7xl mx-auto px-6 w-full mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {servicePillars.map((pillar, index) => (
               <Reveal
                 key={index}
                 delay={100 * (index + 1)}
-                className="h-full"
+                className={`h-full ${index === 4 ? "md:col-span-2" : ""}`}
               >
                 <div className="card-neon-border rounded-2xl p-8 sm:p-10 flex flex-col h-full overflow-hidden group">
                   {/* Immersive inner top radial glow on hover */}
