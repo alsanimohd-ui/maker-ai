@@ -30,7 +30,7 @@ export default function ServicesPage() {
       title: t.pillar1_title,
       desc: t.pillar1_desc,
       icon: (
-        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className="h-7 w-7 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
         </svg>
       ),
@@ -39,7 +39,7 @@ export default function ServicesPage() {
       title: t.pillar2_title,
       desc: t.pillar2_desc,
       icon: (
-        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className="h-7 w-7 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
         </svg>
       ),
@@ -48,7 +48,7 @@ export default function ServicesPage() {
       title: t.pillar3_title,
       desc: t.pillar3_desc,
       icon: (
-        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className="h-7 w-7 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
       ),
@@ -57,7 +57,7 @@ export default function ServicesPage() {
       title: t.pillar4_title,
       desc: t.pillar4_desc,
       icon: (
-        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className="h-7 w-7 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.003 9.003 0 018.716 6.747M12 3a9.003 9.003 0 00-8.716 6.747M3 12h18" />
         </svg>
       ),
@@ -66,7 +66,7 @@ export default function ServicesPage() {
       title: t.pillar5_title,
       desc: t.pillar5_desc,
       icon: (
-        <svg className="h-7 w-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className="h-7 w-7 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m1.5 7.5H3m3.75 3.75V21m7.5-3.75V21m3.75-12.75H21m-1.5 7.5H21M12 3v1.5m6 3.75v10.5A2.25 2.25 0 0115.75 21H8.25A2.25 2.25 0 016 18.75V8.25A2.25 2.25 0 018.25 6h7.5A2.25 2.25 0 0118 8.25zM10.5 12h3M12 10.5v3" />
         </svg>
       ),
@@ -99,7 +99,11 @@ export default function ServicesPage() {
               >
                 <div className="card-neon-border rounded-2xl p-8 sm:p-10 flex flex-col h-full overflow-hidden">
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 dark:bg-cyan-950/20 border border-cyan-500/20 mb-6 text-cyan-500 dark:text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl border mb-6 shadow-sm transition-all duration-300
+                      ${isDark 
+                        ? "bg-cyan-950/20 border-cyan-500/20 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]" 
+                        : "bg-indigo-50 border-indigo-200 text-indigo-600"
+                      }`}>
                       {pillar.icon}
                     </div>
                     <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
@@ -121,7 +125,11 @@ export default function ServicesPage() {
             <div className="absolute top-[-35%] left-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-cyan-500/5 via-blue-500/2 to-transparent blur-[100px]" />
             <div className="absolute bottom-[-35%] right-[-35%] -z-10 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-indigo-500/5 via-purple-600/2 to-transparent blur-[100px]" />
             
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/10 dark:bg-cyan-950/20 px-3.5 py-1 text-xs font-semibold text-cyan-600 dark:text-cyan-400 mb-6 backdrop-blur-md relative z-10">
+            <div className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1 text-xs font-semibold mb-6 backdrop-blur-md relative z-10 transition-all duration-300
+              ${isDark 
+                ? "border-cyan-500/20 bg-cyan-950/20 text-cyan-400" 
+                : "border-indigo-200 bg-indigo-50 text-indigo-600"
+              }`}>
               {lang === "ar" ? "التدقيق التشغيلي" : "Operational Audit"}
             </div>
 

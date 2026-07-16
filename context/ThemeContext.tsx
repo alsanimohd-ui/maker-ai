@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type Theme = "nordic" | "dark" | "light" | "parchment" | "market" | "symphony";
+export type Theme = "dark" | "light";
 
 interface ThemeContextType {
   theme: Theme;
@@ -13,29 +13,35 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme>("nordic");
+  const [theme, setThemeState] = useState<Theme>("dark");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setThemeState("nordic");
+    const savedTheme = localStorage.getItem("maker_ai_theme") as Theme;
+    if (savedTheme === "light" || savedTheme === "dark") {
+      setThemeState(savedTheme);
+    } else {
+      // Default to dark mode (Option A)
+      setThemeState("dark");
+    }
     setIsMounted(true);
   }, []);
 
   useEffect(() => {
     if (isMounted) {
       const root = document.documentElement;
-      root.classList.remove("dark", "light", "theme-parchment", "theme-nordic", "theme-market", "theme-symphony");
-      root.classList.add("theme-nordic");
-      localStorage.setItem("maker_ai_theme", "nordic");
+      root.classList.remove("dark", "light");
+      root.classList.add(theme);
+      localStorage.setItem("maker_ai_theme", theme);
     }
   }, [theme, isMounted]);
 
   const setTheme = (newTheme: Theme) => {
-    setThemeState("nordic");
+    setThemeState(newTheme);
   };
 
   const toggleTheme = () => {
-    setThemeState("nordic");
+    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   if (!isMounted) {
@@ -53,10 +59,11 @@ export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
     return {
-      theme: "nordic" as Theme,
+      theme: "dark" as Theme,
       setTheme: () => {},
       toggleTheme: () => {},
     };
   }
   return context;
 };
+

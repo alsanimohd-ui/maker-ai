@@ -53,481 +53,63 @@
   --brand-color-hover: #14d2db;
 
   /* Typography dynamic variables */
-  --sans-font: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: Georgia, serif;
-
-  /* Raw colors for Parchment Palette (60-30-10) */
-  --bg-parchment: #e1e2e2;      /* 60% Base / Backgrounds */
-  --bg-alabaster: #f6f4f2;      /* Alternate / Cards */
-  --text-ink: #201e1f;          /* 30% Structure / Headings & Body */
-  --stroke-kraft: #c29f7c;      /* Subtle accents, subheadings & borders */
-  --accent-terracotta: #a35c37; /* 10% Conversion / Action items & brand */
-  --white-pure: #ffffff;
-
-  /* Raw colors for Nordic Surrealist Palette */
-  --bg-horizon-pale: #b4c9d8;   /* 60% Base / Backgrounds (Light sky-blue) */
-  --bg-linen-pure: #ededeb;     /* Alternate / Cards (Clean contrasting) */
-  --text-ocean-deep: #294364;   /* 30% Structure / Headings & Body (Deep navy) */
-  --stone-gray: #8d8f8e;        /* Subtle accents, icons & borders */
-  --accent-crimson: #8f2a1e;    /* 10% Conversion / Action items & brand */
-
-
-  /* Raw colors for Gallery Palette (from performance image) */
-  --bg-gallery-wall: #7a7d7e;   /* 60% Base / Backgrounds (Concrete wall gray) */
-  --bg-gallery-floor: #a1a4a5;  /* Alternate / Cards (Concrete floor gray) */
-  --text-rust-dress: #b04c32;   /* Subtle accents, subheadings & borders (Rust-orange) */
-  --text-shadow-deep: #1e1e1f;  /* 30% Structure / Headings & Body (Deep charcoal shadow) */
-  --accent-ochre-gold: #e0ad2f; /* 10% Conversion / Action items & brand (Flowing gold) */
-
-  /* Raw colors for Market Palette (from market image) */
-  --bg-market-plaster: #e9e6e2;  /* 60% Base / Backgrounds (Soft plaster white) */
-  --bg-market-sky: #c8d0d2;      /* Alternate / Cards (Slate-blue gray) */
-  --text-market-charcoal: #212122; /* 30% Structure / Headings & Body (Charcoal shadow) */
-  --accent-market-terracotta: #bc563b; /* Subtle accents, subheadings & borders (Terracotta orange) */
-  --accent-market-crimson: #a32c21; /* 10% Conversion / Action items & brand (Crimson tassel red) */
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: var(--font-inter), Georgia, serif;
 }
 
 html.light {
-  /* ─── LIGHT MODE ───────────────────────────────────── */
-  --background: #f5f7fa;
-  --foreground: #0a0f1e;
+  /* ─── LIGHT MODE (Option B: Clean Minimalist Tech) ───────────────────────────────────── */
+  --background: #f8fafc;
+  --foreground: #0f172a;
 
   /* Cards & Surfaces */
-  --card-bg: rgba(255, 255, 255, 0.82);
-  --card-border-default: rgba(15, 23, 42, 0.08);
-  --card-border-hover: rgba(14, 179, 186, 0.55);
-  --card-shadow: 0 4px 24px -4px rgba(15, 23, 42, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border-default: rgba(15, 23, 42, 0.06);
+  --card-border-hover: rgba(99, 102, 241, 0.5);
+  --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02);
 
   /* Text */
-  --text-muted: #475569;
+  --text-muted: #64748b;
   --text-body: #334155;
 
   /* Nav */
-  --navbar-bg: rgba(245, 247, 250, 0.88);
-  --navbar-border: rgba(15, 23, 42, 0.08);
-  --navbar-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
+  --navbar-bg: rgba(248, 250, 252, 0.8);
+  --navbar-border: rgba(15, 23, 42, 0.05);
+  --navbar-shadow: 0 1px 0 rgba(15, 23, 42, 0.03);
 
   /* Forms */
   --form-input-bg: #ffffff;
-  --form-input-border: rgba(15, 23, 42, 0.12);
-  --form-input-text: #0a0f1e;
+  --form-input-border: rgba(15, 23, 42, 0.1);
+  --form-input-text: #0f172a;
 
   /* Chat */
   --chat-msg-bot-bg: #f1f5f9;
-  --chat-msg-bot-border: rgba(15, 23, 42, 0.06);
+  --chat-msg-bot-border: rgba(15, 23, 42, 0.04);
   --chat-msg-bot-text: #1e293b;
 
   /* Aurora blobs - much softer in light mode */
   --blob-opacity: 0;
-  --blob-light-opacity: 0.35;
+  --blob-light-opacity: 0.25;
 
   /* Scrollbar */
   --scrollbar-thumb: #cbd5e1;
-  --scrollbar-thumb-hover: #0eb3ba;
+  --scrollbar-thumb-hover: #6366f1;
 
   /* Background gradient canvas */
-  --bg-gradient-from: #f0f4f8;
-  --bg-gradient-via: #eaf4fd;
-  --bg-gradient-to: #f0f4f8;
+  --bg-gradient-from: #f8fafc;
+  --bg-gradient-via: #f1f5f9;
+  --bg-gradient-to: #f8fafc;
 
-  /* Micro-mesh grid - light (barely visible ink lines at 2%) */
-  --grid-line-color: rgba(14, 30, 64, 0.02);
+  /* Micro-mesh grid - light (barely visible ink lines at 1.5%) */
+  --grid-line-color: rgba(15, 23, 42, 0.015);
 
   /* Brand color */
-  --brand-color: #0eb3ba;
-  --brand-color-hover: #14d2db;
+  --brand-color: #6366f1;
+  --brand-color-hover: #4f46e5;
 
   /* Typography dynamic variables */
-  --sans-font: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: Georgia, serif;
-}
-
-html.theme-parchment {
-  /* ─── PARCHMENT MODE (Premium Light) ────────────────── */
-  --background: var(--bg-parchment);
-  --foreground: var(--text-ink);
-
-  /* Cards & Surfaces */
-  --card-bg: var(--bg-alabaster);
-  --card-border-default: rgba(194, 159, 124, 0.25);
-  --card-border-hover: var(--stroke-kraft);
-  --card-shadow: 0 4px 24px -4px rgba(32, 30, 31, 0.08);
-
-  /* Text */
-  --text-muted: rgba(32, 30, 31, 0.65);
-  --text-body: var(--text-ink);
-
-  /* Nav */
-  --navbar-bg: rgba(225, 226, 226, 0.88);
-  --navbar-border: rgba(194, 159, 124, 0.25);
-  --navbar-shadow: 0 1px 0 rgba(32, 30, 31, 0.06);
-
-  /* Forms */
-  --form-input-bg: var(--white-pure);
-  --form-input-border: rgba(194, 159, 124, 0.4);
-  --form-input-text: var(--text-ink);
-
-  /* Chat */
-  --chat-msg-bot-bg: var(--bg-alabaster);
-  --chat-msg-bot-border: rgba(194, 159, 124, 0.2);
-  --chat-msg-bot-text: var(--text-ink);
-
-  /* Aurora blobs */
-  --blob-opacity: 0;
-  --blob-light-opacity: 0.15;
-
-  /* Scrollbar */
-  --scrollbar-thumb: var(--stroke-kraft);
-  --scrollbar-thumb-hover: var(--accent-terracotta);
-
-  /* Background gradient canvas */
-  --bg-gradient-from: var(--bg-parchment);
-  --bg-gradient-via: var(--bg-alabaster);
-  --bg-gradient-to: var(--bg-parchment);
-
-  /* Micro-mesh grid */
-  --grid-line-color: rgba(194, 159, 124, 0.08);
-
-  /* Brand color overrides */
-  --brand-color: var(--accent-terracotta);
-  --brand-color-hover: #b96c43;
-
-  /* Typography dynamic variables */
-  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --sans-font: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --serif-font: var(--font-space-grotesk), Georgia, serif;
-}
-
-/* ─── Editorial styling rules for Parchment Theme ─────── */
-html.theme-parchment h1,
-html.theme-parchment h2,
-html.theme-parchment h3 {
-  font-family: var(--serif-font) !important;
-  font-weight: 700;
-}
-
-html.theme-parchment .card-neon-border,
-html.theme-parchment button,
-html.theme-parchment input,
-html.theme-parchment textarea,
-html.theme-parchment [class*="rounded-xl"],
-html.theme-parchment [class*="rounded-lg"],
-html.theme-parchment [class*="rounded-md"],
-html.theme-parchment [class*="rounded-2xl"],
-html.theme-parchment [class*="rounded-3xl"] {
-  border-radius: 4px !important;
-}
-
-html.theme-parchment .btn-primary,
-html.theme-parchment button.btn-primary {
-  background-color: var(--brand-color) !important;
-  color: var(--bg-alabaster) !important; /* Parchment contrast text */
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-html.theme-parchment .btn-primary:hover,
-html.theme-parchment button.btn-primary:hover {
-  background-color: #8c4b2b !important;
-}
-
-html.theme-nordic {
-  /* ─── NORDIC SURREALIST MODE (Surreal Light) ─────────── */
-  --background: var(--bg-horizon-pale);
-  --foreground: var(--text-ocean-deep);
-
-  /* Cards & Surfaces */
-  --card-bg: var(--bg-linen-pure);
-  --card-border-default: rgba(141, 143, 142, 0.25);
-  --card-border-hover: var(--stone-gray);
-  --card-shadow: 0 4px 24px -4px rgba(41, 67, 100, 0.08);
-
-  /* Text */
-  --text-muted: rgba(41, 67, 100, 0.65);
-  --text-body: var(--text-ocean-deep);
-
-  /* Nav */
-  --navbar-bg: rgba(180, 201, 216, 0.88);
-  --navbar-border: rgba(141, 143, 142, 0.25);
-  --navbar-shadow: 0 1px 0 rgba(41, 67, 100, 0.06);
-
-  /* Forms */
-  --form-input-bg: var(--white-pure);
-  --form-input-border: rgba(141, 143, 142, 0.4);
-  --form-input-text: var(--text-ocean-deep);
-
-  /* Chat */
-  --chat-msg-bot-bg: var(--bg-linen-pure);
-  --chat-msg-bot-border: rgba(141, 143, 142, 0.2);
-  --chat-msg-bot-text: var(--text-ocean-deep);
-
-  /* Aurora blobs */
-  --blob-opacity: 0;
-  --blob-light-opacity: 0.15;
-
-  /* Scrollbar */
-  --scrollbar-thumb: var(--stone-gray);
-  --scrollbar-thumb-hover: var(--accent-crimson);
-
-  /* Background gradient canvas */
-  --bg-gradient-from: var(--bg-horizon-pale);
-  --bg-gradient-via: var(--bg-linen-pure);
-  --bg-gradient-to: var(--bg-horizon-pale);
-
-  /* Micro-mesh grid */
-  --grid-line-color: rgba(141, 143, 142, 0.1);
-
-  /* Brand color overrides */
-  --brand-color: var(--accent-crimson);
-  --brand-color-hover: #a83627;
-
-  /* Typography dynamic variables */
-  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-space-grotesk), Georgia, serif;
-}
-
-/* ─── Editorial styling rules for Nordic Theme ────────── */
-html.theme-nordic h1,
-html.theme-nordic h2,
-html.theme-nordic h3 {
-  font-family: var(--serif-font) !important;
-  font-weight: 700;
-}
-
-html.theme-nordic .card-neon-border,
-html.theme-nordic button,
-html.theme-nordic input,
-html.theme-nordic textarea,
-html.theme-nordic [class*="rounded-xl"],
-html.theme-nordic [class*="rounded-lg"],
-html.theme-nordic [class*="rounded-md"],
-html.theme-nordic [class*="rounded-2xl"],
-html.theme-nordic [class*="rounded-3xl"] {
-  border-radius: 4px !important;
-}
-
-html.theme-nordic .btn-primary,
-html.theme-nordic button.btn-primary {
-  background-color: var(--brand-color) !important;
-  color: var(--bg-linen-pure) !important; /* light linen contrast text */
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-html.theme-nordic .btn-primary:hover,
-html.theme-nordic button.btn-primary:hover {
-  background-color: #722016 !important;
-}
-
-
-
-html.theme-market {
-  /* ─── MARKET MODE (Plaster / Terracotta / Crimson) ──── */
-  --background: var(--bg-market-plaster);
-  --foreground: var(--text-market-charcoal);
-
-  /* Cards & Surfaces */
-  --card-bg: var(--bg-market-sky);
-  --card-border-default: rgba(188, 86, 59, 0.25);
-  --card-border-hover: var(--accent-market-terracotta);
-  --card-shadow: 0 4px 24px -4px rgba(33, 33, 34, 0.08);
-
-  /* Text */
-  --text-muted: var(--accent-market-terracotta);
-  --text-body: var(--text-market-charcoal);
-
-  /* Nav */
-  --navbar-bg: rgba(233, 230, 226, 0.88);
-  --navbar-border: rgba(188, 86, 59, 0.25);
-  --navbar-shadow: 0 1px 0 rgba(33, 33, 34, 0.06);
-
-  /* Forms */
-  --form-input-bg: var(--white-pure);
-  --form-input-border: rgba(188, 86, 59, 0.4);
-  --form-input-text: var(--text-market-charcoal);
-
-  /* Chat */
-  --chat-msg-bot-bg: var(--bg-market-sky);
-  --chat-msg-bot-border: rgba(188, 86, 59, 0.2);
-  --chat-msg-bot-text: var(--text-market-charcoal);
-
-  /* Aurora blobs */
-  --blob-opacity: 0;
-  --blob-light-opacity: 0.15;
-
-  /* Scrollbar */
-  --scrollbar-thumb: var(--accent-market-terracotta);
-  --scrollbar-thumb-hover: var(--accent-market-crimson);
-
-  /* Background gradient canvas */
-  --bg-gradient-from: var(--bg-market-plaster);
-  --bg-gradient-via: var(--bg-market-sky);
-  --bg-gradient-to: var(--bg-market-plaster);
-
-  /* Micro-mesh grid */
-  --grid-line-color: rgba(188, 86, 59, 0.08);
-
-  /* Brand color overrides */
-  --brand-color: var(--accent-market-crimson);
-  --brand-color-hover: #bd392e;
-
-  /* Typography dynamic variables */
-  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-space-grotesk), Georgia, serif;
-}
-
-/* ─── Editorial styling rules for Market Theme ────────── */
-html.theme-market h1,
-html.theme-market h2,
-html.theme-market h3 {
-  font-family: var(--serif-font) !important;
-  font-weight: 700;
-}
-
-html.theme-market .card-neon-border,
-html.theme-market button,
-html.theme-market input,
-html.theme-market textarea,
-html.theme-market [class*="rounded-xl"],
-html.theme-market [class*="rounded-lg"],
-html.theme-market [class*="rounded-md"],
-html.theme-market [class*="rounded-2xl"],
-html.theme-market [class*="rounded-3xl"] {
-  border-radius: 4px !important;
-}
-
-html.theme-market .btn-primary,
-html.theme-market button.btn-primary {
-  background-color: var(--brand-color) !important;
-  color: var(--bg-market-plaster) !important; /* plaster white contrast text */
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-html.theme-market .btn-primary:hover,
-html.theme-market button.btn-primary:hover {
-  background-color: #8c2217 !important;
-}
-
-html.theme-symphony {
-  /* ─── SYMPHONY SURREAL LIGHT GLASS MODE (Alabaster / Seafoam / Gold / Frosted Glass) ─── */
-  --background: #f7f5f0;
-  --foreground: #1d1f20;
-
-  /* Cards & Surfaces */
-  --card-bg: rgba(255, 255, 255, 0.45);
-  --card-border-default: rgba(166, 140, 89, 0.18);
-  --card-border-hover: rgba(107, 163, 160, 0.45);
-  --card-shadow: 0 8px 32px 0 rgba(29, 31, 32, 0.06);
-
-  /* Text */
-  --text-muted: #5d7f7e;
-  --text-body: #323b3b;
-
-  /* Nav */
-  --navbar-bg: rgba(247, 245, 240, 0.65);
-  --navbar-border: rgba(166, 140, 89, 0.18);
-  --navbar-shadow: 0 4px 30px rgba(29, 31, 32, 0.04);
-
-  /* Forms */
-  --form-input-bg: rgba(255, 255, 255, 0.5);
-  --form-input-border: rgba(166, 140, 89, 0.25);
-  --form-input-text: #1d1f20;
-
-  /* Chat */
-  --chat-msg-bot-bg: rgba(107, 163, 160, 0.06);
-  --chat-msg-bot-border: rgba(107, 163, 160, 0.18);
-  --chat-msg-bot-text: #3a6966;
-
-  /* Aurora blobs */
-  --blob-opacity: 0.08;
-  --blob-light-opacity: 0.15;
-
-  /* Scrollbar */
-  --scrollbar-thumb: #6ba3a0;
-  --scrollbar-thumb-hover: #568f8c;
-
-  /* Background gradient canvas */
-  --bg-gradient-from: #f7f5f0;
-  --bg-gradient-via: #fbfaf7;
-  --bg-gradient-to: #f7f5f0;
-
-  /* Micro-mesh grid */
-  --grid-line-color: rgba(166, 140, 89, 0.06);
-
-  /* Brand color overrides */
-  --brand-color: #6ba3a0;
-  --brand-color-hover: #568f8c;
-
-  /* Typography dynamic variables */
-  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-space-grotesk), Georgia, serif;
-}
-
-/* Glassmorphism overrides for Symphony theme (Light Theme variant) */
-html.theme-symphony .card-neon-border,
-html.theme-symphony .premium-kpi-card,
-html.theme-symphony .chart-panel,
-html.theme-symphony .quick-stats-panel,
-html.theme-symphony .navbar-neon-glow,
-html.theme-symphony div[class*="border border-[var(--card-border-default)]"],
-html.theme-symphony div[class*="border border-white/[0.05]"],
-html.theme-symphony div[class*="border-brand-border"],
-html.theme-symphony div[class*="card-neon-border"] {
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  background-color: rgba(255, 255, 255, 0.45) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important; /* Brighter high-specular glass border */
-  box-shadow: 0 8px 32px 0 rgba(29, 31, 32, 0.06), 
-              inset 0 1px 1px 0 rgba(255, 255, 255, 0.8) !important; /* Brighter glossy highlight */
-  border-radius: 12px !important;
-}
-
-/* Inputs and interactive elements */
-html.theme-symphony input,
-html.theme-symphony textarea,
-html.theme-symphony select {
-  backdrop-filter: blur(10px) saturate(140%) !important;
-  -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  border: 1px solid rgba(166, 140, 89, 0.25) !important;
-  color: var(--foreground) !important;
-  border-radius: 8px !important;
-}
-
-html.theme-symphony input:focus,
-html.theme-symphony textarea:focus,
-html.theme-symphony select:focus {
-  border-color: var(--brand-color) !important;
-  box-shadow: 0 0 12px color-mix(in srgb, var(--brand-color) 30%, transparent) !important;
-}
-
-/* Primary Button customization for Symphony */
-html.theme-symphony .btn-primary,
-html.theme-symphony button.btn-primary {
-  background-color: var(--brand-color) !important;
-  color: #ffffff !important; /* White contrast text on light seafoam */
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.875rem;
-  font-weight: 700;
-  border-radius: 8px !important;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--brand-color) 30%, transparent) !important;
-}
-
-html.theme-symphony .btn-primary:hover,
-html.theme-symphony button.btn-primary:hover {
-  background-color: var(--brand-color-hover) !important;
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--brand-color) 60%, transparent) !important;
 }
 
 
