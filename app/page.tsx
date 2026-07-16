@@ -746,10 +746,14 @@ function PrototypeSwitcher({
   }, [current]);
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-4 px-4 py-2.5 rounded-full bg-slate-900/90 text-white shadow-2xl border border-slate-700/50 backdrop-blur-md select-none">
+    <div 
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-4 px-4 py-2.5 rounded-full shadow-2xl border select-none animate-none"
+      style={{ backgroundColor: "#0a0b10", borderColor: "#1e293b", color: "#f8fafc" }}
+    >
       <button 
         onClick={handlePrev} 
         className="hover:text-cyan-400 p-1.5 transition-colors cursor-pointer"
+        style={{ color: "#f8fafc" }}
         aria-label="Previous Variant"
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -757,13 +761,14 @@ function PrototypeSwitcher({
         </svg>
       </button>
       
-      <span className="text-xs font-bold font-mono tracking-wide px-2 min-w-[200px] text-center">
+      <span className="text-xs font-bold font-mono tracking-wide px-2 min-w-[200px] text-center" style={{ color: "#f8fafc" }}>
         {names[current] || current}
       </span>
 
       <button 
         onClick={handleNext} 
         className="hover:text-cyan-400 p-1.5 transition-colors cursor-pointer"
+        style={{ color: "#f8fafc" }}
         aria-label="Next Variant"
       >
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
