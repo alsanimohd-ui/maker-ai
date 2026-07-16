@@ -745,8 +745,6 @@ function PrototypeSwitcher({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [current]);
 
-  if (process.env.NODE_ENV === "production") return null;
-
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-4 px-4 py-2.5 rounded-full bg-slate-900/90 text-white shadow-2xl border border-slate-700/50 backdrop-blur-md select-none">
       <button 
