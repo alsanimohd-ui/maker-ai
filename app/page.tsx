@@ -23,27 +23,9 @@ export default function Home() {
   const t = translations[lang];
   const isArabic = lang === "ar";
 
-  // Default to Variant C (Symphony Glass Dashboard)
-  const [variant, setVariant] = useState<string>("C");
-
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const v = params.get("variant");
-    if (v === "A" || v === "B" || v === "C") {
-      setVariant(v);
-    }
     setTheme("light");
   }, [setTheme]);
-
-  const handleVariantChange = (newV: string) => {
-    setVariant(newV);
-    const params = new URLSearchParams(window.location.search);
-    params.set("variant", newV);
-    const newUrl = `${window.location.pathname}?${params.toString()}`;
-    window.history.pushState(null, "", newUrl);
-
-    setTheme("light");
-  };
 
   // Interactive Demo Widget State
   const [activeNodeId, setActiveNodeId] = useState<string>("node-ai");
@@ -167,13 +149,7 @@ export default function Home() {
 
   return (
     <div className="relative text-[#1d1f20] bg-[#f6f5f0] flex flex-col overflow-hidden min-h-screen">
-      
-      {/* ==================================================== */}
-      {/* RENDER VARIANT C: SYMPHONY GLASS DASHBOARD (DEFAULT)  */}
-      {/* ==================================================== */}
-      {variant === "C" && (
-        <>
-          {/* Hero Section */}
+      {/* Hero Section */}
           <section className="relative w-full pt-28 pb-20 sm:pt-36 sm:pb-28 border-b border-[#a68c89]/20">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
@@ -486,89 +462,7 @@ export default function Home() {
               </Reveal>
             </div>
           </section>
-        </>
-      )}
 
-      {/* ==================================================== */}
-      {/* RENDER VARIANT A & VARIANT B (Prototype Fallbacks)   */}
-      {/* ==================================================== */}
-      {variant === "A" && (
-        <div className="bg-[#03030a] text-white py-20 px-6 text-center">
-          <h1 className="text-3xl font-bold">Variant A Prototype</h1>
-          <p className="text-slate-400 mt-2">Switch back to Variant C (Symphony Glass) for the main website.</p>
-        </div>
-      )}
-
-      {variant === "B" && (
-        <div className="bg-[#fcfcfa] text-[#1e1e1a] py-20 px-6 text-center">
-          <h1 className="text-3xl font-serif font-bold">Variant B Prototype</h1>
-          <p className="text-[#575451] mt-2">Switch back to Variant C (Symphony Glass) for the main website.</p>
-        </div>
-      )}
-
-      {/* Prototype Switcher Pill */}
-      <PrototypeSwitcher current={variant} onChange={handleVariantChange} />
-
-    </div>
-  );
-}
-
-function PrototypeSwitcher({
-  current,
-  onChange,
-}: {
-  current: string;
-  onChange: (v: string) => void;
-}) {
-  const variants = ["C", "A", "B"];
-  const names: Record<string, string> = {
-    C: "C — Symphony Glass Dashboard",
-    A: "A — Dark Cyber Orchestrator",
-    B: "B — Minimal Light Editorial",
-  };
-
-  const handlePrev = () => {
-    const idx = variants.indexOf(current);
-    const nextIdx = (idx - 1 + variants.length) % variants.length;
-    onChange(variants[nextIdx]);
-  };
-
-  const handleNext = () => {
-    const idx = variants.indexOf(current);
-    const nextIdx = (idx + 1) % variants.length;
-    onChange(variants[nextIdx]);
-  };
-
-  return (
-    <div 
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-4 px-4 py-2.5 rounded-full shadow-2xl border select-none animate-none"
-      style={{ backgroundColor: "#0a0b10", borderColor: "#1e293b", color: "#f8fafc" }}
-    >
-      <button 
-        onClick={handlePrev} 
-        className="hover:text-emerald-400 p-1.5 transition-colors cursor-pointer"
-        style={{ color: "#f8fafc" }}
-        aria-label="Previous Variant"
-      >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      
-      <span className="text-xs font-bold font-mono tracking-wide px-2 min-w-[220px] text-center" style={{ color: "#f8fafc" }}>
-        {names[current] || current}
-      </span>
-
-      <button 
-        onClick={handleNext} 
-        className="hover:text-emerald-400 p-1.5 transition-colors cursor-pointer"
-        style={{ color: "#f8fafc" }}
-        aria-label="Next Variant"
-      >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
     </div>
   );
 }
