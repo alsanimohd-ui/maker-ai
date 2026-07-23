@@ -117,6 +117,7 @@ export default function ChatBot() {
 
   return (
     <div
+      dir="ltr"
       className={`fixed bottom-6 z-50 flex flex-col pointer-events-none ${
         lang === "ar" ? "left-6 items-start" : "right-6 items-end"
       }`}
@@ -126,8 +127,11 @@ export default function ChatBot() {
           CHAT WINDOW
       ════════════════════════════════════════════ */}
       <div
+        dir={lang === "ar" ? "rtl" : "ltr"}
         className={`w-[22rem] sm:w-96 max-w-[calc(100vw-2rem)] mb-4 flex flex-col rounded-2xl overflow-hidden pointer-events-auto
-          transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] origin-bottom-right
+          transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            lang === "ar" ? "origin-bottom-left" : "origin-bottom-right"
+          }
           ${isOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-90 translate-y-8 pointer-events-none"}
         `}
         style={{
