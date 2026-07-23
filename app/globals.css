@@ -3,54 +3,54 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* ─── DARK MODE (Default) ──────────────────────────── */
-  --background: #03030a;
-  --foreground: #f1f5f9;
+  /* ─── LIGHT MODE (Default) ──────────────────────────── */
+  --background: #f8fafc;
+  --foreground: #0f172a;
 
   /* Cards & Surfaces */
-  --card-bg: rgba(10, 14, 26, 0.55);
-  --card-border-default: rgba(255, 255, 255, 0.07);
-  --card-border-hover: rgba(14, 179, 186, 0.6);
-  --card-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border-default: rgba(15, 23, 42, 0.06);
+  --card-border-hover: rgba(99, 102, 241, 0.5);
+  --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02);
 
   /* Text */
-  --text-muted: #94a3b8;
-  --text-body: #cbd5e1;
+  --text-muted: #64748b;
+  --text-body: #334155;
 
   /* Nav */
-  --navbar-bg: rgba(3, 3, 12, 0.75);
-  --navbar-border: rgba(255, 255, 255, 0.06);
-  --navbar-shadow: 0 1px 0 rgba(255,255,255,0.04);
+  --navbar-bg: rgba(248, 250, 252, 0.8);
+  --navbar-border: rgba(15, 23, 42, 0.05);
+  --navbar-shadow: 0 1px 0 rgba(15, 23, 42, 0.03);
 
   /* Forms */
-  --form-input-bg: rgba(10, 14, 26, 0.7);
-  --form-input-border: rgba(255, 255, 255, 0.09);
-  --form-input-text: #f1f5f9;
+  --form-input-bg: #ffffff;
+  --form-input-border: rgba(15, 23, 42, 0.1);
+  --form-input-text: #0f172a;
 
   /* Chat */
-  --chat-msg-bot-bg: rgba(15, 23, 42, 0.65);
-  --chat-msg-bot-border: rgba(255, 255, 255, 0.07);
-  --chat-msg-bot-text: #e2e8f0;
+  --chat-msg-bot-bg: #f1f5f9;
+  --chat-msg-bot-border: rgba(15, 23, 42, 0.04);
+  --chat-msg-bot-text: #1e293b;
 
   /* Aurora blobs */
-  --blob-opacity: 0.32;
-  --blob-light-opacity: 0;
+  --blob-opacity: 0;
+  --blob-light-opacity: 0.25;
 
   /* Scrollbar */
-  --scrollbar-thumb: #1e293b;
-  --scrollbar-thumb-hover: #0eb3ba;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #6366f1;
 
   /* Background gradient canvas */
-  --bg-gradient-from: #03030a;
-  --bg-gradient-via: #04040e;
-  --bg-gradient-to: #03030a;
+  --bg-gradient-from: #f8fafc;
+  --bg-gradient-via: #f1f5f9;
+  --bg-gradient-to: #f8fafc;
 
-  /* Micro-mesh grid - dark (1.5% max, near-invisible) */
-  --grid-line-color: rgba(255, 255, 255, 0.015);
+  /* Micro-mesh grid */
+  --grid-line-color: rgba(15, 23, 42, 0.015);
 
   /* Brand color */
-  --brand-color: #0eb3ba;
-  --brand-color-hover: #14d2db;
+  --brand-color: #6366f1;
+  --brand-color-hover: #4f46e5;
 
   /* Typography dynamic variables */
   --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;

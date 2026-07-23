@@ -25,7 +25,7 @@ export default function Home() {
   const isArabic = lang === "ar";
 
   // Prototype state switcher
-  const [variant, setVariant] = useState<string>("A");
+  const [variant, setVariant] = useState<string>("C");
 
   // Read/write variant query parameter in browser client-side
   useEffect(() => {
@@ -33,12 +33,9 @@ export default function Home() {
     const v = params.get("variant");
     if (v === "A" || v === "B" || v === "C") {
       setVariant(v);
-      // Synchronize default theme mode for design variant
-      if (v === "A") setTheme("dark");
-      if (v === "B") setTheme("light");
-      if (v === "C") setTheme("light"); // Symphony is light-glass
     }
-  }, []);
+    setTheme("light");
+  }, [setTheme]);
 
   const handleVariantChange = (newV: string) => {
     setVariant(newV);
@@ -47,10 +44,7 @@ export default function Home() {
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.pushState(null, "", newUrl);
 
-    // Sync theme settings automatically to match variant style
-    if (newV === "A") setTheme("dark");
-    if (newV === "B") setTheme("light");
-    if (newV === "C") setTheme("light");
+    setTheme("light");
   };
 
   const isDark = theme === "dark";

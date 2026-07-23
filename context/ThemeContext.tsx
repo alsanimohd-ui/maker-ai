@@ -13,36 +13,19 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme>("dark");
+  const [theme] = useState<Theme>("light");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("maker_ai_theme") as Theme;
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setThemeState(savedTheme);
-    } else {
-      // Default to dark mode (Option A)
-      setThemeState("dark");
-    }
+    const root = document.documentElement;
+    root.classList.remove("dark");
+    root.classList.add("light");
+    localStorage.setItem("maker_ai_theme", "light");
     setIsMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (isMounted) {
-      const root = document.documentElement;
-      root.classList.remove("dark", "light");
-      root.classList.add(theme);
-      localStorage.setItem("maker_ai_theme", theme);
-    }
-  }, [theme, isMounted]);
-
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
-  };
-
-  const toggleTheme = () => {
-    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
-  };
+  const setTheme = () => {};
+  const toggleTheme = () => {};
 
   if (!isMounted) {
     return <div className="opacity-0">{children}</div>;
@@ -59,11 +42,10 @@ export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
     return {
-      theme: "dark" as Theme,
+      theme: "light" as Theme,
       setTheme: () => {},
       toggleTheme: () => {},
     };
   }
   return context;
 };
-
