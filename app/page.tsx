@@ -7,7 +7,6 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
 import { translations } from "@/lib/translations";
 
-// Types for automation nodes in Variant A (Cyber Orchestrator)
 interface AutomationNode {
   id: string;
   nameEn: string;
@@ -24,10 +23,9 @@ export default function Home() {
   const t = translations[lang];
   const isArabic = lang === "ar";
 
-  // Prototype state switcher
+  // Default to Variant C (Symphony Glass Dashboard)
   const [variant, setVariant] = useState<string>("C");
 
-  // Read/write variant query parameter in browser client-side
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const v = params.get("variant");
@@ -47,11 +45,7 @@ export default function Home() {
     setTheme("light");
   };
 
-  const isDark = theme === "dark";
-
-  // ==========================================
-  // VARIANT A: MODERN DARK CYBER ORCHESTRATOR
-  // ==========================================
+  // Interactive Demo Widget State
   const [activeNodeId, setActiveNodeId] = useState<string>("node-ai");
   const [demoLog, setDemoLog] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState<boolean>(true);
@@ -96,7 +90,7 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    if (!isRunning || variant !== "A") return;
+    if (!isRunning) return;
 
     const interval = setInterval(() => {
       const logs = isArabic ? [
@@ -119,43 +113,11 @@ export default function Home() {
     }, 2800);
 
     return () => clearInterval(interval);
-  }, [isRunning, isArabic, variant]);
+  }, [isRunning, isArabic]);
 
   const activeNode = nodes.find((n) => n.id === activeNodeId) || nodes[1];
 
-  const variantATitle = isArabic ? (
-    <>
-      <span className="text-transparent bg-clip-text font-black bg-gradient-to-b from-white via-slate-100 to-slate-400">
-        أتمتة ذكية{" "}
-      </span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
-        لأعمالك الرقمية.
-      </span>{" "}
-      <span className="text-transparent bg-clip-text font-black bg-gradient-to-b from-white via-slate-100 to-slate-400">
-        هندسة مدعومة بـ{" "}
-      </span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
-        أمن المؤسسات.
-      </span>
-    </>
-  ) : (
-    <>
-      <span className="text-transparent bg-clip-text font-black bg-gradient-to-b from-white via-slate-100 to-slate-400">
-        Autonomous{" "}
-      </span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
-        Workflows.
-      </span>{" "}
-      <span className="text-transparent bg-clip-text font-black bg-gradient-to-b from-white via-slate-100 to-slate-400">
-        Engineered with{" "}
-      </span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 font-black animate-text-gradient-flow">
-        Zero-Trust.
-      </span>
-    </>
-  );
-
-  const variantAPillars = [
+  const servicePillars = [
     {
       title: t.pillar1_title,
       desc: t.pillar1_desc,
@@ -204,34 +166,39 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative text-foreground flex flex-col overflow-hidden">
+    <div className="relative text-[#1d1f20] bg-[#f6f5f0] flex flex-col overflow-hidden min-h-screen">
       
       {/* ==================================================== */}
-      {/* RENDER VARIANT A: DARK ENTERPRISE CYBER              */}
+      {/* RENDER VARIANT C: SYMPHONY GLASS DASHBOARD (DEFAULT)  */}
       {/* ==================================================== */}
-      {variant === "A" && (
+      {variant === "C" && (
         <>
-          <section className="relative w-full pt-28 pb-20 sm:pt-36 sm:pb-24 border-b border-[var(--card-border-default)]">
+          {/* Hero Section */}
+          <section className="relative w-full pt-28 pb-20 sm:pt-36 sm:pb-28 border-b border-[#a68c89]/20">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
-              {/* Left column */}
-              <div className="col-span-1 lg:col-span-6 flex flex-col text-left rtl:text-right select-none">
+              {/* Left Column */}
+              <div className="col-span-1 lg:col-span-5 flex flex-col justify-center text-left rtl:text-right select-none">
                 <Reveal delay={100}>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border border-[var(--card-border-default)] bg-[var(--card-bg)] w-fit mb-5 text-cyan-400">
-                    <span className="w-1.5 h-1.5 rounded-full animate-pulse bg-cyan-400" />
-                    {t.hero_badge_secure}
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border border-[#6ba3a0]/30 bg-[#6ba3a0]/10 text-[#6ba3a0] w-fit mb-5">
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse bg-[#6ba3a0]" />
+                    {isArabic ? "حلول برمجية متكاملة" : "SaaS Automation Suite"}
                   </div>
                 </Reveal>
 
                 <Reveal delay={200}>
-                  <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] tracking-tight leading-[1.1] pt-1">
-                    {variantATitle}
+                  <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-serif mb-6 leading-[1.15] text-[#2d3233]">
+                    {isArabic
+                      ? "خطوط أتمتة مرئية تمنحك تحكماً كاملاً بالعمليات."
+                      : "Operations pipelines that grant complete visual control."}
                   </h1>
                 </Reveal>
 
                 <Reveal delay={350}>
-                  <p className="text-base sm:text-lg leading-relaxed mt-6 mb-8 max-w-xl font-light text-slate-400">
-                    {t.hero_subtitle_secure}
+                  <p className="text-base sm:text-lg font-light text-[#505759] mb-8 leading-relaxed">
+                    {isArabic
+                      ? "نصمم لوحات تحكم متكاملة وواجهات برمجية آمنة لمراقبة وإدارة جميع عمليات شركتك وتدفقاتها البرمجية والمالية بدقة فائقة."
+                      : "We design premium visual interfaces, custom dashboards, and zero-trust backend pipelines that let you inspect every automation node, script, and API call running in your business."}
                   </p>
                 </Reveal>
 
@@ -241,7 +208,7 @@ export default function Home() {
                       href="https://mi.maker-ai.tech"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary group relative inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 text-[#020209]"
+                      className="bg-[#6ba3a0] hover:bg-[#568f8c] text-white px-7 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-emerald-950/10 inline-flex items-center justify-center gap-2"
                     >
                       {t.hero_btn_launch}
                       <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -250,119 +217,153 @@ export default function Home() {
                     </Link>
                     <Link
                       href="/services"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 active:scale-[0.97] backdrop-blur-md border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/20 text-slate-200"
+                      className="bg-white/60 border border-[#a68c89]/25 hover:bg-white text-[#2d3233] px-7 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all inline-flex items-center justify-center"
                     >
-                      {t.hero_btn_explore_enterprise}
+                      {isArabic ? "تفاصيل الخدمات" : "View Specifications"}
                     </Link>
                   </div>
                 </Reveal>
               </div>
 
-              {/* Right column: Interactive Demo Widget */}
-              <div className="col-span-1 lg:col-span-6 flex justify-center items-center relative">
-                <Reveal delay={250} className="w-full max-w-[540px] aspect-[4/3] rounded-2xl border border-[var(--card-border-default)] bg-[var(--card-bg)] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.3)] backdrop-blur-xl p-5 flex flex-col overflow-hidden relative">
-                  <div className="flex items-center justify-between border-b border-[var(--card-border-default)] pb-3.5 mb-4.5 select-none">
+              {/* Right Column: Premium SaaS Workspace Mockup (Symphony theme styled) */}
+              <div className="col-span-1 lg:col-span-7 flex justify-center items-center">
+                <Reveal delay={250} className="w-full max-w-[620px] bg-white/45 border border-[#a68c89]/25 backdrop-blur-xl rounded-2xl p-6 shadow-xl shadow-slate-900/5 flex flex-col relative overflow-hidden">
+                  
+                  {/* Topbar of SaaS */}
+                  <div className="flex items-center justify-between border-b border-[#a68c89]/20 pb-4 mb-4 select-none">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                      <span className="text-[10px] uppercase font-mono tracking-wider ml-2 text-brand/60">
-                        Mi Tools // n8n Pipeline Engine
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                      <span className="text-[10px] font-bold text-[#505759] uppercase tracking-wider ml-2 font-mono">
+                        Maker-AI // Admin Control Portal
                       </span>
                     </div>
-                    <button 
-                      onClick={() => setIsRunning(!isRunning)} 
-                      className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase transition-all tracking-wider ${
-                        isRunning 
-                          ? "bg-green-500/10 text-green-500 border border-green-500/20" 
-                          : "bg-red-500/10 text-red-500 border border-red-500/20"
-                      }`}
-                    >
-                      {isRunning ? "● Live Orchestrator" : "■ Paused"}
-                    </button>
+                    <span className="text-[10px] text-[#6ba3a0] font-bold px-2 py-0.5 rounded bg-[#6ba3a0]/10 border border-[#6ba3a0]/20 font-mono">
+                      ● Production Cluster
+                    </span>
                   </div>
 
-                  <div className="relative flex-grow w-full py-4 select-none flex flex-col justify-center">
-                    <div className="relative w-full h-24">
-                      <div className="absolute inset-0 flex items-center justify-between px-3">
-                        {nodes.map((node) => {
-                          const isActive = activeNodeId === node.id;
-                          return (
-                            <button
-                              key={node.id}
-                              onClick={() => setActiveNodeId(node.id)}
-                              className={`relative z-10 p-3 rounded-xl border flex flex-col items-center justify-center gap-1.5 transition-all duration-300 w-[22%] aspect-square hover:scale-[1.05] cursor-pointer ${
-                                isActive
-                                  ? "bg-[var(--card-bg)] shadow-[0_0_15px_3px_color-mix(in_srgb,var(--brand-color)_20%,transparent)] border-cyan-400"
-                                  : "border-[var(--card-border-default)] bg-[var(--card-bg)]/40 opacity-70"
-                              }`}
-                            >
-                              <span className={`absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full border border-[var(--background)] ${
-                                node.status === "running" ? "bg-amber-500 animate-pulse" : "bg-emerald-500"
-                              }`} />
-                              <div className={`p-1.5 rounded-lg ${isActive ? "bg-brand/15 text-brand" : "text-brand-muted"}`}>
-                                {node.type === "source" && (
-                                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
-                                )}
-                                {node.type === "ai" && (
-                                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 11.172V5L8 4z" /></svg>
-                                )}
-                                {node.type === "security" && (
-                                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                                )}
-                                {node.type === "action" && (
-                                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
-                                )}
-                              </div>
-                              <span className="text-[9px] font-bold text-center uppercase tracking-wide truncate max-w-full leading-tight">
-                                {isArabic ? node.nameAr : node.nameEn}
-                              </span>
-                            </button>
-                          );
-                        })}
+                  {/* Dashboard grid mock layout */}
+                  <div className="grid grid-cols-12 gap-4">
+                    {/* Left stats panel */}
+                    <div className="col-span-4 border border-[#a68c89]/20 rounded-xl p-3 bg-white/40 flex flex-col justify-between h-[150px] select-none">
+                      <span className="text-[9px] uppercase font-bold text-[#7a8587] tracking-wider">
+                        {isArabic ? "العمليات الجارية" : "Running Pipelines"}
+                      </span>
+                      <span className="text-2xl font-serif font-black text-[#2d3233]">
+                        42 Active
+                      </span>
+                      <span className="text-[9px] text-[#6ba3a0] font-bold">
+                        ↑ 12% from yesterday
+                      </span>
+                    </div>
+
+                    {/* Center Chart widget */}
+                    <div className="col-span-8 border border-[#a68c89]/20 rounded-xl p-4 bg-white/40 flex flex-col justify-between h-[150px] relative select-none">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[9px] uppercase font-bold text-[#7a8587] tracking-wider">
+                          {isArabic ? "معدل استهلاك المعالج" : "Orchestration Latency (ms)"}
+                        </span>
+                        <span className="text-[10px] font-mono text-[#6ba3a0] font-bold">avg 45ms</span>
+                      </div>
+
+                      {/* Mock Line Graph */}
+                      <div className="relative flex-grow flex items-end justify-between px-2 mt-4 pb-2">
+                        <div className="absolute inset-x-0 bottom-[35%] h-[1px] bg-slate-400/15" />
+                        <div className="absolute inset-x-0 bottom-[65%] h-[1px] bg-slate-400/15" />
+                        
+                        {/* Fake Chart Lines */}
+                        <div className="w-[12%] h-[20%] bg-[#6ba3a0]/40 rounded-t" />
+                        <div className="w-[12%] h-[40%] bg-[#6ba3a0]/40 rounded-t" />
+                        <div className="w-[12%] h-[75%] bg-[#6ba3a0] rounded-t" />
+                        <div className="w-[12%] h-[55%] bg-[#6ba3a0]/40 rounded-t" />
+                        <div className="w-[12%] h-[90%] bg-[#6ba3a0] rounded-t" />
+                        <div className="w-[12%] h-[30%] bg-[#6ba3a0]/40 rounded-t" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-4 p-3 rounded-xl border border-[var(--card-border-default)] bg-[var(--background)]/70 text-xs">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400">
-                        {isArabic ? "تفاصيل الوحدة" : "Node Details"}
+                  {/* Interactive Nodes Switcher */}
+                  <div className="mt-4 pt-3 border-t border-[#a68c89]/15">
+                    <div className="flex items-center justify-between px-1 mb-2">
+                      <span className="text-[9px] uppercase font-bold text-[#7a8587] tracking-wider">
+                        {isArabic ? "وحدات الأتمتة المباشرة" : "Live Pipeline Nodes"}
                       </span>
-                      <span className="text-[9px] font-mono text-brand-muted">
-                        ID: {activeNode.id}
-                      </span>
+                      <button 
+                        onClick={() => setIsRunning(!isRunning)} 
+                        className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase transition-all tracking-wider cursor-pointer ${
+                          isRunning 
+                            ? "bg-[#6ba3a0]/15 text-[#6ba3a0] border border-[#6ba3a0]/30" 
+                            : "bg-red-500/10 text-red-600 border border-red-500/20"
+                        }`}
+                      >
+                        {isRunning ? "● Live Orchestrator" : "■ Paused"}
+                      </button>
                     </div>
-                    <p className="font-light leading-relaxed">
-                      {isArabic ? activeNode.detailsAr : activeNode.detailsEn}
-                    </p>
+
+                    <div className="grid grid-cols-4 gap-2 select-none">
+                      {nodes.map((node) => {
+                        const isActive = activeNodeId === node.id;
+                        return (
+                          <button
+                            key={node.id}
+                            onClick={() => setActiveNodeId(node.id)}
+                            className={`p-2.5 rounded-xl border flex flex-col items-center justify-center gap-1 transition-all duration-300 cursor-pointer ${
+                              isActive
+                                ? "bg-white border-[#6ba3a0] shadow-md shadow-emerald-950/5 text-[#2d3233]"
+                                : "border-[#a68c89]/20 bg-white/30 text-[#7a8587] hover:bg-white/60"
+                            }`}
+                          >
+                            <div className={`p-1 rounded-md ${isActive ? "text-[#6ba3a0]" : "text-[#7a8587]"}`}>
+                              {node.type === "source" && (
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
+                              )}
+                              {node.type === "ai" && (
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 11.172V5L8 4z" /></svg>
+                              )}
+                              {node.type === "security" && (
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                              )}
+                              {node.type === "action" && (
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                              )}
+                            </div>
+                            <span className="text-[9px] font-bold text-center uppercase tracking-wide truncate max-w-full leading-tight">
+                              {isArabic ? node.nameAr : node.nameEn}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
 
                   {/* Security Log Terminal Console */}
-                  <div className="mt-3.5 h-[145px] border border-slate-800/80 bg-[#06060c] rounded-xl p-3 font-mono text-[10px] text-slate-300 flex flex-col gap-1 overflow-hidden select-none animate-none">
-                    <div className="text-[9px] text-slate-500 border-b border-slate-800/50 pb-1 mb-1 font-sans uppercase font-bold tracking-wider flex items-center justify-between shrink-0">
+                  <div className="mt-3.5 h-[110px] border border-[#a68c89]/20 bg-white/70 rounded-xl p-3 font-mono text-[10px] text-[#2d3233] flex flex-col gap-1 overflow-hidden select-none">
+                    <div className="text-[9px] text-[#7a8587] border-b border-[#a68c89]/15 pb-1 mb-1 font-sans uppercase font-bold tracking-wider flex items-center justify-between shrink-0">
                       <span>{isArabic ? "سجل الأحداث الأمني" : "Security Log Terminal"}</span>
-                      <span className="text-[8px] text-emerald-500/80 animate-pulse">● System online</span>
+                      <span className="text-[8px] text-[#6ba3a0] font-bold">● System online</span>
                     </div>
                     {demoLog.length === 0 ? (
-                      <span className="animate-pulse text-slate-400 shrink-0">⏳ Awaiting logs from network orchestrator...</span>
+                      <span className="text-[#7a8587] shrink-0">⏳ Awaiting logs from network orchestrator...</span>
                     ) : (
                       demoLog.map((log, index) => (
-                        <div key={index} className="truncate transition-all duration-300 text-slate-300 flex items-center gap-1.5 shrink-0">
-                          <span className="text-cyan-500 font-bold">❯</span>
+                        <div key={index} className="truncate transition-all duration-300 text-[#2d3233] flex items-center gap-1.5 shrink-0">
+                          <span className="text-[#6ba3a0] font-bold">❯</span>
                           <span className="font-mono">{log}</span>
                         </div>
                       ))
                     )}
                   </div>
+
                 </Reveal>
               </div>
+
             </div>
           </section>
 
-          {/* Section 1: Metrics */}
-          <section className="relative w-full border-b border-[var(--card-border-default)] py-12 select-none" style={{ background: 'var(--card-bg)' }}>
-            <div className="absolute inset-0 backdrop-blur-md pointer-events-none" aria-hidden="true" />
+          {/* Section 1: Metrics Section (Symphony Glass Styled) */}
+          <section className="relative w-full border-b border-[#a68c89]/20 py-12 select-none bg-white/40 backdrop-blur-md">
             <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
               {[
                 { value: t.metric_workflows_value, label: t.metric_workflows_sub },
@@ -370,13 +371,13 @@ export default function Home() {
                 { value: t.metric_security_value,  label: t.metric_security_sub },
               ].map((m, i) => (
                 <Reveal key={i} delay={100 + i * 150} className={
-                  m.divider ? "border-y md:border-y-0 md:border-x border-[var(--card-border-default)] py-6 md:py-0" : ""
+                  m.divider ? "border-y md:border-y-0 md:border-x border-[#a68c89]/20 py-6 md:py-0" : ""
                 }>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="text-4.5xl font-black drop-shadow-[0_0_20px_rgba(14,179,186,0.15)] text-cyan-400">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-4xl sm:text-5xl font-black font-serif text-[#2d3233]">
                       {m.value}
                     </span>
-                    <span className="text-xs font-bold tracking-widest uppercase text-slate-400">
+                    <span className="text-xs font-bold tracking-widest uppercase text-[#6ba3a0] mt-1">
                       {m.label}
                     </span>
                   </div>
@@ -385,17 +386,20 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 2: Services Grid */}
-          <section id="services" className="relative w-full py-24 sm:py-32 border-b border-[var(--card-border-default)]">
+          {/* Section 2: 5 Pillars Core Services Grid (Symphony Glass Styled) */}
+          <section id="services" className="relative w-full py-24 sm:py-32 border-b border-[#a68c89]/20">
             <div className="max-w-7xl mx-auto px-6">
-              <Reveal delay={100} className="text-center mb-20">
-                <h2 className="text-3xl sm:text-4xl font-black tracking-tight uppercase select-none heading-gradient-dark">
+              <Reveal delay={100} className="text-center mb-16">
+                <span className="text-xs uppercase font-bold tracking-widest text-[#6ba3a0] mb-2 block">
+                  {isArabic ? "مجالات الخدمة الأساسية" : "Service Architecture"}
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight font-serif text-[#2d3233]">
                   {t.services_arch_title}
                 </h2>
               </Reveal>
 
               <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-                {variantAPillars.map((p, i) => {
+                {servicePillars.map((p, i) => {
                   const getColSpan = (idx: number) => {
                     if (idx < 3) return "md:col-span-3 lg:col-span-2";
                     if (idx === 3) return "md:col-span-3 lg:col-span-3";
@@ -403,14 +407,14 @@ export default function Home() {
                   };
                   return (
                     <Reveal key={p.title} delay={150 + i * 100} className={`h-full ${getColSpan(i)}`}>
-                      <div className="card-neon-border rounded-2xl p-8 flex flex-col h-full overflow-hidden">
-                        <div className="relative z-10 h-12 w-12 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 bg-cyan-950/40 border border-cyan-500/25 text-cyan-400 shadow-[0_0_16px_rgba(14,179,186,0.12)]">
+                      <div className="bg-white/50 border border-[#a68c89]/25 hover:border-[#6ba3a0]/40 backdrop-blur-xl rounded-2xl p-8 flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div className="h-12 w-12 rounded-2xl flex items-center justify-center mb-6 bg-[#6ba3a0]/15 border border-[#6ba3a0]/25 text-[#6ba3a0]">
                           {p.icon}
                         </div>
-                        <h3 className="relative z-10 text-xl font-bold mb-3 tracking-wide text-white">
+                        <h3 className="text-xl font-serif font-bold mb-3 text-[#2d3233]">
                           {p.title}
                         </h3>
-                        <p className="relative z-10 text-sm leading-relaxed font-light text-slate-400">
+                        <p className="text-sm leading-relaxed font-light text-[#505759]">
                           {p.desc}
                         </p>
                       </div>
@@ -421,14 +425,14 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 3: Operational Blueprint */}
-          <section className="relative w-full py-24 sm:py-32 border-b border-[var(--card-border-default)]">
+          {/* Section 3: Operational Blueprint (Symphony Glass Styled) */}
+          <section className="relative w-full py-24 sm:py-32 border-b border-[#a68c89]/20">
             <div className="max-w-7xl mx-auto px-6">
-              <Reveal delay={100} className="text-center mb-20">
-                <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-cyan-400">
+              <Reveal delay={100} className="text-center mb-16">
+                <span className="text-xs font-bold tracking-widest uppercase text-[#6ba3a0] mb-2 block">
                   {t.blueprint_subtitle}
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-black tracking-tight uppercase mt-3 select-none heading-gradient-dark">
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight font-serif text-[#2d3233]">
                   {t.blueprint_title}
                 </h2>
               </Reveal>
@@ -440,258 +444,75 @@ export default function Home() {
                   { num: "03", title: t.blueprint_step3_title, desc: t.blueprint_step3_desc },
                 ].map((step, i) => (
                   <Reveal key={step.num} delay={200 + i * 150} className="relative flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-full flex items-center justify-center text-xl font-black mb-6 z-10 transition-all duration-300 bg-cyan-950/50 border border-cyan-500/35 text-cyan-400 shadow-[0_0_22px_rgba(14,179,186,0.22)]">
+                    <div className="h-16 w-16 rounded-full flex items-center justify-center text-xl font-bold mb-6 bg-[#6ba3a0]/15 border border-[#6ba3a0]/30 text-[#6ba3a0] shadow-sm">
                       {step.num}
                     </div>
-                    <h3 className="text-lg font-bold mb-3 text-white">
+                    <h3 className="text-lg font-serif font-bold mb-3 text-[#2d3233]">
                       {step.title}
                     </h3>
-                    <p className="text-sm leading-relaxed font-light max-w-xs text-slate-400">
+                    <p className="text-sm leading-relaxed font-light max-w-xs text-[#505759]">
                       {step.desc}
                     </p>
                     {i < 2 && (
-                      <div className="hidden lg:block absolute top-8 left-[62%] rtl:left-auto rtl:right-[62%] w-[76%] h-px -z-10 bg-gradient-to-r rtl:bg-gradient-to-l from-cyan-500/30 via-cyan-500/10 to-transparent" />
+                      <div className="hidden lg:block absolute top-8 left-[62%] rtl:left-auto rtl:right-[62%] w-[76%] h-px -z-10 bg-gradient-to-r rtl:bg-gradient-to-l from-[#6ba3a0]/40 via-[#6ba3a0]/15 to-transparent" />
                     )}
                   </Reveal>
                 ))}
               </div>
             </div>
           </section>
+
+          {/* Section 4: Enterprise Contact CTA Box */}
+          <section className="relative w-full py-20">
+            <div className="max-w-4xl mx-auto px-6">
+              <Reveal delay={100} className="bg-white/60 border border-[#a68c89]/25 rounded-2xl p-10 sm:p-16 text-center backdrop-blur-xl shadow-xl shadow-slate-900/5 flex flex-col items-center">
+                <span className="text-xs uppercase font-bold tracking-widest text-[#6ba3a0] mb-3">
+                  {isArabic ? "ابدأ اليوم" : "Enterprise Automation"}
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#2d3233] mb-4">
+                  {isArabic ? "هل أنت مستعد لأتمتة عملياتك؟" : "Ready to orchestrate your visual pipelines?"}
+                </h2>
+                <p className="text-sm sm:text-base text-[#505759] max-w-lg mb-8 leading-relaxed font-light">
+                  {isArabic 
+                    ? "تواصل معنا لإجراء تدقيق شامل لهيكلية أعمالك وتصميم أنظمة أتمتة آمنة ومخصصة."
+                    : "Connect with our engineering team to design custom visual pipelines and audit workflow bottlenecks."}
+                </p>
+                <Link
+                  href="/contact"
+                  className="bg-[#6ba3a0] hover:bg-[#568f8c] text-white px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-emerald-950/10"
+                >
+                  {t.cta_complexities}
+                </Link>
+              </Reveal>
+            </div>
+          </section>
         </>
       )}
 
       {/* ==================================================== */}
-      {/* RENDER VARIANT B: CLEAN MINIMALIST EDITORIAL         */}
+      {/* RENDER VARIANT A & VARIANT B (Prototype Fallbacks)   */}
       {/* ==================================================== */}
+      {variant === "A" && (
+        <div className="bg-[#03030a] text-white py-20 px-6 text-center">
+          <h1 className="text-3xl font-bold">Variant A Prototype</h1>
+          <p className="text-slate-400 mt-2">Switch back to Variant C (Symphony Glass) for the main website.</p>
+        </div>
+      )}
+
       {variant === "B" && (
-        <div className="bg-[#fcfcfa] text-[#1e1e1a] py-16 sm:py-24">
-          <div className="max-w-4xl mx-auto px-6">
-            
-            {/* Minimal Header */}
-            <div className="text-center mb-16 sm:mb-24 select-none">
-              <span className="text-xs uppercase tracking-widest text-[#a35c37] font-semibold">
-                {isArabic ? "منصة أتمتة الأنظمة" : "Systems & Workflow Engineering"}
-              </span>
-              <h1 className="text-4xl sm:text-6xl font-serif font-bold tracking-tight mt-6 mb-8 leading-[1.1] text-[#2c2a29]">
-                {isArabic 
-                  ? "نبني أنظمة رقمية تدير أعمالك وتتحكم بها تلقائياً" 
-                  : "We build digital systems that run your business automatically."}
-              </h1>
-              <p className="text-base sm:text-xl font-light text-[#575451] max-w-2xl mx-auto leading-relaxed">
-                {t.hero_subtitle_secure}
-              </p>
-            </div>
-
-            {/* Structured Numbers Row */}
-            <div className="border-y border-[#e2e1dd] py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-20 select-none">
-              <div>
-                <div className="text-4xl sm:text-5xl font-serif font-black text-[#a35c37]">
-                  {t.metric_workflows_value}
-                </div>
-                <div className="text-[10px] uppercase font-bold tracking-widest text-[#7c7875] mt-2 leading-relaxed">
-                  {t.metric_workflows_sub}
-                </div>
-              </div>
-              <div className="border-y md:border-y-0 md:border-x border-[#e2e1dd] py-6 md:py-0">
-                <div className="text-4xl sm:text-5xl font-serif font-black text-[#2c2a29]">
-                  0%
-                </div>
-                <div className="text-[10px] uppercase font-bold tracking-widest text-[#7c7875] mt-2 leading-relaxed">
-                  {isArabic ? "نسبة الخطأ البشري المتبقية" : "Manual Error Margin Left"}
-                </div>
-              </div>
-              <div>
-                <div className="text-4xl sm:text-5xl font-serif font-black text-[#2c2a29]">
-                  Bespoke
-                </div>
-                <div className="text-[10px] uppercase font-bold tracking-widest text-[#7c7875] mt-2 leading-relaxed">
-                  {t.metric_security_sub}
-                </div>
-              </div>
-            </div>
-
-            {/* Vertical Services Accordion-style layout */}
-            <div className="mb-24">
-              <h2 className="text-xs uppercase tracking-widest text-[#7c7875] font-bold mb-8">
-                {isArabic ? "مجالات الخدمة الأساسية" : "Service Offerings"}
-              </h2>
-              <div className="space-y-6">
-                {[
-                  { num: "I", title: t.pillar1_title, desc: t.pillar1_desc },
-                  { num: "II", title: t.pillar2_title, desc: t.pillar2_desc },
-                  { num: "III", title: t.pillar3_title, desc: t.pillar3_desc },
-                  { num: "IV", title: t.pillar4_title, desc: t.pillar4_desc },
-                  { num: "V", title: t.pillar5_title, desc: t.pillar5_desc },
-                ].map((s) => (
-                  <div key={s.num} className="border-b border-[#e2e1dd] pb-6 flex gap-6">
-                    <span className="font-serif font-bold text-[#a35c37] text-lg select-none">{s.num}.</span>
-                    <div>
-                      <h3 className="font-serif font-bold text-lg text-[#2c2a29] mb-2">{s.title}</h3>
-                      <p className="text-sm font-light text-[#575451] leading-relaxed">{s.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Minimal Contact Box */}
-            <div className="bg-[#f3f1ed] border border-[#e2e1dd] rounded-2xl p-10 text-center flex flex-col items-center">
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#2c2a29] mb-4">
-                {isArabic ? "دعنا نبدأ بأتمتة أعمالك اليوم" : "Let's automate your pipeline."}
-              </h2>
-              <p className="text-sm text-[#575451] max-w-md mb-8 leading-relaxed font-light">
-                {isArabic 
-                  ? "تواصل معنا لإجراء مراجعة شاملة لعمليات شركتك وهندسة حلول رقمية موثوقة."
-                  : "Connect with our solution engineers to audit workflow bottlenecks and draft an operations blueprint."}
-              </p>
-              <Link
-                href="/contact"
-                className="bg-[#2c2a29] hover:bg-[#a35c37] text-white px-7 py-3 rounded-lg text-sm font-semibold tracking-wider uppercase transition-colors"
-              >
-                {t.cta_complexities}
-              </Link>
-            </div>
-
-          </div>
+        <div className="bg-[#fcfcfa] text-[#1e1e1a] py-20 px-6 text-center">
+          <h1 className="text-3xl font-serif font-bold">Variant B Prototype</h1>
+          <p className="text-[#575451] mt-2">Switch back to Variant C (Symphony Glass) for the main website.</p>
         </div>
       )}
 
-      {/* ==================================================== */}
-      {/* RENDER VARIANT C: SYMPHONY GLASS DASHBOARD           */}
-      {/* ==================================================== */}
-      {variant === "C" && (
-        <div className="bg-[#f6f5f0] text-[#1d1f20] py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left Content */}
-            <div className="col-span-1 lg:col-span-5 flex flex-col justify-center">
-              <span className="text-xs uppercase font-bold tracking-widest text-[#6ba3a0] mb-4">
-                {isArabic ? "حلول برمجية متكاملة" : "SaaS Automation Suite"}
-              </span>
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-serif mb-6 leading-tight text-[#2d3233]">
-                {isArabic
-                  ? "خطوط أتمتة مرئية تمنحك تحكماً كاملاً بالعمليات"
-                  : "Operations pipelines that grant complete visual control."}
-              </h1>
-              <p className="text-sm sm:text-base font-light text-[#505759] mb-8 leading-relaxed">
-                {isArabic
-                  ? "نصمم لوحات تحكم متكاملة وواجهات برمجية آمنة لمراقبة وإدارة جميع عمليات شركتك وتدفقاتها البرمجية والمالية بدقة فائقة."
-                  : "We design premium interfaces and custom dashboards that let you analyze and inspect every automation node, script, and API call running in your business."}
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  href="/contact"
-                  className="bg-[#6ba3a0] hover:bg-[#568f8c] text-white px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-emerald-950/10"
-                >
-                  {t.cta_complexities}
-                </Link>
-                <Link
-                  href="/services"
-                  className="bg-white/40 border border-[#a68c89]/20 hover:bg-white text-[#2d3233] px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all"
-                >
-                  {isArabic ? "تفاصيل الخدمات" : "View Specifications"}
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Content: Premium SaaS Workspace Mockup (Symphony theme styled) */}
-            <div className="col-span-1 lg:col-span-7 flex justify-center items-center">
-              <Reveal className="w-full max-w-[620px] bg-white/40 border border-[#a68c89]/25 backdrop-filter backdrop-blur-xl rounded-2xl p-6 shadow-xl shadow-slate-900/5 flex flex-col relative overflow-hidden">
-                
-                {/* Topbar of SaaS */}
-                <div className="flex items-center justify-between border-b border-[#a68c89]/20 pb-4 mb-4 select-none">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                    <span className="text-[10px] font-bold text-[#505759] uppercase tracking-wider ml-2 font-mono">
-                      Maker-AI // Admin Control Portal
-                    </span>
-                  </div>
-                  <span className="text-[10px] text-[#6ba3a0] font-bold px-2 py-0.5 rounded bg-[#6ba3a0]/10 border border-[#6ba3a0]/20 font-mono">
-                    ● Production Cluster
-                  </span>
-                </div>
-
-                {/* Dashboard grid mock layout */}
-                <div className="grid grid-cols-12 gap-4">
-                  {/* Left stats panel */}
-                  <div className="col-span-4 border border-[#a68c89]/20 rounded-xl p-3 bg-white/30 flex flex-col justify-between h-[150px] select-none">
-                    <span className="text-[9px] uppercase font-bold text-[#7a8587] tracking-wider">
-                      {isArabic ? "العمليات الجارية" : "Running Pipelines"}
-                    </span>
-                    <span className="text-2xl font-serif font-black text-[#2d3233]">
-                      42 Active
-                    </span>
-                    <span className="text-[9px] text-[#6ba3a0] font-bold">
-                      ↑ 12% from yesterday
-                    </span>
-                  </div>
-
-                  {/* Center Chart widget */}
-                  <div className="col-span-8 border border-[#a68c89]/20 rounded-xl p-4 bg-white/30 flex flex-col justify-between h-[150px] relative select-none">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[9px] uppercase font-bold text-[#7a8587] tracking-wider">
-                        {isArabic ? "معدل استهلاك المعالج" : "Orchestration Latency (ms)"}
-                      </span>
-                      <span className="text-[10px] font-mono text-[#6ba3a0] font-bold">avg 45ms</span>
-                    </div>
-
-                    {/* Mock Line Graph */}
-                    <div className="relative flex-grow flex items-end justify-between px-2 mt-4 pb-2">
-                      <div className="absolute inset-x-0 bottom-[35%] h-[1px] bg-slate-400/10" />
-                      <div className="absolute inset-x-0 bottom-[65%] h-[1px] bg-slate-400/10" />
-                      
-                      {/* Fake Chart Lines */}
-                      <div className="w-[12%] h-[20%] bg-[#6ba3a0]/40 rounded-t" />
-                      <div className="w-[12%] h-[40%] bg-[#6ba3a0]/40 rounded-t" />
-                      <div className="w-[12%] h-[75%] bg-[#6ba3a0] rounded-t" />
-                      <div className="w-[12%] h-[55%] bg-[#6ba3a0]/40 rounded-t" />
-                      <div className="w-[12%] h-[90%] bg-[#6ba3a0] rounded-t" />
-                      <div className="w-[12%] h-[30%] bg-[#6ba3a0]/40 rounded-t" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom list panel */}
-                <div className="mt-4 border border-[#a68c89]/20 rounded-xl p-4 bg-white/30 flex flex-col gap-2 select-none">
-                  <div className="text-[9px] uppercase font-bold text-[#7a8587] border-b border-[#a68c89]/15 pb-2 tracking-wider flex items-center justify-between">
-                    <span>{isArabic ? "سجل الامتثال والتحقق" : "Compliance Audit Ledger"}</span>
-                    <span className="font-mono text-[#6ba3a0]">4 Tasks Audited</span>
-                  </div>
-                  <div className="space-y-1.5 text-[10px]">
-                    <div className="flex items-center justify-between py-1 border-b border-[#a68c89]/10">
-                      <span className="font-bold text-[#2d3233]">🔗 Integration Endpoint</span>
-                      <span className="text-[#6ba3a0] font-bold">100% OK</span>
-                    </div>
-                    <div className="flex items-center justify-between py-1 border-b border-[#a68c89]/10">
-                      <span className="font-bold text-[#2d3233]">🤖 Custom RAG Synthesizer</span>
-                      <span className="text-[#6ba3a0] font-bold">Processed 4 documents</span>
-                    </div>
-                    <div className="flex items-center justify-between py-1">
-                      <span className="font-bold text-[#2d3233]">🛡️ CEH Firewall Check</span>
-                      <span className="text-[#6ba3a0] font-bold">Secured</span>
-                    </div>
-                  </div>
-                </div>
-
-              </Reveal>
-            </div>
-
-          </div>
-        </div>
-      )}
-
-      {/* ==================================================== */}
-      {/* DYNAMIC PROTOTYPE INTERACTIVE SWITCHER PILL          */}
-      {/* ==================================================== */}
+      {/* Prototype Switcher Pill */}
       <PrototypeSwitcher current={variant} onChange={handleVariantChange} />
 
     </div>
   );
 }
 
-// Fixed Switcher Pill at the bottom center of the browser screen (Hidden in Production)
 function PrototypeSwitcher({
   current,
   onChange,
@@ -699,11 +520,11 @@ function PrototypeSwitcher({
   current: string;
   onChange: (v: string) => void;
 }) {
-  const variants = ["A", "B", "C"];
+  const variants = ["C", "A", "B"];
   const names: Record<string, string> = {
+    C: "C — Symphony Glass Dashboard",
     A: "A — Dark Cyber Orchestrator",
     B: "B — Minimal Light Editorial",
-    C: "C — Symphony Glass Dashboard",
   };
 
   const handlePrev = () => {
@@ -718,27 +539,6 @@ function PrototypeSwitcher({
     onChange(variants[nextIdx]);
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const activeEl = document.activeElement;
-      if (
-        activeEl &&
-        (activeEl.tagName === "INPUT" ||
-          activeEl.tagName === "TEXTAREA" ||
-          activeEl.hasAttribute("contenteditable"))
-      ) {
-        return;
-      }
-      if (e.key === "ArrowLeft") {
-        handlePrev();
-      } else if (e.key === "ArrowRight") {
-        handleNext();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [current]);
-
   return (
     <div 
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-4 px-4 py-2.5 rounded-full shadow-2xl border select-none animate-none"
@@ -746,7 +546,7 @@ function PrototypeSwitcher({
     >
       <button 
         onClick={handlePrev} 
-        className="hover:text-cyan-400 p-1.5 transition-colors cursor-pointer"
+        className="hover:text-emerald-400 p-1.5 transition-colors cursor-pointer"
         style={{ color: "#f8fafc" }}
         aria-label="Previous Variant"
       >
@@ -755,13 +555,13 @@ function PrototypeSwitcher({
         </svg>
       </button>
       
-      <span className="text-xs font-bold font-mono tracking-wide px-2 min-w-[200px] text-center" style={{ color: "#f8fafc" }}>
+      <span className="text-xs font-bold font-mono tracking-wide px-2 min-w-[220px] text-center" style={{ color: "#f8fafc" }}>
         {names[current] || current}
       </span>
 
       <button 
         onClick={handleNext} 
-        className="hover:text-cyan-400 p-1.5 transition-colors cursor-pointer"
+        className="hover:text-emerald-400 p-1.5 transition-colors cursor-pointer"
         style={{ color: "#f8fafc" }}
         aria-label="Next Variant"
       >

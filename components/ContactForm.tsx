@@ -190,7 +190,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full bg-[var(--form-input-bg)] border border-[var(--form-input-border)] hover:border-slate-300 dark:hover:border-white/[0.15] rounded-xl px-4 py-3 text-[var(--foreground)] placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/10 focus:shadow-[0_0_15px_rgba(6,182,212,0.1)] transition-all duration-300 resize-none placeholder:text-slate-400/80 dark:placeholder:text-slate-500"
+                className="w-full bg-[var(--form-input-bg)] border border-[var(--form-input-border)] hover:border-brand-hover rounded-xl px-4 py-3 text-[var(--foreground)] placeholder-brand-muted/60 focus:outline-none focus:border-brand focus:ring-4 focus:ring-brand/10 transition-all duration-300 resize-none placeholder:text-brand-muted/80"
                 placeholder={t.form_msg_placeholder}
               />
             </div>

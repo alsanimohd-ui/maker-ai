@@ -3,113 +3,103 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* ─── LIGHT MODE (Default) ──────────────────────────── */
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  /* ─── THEME C: SYMPHONY GLASS DASHBOARD (Default) ────────── */
+  --background: #f6f5f0;
+  --foreground: #1d1f20;
 
-  /* Cards & Surfaces */
-  --card-bg: rgba(255, 255, 255, 0.75);
-  --card-border-default: rgba(15, 23, 42, 0.06);
-  --card-border-hover: rgba(99, 102, 241, 0.5);
-  --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02);
+  /* Cards & Surfaces (Glassmorphic Alabaster & Warm Muted Borders) */
+  --card-bg: rgba(255, 255, 255, 0.45);
+  --card-border-default: rgba(166, 140, 137, 0.22);
+  --card-border-hover: rgba(107, 163, 160, 0.5);
+  --card-shadow: 0 20px 40px -15px rgba(29, 31, 32, 0.05), 0 1px 3px rgba(29, 31, 32, 0.03);
 
   /* Text */
-  --text-muted: #64748b;
-  --text-body: #334155;
+  --text-muted: #7a8587;
+  --text-body: #505759;
+  --text-heading: #2d3233;
 
   /* Nav */
-  --navbar-bg: rgba(248, 250, 252, 0.8);
-  --navbar-border: rgba(15, 23, 42, 0.05);
-  --navbar-shadow: 0 1px 0 rgba(15, 23, 42, 0.03);
+  --navbar-bg: rgba(246, 245, 240, 0.85);
+  --navbar-border: rgba(166, 140, 137, 0.18);
+  --navbar-shadow: 0 4px 20px -5px rgba(45, 50, 51, 0.04);
 
   /* Forms */
-  --form-input-bg: #ffffff;
-  --form-input-border: rgba(15, 23, 42, 0.1);
-  --form-input-text: #0f172a;
+  --form-input-bg: rgba(255, 255, 255, 0.7);
+  --form-input-border: rgba(166, 140, 137, 0.25);
+  --form-input-text: #2d3233;
 
   /* Chat */
-  --chat-msg-bot-bg: #f1f5f9;
-  --chat-msg-bot-border: rgba(15, 23, 42, 0.04);
-  --chat-msg-bot-text: #1e293b;
+  --chat-msg-bot-bg: rgba(255, 255, 255, 0.65);
+  --chat-msg-bot-border: rgba(166, 140, 137, 0.2);
+  --chat-msg-bot-text: #2d3233;
 
   /* Aurora blobs */
   --blob-opacity: 0;
-  --blob-light-opacity: 0.25;
+  --blob-light-opacity: 0.15;
 
   /* Scrollbar */
-  --scrollbar-thumb: #cbd5e1;
-  --scrollbar-thumb-hover: #6366f1;
+  --scrollbar-thumb: #c2beb8;
+  --scrollbar-thumb-hover: #6ba3a0;
 
   /* Background gradient canvas */
-  --bg-gradient-from: #f8fafc;
-  --bg-gradient-via: #f1f5f9;
-  --bg-gradient-to: #f8fafc;
+  --bg-gradient-from: #f6f5f0;
+  --bg-gradient-via: #f2f0e8;
+  --bg-gradient-to: #f6f5f0;
 
   /* Micro-mesh grid */
-  --grid-line-color: rgba(15, 23, 42, 0.015);
+  --grid-line-color: rgba(45, 50, 51, 0.02);
 
-  /* Brand color */
-  --brand-color: #6366f1;
-  --brand-color-hover: #4f46e5;
+  /* Brand color (Sage / Emerald Teal) */
+  --brand-color: #6ba3a0;
+  --brand-color-hover: #568f8c;
 
   /* Typography dynamic variables */
   --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-inter), Georgia, serif;
+  --serif-font: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 html.light {
-  /* ─── LIGHT MODE (Option B: Clean Minimalist Tech) ───────────────────────────────────── */
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  /* ─── THEME C: SYMPHONY GLASS DASHBOARD ──────────────────── */
+  --background: #f6f5f0;
+  --foreground: #1d1f20;
 
-  /* Cards & Surfaces */
-  --card-bg: rgba(255, 255, 255, 0.75);
-  --card-border-default: rgba(15, 23, 42, 0.06);
-  --card-border-hover: rgba(99, 102, 241, 0.5);
-  --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02);
+  --card-bg: rgba(255, 255, 255, 0.45);
+  --card-border-default: rgba(166, 140, 137, 0.22);
+  --card-border-hover: rgba(107, 163, 160, 0.5);
+  --card-shadow: 0 20px 40px -15px rgba(29, 31, 32, 0.05), 0 1px 3px rgba(29, 31, 32, 0.03);
 
-  /* Text */
-  --text-muted: #64748b;
-  --text-body: #334155;
+  --text-muted: #7a8587;
+  --text-body: #505759;
 
-  /* Nav */
-  --navbar-bg: rgba(248, 250, 252, 0.8);
-  --navbar-border: rgba(15, 23, 42, 0.05);
-  --navbar-shadow: 0 1px 0 rgba(15, 23, 42, 0.03);
+  --navbar-bg: rgba(246, 245, 240, 0.85);
+  --navbar-border: rgba(166, 140, 137, 0.18);
+  --navbar-shadow: 0 4px 20px -5px rgba(45, 50, 51, 0.04);
 
-  /* Forms */
-  --form-input-bg: #ffffff;
-  --form-input-border: rgba(15, 23, 42, 0.1);
-  --form-input-text: #0f172a;
+  --form-input-bg: rgba(255, 255, 255, 0.7);
+  --form-input-border: rgba(166, 140, 137, 0.25);
+  --form-input-text: #2d3233;
 
-  /* Chat */
-  --chat-msg-bot-bg: #f1f5f9;
-  --chat-msg-bot-border: rgba(15, 23, 42, 0.04);
-  --chat-msg-bot-text: #1e293b;
+  --chat-msg-bot-bg: rgba(255, 255, 255, 0.65);
+  --chat-msg-bot-border: rgba(166, 140, 137, 0.2);
+  --chat-msg-bot-text: #2d3233;
 
-  /* Aurora blobs - much softer in light mode */
   --blob-opacity: 0;
-  --blob-light-opacity: 0.25;
+  --blob-light-opacity: 0.15;
 
-  /* Scrollbar */
-  --scrollbar-thumb: #cbd5e1;
-  --scrollbar-thumb-hover: #6366f1;
+  --scrollbar-thumb: #c2beb8;
+  --scrollbar-thumb-hover: #6ba3a0;
 
-  /* Background gradient canvas */
-  --bg-gradient-from: #f8fafc;
-  --bg-gradient-via: #f1f5f9;
-  --bg-gradient-to: #f8fafc;
+  --bg-gradient-from: #f6f5f0;
+  --bg-gradient-via: #f2f0e8;
+  --bg-gradient-to: #f6f5f0;
 
-  /* Micro-mesh grid - light (barely visible ink lines at 1.5%) */
-  --grid-line-color: rgba(15, 23, 42, 0.015);
+  --grid-line-color: rgba(45, 50, 51, 0.02);
 
-  /* Brand color */
-  --brand-color: #6366f1;
-  --brand-color-hover: #4f46e5;
+  --brand-color: #6ba3a0;
+  --brand-color-hover: #568f8c;
 
-  /* Typography dynamic variables */
-  --sans-font: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
-  --serif-font: var(--font-space-grotesk), Georgia, serif;
+  --sans-font: var(--font-inter), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --serif-font: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 
@@ -154,7 +144,7 @@ body {
 /* Base primary button styles */
 .btn-primary, button.btn-primary {
   background-color: var(--brand-color) !important;
-  color: #020209 !important; /* high-contrast dark text by default */
+  color: #ffffff !important; /* crisp white text for sage teal brand button */
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   box-shadow: 0 4px 14px color-mix(in srgb, var(--brand-color) 20%, transparent) !important;

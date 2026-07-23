@@ -213,7 +213,7 @@ export default function ChatBot() {
               <div
                 className={`p-3.5 text-sm leading-relaxed whitespace-pre-line rounded-2xl ${
                   msg.sender === "user"
-                    ? "rounded-br-none bg-brand text-slate-900 dark:text-white font-medium shadow-md"
+                    ? "rounded-br-none bg-[#6ba3a0] text-white font-medium shadow-md"
                     : "rounded-bl-none bg-[var(--chat-msg-bot-bg)] border border-[var(--chat-msg-bot-border)] text-[var(--chat-msg-bot-text)] shadow-sm"
                 }`}
               >

@@ -4,15 +4,12 @@ import { useEffect, useState } from "react";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import { useLanguage } from "@/context/LanguageContext";
-import { useTheme } from "@/context/ThemeContext";
 import { translations } from "@/lib/translations";
 
 export default function ContactPage() {
   const [mounted, setMounted] = useState(false);
   const { lang } = useLanguage();
-  const { theme } = useTheme();
   const t = translations[lang];
-  const isDark = theme === "dark";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,20 +18,19 @@ export default function ContactPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  const headingGradient = isDark
-    ? "text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400"
-    : "text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-800 to-slate-500";
-
   return (
-    <div className="relative min-h-screen text-foreground flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen text-[#1d1f20] bg-[#f6f5f0] flex flex-col justify-center overflow-hidden">
       <div className="flex flex-col w-full py-24 sm:py-32 z-10">
         {/* Header section */}
-        <section className="max-w-7xl mx-auto px-6 w-full text-center mb-16 sm:mb-24">
+        <section className="max-w-7xl mx-auto px-6 w-full text-center mb-16 sm:mb-24 select-none">
           <div className={`animate-on-load ${mounted ? "visible" : ""}`}>
-            <h1 className={`text-4xl font-black tracking-tight sm:text-5xl md:text-6xl uppercase select-none ${headingGradient}`}>
+            <span className="text-xs uppercase font-bold tracking-widest text-[#6ba3a0] mb-3 block">
+              {lang === "ar" ? "تواصل معنا" : "Get In Touch"}
+            </span>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl font-serif text-[#2d3233] leading-tight">
               {t.contact_page_title}
             </h1>
-            <p className={`mt-4 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed font-light ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+            <p className="mt-4 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed font-light text-[#505759]">
               {t.contact_page_sub}
             </p>
           </div>
@@ -44,14 +40,14 @@ export default function ContactPage() {
         <section className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
-            {/* Side Info Panel - Restyled with hover radial glow container */}
+            {/* Side Info Panel */}
             <Reveal
               delay={100}
               className="h-full"
             >
-              <div className="card-neon-border rounded-2xl p-8 flex flex-col space-y-8 overflow-hidden h-full">
-                <div className="relative z-10">
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wide">
+              <div className="bg-white/50 border border-[#a68c89]/25 backdrop-blur-xl rounded-2xl p-8 flex flex-col space-y-8 overflow-hidden h-full shadow-sm">
+                <div>
+                  <h2 className="text-xl font-serif font-bold text-[#2d3233] mb-6 uppercase tracking-wide">
                     {t.contact_side_title}
                   </h2>
                   
@@ -59,12 +55,12 @@ export default function ContactPage() {
                   <ul className="space-y-4">
                     {[t.contact_side_benefit1, t.contact_side_benefit2, t.contact_side_benefit3].map((benefit, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-cyan-400/10 text-cyan-400 flex items-center justify-center">
+                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#6ba3a0]/15 text-[#6ba3a0] flex items-center justify-center">
                           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className={`text-sm leading-relaxed font-light ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                        <span className="text-sm leading-relaxed font-light text-[#505759]">
                           {benefit}
                         </span>
                       </li>
@@ -72,26 +68,26 @@ export default function ContactPage() {
                   </ul>
                 </div>
 
-                {/* Amman Operating Hours */}
-                <div className="relative z-10 border-t border-[var(--card-border-default)] pt-6">
-                  <h3 className="text-sm font-semibold text-slate-800 dark:text-white uppercase tracking-wider mb-3">
+                {/* Operating Hours */}
+                <div className="border-t border-[#a68c89]/20 pt-6">
+                  <h3 className="text-sm font-semibold text-[#2d3233] uppercase tracking-wider mb-2">
                     {t.contact_side_hours_title}
                   </h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400/80 font-light">{t.contact_side_hours_days}</p>
-                  <p className="text-sm text-slate-900 dark:text-white font-bold">{t.contact_side_hours_time}</p>
+                  <p className="text-sm text-[#7a8587] font-light">{t.contact_side_hours_days}</p>
+                  <p className="text-sm text-[#2d3233] font-bold">{t.contact_side_hours_time}</p>
                 </div>
 
                 {/* Direct Channels */}
-                <div className="relative z-10 border-t border-[var(--card-border-default)] pt-6 flex flex-col space-y-4">
-                  <h3 className="text-sm font-semibold text-slate-800 dark:text-white uppercase tracking-wider">
+                <div className="border-t border-[#a68c89]/20 pt-6 flex flex-col space-y-4">
+                  <h3 className="text-sm font-semibold text-[#2d3233] uppercase tracking-wider">
                     {t.contact_side_channels}
                   </h3>
                   <a
                     href="mailto:info@maker-ai.tech"
-                    className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-white transition-colors duration-200 font-semibold"
+                    className="flex items-center gap-2.5 text-sm text-[#505759] hover:text-[#6ba3a0] transition-colors duration-200 font-semibold"
                   >
                     <svg
-                      className="h-5 w-5 text-cyan-400"
+                      className="h-5 w-5 text-[#6ba3a0]"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
@@ -109,10 +105,11 @@ export default function ContactPage() {
               </div>
             </Reveal>
 
-            {/* Form area */}
-            <Reveal delay={200} className="col-span-1 lg:col-span-2">
+            {/* Main Interactive Contact Form */}
+            <div className="lg:col-span-2">
               <ContactForm />
-            </Reveal>
+            </div>
+
           </div>
         </section>
       </div>
